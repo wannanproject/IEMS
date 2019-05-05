@@ -1,0 +1,9 @@
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\bin\Release\IEMS.WanLi.Entity.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\bin\Release\IEMS.WanLi.Entity.pdb
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\bin\Release\MSTL.DbAccess.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\bin\Release\MSTL.LogAgent.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\obj\Release\IEMS.WanLi.Entity.csprojResolveAssemblyReference.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\obj\Release\IEMS.WanLi.Entity.csproj.CoreCompileInputs.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\obj\Release\IEMS.WanLi.Entity.csproj.CopyComplete
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\obj\Release\IEMS.WanLi.Entity.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.Entity\obj\Release\IEMS.WanLi.Entity.pdb

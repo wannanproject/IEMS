@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ORDER_TYPE_NO" Value="订单类型编码" ></Caption>
+    <Caption Name="ORDER_TYPE_NAME" Value="订单类型名称" ></Caption>
+    <Caption Name="ORDER_TYPE_MODULE" Value="订单类型模型" ></Caption>
+  </Captions>
+  <WebPage Title="订单类型">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ORDER_TYPE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ORDER_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_TYPE_NAME" ></GridColumn>
+        <GridColumn ColumnName="ORDER_TYPE_MODULE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ORDER_TYPE_NO" ></ParamField>
+        <ParamField FieldName="ORDER_TYPE_NAME" ></ParamField>
+        <ParamField FieldName="ORDER_TYPE_MODULE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

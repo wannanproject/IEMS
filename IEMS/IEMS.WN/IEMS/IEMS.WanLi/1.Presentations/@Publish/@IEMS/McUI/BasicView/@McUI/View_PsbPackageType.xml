@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PACK_TYPE_NO" Value="PACK_TYPE_NO" ></Caption>
+    <Caption Name="PACK_TYPE_NAME" Value="PACK_TYPE_NAME" ></Caption>
+    <Caption Name="LIMIT_TLOC_TYPE" Value="LIMIT_TLOC_TYPE" ></Caption>
+  </Captions>
+  <WebPage Title="包装检验结果分类">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PACK_TYPE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PACK_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="PACK_TYPE_NAME" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_TLOC_TYPE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PACK_TYPE_NO" ></ParamField>
+        <ParamField FieldName="PACK_TYPE_NAME" ></ParamField>
+        <ParamField FieldName="LIMIT_TLOC_TYPE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

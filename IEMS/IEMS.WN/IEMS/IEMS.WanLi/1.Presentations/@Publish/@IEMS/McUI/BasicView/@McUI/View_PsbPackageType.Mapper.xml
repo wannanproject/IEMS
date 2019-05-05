@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PsbPackageType" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PSB_PACKAGE_TYPE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.PACK_TYPE_NO" prepend="AND">
+           T1.PACK_TYPE_NO LIKE '%'||#where.PACK_TYPE_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY PACK_TYPE_NO
+     </select>
+     <select id="Select@View_PsbPackageType@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_PACKAGE_TYPE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.PACK_TYPE_NO" prepend = "AND">
+           T1.PACK_TYPE_NO = #where.PACK_TYPE_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

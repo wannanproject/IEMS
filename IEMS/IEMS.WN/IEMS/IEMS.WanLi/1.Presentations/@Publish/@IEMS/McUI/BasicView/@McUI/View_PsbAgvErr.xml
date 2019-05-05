@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ERR_NO" Value="ERR_NO" ></Caption>
+    <Caption Name="ERR_NAME" Value="ERR_NAME" ></Caption>
+  </Captions>
+  <WebPage Title="AGV错误列表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ERR_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_NAME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="ERR_NAME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

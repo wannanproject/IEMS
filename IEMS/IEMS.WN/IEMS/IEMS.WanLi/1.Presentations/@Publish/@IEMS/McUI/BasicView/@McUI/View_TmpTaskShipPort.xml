@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PORT_ID" Value="发货站台ID" ></Caption>
+    <Caption Name="PORT_NAME" Value="发货站台名称" ></Caption>
+    <Caption Name="PORT_NO" Value="发货站台编号--短" ></Caption>
+    <Caption Name="PORT_CODE" Value="发货站台编号--长" ></Caption>
+    <Caption Name="AREA_NO" Value="区域" ></Caption>
+    <Caption Name="PORT_PRIORITY" Value="优先级" ></Caption>
+    <Caption Name="LIST_NO" Value="单据编号" ></Caption>
+    <Caption Name="SORT_ID" Value="单据Sort_id" ></Caption>
+    <Caption Name="TASK_NO" Value="任务编号" ></Caption>
+  </Captions>
+  <WebPage Title="发货站台信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PORT_ID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PORT_ID" ></GridColumn>
+        <GridColumn ColumnName="PORT_NAME" ></GridColumn>
+        <GridColumn ColumnName="PORT_NO" ></GridColumn>
+        <GridColumn ColumnName="PORT_CODE" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="PORT_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PORT_ID" ></ParamField>
+        <ParamField FieldName="PORT_NAME" ></ParamField>
+        <ParamField FieldName="PORT_NO" ></ParamField>
+        <ParamField FieldName="PORT_CODE" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="PORT_PRIORITY" ></ParamField>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

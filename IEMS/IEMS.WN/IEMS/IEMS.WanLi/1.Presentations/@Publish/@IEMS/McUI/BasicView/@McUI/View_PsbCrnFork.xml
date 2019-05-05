@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="CRN_FORK_NO" Value="堆垛机叉编码" ></Caption>
+    <Caption Name="CRN_NO" Value="所属堆垛机编码" ></Caption>
+    <Caption Name="CRN_FORK_NAME" Value="叉名称" ></Caption>
+    <Caption Name="CRN_FORK_IDX" Value="叉序号(需要单独讨论)" ></Caption>
+    <Caption Name="CRN_FORK_ENABLE" Value="叉可用：1：可用 0：禁用" ></Caption>
+  </Captions>
+  <WebPage Title="堆垛机叉设置表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="CRN_FORK_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="CRN_FORK_NO" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="CRN_FORK_NAME" ></GridColumn>
+        <GridColumn ColumnName="CRN_FORK_IDX" ></GridColumn>
+        <GridColumn ColumnName="CRN_FORK_ENABLE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="CRN_FORK_NO" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="CRN_FORK_NAME" ></ParamField>
+        <ParamField FieldName="CRN_FORK_IDX" ></ParamField>
+        <ParamField FieldName="CRN_FORK_ENABLE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

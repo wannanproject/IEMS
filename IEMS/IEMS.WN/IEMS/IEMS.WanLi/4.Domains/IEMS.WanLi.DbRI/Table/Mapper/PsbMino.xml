@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbMinoService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbMino" type="IEMS.WanLi.Entity.PsbMino, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbMino" class="PsbMino">
+    <result property="Mino" column="MINO"/>
+    <result property="Midsc" column="MIDSC"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbMino" class="PsbMino">
+    <parameter property="Mino" column="Mino"/>
+    <parameter property="Midsc" column="Midsc"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_MINO ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.Mino" prepend="AND">
+          <isEqual property="where.Mino" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MINO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Mino" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MINO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Mino" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Mino" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MINO = #where.Mino#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Midsc" prepend="AND">
+          <isEqual property="where.Midsc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MIDSC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Midsc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MIDSC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Midsc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Midsc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MIDSC = #where.Midsc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_MINO]]>
+       <dynamic prepend="(">
+        <isNotNull property="Mino" prepend=",">MINO</isNotNull>
+        <isNotNull property="Midsc" prepend=",">MIDSC</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="Mino" prepend=",">#Mino#</isNotNull>
+        <isNotNull property="Midsc" prepend=",">#Midsc#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_MINO]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.Midsc" prepend=",">
+          <isEqual property="update.Midsc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MIDSC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Midsc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MIDSC = #update.Midsc#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_MINO]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbMino">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_MINO]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_MINO]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbMino" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

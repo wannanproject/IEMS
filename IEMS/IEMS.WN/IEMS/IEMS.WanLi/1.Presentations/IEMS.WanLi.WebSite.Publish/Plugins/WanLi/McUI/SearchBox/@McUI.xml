@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="SearchMaterial" uri="@McUI\SearchMaterial.xml"/>
+  <McUI name="SearchOutLocData" uri="@McUI\SearchOutLocData.xml"/>
+  <McUI name="SearchErrOutLocData" uri="@McUI\SearchErrOutLocData.xml"/>
+  <McUI name="SearchInLocData" uri="@McUI\SearchInLocData.xml"/>
+  <McUI name="SearchPallet1Data" uri="@McUI\SearchPallet1Data.xml"/>
+  <McUI name="SearchPallet2Data" uri="@McUI\SearchPallet2Data.xml"/>
+  <McUI name="SearchLocData" uri="@McUI\SearchLocData.xml"/>
+  <McUI name="SearchBinMaterial" uri="@McUI\SearchBinMaterial.xml"/>
+  <McUI name="SearchAgvSLocData" uri="@McUI\SearchAgvSLocData.xml"/>
+  <McUI name="SearchAgvELocData" uri="@McUI\SearchAgvELocData.xml"/>
+  <McUI name="SearchSrmData" uri="@McUI\SearchSrmData.xml"/>
+  <McUI name="SearchMinColData" uri="@McUI\SearchMinColData.xml"/>
+  <McUI name="SearchMaxColData" uri="@McUI\SearchMaxColData.xml"/>
+</McUIConfig>

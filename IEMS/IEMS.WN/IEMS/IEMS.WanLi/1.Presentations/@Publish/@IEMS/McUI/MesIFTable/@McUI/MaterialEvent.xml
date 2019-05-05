@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ID_KEY" Value="报工GUID" ></Caption>    
+    <Caption Name="REQUEST_NO" Value="要货号码" ></Caption>
+    <Caption Name="BARCODE" Value="货物的条码" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码" ></Caption>  
+    <Caption Name="TRANS_TYPE" Value="发生的事件" ></Caption>   
+    <Caption Name="TRANS_TIME" Value="上报的时间" ></Caption>
+    <Caption Name="DESTINATION" Value="送货目的地" ></Caption>
+    <Caption Name="RESULT" Value="结果" ></Caption>
+    <Caption Name="REMARKS" Value="备注信息" ></Caption>
+    <Caption Name="MES_STATUS" Value="MES状态" ></Caption>
+    <Caption Name="EQU_STATUS" Value="EQU状态" ></Caption>
+    <Caption Name="UPDATETIME" Value="更新时间" ></Caption>
+    <Caption Name="START_TIME" Value="开始上报时间" ></Caption>
+    <Caption Name="END_TIME" Value="结束上报时间" ></Caption>
+    <Caption Name="LOCATION_NO" Value="位置编号" ></Caption>    
+  </Captions>
+  <WebPage Title="报工信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="START_TIME"  Type="DateBox" DefaultValue="-1"></ParamField>
+        <ParamField FieldName="END_TIME"  Type="DateBox" DefaultValue="0"></ParamField>
+        <ParamField FieldName="TRANS_TYPE" Type="ComboBox" Nullable="true" Caption="事件类型"></ParamField>
+        <ParamField FieldName="REQUEST_NO"></ParamField>
+        <ParamField FieldName="RFID_NO"></ParamField>
+        <ParamField FieldName="DESTINATION"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="REQUEST_NO" WIDTH="200"></GridColumn>
+        <GridColumn ColumnName="BARCODE" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="RFID_NO" WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE" WIDTH="100"></GridColumn>
+        <GridColumn ColumnName="TRANS_TIME" WIDTH="160" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>       
+        <GridColumn ColumnName="DESTINATION" WIDTH="130"></GridColumn>     
+        <GridColumn ColumnName="MES_STATUS" WIDTH="60" ></GridColumn>       
+        <GridColumn ColumnName="EQU_STATUS" WIDTH="60"></GridColumn>        
+        <GridColumn ColumnName="UPDATETIME" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="RESULT" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="REMARKS" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="LOCATION_NO" WIDTH="60"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <!--<DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="MATER_NO" WIDTH="180"></GridColumn>       
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>       
+      </ParamFields>
+    </MainDetail>-->
+  </Select>
+</UiConfig>

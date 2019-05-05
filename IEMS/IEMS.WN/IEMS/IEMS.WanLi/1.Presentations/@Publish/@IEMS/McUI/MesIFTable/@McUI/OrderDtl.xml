@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LIST_NO" Value="单号" ></Caption>
+    <Caption Name="STATUS" Value="单据状态" ></Caption>
+    <Caption Name="SOURCE_BY" Value="来源" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建时间" ></Caption>   
+    <Caption Name="LAST_UPDATE_DATE" Value="更新时间" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="更新标志" ></Caption>    
+    
+    <Caption Name="LINE_ID" Value="行号" ></Caption> 
+    <Caption Name="MATER_NO" Value="物料编号" ></Caption>
+    <Caption Name="GRADE" Value="品级" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="单据数量" ></Caption>
+    <Caption Name="ACT_QTY" Value="到货数量" ></Caption>
+    <Caption Name="SHIP_QTY" Value="已发数量" ></Caption>   
+    <Caption Name="PRODUCT_GUID" Value="产出品GUID" ></Caption>    
+    <Caption Name="LINE_STATUS" Value="行项目状态" ></Caption>
+    <Caption Name="STOP_FLAG" Value="终止标志" ></Caption>   
+    <Caption Name="DLOC_NO" Value="目标线边库" ></Caption>   
+    <Caption Name="ERR_FLAG" Value="异常标志" ></Caption>
+    <Caption Name="REMARKS" Value="摘要" ></Caption>
+    <Caption Name="LINE_SLMS_FLAG" Value="行项目更新标志" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="生产设备" ></Caption> 
+    <Caption Name="BATCH_NO" Value="要货批次号码" ></Caption>
+    <Caption Name="REQUEST_CATEGORY" Value="要货物料类型" ></Caption>
+    <Caption Name="MES_STATUS" Value="MES状态" ></Caption>
+    <Caption Name="EQU_STATUS" Value="设备状态" ></Caption>
+
+    <Caption Name="LOC_MES_NO" Value="MES线边库编号" ></Caption>
+    <Caption Name="LOC_NO" Value="站台编号" ></Caption>
+    <Caption Name="LOC_PLC_NO" Value="站台PLC号" ></Caption>
+    <Caption Name="LOC_TYPE_NAME" Value="站台类型" ></Caption>
+    <Caption Name="LOC_NAME" Value="站台名称" ></Caption>
+    <Caption Name="MAX_BUFFER" Value="最大缓存" ></Caption>
+    <Caption Name="LOC_GROUP_NAME" Value="站台组" ></Caption>
+    <Caption Name="LOC_AGV_NO" Value="站台AGV号" ></Caption>
+    <Caption Name="LOC_ENABLE" Value="站台状态" ></Caption>
+
+    <Caption Name="START_TIME" Value="开始创建时间" ></Caption>
+    <Caption Name="END_TIME" Value="结束创建时间" ></Caption>
+  </Captions>
+  <WebPage Title="订单">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO"></ParamField>
+        <ParamField FieldName="MATER_NO"></ParamField>
+        <ParamField FieldName="PRODUCT_GUID"></ParamField>
+        <ParamField FieldName="DLOC_NO"></ParamField>       
+        <ParamField FieldName="EQUIPMENT_NAME"></ParamField>
+        <ParamField FieldName="REQUEST_CATEGORY"></ParamField>
+        <ParamField FieldName="START_TIME"  Type="DateBox" DefaultValue="-1"></ParamField>
+        <ParamField FieldName="END_TIME"  Type="DateBox" DefaultValue="0"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LIST_NO" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="STATUS" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="SOURCE_BY" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="LAST_UPDATE_DATE"  WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" WIDTH="60"></GridColumn>
+        
+        <GridColumn ColumnName="LINE_ID" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="MATER_NO" WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="GRADE" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="DLOC_NO" WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="LINE_STATUS" WIDTH="80"></GridColumn>     
+      </GridColumns>
+    </MainGrid>
+    <DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="LIST_NO" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="LINE_ID" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="ACT_QTY"  WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY"  WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID"  WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="LINE_STATUS"  WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="STOP_FLAG"  WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="ERR_FLAG"  WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="LINE_SLMS_FLAG"  WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME"  WIDTH="100"></GridColumn>
+        <GridColumn ColumnName="BATCH_NO"  WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="REQUEST_CATEGORY"  WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="MES_STATUS"  WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="EQU_STATUS"  WIDTH="60"></GridColumn>
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_MES_NO" ></ParamField>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_PLC_NO" ></ParamField>
+        <!--<ParamField FieldName="LOC_TYPE_NO" ></ParamField>-->
+        <ParamField FieldName="LOC_TYPE_NAME" ></ParamField>
+        <ParamField FieldName="LOC_NAME" ></ParamField>
+        <ParamField FieldName="MAX_BUFFER" ></ParamField>
+        <!--<ParamField FieldName="LOC_GROUP_NO" ></ParamField>-->
+        <ParamField FieldName="LOC_GROUP_NAME" ></ParamField>       
+        <ParamField FieldName="LOC_AGV_NO" ></ParamField>
+        <ParamField FieldName="LOC_ENABLE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

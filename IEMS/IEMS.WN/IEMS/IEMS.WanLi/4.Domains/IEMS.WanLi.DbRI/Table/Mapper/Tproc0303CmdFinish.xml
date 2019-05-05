@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.Tproc0303CmdFinishService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="Tproc0303CmdFinish" type="IEMS.WanLi.Entity.Tproc0303CmdFinish, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_Tproc0303CmdFinish" class="Tproc0303CmdFinish">
+    <result property="ObjId" column="OBJID"/>
+    <result property="ErrCode" column="ERR_CODE"/>
+    <result property="ErrDesc" column="ERR_DESC"/>
+    <result property="ProcStatus" column="PROC_STATUS"/>
+    <result property="ProcCreateTime" column="PROC_CREATE_TIME"/>
+    <result property="ProcExcuteTime" column="PROC_EXCUTE_TIME"/>
+    <result property="ProcFinishTime" column="PROC_FINISH_TIME"/>
+    <result property="TaskNo" column="TASK_NO"/>
+    <result property="CurrLocNo" column="CURR_LOC_NO"/>
+    <result property="FinishStatus" column="FINISH_STATUS"/>
+    <result property="PalletNo" column="PALLET_NO"/>
+    <result property="SlocType" column="SLOC_TYPE"/>
+    <result property="SlocNo" column="SLOC_NO"/>
+    <result property="ElocNo" column="ELOC_NO"/>
+    <result property="GlobalGuid" column="GLOBAL_GUID"/>
+    <result property="CmdObjid" column="CMD_OBJID"/>
+    <result property="TaskGuid" column="TASK_GUID"/>
+    <result property="TaskFinishFlag" column="TASK_FINISH_FLAG"/>
+    <result property="ElocType" column="ELOC_TYPE"/>
+    <result property="Ftype" column="FTYPE"/>
+    <result property="Ftype01" column="FTYPE01"/>
+    <result property="TransferType" column="TRANSFER_TYPE"/>
+    <result property="ErrSign" column="ERR_SIGN"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_Tproc0303CmdFinish" class="Tproc0303CmdFinish">
+    <parameter property="ObjId" column="ObjId"/>
+    <parameter property="ErrCode" column="ErrCode"/>
+    <parameter property="ErrDesc" column="ErrDesc"/>
+    <parameter property="ProcStatus" column="ProcStatus"/>
+    <parameter property="ProcCreateTime" column="ProcCreateTime"/>
+    <parameter property="ProcExcuteTime" column="ProcExcuteTime"/>
+    <parameter property="ProcFinishTime" column="ProcFinishTime"/>
+    <parameter property="TaskNo" column="TaskNo"/>
+    <parameter property="CurrLocNo" column="CurrLocNo"/>
+    <parameter property="FinishStatus" column="FinishStatus"/>
+    <parameter property="PalletNo" column="PalletNo"/>
+    <parameter property="SlocType" column="SlocType"/>
+    <parameter property="SlocNo" column="SlocNo"/>
+    <parameter property="ElocNo" column="ElocNo"/>
+    <parameter property="GlobalGuid" column="GlobalGuid"/>
+    <parameter property="CmdObjid" column="CmdObjid"/>
+    <parameter property="TaskGuid" column="TaskGuid"/>
+    <parameter property="TaskFinishFlag" column="TaskFinishFlag"/>
+    <parameter property="ElocType" column="ElocType"/>
+    <parameter property="Ftype" column="Ftype"/>
+    <parameter property="Ftype01" column="Ftype01"/>
+    <parameter property="TransferType" column="TransferType"/>
+    <parameter property="ErrSign" column="ErrSign"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM TPROC_0303_CMD_FINISH ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.ObjId" prepend="AND">
+            <![CDATA[OBJID = #where.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="where.ErrCode" prepend="AND">
+          <isEqual property="where.ErrCode" compareValue="-1147483648">
+            <![CDATA[ERR_CODE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrCode" compareValue="-1147483647">
+            <![CDATA[ERR_CODE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrCode" compareValue="-1147483648">
+          <isNotEqual property="where.ErrCode" compareValue="-1147483647">
+            <![CDATA[ERR_CODE = #where.ErrCode#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrDesc" prepend="AND">
+          <isEqual property="where.ErrDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_DESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_DESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrDesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ErrDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_DESC = #where.ErrDesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcStatus" prepend="AND">
+          <isEqual property="where.ProcStatus" compareValue="-1147483648">
+            <![CDATA[PROC_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcStatus" compareValue="-1147483647">
+            <![CDATA[PROC_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcStatus" compareValue="-1147483648">
+          <isNotEqual property="where.ProcStatus" compareValue="-1147483647">
+            <![CDATA[PROC_STATUS = #where.ProcStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcCreateTime" prepend="AND">
+          <isEqual property="where.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_CREATE_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcCreateTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_CREATE_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcCreateTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_CREATE_TIME = #where.ProcCreateTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcExcuteTime" prepend="AND">
+          <isEqual property="where.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcExcuteTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcExcuteTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME = #where.ProcExcuteTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcFinishTime" prepend="AND">
+          <isEqual property="where.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_FINISH_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcFinishTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_FINISH_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcFinishTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_FINISH_TIME = #where.ProcFinishTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskNo" prepend="AND">
+          <isEqual property="where.TaskNo" compareValue="-1147483648">
+            <![CDATA[TASK_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskNo" compareValue="-1147483647">
+            <![CDATA[TASK_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskNo" compareValue="-1147483648">
+          <isNotEqual property="where.TaskNo" compareValue="-1147483647">
+            <![CDATA[TASK_NO = #where.TaskNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CurrLocNo" prepend="AND">
+          <isEqual property="where.CurrLocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CURR_LOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CurrLocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CURR_LOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CurrLocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CurrLocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CURR_LOC_NO = #where.CurrLocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.FinishStatus" prepend="AND">
+          <isEqual property="where.FinishStatus" compareValue="-1147483648">
+            <![CDATA[FINISH_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.FinishStatus" compareValue="-1147483647">
+            <![CDATA[FINISH_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.FinishStatus" compareValue="-1147483648">
+          <isNotEqual property="where.FinishStatus" compareValue="-1147483647">
+            <![CDATA[FINISH_STATUS = #where.FinishStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletNo" prepend="AND">
+          <isEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO = #where.PalletNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SlocType" prepend="AND">
+          <isEqual property="where.SlocType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SlocType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SlocType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.SlocType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_TYPE = #where.SlocType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SlocNo" prepend="AND">
+          <isEqual property="where.SlocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SlocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SlocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.SlocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_NO = #where.SlocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ElocNo" prepend="AND">
+          <isEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO = #where.ElocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.GlobalGuid" prepend="AND">
+          <isEqual property="where.GlobalGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GlobalGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GlobalGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GlobalGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID = #where.GlobalGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CmdObjid" prepend="AND">
+          <isEqual property="where.CmdObjid" compareValue="-1147483648">
+            <![CDATA[CMD_OBJID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CmdObjid" compareValue="-1147483647">
+            <![CDATA[CMD_OBJID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CmdObjid" compareValue="-1147483648">
+          <isNotEqual property="where.CmdObjid" compareValue="-1147483647">
+            <![CDATA[CMD_OBJID = #where.CmdObjid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskGuid" prepend="AND">
+          <isEqual property="where.TaskGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TASK_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.TaskGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_GUID = #where.TaskGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskFinishFlag" prepend="AND">
+          <isEqual property="where.TaskFinishFlag" compareValue="-1147483648">
+            <![CDATA[TASK_FINISH_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskFinishFlag" compareValue="-1147483647">
+            <![CDATA[TASK_FINISH_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskFinishFlag" compareValue="-1147483648">
+          <isNotEqual property="where.TaskFinishFlag" compareValue="-1147483647">
+            <![CDATA[TASK_FINISH_FLAG = #where.TaskFinishFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ElocType" prepend="AND">
+          <isEqual property="where.ElocType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ElocType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ElocType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ElocType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_TYPE = #where.ElocType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Ftype" prepend="AND">
+          <isEqual property="where.Ftype" compareValue="-1147483648">
+            <![CDATA[FTYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Ftype" compareValue="-1147483647">
+            <![CDATA[FTYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Ftype" compareValue="-1147483648">
+          <isNotEqual property="where.Ftype" compareValue="-1147483647">
+            <![CDATA[FTYPE = #where.Ftype#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Ftype01" prepend="AND">
+          <isEqual property="where.Ftype01" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FTYPE01 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Ftype01" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FTYPE01 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Ftype01" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Ftype01" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FTYPE01 = #where.Ftype01#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TransferType" prepend="AND">
+          <isEqual property="where.TransferType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TRANSFER_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TransferType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TRANSFER_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TransferType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.TransferType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TRANSFER_TYPE = #where.TransferType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrSign" prepend="AND">
+          <isEqual property="where.ErrSign" compareValue="-1147483648">
+            <![CDATA[ERR_SIGN IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrSign" compareValue="-1147483647">
+            <![CDATA[ERR_SIGN IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrSign" compareValue="-1147483648">
+          <isNotEqual property="where.ErrSign" compareValue="-1147483647">
+            <![CDATA[ERR_SIGN = #where.ErrSign#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO TPROC_0303_CMD_FINISH]]>
+       <dynamic prepend="(">
+        <isNull property="ObjId" prepend=",">OBJID</isNull>
+        <isNotNull property="ObjId" prepend=",">OBJID</isNotNull>
+        <isNotNull property="ErrCode" prepend=",">ERR_CODE</isNotNull>
+        <isNotNull property="ErrDesc" prepend=",">ERR_DESC</isNotNull>
+        <isNotNull property="ProcStatus" prepend=",">PROC_STATUS</isNotNull>
+        <isNotNull property="ProcCreateTime" prepend=",">PROC_CREATE_TIME</isNotNull>
+        <isNotNull property="ProcExcuteTime" prepend=",">PROC_EXCUTE_TIME</isNotNull>
+        <isNotNull property="ProcFinishTime" prepend=",">PROC_FINISH_TIME</isNotNull>
+        <isNotNull property="TaskNo" prepend=",">TASK_NO</isNotNull>
+        <isNotNull property="CurrLocNo" prepend=",">CURR_LOC_NO</isNotNull>
+        <isNotNull property="FinishStatus" prepend=",">FINISH_STATUS</isNotNull>
+        <isNotNull property="PalletNo" prepend=",">PALLET_NO</isNotNull>
+        <isNotNull property="SlocType" prepend=",">SLOC_TYPE</isNotNull>
+        <isNotNull property="SlocNo" prepend=",">SLOC_NO</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">ELOC_NO</isNotNull>
+        <isNotNull property="GlobalGuid" prepend=",">GLOBAL_GUID</isNotNull>
+        <isNotNull property="CmdObjid" prepend=",">CMD_OBJID</isNotNull>
+        <isNotNull property="TaskGuid" prepend=",">TASK_GUID</isNotNull>
+        <isNotNull property="TaskFinishFlag" prepend=",">TASK_FINISH_FLAG</isNotNull>
+        <isNotNull property="ElocType" prepend=",">ELOC_TYPE</isNotNull>
+        <isNotNull property="Ftype" prepend=",">FTYPE</isNotNull>
+        <isNotNull property="Ftype01" prepend=",">FTYPE01</isNotNull>
+        <isNotNull property="TransferType" prepend=",">TRANSFER_TYPE</isNotNull>
+        <isNotNull property="ErrSign" prepend=",">ERR_SIGN</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNull property="ObjId" prepend=",">SEQ_TPROC_0303_CMD_FINISH.NEXTVAL</isNull>
+        <isNotNull property="ObjId" prepend=",">#ObjId#</isNotNull>
+        <isNotNull property="ErrCode" prepend=",">#ErrCode#</isNotNull>
+        <isNotNull property="ErrDesc" prepend=",">#ErrDesc#</isNotNull>
+        <isNotNull property="ProcStatus" prepend=",">#ProcStatus#</isNotNull>
+        <isNotNull property="ProcCreateTime" prepend=",">#ProcCreateTime#</isNotNull>
+        <isNotNull property="ProcExcuteTime" prepend=",">#ProcExcuteTime#</isNotNull>
+        <isNotNull property="ProcFinishTime" prepend=",">#ProcFinishTime#</isNotNull>
+        <isNotNull property="TaskNo" prepend=",">#TaskNo#</isNotNull>
+        <isNotNull property="CurrLocNo" prepend=",">#CurrLocNo#</isNotNull>
+        <isNotNull property="FinishStatus" prepend=",">#FinishStatus#</isNotNull>
+        <isNotNull property="PalletNo" prepend=",">#PalletNo#</isNotNull>
+        <isNotNull property="SlocType" prepend=",">#SlocType#</isNotNull>
+        <isNotNull property="SlocNo" prepend=",">#SlocNo#</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">#ElocNo#</isNotNull>
+        <isNotNull property="GlobalGuid" prepend=",">#GlobalGuid#</isNotNull>
+        <isNotNull property="CmdObjid" prepend=",">#CmdObjid#</isNotNull>
+        <isNotNull property="TaskGuid" prepend=",">#TaskGuid#</isNotNull>
+        <isNotNull property="TaskFinishFlag" prepend=",">#TaskFinishFlag#</isNotNull>
+        <isNotNull property="ElocType" prepend=",">#ElocType#</isNotNull>
+        <isNotNull property="Ftype" prepend=",">#Ftype#</isNotNull>
+        <isNotNull property="Ftype01" prepend=",">#Ftype01#</isNotNull>
+        <isNotNull property="TransferType" prepend=",">#TransferType#</isNotNull>
+        <isNotNull property="ErrSign" prepend=",">#ErrSign#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE TPROC_0303_CMD_FINISH]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.ErrCode" prepend=",">
+          <isEqual property="update.ErrCode" compareValue="-1147483648">
+            <![CDATA[ERR_CODE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrCode" compareValue="-1147483648">
+          <![CDATA[ERR_CODE = #update.ErrCode#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrDesc" prepend=",">
+          <isEqual property="update.ErrDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_DESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrDesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ERR_DESC = #update.ErrDesc#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcStatus" prepend=",">
+          <isEqual property="update.ProcStatus" compareValue="-1147483648">
+            <![CDATA[PROC_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcStatus" compareValue="-1147483648">
+          <![CDATA[PROC_STATUS = #update.ProcStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcCreateTime" prepend=",">
+          <isEqual property="update.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_CREATE_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_CREATE_TIME = #update.ProcCreateTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcExcuteTime" prepend=",">
+          <isEqual property="update.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_EXCUTE_TIME = #update.ProcExcuteTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcFinishTime" prepend=",">
+          <isEqual property="update.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_FINISH_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_FINISH_TIME = #update.ProcFinishTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskNo" prepend=",">
+          <isEqual property="update.TaskNo" compareValue="-1147483648">
+            <![CDATA[TASK_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskNo" compareValue="-1147483648">
+          <![CDATA[TASK_NO = #update.TaskNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CurrLocNo" prepend=",">
+          <isEqual property="update.CurrLocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CURR_LOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CurrLocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CURR_LOC_NO = #update.CurrLocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.FinishStatus" prepend=",">
+          <isEqual property="update.FinishStatus" compareValue="-1147483648">
+            <![CDATA[FINISH_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.FinishStatus" compareValue="-1147483648">
+          <![CDATA[FINISH_STATUS = #update.FinishStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletNo" prepend=",">
+          <isEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_NO = #update.PalletNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SlocType" prepend=",">
+          <isEqual property="update.SlocType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SlocType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[SLOC_TYPE = #update.SlocType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SlocNo" prepend=",">
+          <isEqual property="update.SlocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SlocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[SLOC_NO = #update.SlocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ElocNo" prepend=",">
+          <isEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ELOC_NO = #update.ElocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.GlobalGuid" prepend=",">
+          <isEqual property="update.GlobalGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.GlobalGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[GLOBAL_GUID = #update.GlobalGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CmdObjid" prepend=",">
+          <isEqual property="update.CmdObjid" compareValue="-1147483648">
+            <![CDATA[CMD_OBJID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CmdObjid" compareValue="-1147483648">
+          <![CDATA[CMD_OBJID = #update.CmdObjid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskGuid" prepend=",">
+          <isEqual property="update.TaskGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TASK_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[TASK_GUID = #update.TaskGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskFinishFlag" prepend=",">
+          <isEqual property="update.TaskFinishFlag" compareValue="-1147483648">
+            <![CDATA[TASK_FINISH_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskFinishFlag" compareValue="-1147483648">
+          <![CDATA[TASK_FINISH_FLAG = #update.TaskFinishFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ElocType" prepend=",">
+          <isEqual property="update.ElocType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ElocType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ELOC_TYPE = #update.ElocType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Ftype" prepend=",">
+          <isEqual property="update.Ftype" compareValue="-1147483648">
+            <![CDATA[FTYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Ftype" compareValue="-1147483648">
+          <![CDATA[FTYPE = #update.Ftype#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Ftype01" prepend=",">
+          <isEqual property="update.Ftype01" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FTYPE01 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Ftype01" compareValue="STRING_NULL_VALUE">
+          <![CDATA[FTYPE01 = #update.Ftype01#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TransferType" prepend=",">
+          <isEqual property="update.TransferType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TRANSFER_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TransferType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[TRANSFER_TYPE = #update.TransferType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrSign" prepend=",">
+          <isEqual property="update.ErrSign" compareValue="-1147483648">
+            <![CDATA[ERR_SIGN = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrSign" compareValue="-1147483648">
+          <![CDATA[ERR_SIGN = #update.ErrSign#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM TPROC_0303_CMD_FINISH]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_Tproc0303CmdFinish">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM TPROC_0303_CMD_FINISH]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM TPROC_0303_CMD_FINISH]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_Tproc0303CmdFinish" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

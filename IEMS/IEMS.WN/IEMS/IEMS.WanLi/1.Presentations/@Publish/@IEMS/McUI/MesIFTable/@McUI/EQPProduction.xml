@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ID_KEY" Value="产品GUID" ></Caption>
+    <Caption Name="PLAN_NAME" Value="生产计划号码" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="设备名称" ></Caption>
+    <Caption Name="TRANS_TYPE" Value="发生的事件" ></Caption>   
+    <Caption Name="TRANS_TIME" Value="上报的时间" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号码" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码" ></Caption>  
+    <Caption Name="PART_NUMBER" Value="物料编号" ></Caption>
+    <Caption Name="QTY" Value="产出数量（重量）" ></Caption>
+    <Caption Name="PASS_FLAG" Value="放行标记" ></Caption>
+    <Caption Name="DESTINATION" Value="送货目的地" ></Caption>
+    <Caption Name="REMARKS" Value="备注信息" ></Caption>
+    <Caption Name="ALS_STATUS" Value="物流更新状态" ></Caption>
+    <Caption Name="CREATE_TIME" Value="创建时间" ></Caption>   
+    <Caption Name="SET_WEIGHT" Value="设置重量" ></Caption>
+    <Caption Name="REAL_WEIGHT" Value="实际重量" ></Caption>  
+    <Caption Name="SET_NUM" Value="设定数量" ></Caption>
+    <Caption Name="REAL_NUM" Value="实际数量" ></Caption>  
+    
+    <Caption Name="LOAD_STATUS" Value="有载状态" ></Caption>
+    <Caption Name="BINDING_TIME" Value="绑定时间" ></Caption>
+
+    <Caption Name="START_TIME" Value="开始上报时间" ></Caption>
+    <Caption Name="END_TIME" Value="结束上报时间" ></Caption>
+  </Captions>
+  <WebPage Title="产出品信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="RFID_NO"></ParamField>        
+        <ParamField FieldName="PART_NUMBER"></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME"></ParamField>
+        <ParamField FieldName="START_TIME"  Type="DateBox" DefaultValue="-1"></ParamField>
+        <ParamField FieldName="END_TIME"  Type="DateBox" DefaultValue="0"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ID_KEY" WIDTH="160"></GridColumn>
+        <GridColumn ColumnName="PLAN_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="LOAD_STATUS" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="TRANS_TIME" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>       
+        <GridColumn ColumnName="BATCH_NO" WIDTH="100"></GridColumn>
+        <GridColumn ColumnName="RFID_NO" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PART_NUMBER" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="QTY" WIDTH="60" ></GridColumn>
+        
+        <GridColumn ColumnName="DESTINATION" WIDTH="120"></GridColumn>        
+        <GridColumn ColumnName="ALS_STATUS" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="CREATE_TIME" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        
+        <GridColumn ColumnName="BINDING_TIME" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE" WIDTH="100" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" WIDTH="80"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <!--<DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="MATER_NO" WIDTH="180"></GridColumn>       
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>       
+      </ParamFields>
+    </MainDetail>-->
+  </Select>
+</UiConfig>

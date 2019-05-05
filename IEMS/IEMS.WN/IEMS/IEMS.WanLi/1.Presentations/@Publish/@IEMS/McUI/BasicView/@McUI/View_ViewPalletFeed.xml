@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID_NO" ></Caption>
+    <Caption Name="PAINT_CODE" Value="PAINT_CODE" ></Caption>
+    <Caption Name="PALLET_TYPE" Value="PALLET_TYPE" ></Caption>
+    <Caption Name="PALLET_NAME" Value="PALLET_NAME" ></Caption>
+    <Caption Name="USED_FLAG" Value="USED_FLAG" ></Caption>
+    <Caption Name="PALLET_WEIGHT" Value="PALLET_WEIGHT" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="LAST_PRODUCT_GUID" Value="LAST_PRODUCT_GUID" ></Caption>
+    <Caption Name="BINDING_TIME" Value="BINDING_TIME" ></Caption>
+    <Caption Name="LOAD_STATUS" Value="LOAD_STATUS" ></Caption>
+    <Caption Name="ERROR_STATUS" Value="ERROR_STATUS" ></Caption>
+    <Caption Name="CHECKOUT_STATUS" Value="CHECKOUT_STATUS" ></Caption>
+    <Caption Name="FMEM" Value="FMEM" ></Caption>
+    <Caption Name="DEQUIP_CODE" Value="DEQUIP_CODE" ></Caption>
+    <Caption Name="DLOG_NO" Value="DLOG_NO" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_PALLET_FEED">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="PAINT_CODE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NAME" ></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PALLET_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="LAST_PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="BINDING_TIME" ></GridColumn>
+        <GridColumn ColumnName="LOAD_STATUS" ></GridColumn>
+        <GridColumn ColumnName="ERROR_STATUS" ></GridColumn>
+        <GridColumn ColumnName="CHECKOUT_STATUS" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="DEQUIP_CODE" ></GridColumn>
+        <GridColumn ColumnName="DLOG_NO" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="PAINT_CODE" ></ParamField>
+        <ParamField FieldName="PALLET_TYPE" ></ParamField>
+        <ParamField FieldName="PALLET_NAME" ></ParamField>
+        <ParamField FieldName="USED_FLAG" ></ParamField>
+        <ParamField FieldName="PALLET_WEIGHT" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="LAST_PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="BINDING_TIME" ></ParamField>
+        <ParamField FieldName="LOAD_STATUS" ></ParamField>
+        <ParamField FieldName="ERROR_STATUS" ></ParamField>
+        <ParamField FieldName="CHECKOUT_STATUS" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="DEQUIP_CODE" ></ParamField>
+        <ParamField FieldName="DLOG_NO" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

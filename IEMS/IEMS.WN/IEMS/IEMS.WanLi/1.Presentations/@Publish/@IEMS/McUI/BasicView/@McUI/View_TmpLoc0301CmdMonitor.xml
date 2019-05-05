@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="LOC_NO" ></Caption>
+    <Caption Name="LOC_TYPE_NO" Value="LOC_TYPE_NO" ></Caption>
+    <Caption Name="REQUEST_FLAG" Value="REQUEST_FLAG" ></Caption>
+    <Caption Name="REQUEST_DATE" Value="REQUEST_DATE" ></Caption>
+    <Caption Name="TASK_NO" Value="TASK_NO" ></Caption>
+    <Caption Name="TASK_GUID" Value="TASK_GUID" ></Caption>
+    <Caption Name="RETRY_COUNT" Value="RETRY_COUNT" ></Caption>
+    <Caption Name="CMD_OBJID" Value="CMD_OBJID" ></Caption>
+    <Caption Name="ERR_CODE" Value="ERR_CODE" ></Caption>
+    <Caption Name="ERR_DESC" Value="ERR_DESC" ></Caption>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="LOADED_STATUS" Value="LOADED_STATUS" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="PACKAGE_GUID" ></Caption>
+    <Caption Name="LOC_INDEX" Value="LOC_INDEX" ></Caption>
+    <Caption Name="LOC_GROUP_NO" Value="LOC_GROUP_NO" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+  </Captions>
+  <WebPage Title="TMP_LOC_0301_CMD_MONITOR">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_FLAG" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_DATE" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="RETRY_COUNT" ></GridColumn>
+        <GridColumn ColumnName="CMD_OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="LOADED_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="LOC_INDEX" ></GridColumn>
+        <GridColumn ColumnName="LOC_GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" ></ParamField>
+        <ParamField FieldName="REQUEST_FLAG" ></ParamField>
+        <ParamField FieldName="REQUEST_DATE" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="RETRY_COUNT" ></ParamField>
+        <ParamField FieldName="CMD_OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="LOADED_STATUS" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="LOC_INDEX" ></ParamField>
+        <ParamField FieldName="LOC_GROUP_NO" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

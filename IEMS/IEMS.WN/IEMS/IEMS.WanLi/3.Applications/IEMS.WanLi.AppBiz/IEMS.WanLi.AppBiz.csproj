@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26E28B93-3C82-4A06-BD42-3DF98800C319}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.WanLi.AppBiz</RootNamespace>
+    <AssemblyName>IEMS.WanLi.AppBiz</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.ExcelData">
+      <HintPath>..\..\@packages\@MSTL\MSTL.ExcelData.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.Extensions">
+      <HintPath>..\..\@packages\@MSTL\MSTL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.LogAgent">
+      <HintPath>..\..\@packages\@MSTL\MSTL.LogAgent.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.McJson">
+      <HintPath>..\..\@packages\@MSTL\MSTL.McJson.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.ResultStruct">
+      <HintPath>..\..\@packages\@MSTL\MSTL.ResultStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBizFactory\AppBizFactory.cs" />
+    <Compile Include="AppBizFactory\IAppBizManager.cs" />
+    <Compile Include="Common\BillNoManager.cs" />
+    <Compile Include="Common\LineGuidManager.cs" />
+    <Compile Include="Implement\MaterialManager.cs" />
+    <Compile Include="Implement\AgvTaskManager.cs" />
+    <Compile Include="Implement\BillTaskCmd.cs" />
+    <Compile Include="Implement\LocManager.cs" />
+    <Compile Include="Implement\CrnManager.cs" />
+    <Compile Include="Implement\BinDataManager.cs" />
+    <Compile Include="Implement\LocAutoManager.cs" />
+    <Compile Include="Implement\OutputBillManager.cs" />
+    <Compile Include="Implement\TaskManager.cs" />
+    <Compile Include="Implement\TmpLocCmdMonitorManager.cs" />
+    <Compile Include="Implement\TmpLocOrderMonitorManager.cs" />
+    <Compile Include="Interface\IMaterialManager.cs" />
+    <Compile Include="Interface\IAgvTaskManager.cs" />
+    <Compile Include="Interface\IBillTaskCmd.cs" />
+    <Compile Include="Interface\ILocManager.cs" />
+    <Compile Include="Interface\ICrnManager.cs" />
+    <Compile Include="Interface\IBinDataManager.cs" />
+    <Compile Include="Interface\ILocAutoManager.cs" />
+    <Compile Include="Interface\IOutputBillManager.cs" />
+    <Compile Include="Interface\ITaskManager.cs" />
+    <Compile Include="Interface\ITmpLocCmdMonitorManager.cs" />
+    <Compile Include="Interface\ITmpLocOrderMonitorManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Presentations\IEMS.WanLi.WebUI\IEMS.WanLi.WebUI.csproj">
+      <Project>{4c604b91-786d-4f6a-af23-060763cc00bc}</Project>
+      <Name>IEMS.WanLi.WebUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.WanLi.DbCI\IEMS.WanLi.DbCI.csproj">
+      <Project>{9648a750-931f-4711-9904-cd0c84c84c33}</Project>
+      <Name>IEMS.WanLi.DbCI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.WanLi.DbMapper\IEMS.WanLi.DbMapper.csproj">
+      <Project>{543e3098-f470-456e-97e6-2554462c012d}</Project>
+      <Name>IEMS.WanLi.DbMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.WanLi.DbRI\IEMS.WanLi.DbRI.csproj">
+      <Project>{766ef1f3-0d9c-4ea8-947d-6a167583769d}</Project>
+      <Name>IEMS.WanLi.DbRI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.WanLi.Entity\IEMS.WanLi.Entity.csproj">
+      <Project>{b322627c-9f72-417b-bff8-754319e5bcf2}</Project>
+      <Name>IEMS.WanLi.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.WanLi.VoDto\IEMS.WanLi.VoDto.csproj">
+      <Project>{fdd830c9-2259-480c-bba3-4982b344ccf6}</Project>
+      <Name>IEMS.WanLi.VoDto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

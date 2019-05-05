@@ -1,0 +1,9 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\bin\Debug\IEMS.Frame.Entity.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\bin\Debug\IEMS.Frame.Entity.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\bin\Debug\MSTL.DbAccess.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\bin\Debug\MSTL.LogAgent.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\obj\Debug\IEMS.Frame.Entity.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\obj\Debug\IEMS.Frame.Entity.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\obj\Debug\IEMS.Frame.Entity.csproj.CopyComplete
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\obj\Debug\IEMS.Frame.Entity.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.Entity\obj\Debug\IEMS.Frame.Entity.pdb

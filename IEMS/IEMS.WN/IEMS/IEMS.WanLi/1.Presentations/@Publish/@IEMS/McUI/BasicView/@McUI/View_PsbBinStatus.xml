@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="BIN_NO" Value="库位" ></Caption>
+    <Caption Name="USED_FLAG" Value="可用状态：0：不可用  1：可用" ></Caption>
+    <Caption Name="BIN_SIZE" Value="库位大小(H High高, M MIDDLE中, L Low低, :无)" ></Caption>
+    <Caption Name="BIN_STATUS" Value="库位状态（_ :空库，$ :库存）" ></Caption>
+    <Caption Name="BIN_BIZ_STATUS" Value="业务状态：  I :预约入库，O :预约出库，T:移库占用, E :空出库位 P :先入库位" ></Caption>
+    <Caption Name="BIN_WEIGHT" Value="权重(被放置时的优先顺序,1最先,数字越大越后)" ></Caption>
+    <Caption Name="BIN_AREA" Value="储区(库位类别 A, B, C...)" ></Caption>
+    <Caption Name="CRN_NO" Value="堆垛机编号" ></Caption>
+    <Caption Name="GROUP_NO" Value="库位组" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="ORDER_LINE_GUID" ></Caption>
+    <Caption Name="BIN_AGV_NO" Value="对应AGV编码" ></Caption>
+  </Captions>
+  <WebPage Title="库位状态表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BIN_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="BIN_NO" ></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BIN_SIZE" ></GridColumn>
+        <GridColumn ColumnName="BIN_STATUS" ></GridColumn>
+        <GridColumn ColumnName="BIN_BIZ_STATUS" ></GridColumn>
+        <GridColumn ColumnName="BIN_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="BIN_AREA" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="BIN_AGV_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="BIN_NO" ></ParamField>
+        <ParamField FieldName="USED_FLAG" ></ParamField>
+        <ParamField FieldName="BIN_SIZE" ></ParamField>
+        <ParamField FieldName="BIN_STATUS" ></ParamField>
+        <ParamField FieldName="BIN_BIZ_STATUS" ></ParamField>
+        <ParamField FieldName="BIN_WEIGHT" ></ParamField>
+        <ParamField FieldName="BIN_AREA" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="GROUP_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="BIN_AGV_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

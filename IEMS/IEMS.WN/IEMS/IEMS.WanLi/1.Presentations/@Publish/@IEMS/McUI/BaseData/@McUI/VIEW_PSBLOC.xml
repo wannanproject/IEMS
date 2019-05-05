@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="站台号" ></Caption>
+    <Caption Name="LOC_PLC_NO" Value="站台PLC号" ></Caption>
+    <Caption Name="LOC_TYPE_NO" Value="站台类型" ></Caption>
+    <Caption Name="LOC_NAME" Value="站台名称" ></Caption>
+    <Caption Name="LOC_INDEX" Value="站台顺序号" ></Caption>
+    <Caption Name="MAX_BUFFER" Value="缓存区大小" ></Caption>
+    <Caption Name="LOC_GROUP_NO" Value="站台组" ></Caption>
+    <Caption Name="LOC_MES_NO" Value="MES编码" ></Caption>
+    <Caption Name="LOC_AGV_NO" Value="AGV编码" ></Caption>
+    <Caption Name="LOC_PRIORITY" Value="优先级" ></Caption>
+    <Caption Name="LOC_ENABLE" Value="可用状态" ></Caption>
+    <Caption Name="LAST_USED_DATE" Value="最后使用时间" ></Caption>
+    <Caption Name="ENABLE_RECORRECT_FLAG" Value="是否允许任务修正" ></Caption>
+    <Caption Name="ENABLE_REPACKAGE_FLAG" Value="是否允许重新生成资料" ></Caption>
+    <Caption Name="ENABLE_REQUEST_FLAG" Value="是否允许发起订单" ></Caption>
+    <Caption Name="AUTO_REQUEST_MODE" Value="是否允许自动发起" ></Caption>
+    <Caption Name="LIMIT_PALLET_VALID_TYPE" Value="限定物料非法种类" ></Caption>
+    <Caption Name="LIMIT_ORDER_VALID" Value="限定失效类型" ></Caption>
+    <Caption Name="JOB_MONITOR_FLAG" Value="作业监控标志" ></Caption>
+    <Caption Name="LIMIT_CMD_FINISH" Value="指令结束标志" ></Caption>
+
+    <Caption Name="LOC_TYPE_NAME" Value="站台类型" ></Caption>
+    <Caption Name="LOC_GROUP_NAME" Value="站台组" ></Caption>
+  </Captions>
+  <WebPage Title="站台信息维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" Type="ComboBox" Nullable="true" Caption="站台类型"></ParamField>
+        <ParamField FieldName="LOC_GROUP_NO" Type="ComboBox" Nullable="true" Caption="站台组"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="LOC_NAME" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="LOC_PLC_NO" WIDTH="80"></GridColumn>
+        <!--<GridColumn ColumnName="LOC_TYPE_NO" WIDTH="80"></GridColumn>-->
+        <GridColumn ColumnName="LOC_TYPE_NAME" WIDTH="120"></GridColumn>                     
+        <!--<GridColumn ColumnName="LOC_GROUP_NO" ></GridColumn>-->
+        <GridColumn ColumnName="LOC_GROUP_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="LOC_MES_NO" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="LOC_AGV_NO" ></GridColumn>       
+        <GridColumn ColumnName="LOC_ENABLE" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="LAST_USED_DATE" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>      
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_INDEX" ></ParamField>
+        <ParamField FieldName="MAX_BUFFER" ></ParamField>
+        <ParamField FieldName="LOC_PRIORITY" ></ParamField>
+   
+        <ParamField FieldName="ENABLE_RECORRECT_FLAG" ></ParamField>
+        <ParamField FieldName="ENABLE_REPACKAGE_FLAG" ></ParamField>
+        <ParamField FieldName="ENABLE_REQUEST_FLAG" ></ParamField>
+        <ParamField FieldName="AUTO_REQUEST_MODE" ></ParamField>
+        <ParamField FieldName="LIMIT_PALLET_VALID_TYPE" ></ParamField>
+        <ParamField FieldName="LIMIT_ORDER_VALID" ></ParamField>
+        <ParamField FieldName="JOB_MONITOR_FLAG" ></ParamField>
+        <ParamField FieldName="LIMIT_CMD_FINISH" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

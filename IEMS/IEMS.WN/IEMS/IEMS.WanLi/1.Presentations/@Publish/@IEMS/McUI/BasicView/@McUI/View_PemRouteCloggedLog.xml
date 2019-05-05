@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ROUTE_NO" Value="ROUTE_NO" ></Caption>
+    <Caption Name="CLOGGED_STIME" Value="CLOGGED_STIME" ></Caption>
+    <Caption Name="CLOGGED_ETIME" Value="CLOGGED_ETIME" ></Caption>
+    <Caption Name="CAPACITY" Value="CAPACITY" ></Caption>
+    <Caption Name="OBJID" Value="OBJID" ></Caption>
+    <Caption Name="LOG_STATUS" Value="LOG_STATUS" ></Caption>
+  </Captions>
+  <WebPage Title="路径阻塞日志">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ROUTE_NO" ></GridColumn>
+        <GridColumn ColumnName="CLOGGED_STIME" ></GridColumn>
+        <GridColumn ColumnName="CLOGGED_ETIME" ></GridColumn>
+        <GridColumn ColumnName="CAPACITY" ></GridColumn>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="LOG_STATUS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO" ></ParamField>
+        <ParamField FieldName="CLOGGED_STIME" ></ParamField>
+        <ParamField FieldName="CLOGGED_ETIME" ></ParamField>
+        <ParamField FieldName="CAPACITY" ></ParamField>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="LOG_STATUS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

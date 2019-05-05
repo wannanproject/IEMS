@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+警告: 请勿修改此文件，它将用于 Web 发布过程。
+
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21fe0146-37f8-4191-985c-05f6be8d883c}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/IEMS.Main.WebSite</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebMetabasePath>
+    </SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\3.Applications\IEMS.Main.AppBiz\IEMS.Main.AppBiz.csproj">
+      <Project>{A7F31FBB-6996-423F-9654-7149C208EB3F}</Project>
+      <Name>IEMS.Main.AppBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Main.DbCI\IEMS.Main.DbCI.csproj">
+      <Project>{BEE2A578-7A5D-4465-A919-59F9C3411871}</Project>
+      <Name>IEMS.Main.DbCI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Main.DbMapper\IEMS.Main.DbMapper.csproj">
+      <Project>{C6E6BDC7-6459-4CDA-8410-9ADA034FE4B1}</Project>
+      <Name>IEMS.Main.DbMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Main.DbRI\IEMS.Main.DbRI.csproj">
+      <Project>{428412D0-F2E6-410F-B328-84196D888CA8}</Project>
+      <Name>IEMS.Main.DbRI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Main.Entity\IEMS.Main.Entity.csproj">
+      <Project>{542AF0F9-5E18-4D5C-BB45-EE3ED4B835EC}</Project>
+      <Name>IEMS.Main.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Main.VoDto\IEMS.Main.VoDto.csproj">
+      <Project>{81EB258A-6A65-4452-B355-82317ADAC870}</Project>
+      <Name>IEMS.Main.VoDto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEMS.Main.WebUI\IEMS.Main.WebUI.csproj">
+      <Project>{6A27AF43-9F5B-4EBC-86B3-E1225E823265}</Project>
+      <Name>IEMS.Main.WebUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

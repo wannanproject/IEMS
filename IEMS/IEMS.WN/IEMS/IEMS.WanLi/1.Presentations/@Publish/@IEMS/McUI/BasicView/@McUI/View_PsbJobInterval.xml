@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="JOB_NO" Value="作业编码" ></Caption>
+    <Caption Name="JOB_DESC" Value="作业名称" ></Caption>
+    <Caption Name="LAST_EXEC_DATE" Value="上次执行时间" ></Caption>
+    <Caption Name="INTERVAL" Value="间隔时间//秒钟" ></Caption>
+    <Caption Name="JOB_STATUS" Value="0:无执行  1：执行中  2：执行成功  3：执行失败" ></Caption>
+    <Caption Name="ERR_NO" Value="错误编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误描述" ></Caption>
+    <Caption Name="USED_FLAG" Value="使用标志  1：启用 0：停用" ></Caption>
+    <Caption Name="FMEM" Value="FMEM" ></Caption>
+    <Caption Name="START_TIME" Value="开始时间   ：秒" ></Caption>
+  </Captions>
+  <WebPage Title="作业间隔时间设置">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="JOB_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="JOB_NO" ></GridColumn>
+        <GridColumn ColumnName="JOB_DESC" ></GridColumn>
+        <GridColumn ColumnName="LAST_EXEC_DATE" ></GridColumn>
+        <GridColumn ColumnName="INTERVAL" ></GridColumn>
+        <GridColumn ColumnName="JOB_STATUS" ></GridColumn>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="START_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="JOB_NO" ></ParamField>
+        <ParamField FieldName="JOB_DESC" ></ParamField>
+        <ParamField FieldName="LAST_EXEC_DATE" ></ParamField>
+        <ParamField FieldName="INTERVAL" ></ParamField>
+        <ParamField FieldName="JOB_STATUS" ></ParamField>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="USED_FLAG" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="START_TIME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

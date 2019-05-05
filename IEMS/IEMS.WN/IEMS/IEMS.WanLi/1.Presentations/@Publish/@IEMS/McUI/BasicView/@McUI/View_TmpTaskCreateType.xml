@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="TYPE_CODE" Value="编号" ></Caption>
+    <Caption Name="TYPE_DESC" Value="说明   /******************************************************************************       [说明] 任务创建             312060：入库移栽-生产（接片）至入库口             313060：入库移栽-余料（线边库）至入库口             316040：入库移栽-入库口至叠盘机             104010：入库-叠盘机至立库             105010：入库-异常口至立库             106010：入库-入库口（生产、余料）至立库   ******************************************************************************/              10：立库       20：接片       30：线边库       40：叠盘机       50：异常口       60：入库口       70：PD站" ></Caption>
+    <Caption Name="IO_TYPE" Value="出入库标识" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="起始站台类型" ></Caption>
+    <Caption Name="ELOC_TYPE" Value="结束站台类型" ></Caption>
+    <Caption Name="IO_TYPE_DESC" Value="出入库标识--说明" ></Caption>
+    <Caption Name="SLOC_TYPE_DESC" Value="起始站台类型--说明" ></Caption>
+    <Caption Name="ELOC_TYPE_DESC" Value="起始站台类型--说明" ></Caption>
+    <Caption Name="TASK_CREATE_COND" Value="任务条件" ></Caption>
+  </Captions>
+  <WebPage Title="TASK_CREATE_TYPE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TYPE_CODE"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TYPE_CODE" ></GridColumn>
+        <GridColumn ColumnName="TYPE_DESC" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="SLOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="ELOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE_DESC" ></GridColumn>
+        <GridColumn ColumnName="SLOC_TYPE_DESC" ></GridColumn>
+        <GridColumn ColumnName="ELOC_TYPE_DESC" ></GridColumn>
+        <GridColumn ColumnName="TASK_CREATE_COND" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TYPE_CODE" ></ParamField>
+        <ParamField FieldName="TYPE_DESC" ></ParamField>
+        <ParamField FieldName="IO_TYPE" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="IO_TYPE_DESC" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE_DESC" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE_DESC" ></ParamField>
+        <ParamField FieldName="TASK_CREATE_COND" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

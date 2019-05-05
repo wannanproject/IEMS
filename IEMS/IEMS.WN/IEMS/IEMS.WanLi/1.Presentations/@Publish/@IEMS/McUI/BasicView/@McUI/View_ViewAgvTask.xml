@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="AGV_NO" Value="AGV_NO" ></Caption>
+    <Caption Name="AGV_TASKNO" Value="AGV_TASKNO" ></Caption>
+    <Caption Name="TASK_NO" Value="TASK_NO" ></Caption>
+    <Caption Name="SLOC_NO" Value="SLOC_NO" ></Caption>
+    <Caption Name="ELOC_NO" Value="ELOC_NO" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID_NO" ></Caption>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+    <Caption Name="CREATE_DATE" Value="CREATE_DATE" ></Caption>
+    <Caption Name="TASK_TYPE" Value="TASK_TYPE" ></Caption>
+    <Caption Name="DOWN_LOAD_DATE" Value="DOWN_LOAD_DATE" ></Caption>
+    <Caption Name="EXEC_DATE" Value="EXEC_DATE" ></Caption>
+    <Caption Name="END_DATE" Value="END_DATE" ></Caption>
+    <Caption Name="SLMS_STATUS" Value="SLMS_STATUS" ></Caption>
+    <Caption Name="AGV_STATUS" Value="AGV_STATUS" ></Caption>
+    <Caption Name="TASK_ORDER_OBJID" Value="TASK_ORDER_OBJID" ></Caption>
+    <Caption Name="PRODUCT_ID" Value="PRODUCT_ID" ></Caption>
+    <Caption Name="FMEM" Value="FMEM" ></Caption>
+    <Caption Name="SPARE_01" Value="SPARE_01" ></Caption>
+    <Caption Name="SPARE_02" Value="SPARE_02" ></Caption>
+    <Caption Name="SPARE_03" Value="SPARE_03" ></Caption>
+    <Caption Name="ERROR_NUMBER" Value="ERROR_NUMBER" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_AGV_TASK">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="AGV_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="AGV_NO" ></GridColumn>
+        <GridColumn ColumnName="AGV_TASKNO" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="CREATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="TASK_TYPE" ></GridColumn>
+        <GridColumn ColumnName="DOWN_LOAD_DATE" ></GridColumn>
+        <GridColumn ColumnName="EXEC_DATE" ></GridColumn>
+        <GridColumn ColumnName="END_DATE" ></GridColumn>
+        <GridColumn ColumnName="SLMS_STATUS" ></GridColumn>
+        <GridColumn ColumnName="AGV_STATUS" ></GridColumn>
+        <GridColumn ColumnName="TASK_ORDER_OBJID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_ID" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="SPARE_01" ></GridColumn>
+        <GridColumn ColumnName="SPARE_02" ></GridColumn>
+        <GridColumn ColumnName="SPARE_03" ></GridColumn>
+        <GridColumn ColumnName="ERROR_NUMBER" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="AGV_NO" ></ParamField>
+        <ParamField FieldName="AGV_TASKNO" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="ELOC_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="CREATE_DATE" ></ParamField>
+        <ParamField FieldName="TASK_TYPE" ></ParamField>
+        <ParamField FieldName="DOWN_LOAD_DATE" ></ParamField>
+        <ParamField FieldName="EXEC_DATE" ></ParamField>
+        <ParamField FieldName="END_DATE" ></ParamField>
+        <ParamField FieldName="SLMS_STATUS" ></ParamField>
+        <ParamField FieldName="AGV_STATUS" ></ParamField>
+        <ParamField FieldName="TASK_ORDER_OBJID" ></ParamField>
+        <ParamField FieldName="PRODUCT_ID" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="SPARE_01" ></ParamField>
+        <ParamField FieldName="SPARE_02" ></ParamField>
+        <ParamField FieldName="SPARE_03" ></ParamField>
+        <ParamField FieldName="ERROR_NUMBER" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

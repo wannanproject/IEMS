@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="OBJID" ></Caption>
+    <Caption Name="ERR_CODE" Value="【返回值】：异常编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="【返回值】：异常描述  " ></Caption>
+    <Caption Name="PROC_STATUS" Value="【返回值】：执行结果 0:未执行 1：执行中  2：执行结束    " ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="创建日期" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="执行时间" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="结束时间" ></Caption>
+    <Caption Name="ORDER_TYPE_NO" Value="【必填项】：订单类型                  " ></Caption>
+    <Caption Name="SLOC_NO" Value="【必填项】：起始站台(库位)    " ></Caption>
+    <Caption Name="ELOC_NO" Value="【必填项】：目标站台(库位)             " ></Caption>
+    <Caption Name="SOURCE_TYPE" Value="【必填项】：来源类型 0:WMS 1:WCS  2: 接口" ></Caption>
+    <Caption Name="PALLET_NO" Value="【可选项】：工装编码                               " ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="【可选项】：订单数量                           " ></Caption>
+    <Caption Name="LOCK_END_LOC" Value="【可选项】：锁定目标      1；锁定 0:不锁定  " ></Caption>
+    <Caption Name="ORDER_NO" Value="【返回值】：订单号码         " ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="【返回值】：订单行GUID " ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="唯一GUID" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="PACKAGE_GUID" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="PRODUCT_NO" ></Caption>
+  </Captions>
+  <WebPage Title="TPROC_0101_ORDER_CREATE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="ORDER_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="SOURCE_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="LOCK_END_LOC" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="ORDER_TYPE_NO" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="ELOC_NO" ></ParamField>
+        <ParamField FieldName="SOURCE_TYPE" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="LOCK_END_LOC" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

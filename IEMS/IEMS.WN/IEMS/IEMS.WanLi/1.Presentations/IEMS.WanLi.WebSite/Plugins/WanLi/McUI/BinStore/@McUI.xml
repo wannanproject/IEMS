@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="BinStatistics" uri="@McUI\BinStatistics.xml"/>
+  <McUI name="BinData" uri="@McUI\BinData.xml"/>
+  <McUI name="InOutBin" uri="@McUI\InOutBin.xml"/>
+  <McUI name="ExChangeAreaDATA" uri="@McUI\ExChangeAreaDATA.xml"/>
+
+</McUIConfig>
+

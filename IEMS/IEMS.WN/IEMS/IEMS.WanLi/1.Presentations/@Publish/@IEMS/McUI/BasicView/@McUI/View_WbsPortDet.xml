@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="货笼ID" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="条码编码" ></Caption>
+    <Caption Name="STACK_IDX" Value="垛序号" ></Caption>
+    <Caption Name="LAYER_IDX" Value="第几垛第几个(自下而上)" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号码" ></Caption>
+    <Caption Name="PRODUCT_DATE" Value="生产日期" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="包GUID" ></Caption>
+  </Captions>
+  <WebPage Title="入库资料明细表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="STACK_IDX" ></GridColumn>
+        <GridColumn ColumnName="LAYER_IDX" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_DATE" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="STACK_IDX" ></ParamField>
+        <ParamField FieldName="LAYER_IDX" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_DATE" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

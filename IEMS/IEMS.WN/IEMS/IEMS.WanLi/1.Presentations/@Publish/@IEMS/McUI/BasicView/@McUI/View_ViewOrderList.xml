@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LIST_NO" Value="LIST_NO" ></Caption>
+    <Caption Name="STATUS" Value="STATUS" ></Caption>
+    <Caption Name="SOURCE_BY" Value="SOURCE_BY" ></Caption>
+    <Caption Name="CREATION_DATE" Value="CREATION_DATE" ></Caption>
+    <Caption Name="CREATED_BY" Value="CREATED_BY" ></Caption>
+    <Caption Name="LAST_UPDATE_DATE" Value="LAST_UPDATE_DATE" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="OUT_PRIORITY" Value="OUT_PRIORITY" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_ORDER_LIST">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="STATUS" ></GridColumn>
+        <GridColumn ColumnName="SOURCE_BY" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="CREATED_BY" ></GridColumn>
+        <GridColumn ColumnName="LAST_UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="OUT_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="STATUS" ></ParamField>
+        <ParamField FieldName="SOURCE_BY" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="CREATED_BY" ></ParamField>
+        <ParamField FieldName="LAST_UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="OUT_PRIORITY" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

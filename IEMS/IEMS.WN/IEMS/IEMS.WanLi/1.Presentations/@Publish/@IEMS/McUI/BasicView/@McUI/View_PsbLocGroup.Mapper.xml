@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PsbLocGroup" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PSB_LOC_GROUP T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_GROUP_NO" prepend="AND">
+           T1.LOC_GROUP_NO LIKE '%'||#where.LOC_GROUP_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY LOC_GROUP_NO
+     </select>
+     <select id="Select@View_PsbLocGroup@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_LOC_GROUP T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_GROUP_NO" prepend = "AND">
+           T1.LOC_GROUP_NO = #where.LOC_GROUP_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

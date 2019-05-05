@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="物料编号" ></Caption>
+    <Caption Name="MATER_NAME" Value="物料代号" ></Caption>
+    <Caption Name="MATER_CODE" Value="物料编号展示" ></Caption>
+    <Caption Name="MATER_MKIND" Value="物料大类" ></Caption>   
+    <Caption Name="MATER_TYPE" Value="物料分类" ></Caption>
+    <Caption Name="MIN_TIME" Value="最短时间（小时）" ></Caption>    
+    <Caption Name="MAX_TIME" Value="最长时间（小时）" ></Caption> 
+    <Caption Name="MAIN_UNIT" Value="计量单位" ></Caption>
+    <Caption Name="MATER_SPEC" Value="规格" ></Caption>
+    <Caption Name="MATER_DESC" Value="描述" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="排序列" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="更新标志" ></Caption>  
+  </Captions>
+  <WebPage Title="物料">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO"></ParamField>        
+        <ParamField FieldName="MATER_MKIND"></ParamField>
+        <ParamField FieldName="MATER_TYPE"></ParamField>
+        <ParamField FieldName="MATER_SPEC"></ParamField>
+        <ParamField FieldName="MATER_DESC"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO" WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="MATER_DESC" WIDTH="160"></GridColumn>
+        <GridColumn ColumnName="MATER_SPEC" WIDTH="160"></GridColumn>
+        <GridColumn ColumnName="MATER_MKIND" WIDTH="140" ></GridColumn>
+        <GridColumn ColumnName="MATER_TYPE" WIDTH="140"></GridColumn>
+        <GridColumn ColumnName="MIN_TIME" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="MAX_TIME" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="MATER_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="MATER_CODE" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="MAIN_UNIT" WIDTH="60"></GridColumn>
+
+      </GridColumns>
+    </MainGrid>
+    <!--<DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="MATER_NO" WIDTH="180"></GridColumn>       
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>       
+      </ParamFields>
+    </MainDetail>-->
+  </Select>
+</UiConfig>

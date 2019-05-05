@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@ReportWebLog" parameterClass="int" resultClass="row">
+      <![CDATA[
+          SELECT T1.OBJID ,T2.USER_NAME ,T2.REAL_NAME ,T1.USER_IP ,T3.SHOW_NAME  AS PAGE_ID
+          ,T4.METHOD_NAME AS METHOD_ID ,T1.METHOD_RESULT ,T1.RECORD_TIME ,T1.REMARK FROM SSL_WEB_LOG T1 
+          LEFT JOIN   SSB_USER        T2  ON    T1.USER_ID = T2.OBJID
+          LEFT JOIN   SSP_PAGE_MENU   T3  ON    T1.PAGE_ID = T3.OBJID
+          LEFT JOIN   SSP_PAGE_METHOD T4  ON    T1.METHOD_ID = T4.OBJID
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.OBJID" prepend="AND">
+          <![CDATA[T1.OBJID = #where.OBJID#]]>
+        </isNotNull>
+        <isNotNull property="where.USER_NAME" prepend="AND">
+          T2.USER_NAME  like '%'||#where.USER_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.DELETE_FLAG" prepend="AND">
+          <![CDATA[T1.DELETE_FLAG = #where.DELETE_FLAG#]]>
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.RECORD_TIME >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.RECORD_TIME <= #where.END_TIME#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+  </statements>
+</sqlMap>

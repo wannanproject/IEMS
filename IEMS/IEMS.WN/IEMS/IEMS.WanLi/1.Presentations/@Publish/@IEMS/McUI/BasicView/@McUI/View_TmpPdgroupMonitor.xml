@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_GROUP_NO" Value="LOC_GROUP_NO" ></Caption>
+    <Caption Name="CRN_NO" Value="CRN_NO" ></Caption>
+    <Caption Name="LOC_COUNT" Value="LOC_COUNT" ></Caption>
+    <Caption Name="REQUEST_COUNT" Value="REQUEST_COUNT" ></Caption>
+    <Caption Name="REQUEST_DATE" Value="REQUEST_DATE" ></Caption>
+    <Caption Name="ACCESS_FLAG" Value="1：准入  0：不准入" ></Caption>
+    <Caption Name="ERR_DESC" Value="ERR_DESC" ></Caption>
+  </Captions>
+  <WebPage Title="PDIN站台监控">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_GROUP_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_COUNT" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_COUNT" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_DATE" ></GridColumn>
+        <GridColumn ColumnName="ACCESS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_GROUP_NO" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="LOC_COUNT" ></ParamField>
+        <ParamField FieldName="REQUEST_COUNT" ></ParamField>
+        <ParamField FieldName="REQUEST_DATE" ></ParamField>
+        <ParamField FieldName="ACCESS_FLAG" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

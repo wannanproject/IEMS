@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ID_KEY" Value="ID_KEY" ></Caption>
+    <Caption Name="REQUEST_NO" Value="REQUEST_NO" ></Caption>
+    <Caption Name="BARCODE" Value="BARCODE" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID_NO" ></Caption>
+    <Caption Name="TRANS_TYPE" Value="TRANS_TYPE" ></Caption>
+    <Caption Name="TRANS_TIME" Value="TRANS_TIME" ></Caption>
+    <Caption Name="DESTINATION" Value="DESTINATION" ></Caption>
+    <Caption Name="RESULT" Value="RESULT" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="MES_STATUS" Value="MES_STATUS" ></Caption>
+    <Caption Name="EQU_STATUS" Value="EQU_STATUS" ></Caption>
+    <Caption Name="RESERVED1" Value="RESERVED1" ></Caption>
+    <Caption Name="RESERVED2" Value="RESERVED2" ></Caption>
+    <Caption Name="RESERVED3" Value="RESERVED3" ></Caption>
+    <Caption Name="RESERVED4" Value="RESERVED4" ></Caption>
+    <Caption Name="RESERVED5" Value="RESERVED5" ></Caption>
+    <Caption Name="RESERVED6" Value="RESERVED6" ></Caption>
+    <Caption Name="RESERVED7" Value="RESERVED7" ></Caption>
+    <Caption Name="RESERVED8" Value="RESERVED8" ></Caption>
+    <Caption Name="UPDATETIME" Value="UPDATETIME" ></Caption>
+    <Caption Name="LOCATION_NO" Value="LOCATION_NO" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_MATERIAL_EVENT">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ID_KEY" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" ></GridColumn>
+        <GridColumn ColumnName="BARCODE" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TRANS_TIME" ></GridColumn>
+        <GridColumn ColumnName="DESTINATION" ></GridColumn>
+        <GridColumn ColumnName="RESULT" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="MES_STATUS" ></GridColumn>
+        <GridColumn ColumnName="EQU_STATUS" ></GridColumn>
+        <GridColumn ColumnName="RESERVED1" ></GridColumn>
+        <GridColumn ColumnName="RESERVED2" ></GridColumn>
+        <GridColumn ColumnName="RESERVED3" ></GridColumn>
+        <GridColumn ColumnName="RESERVED4" ></GridColumn>
+        <GridColumn ColumnName="RESERVED5" ></GridColumn>
+        <GridColumn ColumnName="RESERVED6" ></GridColumn>
+        <GridColumn ColumnName="RESERVED7" ></GridColumn>
+        <GridColumn ColumnName="RESERVED8" ></GridColumn>
+        <GridColumn ColumnName="UPDATETIME" ></GridColumn>
+        <GridColumn ColumnName="LOCATION_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY" ></ParamField>
+        <ParamField FieldName="REQUEST_NO" ></ParamField>
+        <ParamField FieldName="BARCODE" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="TRANS_TYPE" ></ParamField>
+        <ParamField FieldName="TRANS_TIME" ></ParamField>
+        <ParamField FieldName="DESTINATION" ></ParamField>
+        <ParamField FieldName="RESULT" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="MES_STATUS" ></ParamField>
+        <ParamField FieldName="EQU_STATUS" ></ParamField>
+        <ParamField FieldName="RESERVED1" ></ParamField>
+        <ParamField FieldName="RESERVED2" ></ParamField>
+        <ParamField FieldName="RESERVED3" ></ParamField>
+        <ParamField FieldName="RESERVED4" ></ParamField>
+        <ParamField FieldName="RESERVED5" ></ParamField>
+        <ParamField FieldName="RESERVED6" ></ParamField>
+        <ParamField FieldName="RESERVED7" ></ParamField>
+        <ParamField FieldName="RESERVED8" ></ParamField>
+        <ParamField FieldName="UPDATETIME" ></ParamField>
+        <ParamField FieldName="LOCATION_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbCI.UserService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="SsbUser" type="IEMS.Main.Entity.SsbUser, IEMS.Main.Entity" />
+  </alias>
+
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_SsbUser" class="SsbUser">
+    <result property="ObjId" column="OBJID"/>
+    <result property="UserName" column="USER_NAME"/>
+    <result property="UserPwd" column="USER_PWD"/>
+    <result property="RealName" column="REAL_NAME"/>
+    <result property="Sex" column="SEX"/>
+    <result property="Telephone" column="TELEPHONE"/>
+    <result property="WorkBarcode" column="WORK_BARCODE"/>
+    <result property="DeptId" column="DEPT_ID"/>
+    <result property="WorkId" column="WORK_ID"/>
+    <result property="ShiftId" column="SHIFT_ID"/>
+    <result property="ClassId" column="CLASS_ID"/>
+    <result property="WorkshopId" column="WORKSHOP_ID"/>
+    <result property="DeleteFlag" column="DELETE_FLAG"/>
+    <result property="Remark" column="REMARK"/>
+    <result property="IsEmployee" column="IS_EMPLOYEE"/>
+    <result property="BakupFlag" column="BAKUP_FLAG"/>
+    <result property="BakupTime" column="BAKUP_TIME"/>
+    <result property="RecordUserId" column="RECORD_USER_ID"/>
+    <result property="RecordTime" column="RECORD_TIME"/>
+    <result property="ForeignNo" column="FOREIGN_NO"/>
+    <result property="SeqIndex" column="SEQ_INDEX"/>
+    <result property="BackupFlag" column="BACKUP_FLAG"/>
+    <result property="BackupTime" column="BACKUP_TIME"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_SsbUser" class="SsbUser">
+    <parameter property="ObjId" column="ObjId"/>
+    <parameter property="UserName" column="UserName"/>
+    <parameter property="UserPwd" column="UserPwd"/>
+    <parameter property="RealName" column="RealName"/>
+    <parameter property="Sex" column="Sex"/>
+    <parameter property="Telephone" column="Telephone"/>
+    <parameter property="WorkBarcode" column="WorkBarcode"/>
+    <parameter property="DeptId" column="DeptId"/>
+    <parameter property="WorkId" column="WorkId"/>
+    <parameter property="ShiftId" column="ShiftId"/>
+    <parameter property="ClassId" column="ClassId"/>
+    <parameter property="WorkshopId" column="WorkshopId"/>
+    <parameter property="DeleteFlag" column="DeleteFlag"/>
+    <parameter property="Remark" column="Remark"/>
+    <parameter property="IsEmployee" column="IsEmployee"/>
+    <parameter property="BakupFlag" column="BakupFlag"/>
+    <parameter property="BakupTime" column="BakupTime"/>
+    <parameter property="RecordUserId" column="RecordUserId"/>
+    <parameter property="RecordTime" column="RecordTime"/>
+    <parameter property="ForeignNo" column="ForeignNo"/>
+    <parameter property="SeqIndex" column="SeqIndex"/>
+    <parameter property="BackupFlag" column="BackupFlag"/>
+    <parameter property="BackupTime" column="BackupTime"/>
+  </parameterMap>
+  
+  <statements>
+
+    <!--获取用户角色信息-->
+    <select id="GetRoleUserList" parameterClass="map" resultMap="R_SsbUser">
+      SELECT U.* FROM SSB_USER U
+      INNER JOIN SSP_USER_ROLE UR ON U.OBJID=UR.USER_ID
+      INNER JOIN SSP_ROLE R ON UR.ROLE_ID=R.OBJID
+      WHERE U.DELETE_FLAG=0 AND R.DELETE_FLAG=0
+      <dynamic>
+        <isNotNull property="ObjId" prepend="AND">
+          R.OBJID = #ObjId#
+        </isNotNull>
+        <isNotNull property="RealName" prepend="AND">
+          U.REAL_NAME like '%'||#where.RealName#||'%'
+        </isNotNull>
+        <isNotNull property="UserName" prepend="AND">
+          u.USER_NAME like '%'||#where.UserName#||'%'
+        </isNotNull>
+        <isNotNull property="RoleName" prepend="AND">
+          r.ROLE_NAME like '%'||#where.RoleName#||'%'
+        </isNotNull>
+      </dynamic>
+    </select>
+
+    <!--在系统权限管理-人员基础信息调用的分页方法-->
+    <select id="GetAllUserList" parameterClass="map" resultClass="row">
+      <![CDATA[
+          SELECT T1.OBJID ,T1.USER_NAME ,T1.REAL_NAME ,T1.TELEPHONE ,T1.WORK_BARCODE 
+            ,CASE T1.SEX WHEN 1 THEN '男' WHEN 2 THEN '女' ELSE '' END AS SEX
+            ,T3.DEPT_NAME AS DEPT_ID 
+            ,CASE WHEN LENGTH(T1.USER_PWD) > 0 THEN 1 ELSE 0 END AS IS_EMPLOYEE , LENGTH(t1.USER_PWD) as LENPWD  FROM SSB_USER T1 
+            LEFT JOIN SSB_DEPT      T3 ON T1.DEPT_ID = T3.OBJID
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.OBJID" prepend="AND">
+          <![CDATA[T1.OBJID = #where.OBJID#]]>
+        </isNotNull>
+        <isNotNull property="where.USER_NAME" prepend="AND">
+          T1.USER_NAME  like '%'||#where.USER_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.WORK_BARCODE" prepend="AND">
+          T1.WORK_BARCODE  like '%'||#where.WORK_BARCODE#||'%'
+        </isNotNull>
+        <isNotNull property="where.DEPT_ID" prepend="AND">
+          <![CDATA[T1.DEPT_ID = #where.DEPT_ID#]]>
+        </isNotNull>
+        <isNotNull property="where.DELETE_FLAG" prepend="AND">
+          <![CDATA[T1.DELETE_FLAG = #where.DELETE_FLAG#]]>
+        </isNotNull>
+        <isNotNull property="where.REMARK" prepend="AND">
+          <![CDATA[T1.REMARK = #where.REMARK#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM SSB_USER ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ClassId" prepend="AND">
+          <![CDATA[CLASS_ID = #where.ClassId#]]>
+        </isNotNull>
+        <isNotNull property="where.WorkshopId" prepend="AND">
+          <![CDATA[WORKSHOP_ID = #where.WorkshopId#]]>
+        </isNotNull>
+        <isNotNull property="where.HrCode" prepend="AND">
+          <![CDATA[HR_CODE = #where.HrCode#]]>
+        </isNotNull>
+        <isNotNull property="where.ErpCode" prepend="AND">
+          <![CDATA[ERP_CODE = #where.ErpCode#]]>
+        </isNotNull>
+        <isNotNull property="where.DeleteFlag" prepend="AND">
+          <![CDATA[DELETE_FLAG = #where.DeleteFlag#]]>
+        </isNotNull>
+        <isNotNull property="where.Remark" prepend="AND">
+          <![CDATA[REMARK = #where.Remark#]]>
+        </isNotNull>
+        <isNotNull property="where.IsEmployee" prepend="AND">
+          <![CDATA[IS_EMPLOYEE = #where.IsEmployee#]]>
+        </isNotNull>
+        <isNotNull property="where.BakupFlag" prepend="AND">
+          <![CDATA[BAKUP_FLAG = #where.BakupFlag#]]>
+        </isNotNull>
+        <isNotNull property="where.BakupTime" prepend="AND">
+          <![CDATA[BAKUP_TIME = #where.BakupTime#]]>
+        </isNotNull>
+        <isNotNull property="where.ObjId" prepend="AND">
+          <![CDATA[OBJID = #where.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="where.UserName" prepend="AND">
+          <![CDATA[USER_NAME = #where.UserName#]]>
+        </isNotNull>
+        <isNotNull property="where.UserPwd" prepend="AND">
+          <![CDATA[USER_PWD = #where.UserPwd#]]>
+        </isNotNull>
+        <isNotNull property="where.RealName" prepend="AND">
+          <![CDATA[REAL_NAME = #where.RealName#]]>
+        </isNotNull>
+        <isNotNull property="where.Sex" prepend="AND">
+          <![CDATA[SEX = #where.Sex#]]>
+        </isNotNull>
+        <isNotNull property="where.Telephone" prepend="AND">
+          <![CDATA[TELEPHONE = #where.Telephone#]]>
+        </isNotNull>
+        <isNotNull property="where.WorkBarcode" prepend="AND">
+          <![CDATA[WORK_BARCODE = #where.WorkBarcode#]]>
+        </isNotNull>
+        <isNotNull property="where.DeptId" prepend="AND">
+          <![CDATA[DEPT_ID = #where.DeptId#]]>
+        </isNotNull>
+        <isNotNull property="where.WorkId" prepend="AND">
+          <![CDATA[WORK_ID = #where.WorkId#]]>
+        </isNotNull>
+        <isNotNull property="where.ShiftId" prepend="AND">
+          <![CDATA[SHIFT_ID = #where.ShiftId#]]>
+        </isNotNull>
+
+        <!--sunyj查询硫化人员-->
+        <isNotNull property="where.QuerySulfUser" prepend="AND">
+          <![CDATA[ nvl(work_id,'0')<>'0' and workshop_id=5]]>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+
+    <!--查询实例说明-->
+    <select id="GetPageDataByReader" parameterClass="map" resultClass="Row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+
+  </statements>
+</sqlMap>

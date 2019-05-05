@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@EQPInPort" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t1.gportno,t1.equipment_name,t1.port_name,t1.cache_size,
+      CASE t1.slms_flag WHEN '0' THEN '复位' WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' END AS slms_flag
+      from VIEW_EQP_IN_PORT t1
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.GPORTNO" prepend="AND">
+          T1.GPORTNO LIKE '%'||#where.GPORTNO#||'%'
+        </isNotNull>       
+        <isNotNull property="where.EQUIPMENT_NAME" prepend="AND">
+          T1.EQUIPMENT_NAME LIKE '%'||#where.EQUIPMENT_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.PORT_NAME" prepend="AND">
+          T1.PORT_NAME LIKE '%'||#where.PORT_NAME#||'%'
+        </isNotNull>
+       </dynamic>
+      ORDER BY t1.equipment_name,t1.port_name
+    </select>
+      <select id="Select@EQPInPort@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+         select t1.* from VIEW_EQP_IN_PORT t1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.GPORTNO" prepend="AND">
+           T1.GPORTNO = #where.GPORTNO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

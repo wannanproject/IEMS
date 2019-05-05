@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBMATERIAL" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT mater_no,mater_name,mater_code,mater_mkind,mater_type,
+       min_time,max_time,main_unit,mater_spec,mater_desc,seq_index,case del_flag when 1 then'删除' when 0 then '正常' end as del_flag,mes_no
+       FROM PSB_MATERIAL T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.MATER_NO" prepend="AND">
+           T1.MATER_NO LIKE '%'||#where.MATER_NO#||'%'
+         </isNotNull>
+        <isNotNull property="where.MATER_NAME" prepend="AND">
+          T1.MATER_NAME LIKE '%'||#where.MATER_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATER_TYPE" prepend="AND">
+          T1.MATER_TYPE LIKE '%'||#where.MATER_TYPE#||'%'
+        </isNotNull>
+       </dynamic>
+       ORDER BY MATER_NO
+     </select>
+     <select id="Select@VIEW_PSBMATERIAL@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_MATERIAL T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.MATER_NO" prepend = "AND">
+           T1.MATER_NO = #where.MATER_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

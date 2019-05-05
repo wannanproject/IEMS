@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="View_PelJobLog" uri="@McUI\View_PelJobLog.xml"/>
+</McUIConfig>

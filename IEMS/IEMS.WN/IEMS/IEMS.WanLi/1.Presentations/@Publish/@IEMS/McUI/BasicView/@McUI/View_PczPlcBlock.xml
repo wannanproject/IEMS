@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GUID" Value="编号" ></Caption>
+    <Caption Name="PLC_GUID" Value="PLC编号" ></Caption>
+    <Caption Name="BLOCK_NAME" Value="PLC块编号" ></Caption>
+    <Caption Name="BLOCK_START" Value="起始位置" ></Caption>
+    <Caption Name="BLOCK_LEN" Value="长度" ></Caption>
+    <Caption Name="REMARKS" Value="描述" ></Caption>
+  </Captions>
+  <WebPage Title="PLC块信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GUID" ></GridColumn>
+        <GridColumn ColumnName="PLC_GUID" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_NAME" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_START" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_LEN" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GUID" ></ParamField>
+        <ParamField FieldName="PLC_GUID" ></ParamField>
+        <ParamField FieldName="BLOCK_NAME" ></ParamField>
+        <ParamField FieldName="BLOCK_START" ></ParamField>
+        <ParamField FieldName="BLOCK_LEN" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

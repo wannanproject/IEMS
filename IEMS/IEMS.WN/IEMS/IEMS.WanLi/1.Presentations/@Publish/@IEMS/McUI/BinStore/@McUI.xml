@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="MaterialStore" uri="@McUI\MaterialStore.xml"/>
+  <McUI name="MaterialBin" uri="@McUI\MaterialBin.xml"/>
+</McUIConfig>
+

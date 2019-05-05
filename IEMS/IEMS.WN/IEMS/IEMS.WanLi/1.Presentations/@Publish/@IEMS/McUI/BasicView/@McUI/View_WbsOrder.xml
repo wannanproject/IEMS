@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ORDER_NO" Value="单号" ></Caption>
+    <Caption Name="ORDER_STATUS" Value="单据状态 (0: 未执行, 1: 执行中, 2: 已完成, 3: 已取消)" ></Caption>
+    <Caption Name="ORDER_TYPE_NO" Value="单据类型" ></Caption>
+    <Caption Name="ORDER_TYPE_MODULE" Value="单据类型模式" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建日期" ></Caption>
+    <Caption Name="CREATED_BY" Value="创建者" ></Caption>
+    <Caption Name="FMEM" Value="备注" ></Caption>
+    <Caption Name="LOCK_LINE_FLAG" Value="按行项目发货  1:按照行项目发货  0：不按照行项目发货" ></Caption>
+    <Caption Name="ORDER_PRIORITY" Value="优先级    数字越小优先级越高" ></Caption>
+    <Caption Name="AUDIT_FLAG" Value="1:生效锁定  0：未生效" ></Caption>
+    <Caption Name="SOURCE_TYPE" Value="0: WMS 生成  1:WCS生成  2: interface导入 " ></Caption>
+  </Captions>
+  <WebPage Title="订单主表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ORDER_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_STATUS" ></GridColumn>
+        <GridColumn ColumnName="ORDER_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_TYPE_MODULE" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="CREATED_BY" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="LOCK_LINE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ORDER_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="AUDIT_FLAG" ></GridColumn>
+        <GridColumn ColumnName="SOURCE_TYPE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="ORDER_STATUS" ></ParamField>
+        <ParamField FieldName="ORDER_TYPE_NO" ></ParamField>
+        <ParamField FieldName="ORDER_TYPE_MODULE" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="CREATED_BY" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="LOCK_LINE_FLAG" ></ParamField>
+        <ParamField FieldName="ORDER_PRIORITY" ></ParamField>
+        <ParamField FieldName="AUDIT_FLAG" ></ParamField>
+        <ParamField FieldName="SOURCE_TYPE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

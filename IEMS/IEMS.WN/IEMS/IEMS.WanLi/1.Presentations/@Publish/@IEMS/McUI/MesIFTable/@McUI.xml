@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="OrderDtl" uri="@McUI\OrderDtl.xml"/>
+  <McUI name="Material" uri="@McUI\Material.xml"/>
+  <McUI name="EQPInPort" uri="@McUI\EQPInPort.xml"/>
+  <McUI name="EQPOutPort" uri="@McUI\EQPOutPort.xml"/>
+  <McUI name="Pallet" uri="@McUI\Pallet.xml"/>
+  <McUI name="EQPProduction" uri="@McUI\EQPProduction.xml"/>
+  <McUI name="MaterialEvent" uri="@McUI\MaterialEvent.xml"/>
+</McUIConfig>

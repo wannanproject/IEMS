@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_BkWbsPackageData" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM BK_WBS_PACKAGE_DATA T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.PACKAGE_GUID" prepend="AND">
+           T1.PACKAGE_GUID LIKE '%'||#where.PACKAGE_GUID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY PACKAGE_GUID
+     </select>
+     <select id="Select@View_BkWbsPackageData@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM BK_WBS_PACKAGE_DATA T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.PACKAGE_GUID" prepend = "AND">
+           T1.PACKAGE_GUID = #where.PACKAGE_GUID#
+         </isNotNull><isNotNull property="where.PALLET_NO" prepend = "AND">
+           T1.PALLET_NO = #where.PALLET_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

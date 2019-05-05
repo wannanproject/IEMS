@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_ViewEqpOutPort" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM VIEW_EQP_OUT_PORT T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.GPORTNO" prepend="AND">
+           T1.GPORTNO LIKE '%'||#where.GPORTNO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY GPORTNO
+     </select>
+     <select id="Select@View_ViewEqpOutPort@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM VIEW_EQP_OUT_PORT T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.GPORTNO" prepend = "AND">
+           T1.GPORTNO = #where.GPORTNO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

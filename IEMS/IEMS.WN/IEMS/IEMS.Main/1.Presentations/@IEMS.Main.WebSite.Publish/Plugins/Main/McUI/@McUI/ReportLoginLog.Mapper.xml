@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@ReportLoginLog" parameterClass="int" resultClass="row">
+      <![CDATA[
+          SELECT T1.OBJID ,T2.USER_NAME ,T1.LOGIN_TIME ,T1.LOGIN_IP ,
+          T1.LOGOUT_TIME ,T1.LOGOUT_IP ,T1.REMARK FROM SSL_LOGIN_LOG T1 
+          LEFT JOIN   SSB_USER        T2  ON    T1.USER_ID = T2.OBJID
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.OBJID" prepend="AND">
+          <![CDATA[T1.OBJID = #where.OBJID#]]>
+        </isNotNull>
+        <isNotNull property="where.USER_NAME" prepend="AND">
+          T2.USER_NAME  like '%'||#where.USER_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.LOGIN_TIME >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.LOGIN_TIME <= #where.END_TIME#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+  </statements>
+</sqlMap>

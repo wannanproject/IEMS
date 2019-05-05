@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.ProcWmsDeleteTaskService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--执行存储过程-->
+    <procedure id="PROC_WMS_DELETE_TASK" parameterClass = "map" resultClass="string">
+      PROC_WMS_DELETE_TASK
+      @{ITaskNo, column=I_TASK_NO}
+    </procedure>
+  </statements>
+</sqlMap>

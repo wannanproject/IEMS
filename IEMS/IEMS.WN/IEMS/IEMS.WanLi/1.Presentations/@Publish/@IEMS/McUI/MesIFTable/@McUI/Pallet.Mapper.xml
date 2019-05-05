@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@Pallet" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t1.pallet_no,t1.rfid_no,t1.paint_code,t1.pallet_type,t1.pallet_name,
+      CASE t1.used_flag WHEN '1' THEN '启用' WHEN '0' THEN '停用' END AS used_flag,
+      t1.pallet_weight,t1.product_guid,t1.last_product_guid,t1.binding_time,
+      CASE t1.load_status WHEN 1 THEN '有载' WHEN 0 THEN '空载' END AS load_status,
+      CASE t1.error_status WHEN '1' THEN '异常' WHEN '0' THEN '正常' END AS error_status,
+      CASE t1.checkout_status WHEN '1' THEN '超差' WHEN '0' THEN '正常' END AS checkout_status,
+      t1.dequip_code,t1.dlog_no,
+      CASE t1.slms_flag WHEN '0' THEN '复位' WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' END AS slms_flag
+      from VIEW_PALLET t1
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          T1.PALLET_NO LIKE '%'||#where.PALLET_NO#||'%'
+        </isNotNull>       
+        <isNotNull property="where.RFID_NO" prepend="AND">
+          T1.RFID_NO LIKE '%'||#where.RFID_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NAME" prepend="AND">
+          T1.PALLET_NAME LIKE '%'||#where.PALLET_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.LOAD_STATUS" prepend="AND">
+          T1.LOAD_STATUS = #where.LOAD_STATUS#
+        </isNotNull>
+        <isNotNull property="where.ERROR_STATUS" prepend="AND">
+          T1.ERROR_STATUS = #where.ERROR_STATUS#
+        </isNotNull>
+        <isNotNull property="where.CHECKOUT_STATUS" prepend="AND">
+          T1.CHECKOUT_STATUS = #where.CHECKOUT_STATUS#
+        </isNotNull>
+       </dynamic>
+      ORDER BY t1.rfid_no
+    </select>
+      <select id="Select@Pallet@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+         select t1.* from VIEW_PALLET t1
+       ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.PALLET_NO" prepend="AND">
+           T1.PALLET_NO = #where.PALLET_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+         
+     <!--查询负载状态信息，ID值固定为GetComboBoxData@Select@Pallet@ERROR_STATUS字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@Pallet@LOAD_STATUS" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        SELECT   '1' AS sskey, '有载' AS ssValue FROM dual UNION SELECT   '0', '空载' FROM dual
+      ]]>
+     </select>
+     <!--查询异常状态信息，ID值固定为GetComboBoxData@Select@Pallet@LOAD_STATUS字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@Pallet@ERROR_STATUS" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        SELECT  '1' AS sskey, '异常' AS ssValue FROM dual UNION SELECT  '0', '正常' FROM dual
+      ]]>
+     </select>
+     <!--查询检量状态信息，ID值固定为GetComboBoxData@Select@Pallet@CHECKOUT_STATUS字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@Pallet@CHECKOUT_STATUS" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        SELECT   '1' AS sskey, '超差' AS ssValue FROM dual UNION SELECT   '0', '正常' FROM dual
+      ]]>
+     </select>
+  </statements>
+</sqlMap>

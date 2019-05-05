@@ -1,0 +1,166 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentations", "1.Presentations", "{9D6532A4-CAB1-4947-A528-C674678432CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.WebUI", "1.Presentations\IEMS.WanLi.WebUI\IEMS.WanLi.WebUI.csproj", "{4C604B91-786D-4F6A-AF23-060763CC00BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Applications", "3.Applications", "{3565DB93-1D75-4FB0-B1CD-EBD2C4DA788E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Domains", "4.Domains", "{BFB9A501-D68A-49DA-A4D4-3944B45B64E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.DbCI", "4.Domains\IEMS.WanLi.DbCI\IEMS.WanLi.DbCI.csproj", "{9648A750-931F-4711-9904-CD0C84C84C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.DbMapper", "4.Domains\IEMS.WanLi.DbMapper\IEMS.WanLi.DbMapper.csproj", "{543E3098-F470-456E-97E6-2554462C012D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.DbRI", "4.Domains\IEMS.WanLi.DbRI\IEMS.WanLi.DbRI.csproj", "{766EF1F3-0D9C-4EA8-947D-6A167583769D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.Entity", "4.Domains\IEMS.WanLi.Entity\IEMS.WanLi.Entity.csproj", "{B322627C-9F72-417B-BFF8-754319E5BCF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.VoDto", "4.Domains\IEMS.WanLi.VoDto\IEMS.WanLi.VoDto.csproj", "{FDD830C9-2259-480C-BBA3-4982B344CCF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEMS.WanLi.AppBiz", "3.Applications\IEMS.WanLi.AppBiz\IEMS.WanLi.AppBiz.csproj", "{26E28B93-3C82-4A06-BD42-3DF98800C319}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IEMS.WanLi.WebSite", "1.Presentations\IEMS.WanLi.WebSite\", "{7F0A7472-AE82-451D-80FF-06391AA5EDA0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{26e28b93-3c82-4a06-bd42-3df98800c319}|IEMS.WanLi.AppBiz.dll;{9648A750-931F-4711-9904-CD0C84C84C33}|IEMS.WanLi.DbCI.dll;{543E3098-F470-456E-97E6-2554462C012D}|IEMS.WanLi.DbMapper.dll;{766EF1F3-0D9C-4EA8-947D-6A167583769D}|IEMS.WanLi.DbRI.dll;{B322627C-9F72-417B-BFF8-754319E5BCF2}|IEMS.WanLi.Entity.dll;{FDD830C9-2259-480C-BBA3-4982B344CCF6}|IEMS.WanLi.VoDto.dll;{4C604B91-786D-4F6A-AF23-060763CC00BC}|IEMS.WanLi.WebUI.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_14158"
+		Debug.AspNetCompiler.PhysicalPath = "1.Presentations\IEMS.WanLi.WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14158\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_14158"
+		Release.AspNetCompiler.PhysicalPath = "1.Presentations\IEMS.WanLi.WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14158\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "14158"
+		SlnRelativePath = "1.Presentations\IEMS.WanLi.WebSite\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@packages", "@packages", "{C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@IEMS", "@IEMS", "{2F48C850-68A5-445F-B21E-AF4E398BBC61}"
+	ProjectSection(SolutionItems) = preProject
+		@packages\@IEMS\IEMS.Frame.AppBiz.dll = @packages\@IEMS\IEMS.Frame.AppBiz.dll
+		@packages\@IEMS\IEMS.Frame.DbCI.dll = @packages\@IEMS\IEMS.Frame.DbCI.dll
+		@packages\@IEMS\IEMS.Frame.DbMapper.dll = @packages\@IEMS\IEMS.Frame.DbMapper.dll
+		@packages\@IEMS\IEMS.Frame.DbRI.dll = @packages\@IEMS\IEMS.Frame.DbRI.dll
+		@packages\@IEMS\IEMS.Frame.Entity.dll = @packages\@IEMS\IEMS.Frame.Entity.dll
+		@packages\@IEMS\IEMS.Frame.McUI.dll = @packages\@IEMS\IEMS.Frame.McUI.dll
+		@packages\@IEMS\IEMS.Frame.VoDto.dll = @packages\@IEMS\IEMS.Frame.VoDto.dll
+		@packages\@IEMS\IEMS.Frame.WebGlobal.dll = @packages\@IEMS\IEMS.Frame.WebGlobal.dll
+		@packages\@IEMS\IEMS.Frame.WebSite.dll = @packages\@IEMS\IEMS.Frame.WebSite.dll
+		@packages\@IEMS\IEMS.Frame.WebUI.dll = @packages\@IEMS\IEMS.Frame.WebUI.dll
+		@packages\@IEMS\IEMS.Main.AppBiz.dll = @packages\@IEMS\IEMS.Main.AppBiz.dll
+		@packages\@IEMS\IEMS.Main.DbCI.dll = @packages\@IEMS\IEMS.Main.DbCI.dll
+		@packages\@IEMS\IEMS.Main.DbMapper.dll = @packages\@IEMS\IEMS.Main.DbMapper.dll
+		@packages\@IEMS\IEMS.Main.DbRI.dll = @packages\@IEMS\IEMS.Main.DbRI.dll
+		@packages\@IEMS\IEMS.Main.Entity.dll = @packages\@IEMS\IEMS.Main.Entity.dll
+		@packages\@IEMS\IEMS.Main.VoDto.dll = @packages\@IEMS\IEMS.Main.VoDto.dll
+		@packages\@IEMS\IEMS.Main.WebSite.dll = @packages\@IEMS\IEMS.Main.WebSite.dll
+		@packages\@IEMS\IEMS.Main.WebUI.dll = @packages\@IEMS\IEMS.Main.WebUI.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@MSTL", "@MSTL", "{A49E4A45-4938-4EBB-B540-0D72696C9339}"
+	ProjectSection(SolutionItems) = preProject
+		@packages\@MSTL\MSTL.DbAccess.dll = @packages\@MSTL\MSTL.DbAccess.dll
+		@packages\@MSTL\MSTL.ExcelData.dll = @packages\@MSTL\MSTL.ExcelData.dll
+		@packages\@MSTL\MSTL.Extensions.dll = @packages\@MSTL\MSTL.Extensions.dll
+		@packages\@MSTL\MSTL.LogAgent.dll = @packages\@MSTL\MSTL.LogAgent.dll
+		@packages\@MSTL\MSTL.McJson.dll = @packages\@MSTL\MSTL.McJson.dll
+		@packages\@MSTL\MSTL.ResultStruct.dll = @packages\@MSTL\MSTL.ResultStruct.dll
+		@packages\@MSTL\MSTL.XmlOrm.dll = @packages\@MSTL\MSTL.XmlOrm.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ext.net", "Ext.net", "{6DE73A11-2EC5-4776-B05A-39C722B545DE}"
+	ProjectSection(SolutionItems) = preProject
+		@packages\Ext.net\Ext.Net.dll = @packages\Ext.net\Ext.Net.dll
+		@packages\Ext.net\Ext.Net.Utilities.dll = @packages\Ext.net\Ext.Net.Utilities.dll
+		@packages\Ext.net\Newtonsoft.Json.dll = @packages\Ext.net\Newtonsoft.Json.dll
+		@packages\Ext.net\Transformer.NET.dll = @packages\Ext.net\Transformer.NET.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyBatis", "MyBatis", "{7149DA91-0440-4853-8A72-B71D81F6488C}"
+	ProjectSection(SolutionItems) = preProject
+		@packages\MyBatis\Castle.Core.dll = @packages\MyBatis\Castle.Core.dll
+		@packages\MyBatis\Castle.DynamicProxy2.dll = @packages\MyBatis\Castle.DynamicProxy2.dll
+		@packages\MyBatis\DaoConfig.xsd = @packages\MyBatis\DaoConfig.xsd
+		@packages\MyBatis\MyBatis.Common.dll = @packages\MyBatis\MyBatis.Common.dll
+		@packages\MyBatis\MyBatis.DataMapper.dll = @packages\MyBatis\MyBatis.DataMapper.dll
+		@packages\MyBatis\SqlMap.xsd = @packages\MyBatis\SqlMap.xsd
+		@packages\MyBatis\SqlMapConfig.xsd = @packages\MyBatis\SqlMapConfig.xsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Newtonsoft.Json", "Newtonsoft.Json", "{FC3CD5C4-4269-4321-A45C-247E90502697}"
+	ProjectSection(SolutionItems) = preProject
+		@packages\Newtonsoft.Json\Newtonsoft.Json.dll = @packages\Newtonsoft.Json\Newtonsoft.Json.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C604B91-786D-4F6A-AF23-060763CC00BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C604B91-786D-4F6A-AF23-060763CC00BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C604B91-786D-4F6A-AF23-060763CC00BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C604B91-786D-4F6A-AF23-060763CC00BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9648A750-931F-4711-9904-CD0C84C84C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9648A750-931F-4711-9904-CD0C84C84C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9648A750-931F-4711-9904-CD0C84C84C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9648A750-931F-4711-9904-CD0C84C84C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543E3098-F470-456E-97E6-2554462C012D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543E3098-F470-456E-97E6-2554462C012D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543E3098-F470-456E-97E6-2554462C012D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543E3098-F470-456E-97E6-2554462C012D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766EF1F3-0D9C-4EA8-947D-6A167583769D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766EF1F3-0D9C-4EA8-947D-6A167583769D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766EF1F3-0D9C-4EA8-947D-6A167583769D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766EF1F3-0D9C-4EA8-947D-6A167583769D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B322627C-9F72-417B-BFF8-754319E5BCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B322627C-9F72-417B-BFF8-754319E5BCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B322627C-9F72-417B-BFF8-754319E5BCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B322627C-9F72-417B-BFF8-754319E5BCF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD830C9-2259-480C-BBA3-4982B344CCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD830C9-2259-480C-BBA3-4982B344CCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD830C9-2259-480C-BBA3-4982B344CCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD830C9-2259-480C-BBA3-4982B344CCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E28B93-3C82-4A06-BD42-3DF98800C319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E28B93-3C82-4A06-BD42-3DF98800C319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E28B93-3C82-4A06-BD42-3DF98800C319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E28B93-3C82-4A06-BD42-3DF98800C319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0A7472-AE82-451D-80FF-06391AA5EDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0A7472-AE82-451D-80FF-06391AA5EDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0A7472-AE82-451D-80FF-06391AA5EDA0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0A7472-AE82-451D-80FF-06391AA5EDA0}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C604B91-786D-4F6A-AF23-060763CC00BC} = {9D6532A4-CAB1-4947-A528-C674678432CC}
+		{9648A750-931F-4711-9904-CD0C84C84C33} = {BFB9A501-D68A-49DA-A4D4-3944B45B64E4}
+		{543E3098-F470-456E-97E6-2554462C012D} = {BFB9A501-D68A-49DA-A4D4-3944B45B64E4}
+		{766EF1F3-0D9C-4EA8-947D-6A167583769D} = {BFB9A501-D68A-49DA-A4D4-3944B45B64E4}
+		{B322627C-9F72-417B-BFF8-754319E5BCF2} = {BFB9A501-D68A-49DA-A4D4-3944B45B64E4}
+		{FDD830C9-2259-480C-BBA3-4982B344CCF6} = {BFB9A501-D68A-49DA-A4D4-3944B45B64E4}
+		{26E28B93-3C82-4A06-BD42-3DF98800C319} = {3565DB93-1D75-4FB0-B1CD-EBD2C4DA788E}
+		{7F0A7472-AE82-451D-80FF-06391AA5EDA0} = {9D6532A4-CAB1-4947-A528-C674678432CC}
+		{2F48C850-68A5-445F-B21E-AF4E398BBC61} = {C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}
+		{A49E4A45-4938-4EBB-B540-0D72696C9339} = {C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}
+		{6DE73A11-2EC5-4776-B05A-39C722B545DE} = {C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}
+		{7149DA91-0440-4853-8A72-B71D81F6488C} = {C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}
+		{FC3CD5C4-4269-4321-A45C-247E90502697} = {C55061EF-F492-49E2-99D7-EDA8AD5DAF5C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07F9D775-6CFF-4D71-932B-09BAD784C5D7}
+	EndGlobalSection
+EndGlobal

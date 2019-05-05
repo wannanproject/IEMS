@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+     <select id="Select@CrnErrLog" parameterClass="map" resultClass="row">    
+      <![CDATA[        
+            SELECT T.*, T1.ERR_NAME,
+                   NVL(WT.PALLET_NO,ZWT.PALLET_NO) AS PALLET_NO,
+                   NVL(WT.SLOC_NO,ZWT.SLOC_NO) AS SLOC_NO,
+                   NVL(WT.ELOC_NO,ZWT.ELOC_NO) AS ELOC_NO
+              FROM Z40_CRN_FORK_ERR_LOG T
+              LEFT JOIN PSB_CRN_ERR T1
+                ON T.ERR_NO = T1.ERR_NO
+              LEFT JOIN WBS_TASK WT
+                ON WT.TASK_GUID = T.TASK_GUID
+              LEFT JOIN Z50_WBS_TASK ZWT
+                ON ZWT.TASK_GUID = T.TASK_GUID
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.CRN_FORK_NO" prepend="AND">
+           <![CDATA[ T.CRN_FORK_NO like '%'||#where.CRN_FORK_NO#||'%']]>
+         </isNotNull>
+         <isNotNull property="where.ERR_NO" prepend="AND">
+           <![CDATA[ T.ERR_NO like '%'||#where.ERR_NO#||'%' ]]>
+         </isNotNull>
+         <isNotNull property="where.B_TIME" prepend="AND">
+           <![CDATA[ T.ERR_BEGIN_TIME >=#where.B_TIME#  ]]>
+         </isNotNull>
+         <isNotNull property="where.E_TIME" prepend="AND">
+           <![CDATA[ T.ERR_BEGIN_TIME <=1+ #where.E_TIME#  ]]>
+         </isNotNull>
+       </dynamic>
+         ORDER BY T.ERR_BEGIN_TIME desc
+     </select>
+   </statements>
+</sqlMap>

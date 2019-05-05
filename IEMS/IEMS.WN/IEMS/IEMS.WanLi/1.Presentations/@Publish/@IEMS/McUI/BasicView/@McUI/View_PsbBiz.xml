@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="BIZ_NO" Value="业务编号" ></Caption>
+    <Caption Name="BIZ_ASSEMBLY" Value="业务处理程序集" ></Caption>
+    <Caption Name="BIZ_TYPE" Value="业务处理接口" ></Caption>
+    <Caption Name="BIZ_DESC" Value="业务描述" ></Caption>
+  </Captions>
+  <WebPage Title="业务处理">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BIZ_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="BIZ_NO" ></GridColumn>
+        <GridColumn ColumnName="BIZ_ASSEMBLY" ></GridColumn>
+        <GridColumn ColumnName="BIZ_TYPE" ></GridColumn>
+        <GridColumn ColumnName="BIZ_DESC" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="BIZ_NO" ></ParamField>
+        <ParamField FieldName="BIZ_ASSEMBLY" ></ParamField>
+        <ParamField FieldName="BIZ_TYPE" ></ParamField>
+        <ParamField FieldName="BIZ_DESC" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

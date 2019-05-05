@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="USER_ID" Value="用户编号" ></Caption>
+    <Caption Name="ACTION_ID" Value="功能编号" ></Caption>
+    <Caption Name="M" Value="M" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_USER_ALL_ACTION">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="USER_ID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="USER_ID" ></GridColumn>
+        <GridColumn ColumnName="ACTION_ID" ></GridColumn>
+        <GridColumn ColumnName="M" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="USER_ID" ></ParamField>
+        <ParamField FieldName="ACTION_ID" ></ParamField>
+        <ParamField FieldName="M" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

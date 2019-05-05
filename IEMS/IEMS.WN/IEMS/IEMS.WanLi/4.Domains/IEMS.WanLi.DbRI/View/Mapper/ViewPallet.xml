@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.ViewPalletService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="ViewPallet" type="IEMS.WanLi.Entity.ViewPallet, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_ViewPallet" class="ViewPallet">
+    <result property="PalletNo" column="PALLET_NO"/>
+    <result property="RfidNo" column="RFID_NO"/>
+    <result property="PaintCode" column="PAINT_CODE"/>
+    <result property="PalletType" column="PALLET_TYPE"/>
+    <result property="PalletName" column="PALLET_NAME"/>
+    <result property="UsedFlag" column="USED_FLAG"/>
+    <result property="PalletWeight" column="PALLET_WEIGHT"/>
+    <result property="ProductGuid" column="PRODUCT_GUID"/>
+    <result property="LastProductGuid" column="LAST_PRODUCT_GUID"/>
+    <result property="BindingTime" column="BINDING_TIME"/>
+    <result property="LoadStatus" column="LOAD_STATUS"/>
+    <result property="ErrorStatus" column="ERROR_STATUS"/>
+    <result property="CheckoutStatus" column="CHECKOUT_STATUS"/>
+    <result property="DequipCode" column="DEQUIP_CODE"/>
+    <result property="DlogNo" column="DLOG_NO"/>
+    <result property="SlmsFlag" column="SLMS_FLAG"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_ViewPallet" class="ViewPallet">
+    <parameter property="PalletNo" column="PalletNo"/>
+    <parameter property="RfidNo" column="RfidNo"/>
+    <parameter property="PaintCode" column="PaintCode"/>
+    <parameter property="PalletType" column="PalletType"/>
+    <parameter property="PalletName" column="PalletName"/>
+    <parameter property="UsedFlag" column="UsedFlag"/>
+    <parameter property="PalletWeight" column="PalletWeight"/>
+    <parameter property="ProductGuid" column="ProductGuid"/>
+    <parameter property="LastProductGuid" column="LastProductGuid"/>
+    <parameter property="BindingTime" column="BindingTime"/>
+    <parameter property="LoadStatus" column="LoadStatus"/>
+    <parameter property="ErrorStatus" column="ErrorStatus"/>
+    <parameter property="CheckoutStatus" column="CheckoutStatus"/>
+    <parameter property="DequipCode" column="DequipCode"/>
+    <parameter property="DlogNo" column="DlogNo"/>
+    <parameter property="SlmsFlag" column="SlmsFlag"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM VIEW_PALLET ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.PalletNo" prepend="AND">
+          <isEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO = #where.PalletNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.RfidNo" prepend="AND">
+          <isEqual property="where.RfidNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[RFID_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.RfidNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[RFID_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.RfidNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.RfidNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[RFID_NO = #where.RfidNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PaintCode" prepend="AND">
+          <isEqual property="where.PaintCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PAINT_CODE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PaintCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PAINT_CODE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PaintCode" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PaintCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PAINT_CODE = #where.PaintCode#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletType" prepend="AND">
+          <isEqual property="where.PalletType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_TYPE = #where.PalletType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletName" prepend="AND">
+          <isEqual property="where.PalletName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NAME = #where.PalletName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.UsedFlag" prepend="AND">
+          <isEqual property="where.UsedFlag" compareValue="STRING_NULL_VALUE">
+            <![CDATA[USED_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.UsedFlag" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[USED_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.UsedFlag" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.UsedFlag" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[USED_FLAG = #where.UsedFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletWeight" prepend="AND">
+          <isEqual property="where.PalletWeight" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_WEIGHT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletWeight" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_WEIGHT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletWeight" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletWeight" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_WEIGHT = #where.PalletWeight#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProductGuid" prepend="AND">
+          <isEqual property="where.ProductGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PRODUCT_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProductGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PRODUCT_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProductGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ProductGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PRODUCT_GUID = #where.ProductGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LastProductGuid" prepend="AND">
+          <isEqual property="where.LastProductGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LAST_PRODUCT_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LastProductGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LAST_PRODUCT_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LastProductGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.LastProductGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LAST_PRODUCT_GUID = #where.LastProductGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BindingTime" prepend="AND">
+          <isEqual property="where.BindingTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[BINDING_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BindingTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[BINDING_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BindingTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.BindingTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[BINDING_TIME = #where.BindingTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LoadStatus" prepend="AND">
+          <isEqual property="where.LoadStatus" compareValue="-1147483648">
+            <![CDATA[LOAD_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LoadStatus" compareValue="-1147483647">
+            <![CDATA[LOAD_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LoadStatus" compareValue="-1147483648">
+          <isNotEqual property="where.LoadStatus" compareValue="-1147483647">
+            <![CDATA[LOAD_STATUS = #where.LoadStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrorStatus" prepend="AND">
+          <isEqual property="where.ErrorStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERROR_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrorStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERROR_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrorStatus" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ErrorStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERROR_STATUS = #where.ErrorStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CheckoutStatus" prepend="AND">
+          <isEqual property="where.CheckoutStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CHECKOUT_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CheckoutStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CHECKOUT_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CheckoutStatus" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CheckoutStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CHECKOUT_STATUS = #where.CheckoutStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.DequipCode" prepend="AND">
+          <isEqual property="where.DequipCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DEQUIP_CODE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.DequipCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DEQUIP_CODE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.DequipCode" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.DequipCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DEQUIP_CODE = #where.DequipCode#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.DlogNo" prepend="AND">
+          <isEqual property="where.DlogNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DLOG_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.DlogNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DLOG_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.DlogNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.DlogNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DLOG_NO = #where.DlogNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SlmsFlag" prepend="AND">
+          <isEqual property="where.SlmsFlag" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLMS_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SlmsFlag" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLMS_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SlmsFlag" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.SlmsFlag" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLMS_FLAG = #where.SlmsFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO VIEW_PALLET]]>
+       <dynamic prepend="(">
+        <isNotNull property="PalletNo" prepend=",">PALLET_NO</isNotNull>
+        <isNotNull property="RfidNo" prepend=",">RFID_NO</isNotNull>
+        <isNotNull property="PaintCode" prepend=",">PAINT_CODE</isNotNull>
+        <isNotNull property="PalletType" prepend=",">PALLET_TYPE</isNotNull>
+        <isNotNull property="PalletName" prepend=",">PALLET_NAME</isNotNull>
+        <isNotNull property="UsedFlag" prepend=",">USED_FLAG</isNotNull>
+        <isNotNull property="PalletWeight" prepend=",">PALLET_WEIGHT</isNotNull>
+        <isNotNull property="ProductGuid" prepend=",">PRODUCT_GUID</isNotNull>
+        <isNotNull property="LastProductGuid" prepend=",">LAST_PRODUCT_GUID</isNotNull>
+        <isNotNull property="BindingTime" prepend=",">BINDING_TIME</isNotNull>
+        <isNotNull property="LoadStatus" prepend=",">LOAD_STATUS</isNotNull>
+        <isNotNull property="ErrorStatus" prepend=",">ERROR_STATUS</isNotNull>
+        <isNotNull property="CheckoutStatus" prepend=",">CHECKOUT_STATUS</isNotNull>
+        <isNotNull property="DequipCode" prepend=",">DEQUIP_CODE</isNotNull>
+        <isNotNull property="DlogNo" prepend=",">DLOG_NO</isNotNull>
+        <isNotNull property="SlmsFlag" prepend=",">SLMS_FLAG</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="PalletNo" prepend=",">#PalletNo#</isNotNull>
+        <isNotNull property="RfidNo" prepend=",">#RfidNo#</isNotNull>
+        <isNotNull property="PaintCode" prepend=",">#PaintCode#</isNotNull>
+        <isNotNull property="PalletType" prepend=",">#PalletType#</isNotNull>
+        <isNotNull property="PalletName" prepend=",">#PalletName#</isNotNull>
+        <isNotNull property="UsedFlag" prepend=",">#UsedFlag#</isNotNull>
+        <isNotNull property="PalletWeight" prepend=",">#PalletWeight#</isNotNull>
+        <isNotNull property="ProductGuid" prepend=",">#ProductGuid#</isNotNull>
+        <isNotNull property="LastProductGuid" prepend=",">#LastProductGuid#</isNotNull>
+        <isNotNull property="BindingTime" prepend=",">#BindingTime#</isNotNull>
+        <isNotNull property="LoadStatus" prepend=",">#LoadStatus#</isNotNull>
+        <isNotNull property="ErrorStatus" prepend=",">#ErrorStatus#</isNotNull>
+        <isNotNull property="CheckoutStatus" prepend=",">#CheckoutStatus#</isNotNull>
+        <isNotNull property="DequipCode" prepend=",">#DequipCode#</isNotNull>
+        <isNotNull property="DlogNo" prepend=",">#DlogNo#</isNotNull>
+        <isNotNull property="SlmsFlag" prepend=",">#SlmsFlag#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE VIEW_PALLET]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.PalletNo" prepend=",">
+          <isEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_NO = #update.PalletNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.RfidNo" prepend=",">
+          <isEqual property="update.RfidNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[RFID_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.RfidNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[RFID_NO = #update.RfidNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PaintCode" prepend=",">
+          <isEqual property="update.PaintCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PAINT_CODE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PaintCode" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PAINT_CODE = #update.PaintCode#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletType" prepend=",">
+          <isEqual property="update.PalletType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_TYPE = #update.PalletType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletName" prepend=",">
+          <isEqual property="update.PalletName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_NAME = #update.PalletName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.UsedFlag" prepend=",">
+          <isEqual property="update.UsedFlag" compareValue="STRING_NULL_VALUE">
+            <![CDATA[USED_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.UsedFlag" compareValue="STRING_NULL_VALUE">
+          <![CDATA[USED_FLAG = #update.UsedFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletWeight" prepend=",">
+          <isEqual property="update.PalletWeight" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_WEIGHT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletWeight" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_WEIGHT = #update.PalletWeight#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProductGuid" prepend=",">
+          <isEqual property="update.ProductGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PRODUCT_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProductGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PRODUCT_GUID = #update.ProductGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LastProductGuid" prepend=",">
+          <isEqual property="update.LastProductGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LAST_PRODUCT_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LastProductGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[LAST_PRODUCT_GUID = #update.LastProductGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BindingTime" prepend=",">
+          <isEqual property="update.BindingTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[BINDING_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BindingTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[BINDING_TIME = #update.BindingTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LoadStatus" prepend=",">
+          <isEqual property="update.LoadStatus" compareValue="-1147483648">
+            <![CDATA[LOAD_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LoadStatus" compareValue="-1147483648">
+          <![CDATA[LOAD_STATUS = #update.LoadStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrorStatus" prepend=",">
+          <isEqual property="update.ErrorStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERROR_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrorStatus" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ERROR_STATUS = #update.ErrorStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CheckoutStatus" prepend=",">
+          <isEqual property="update.CheckoutStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CHECKOUT_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CheckoutStatus" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CHECKOUT_STATUS = #update.CheckoutStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.DequipCode" prepend=",">
+          <isEqual property="update.DequipCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DEQUIP_CODE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.DequipCode" compareValue="STRING_NULL_VALUE">
+          <![CDATA[DEQUIP_CODE = #update.DequipCode#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.DlogNo" prepend=",">
+          <isEqual property="update.DlogNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DLOG_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.DlogNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[DLOG_NO = #update.DlogNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SlmsFlag" prepend=",">
+          <isEqual property="update.SlmsFlag" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLMS_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SlmsFlag" compareValue="STRING_NULL_VALUE">
+          <![CDATA[SLMS_FLAG = #update.SlmsFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM VIEW_PALLET]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_ViewPallet">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM VIEW_PALLET]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM VIEW_PALLET]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_ViewPallet" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="部门编号"></Caption>
+    <Caption Name="DEPT_NAME" Value="部门名称"></Caption>
+    <Caption Name="DEPT_LEVEL" Value="部门层级"></Caption>
+  </Captions>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="DEPT_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="OBJID,DEPT_LEVEL">
+      <GridColumns>
+        <GridColumn ColumnName="OBJID"></GridColumn>
+        <GridColumn ColumnName="DEPT_NAME"></GridColumn>
+        <GridColumn ColumnName="DEPT_LEVEL"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

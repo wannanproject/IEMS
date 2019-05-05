@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbRI.SeqSslLoginLogService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <select id="SEQ_SSL_LOGIN_LOG.NEXTVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_SSL_LOGIN_LOG.NEXTVAL FROM DUAL]]>
+    </select>
+    <select id="SEQ_SSL_LOGIN_LOG.CURRVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_SSL_LOGIN_LOG.CURRVAL FROM DUAL]]>
+    </select>
+  </statements>
+</sqlMap>

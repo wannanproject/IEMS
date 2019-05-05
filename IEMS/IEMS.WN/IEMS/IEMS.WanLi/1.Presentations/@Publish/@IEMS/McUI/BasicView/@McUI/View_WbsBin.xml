@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="货笼ID" ></Caption>
+    <Caption Name="BIN_NO" Value="发起站台" ></Caption>
+    <Caption Name="KIND" Value="种类(10: 生产入库,  11: 空笼入库,  29:其他入库 )" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行项目GUID" ></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料编码" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="当前包装单位唯一识别码" ></Caption>
+    <Caption Name="PRODUCT_GRADE" Value="品级" ></Caption>
+    <Caption Name="PRODUCT_QTY" Value="数量" ></Caption>
+    <Caption Name="PRODUCT_STATUS" Value="状态 （0：待入库 ,1：正在入库 ）" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建日期" ></Caption>
+    <Caption Name="CREATION_USER" Value="创建人" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号" ></Caption>
+    <Caption Name="PRODUCT_DATE" Value="货笼最早生产时间" ></Caption>
+    <Caption Name="DEADLINE_DATE" Value="到期时间" ></Caption>
+    <Caption Name="VALID_FLAG" Value="有效标志  1：有效  0：失效" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+  </Captions>
+  <WebPage Title="入库资料主表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="BIN_NO" ></GridColumn>
+        <GridColumn ColumnName="KIND" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GRADE" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_QTY" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_STATUS" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="CREATION_USER" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_DATE" ></GridColumn>
+        <GridColumn ColumnName="DEADLINE_DATE" ></GridColumn>
+        <GridColumn ColumnName="VALID_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="BIN_NO" ></ParamField>
+        <ParamField FieldName="KIND" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="MATERIAL_NO" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PRODUCT_GRADE" ></ParamField>
+        <ParamField FieldName="PRODUCT_QTY" ></ParamField>
+        <ParamField FieldName="PRODUCT_STATUS" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="CREATION_USER" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_DATE" ></ParamField>
+        <ParamField FieldName="DEADLINE_DATE" ></ParamField>
+        <ParamField FieldName="VALID_FLAG" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

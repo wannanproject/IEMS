@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.BillTaskCmdService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <statements>
+
+    <select id="GetBillOrderDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.ORDER_NO,CASE T.ORDER_STATUS 
+      WHEN 0 THEN '未执行' 
+      WHEN 1 THEN '执行中'
+      WHEN 2 THEN '已完成'
+      WHEN 3 THEN '已取消'
+      WHEN 4 THEN '已关闭'
+      ELSE '未知' END ORDER_STATUS,
+      T.ELOC_NO,T.CUSTOMER_NAME,T.P_PLATENUM,T.TRANS_TYPE,T.CUSTOMER_ADDRESS,T.CREATION_DATE FROM WBS_ORDER T
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ELOC_NO" prepend="AND">
+          <![CDATA[T.ELOC_NO = #where.ELOC_NO# ]]>
+        </isNotNull>
+        <isNotNull property="where.BEGIN_DATE" prepend="AND">
+          <![CDATA[T.CREATION_DATE >= to_date(#where.BEGIN_DATE#,'yyyy-mm-dd hh24:mi:ss')]]>
+        </isNotNull>
+        <isNotNull property="where.END_DATE" prepend="AND">
+          <![CDATA[T.CREATION_DATE <= to_date(#where.END_DATE#,'yyyy-mm-dd hh24:mi:ss')]]>
+        </isNotNull>
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[T.ORDER_NO like '%'||#where.ORDER_NO#||'%' ]]>
+        </isNotNull>
+        <isNotNull property="where.ORDER_STATUS" prepend="AND">
+          <![CDATA[T.ORDER_STATUS = #where.ORDER_STATUS# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$ DESC
+      </isNotNull>
+    </select>
+    <select id="GetBillOrderLineDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.SORT_ID,Case T.LINE_STATUS 
+      When 0 Then '未执行'
+      When 1 Then '等待中'
+      When 2 Then '执行中'
+      When 3 Then '已完成'
+      When 4 Then '已取消】'
+      Else '异常' End LINE_STATUS,
+      T.MATERIAL_NO,M.MATER_NAME,M.TREAD_STAMP,T.REQUIRE_QTY,T.ACT_QTY,T.SHIP_QTY,T.STOCKED_QTY,T.STOCKED_ACT_QTY,T.GRADE,T.LINE_TASK_DESC,T.LINE_STOCKED_DESC,
+      T.SEND_MAIN_FLAG,T.CACHE_MAIN_FLAG,T.OUT_MAIN_FLAG,T.OUT_SECOND_FLAG,T.ORDER_NO,T.ELOC_NO,T.LIMIT_BATCH_NO,T.SALE_TYPE,T.ORDER_LINE_GUID
+      FROM WBS_ORDER_LINE T 
+      LEFT JOIN PSB_MATERIAL M ON T.MATERIAL_NO = M.MATER_NO WHERE T.DELETE_FLAG = 'N'
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[T.ORDER_NO = #where.ORDER_NO# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+
+    <select id="GetBillOrderTaskDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      Select * From(
+      SELECT  OL.ORDER_NO,OL.SORT_ID,ZT.TASK_NO,ZT.IO_TYPE,ZT.TRANSFER_NO,ZT.SLOC_NO,ZT.ELOC_NO,ZT.PALLET_NO,
+      '输送线-结束'  TASK_STEP,
+      '发货站台'  TASK_POS_DESC,-1 TASK_POS,OL.ORDER_LINE_GUID,
+      ZT.USE_QTY,LOC.LOC_PLC_NO,OL.LINE_TASK_DESC FROM WBS_WAITING T 
+      JOIN WBS_ORDER_LINE OL ON T.ORDER_LINE_GUID = OL.ORDER_LINE_GUID
+      JOIN Z50_WBS_TASK ZT ON T.TASK_GUID = ZT.TASK_GUID
+      JOIN PSB_LOC LOC ON ZT.ELOC_NO = LOC.LOC_NO 
+      UNION ALL
+      SELECT OL.ORDER_NO,OL.SORT_ID,T.TASK_NO,T.IO_TYPE,T.TRANSFER_NO,T.SLOC_NO,T.ELOC_NO,T.PALLET_NO,
+      CASE  T.TASK_STEP
+      WHEN '0000' THEN '等待'
+      WHEN '1000' THEN '堆垛机-等待'
+      WHEN '1002' THEN '堆垛机-执行'
+      WHEN '2000' THEN '输送线-等待'
+      WHEN '2002' THEN '输送线-执行'
+      WHEN '2004' THEN '输送线-完成' ELSE '' END TASK_STEP,
+      CASE DECODE(CMD.TRANSFER_TYPE,'20',T.TASK_POS,10)
+      WHEN 0 THEN '环路'
+      WHEN 1 THEN '缓存'
+      WHEN 2 THEN 'A道'
+      WHEN 3 THEN 'B道' 
+      WHEN 10 THEN '堆垛机' 
+      ELSE '' END TASK_POS_DESC,T.TASK_POS,OL.ORDER_LINE_GUID,
+      T.USE_QTY,LOC.LOC_PLC_NO,OL.LINE_TASK_DESC
+      FROM WBS_TASK T 
+       LEFT JOIN WBS_TASK_CMD CMD ON T.TASK_GUID = CMD.TASK_GUID
+       JOIN  WBS_ORDER_LINE OL ON T.ORDER_LINE_GUID = OL.ORDER_LINE_GUID
+       JOIN PSB_LOC LOC ON T.ELOC_NO = LOC.LOC_NO) M
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[M.ORDER_NO = #where.ORDER_NO# ]]>
+        </isNotNull>
+        <isNotNull property="where.ORDER_LINE_GUID" prepend="AND">
+          <![CDATA[M.ORDER_LINE_GUID = #where.ORDER_LINE_GUID# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+
+    <select id="GetBillOrderWaittingListDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT OL.SORT_ID,WL.PRODUCT_GUID,WL.PALLET_NO,WL.TASK_NO,SSCAN.ERR_DESC,
+      CASE WL.SOURCE_TYPE WHEN 1 THEN '机械手' WHEN 2 THEN '备货龙门' ELSE '' END SOURCE_TYPE,
+      WL.CREATE_DATE
+      FROM WBS_ORDER_LINE OL 
+      JOIN WBS_SENDING_WAITING_LIST WL ON OL.ORDER_LINE_GUID = WL.ORDER_LINE_GUID
+      Left JOIN TPROC_6600_SENDING_SCAN SSCAN ON WL.PRODUCT_GUID = SSCAN.PRODUCT_GUID
+      WHERE WL.SEND_FLAG = 0 
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[OL.ORDER_NO = #where.ORDER_NO# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+
+    <select id="GetBillOrderErrorListDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT OL.SORT_ID, WE.PRODUCT_GUID,WE.PALLET_NO,WE.ERR_NAME,WE.TASK_NO,
+      CASE WE.SOURCE_TYPE WHEN 1 THEN '机械手' WHEN 2 THEN '备货龙门' ELSE '' END SOURCE_TYPE,
+      WE.SCAN_DATE 
+      FROM WBS_ORDER_LINE OL JOIN WBS_SENDING_LIST_ERR WE ON OL.ORDER_LINE_GUID = WE.ORDER_LINE_GUID
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[OL.ORDER_NO = #where.ORDER_NO# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+
+    <select id="GetBillDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        select TA.*
+        from (SELECT CASE t1.ELOC_NO
+           WHEN '00000000' THEN
+            '立库'
+           ELSE
+            t3.loc_name
+         END AS ELOC_NAME,
+         T1.MATERIAL_NO,t1.product_grade,
+          T4.ORDER_TYPE_MODULE AS ORDER_TYPE_MODULE1,
+         CASE T4.ORDER_TYPE_MODULE
+           WHEN 'I' THEN
+            '入库'
+           WHEN 'O' THEN
+            '出库'
+           WHEN 'M' THEN
+            '移库'
+           WHEN 'T' THEN
+            '移载'
+         END AS ORDER_TYPE_MODULE,
+         T1.ORDER_NO,
+         T1.LIMIT_BIN_NO,
+         T1.ELOC_NO,
+         T1.LIMIT_PALLET_ID,
+         T1.LIMIT_PRODUCT_GUID,
+         T1.CREATION_DATE,
+         T1.DELETE_FLAG,
+         T1.ORDER_LINE_GUID,
+         T1.LINE_ID,
+         T1.SORT_ID,
+         T1.REQUIRE_QTY,
+         T1.ACT_QTY,
+         T1.SHIP_QTY,
+         T1.LINE_TASK_FLAG,
+         T1.BIN_ERR_DESC,
+         CASE T1.LOCK_END_LOC
+           WHEN 0 THEN
+            '未锁定'
+           ELSE
+            '锁定'
+         END AS LOCK_END_LOC,
+         T1.Line_Task_Desc,
+         T1.Line_Status as LINE_NO,
+         CASE T1.LINE_STATUS
+           WHEN 0 THEN
+            '等待'
+           WHEN 1 THEN
+            '下达'
+           WHEN 2 THEN
+            '执行'
+           WHEN 3 THEN
+            '完成'
+           ELSE
+            '取消'
+         END AS LINE_STATUS,
+         T1.LINE_STATUS STATUS
+          FROM WBS_ORDER_LINE T1
+          LEFT JOIN Psb_Material T2
+            ON T1.MATERIAL_NO = T2.MATER_NO
+          LEFT JOIN PSB_LOC T3
+            ON T1.ELOC_NO = T3.LOC_NO
+          LEFT JOIN WBS_ORDER T4
+            ON T4.ORDER_NO = T1.ORDER_NO WHERE T1.DELETE_FLAG='N') TA
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.LOC_NAME" prepend="AND">
+          <![CDATA[TA.ELOC_NAME like '%'||#where.LOC_NAME#||'%' ]]>
+        </isNotNull>
+        <isNotNull property="where.MATERIAL_NO" prepend="AND">
+          <![CDATA[TA.MATERIAL_NO like '%'||#where.MATERIAL_NO#||'%' ]]>
+        </isNotNull>
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[TA.ORDER_NO = #where.ORDER_NO#  ]]>
+        </isNotNull>
+        <isNotNull property="where.LINE_STATUS" prepend="AND">
+          <isGreaterEqual property="where.LINE_STATUS" compareValue="4">
+            <![CDATA[TA.STATUS > 3 ]]>
+          </isGreaterEqual>
+          <isLessThan property="where.LINE_STATUS" compareValue="4">
+            <isEqual property="where.LINE_STATUS" compareValue="3">
+              <![CDATA[TA.STATUS = 3 ]]>
+            </isEqual>
+            <isEqual property="where.LINE_STATUS" compareValue="2">
+              <![CDATA[TA.STATUS = 2 ]]>
+            </isEqual>
+            <isEqual property="where.LINE_STATUS" compareValue="1">
+              <![CDATA[TA.STATUS = 1 ]]>
+            </isEqual>
+            <isEqual property="where.LINE_STATUS" compareValue="0">
+              <![CDATA[TA.STATUS = 0 ]]>
+            </isEqual>
+            <isEqual property="where.LINE_STATUS" compareValue="-1">
+              <![CDATA[TA.STATUS >= 0 ]]>
+            </isEqual>
+          </isLessThan>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$ DESC
+      </isNotNull>
+    </select>
+
+    <select id="GetTaskDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      select TA.*
+        from (SELECT T.TASK_GUID,T.TASK_NO,T.EMERGENCY,T.SLOC_NO,T.TRANSFER_NO,
+                CASE WHEN T.IO_TYPE = 'I' THEN '入库' WHEN T.IO_TYPE = 'O' THEN '出库' 
+                ELSE '移库' END IO_TYPE,
+                T.ELOC_NO,T.PALLET_NO,T.PACKAGE_GUID,T.ORDER_LINE_GUID,
+                T.SORT_ID,T.CREATION_DATE, T.TASK_EXEC_START_DT,T.TASK_EXEC_END_DT,
+                CASE WHEN T.TASK_STEP = '0000' THEN '等待' ELSE '执行' END TASK_STEP, 
+                T.ROUTE_NOS,T.UNEXE_ROUTE_NO,T.FINISH_DESC,T1.MATER_NO as MATERIAL_NO,T1.PRODUCT_QTY USE_QTY
+          FROM WBS_TASK T
+          LEFT JOIN WBS_PACKAGE_DATA T1
+            ON T1.PACKAGE_GUID = T.PACKAGE_GUID
+        UNION ALL
+        SELECT T.TASK_GUID,T.TASK_NO,T.EMERGENCY,T.SLOC_NO,T.TRANSFER_NO,
+                CASE WHEN T.IO_TYPE = 'I' THEN '入库' WHEN T.IO_TYPE = 'O' THEN '出库' 
+                ELSE '移库' END IO_TYPE,
+                T.ELOC_NO,T.PALLET_NO,T.PACKAGE_GUID,T.ORDER_LINE_GUID,
+                T.SORT_ID,T.CREATION_DATE, T.TASK_EXEC_START_DT,T.TASK_EXEC_END_DT,
+                '完成' TASK_STEP, T.ROUTE_NOS,T.UNEXE_ROUTE_NO,T.FINISH_DESC,
+                NVL(T1.MATER_NO,T2.MATER_NO) MATERIAL_NO,
+                NVL(T1.PRODUCT_QTY,T2.PRODUCT_QTY) USE_QTY
+          FROM Z50_WBS_TASK T
+          LEFT JOIN WBS_PACKAGE_DATA T1
+            ON T1.PACKAGE_GUID = T.PACKAGE_GUID
+          LEFT JOIN Z50_WBS_PACKAGE_DATA T2
+            ON T2.PACKAGE_GUID = T.PACKAGE_GUID ) TA
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ORDER_LINE_GUID" prepend="AND">
+          <![CDATA[TA.ORDER_LINE_GUID =#where.ORDER_LINE_GUID# ]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY TA.CREATION_DATE
+    </select>
+
+    <select id="GetCmdDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       select ta.* from 
+          (SELECT T.OBJID,T.TASK_GUID,T.TASK_NO,T.SLOC_PLC_NO,T.ELOC_PLC_NO,
+           CASE WHEN T.CMD_TYPE = 'I' THEN '入库' WHEN T.CMD_TYPE = 'O' THEN '出库'
+           WHEN T.CMD_TYPE = 'M' THEN '移库' END CMD_TYPE,
+           T.PALLET_NO,T.ROUTE_NO,T.TRANSFER_NO,
+           CASE WHEN T.TRANSFER_TYPE = '10' THEN '堆垛机' WHEN T.TRANSFER_TYPE = '20' THEN '输送线' 
+           WHEN T.TRANSFER_NO = '30' THEN 'AGV' END TRANSFER_TYPE,
+           CASE WHEN T.CMD_STEP = '00' THEN '等待' ELSE '下传' END CMD_STEP,
+           T.CREATION_DATE,T.EXCUTE_DATE,T.FINISH_DATE, T.ORDER_LINE_GUID
+      FROM WBS_TASK_CMD T
+      UNION ALL
+      SELECT T.OBJID,T.TASK_GUID,T.TASK_NO,T.SLOC_PLC_NO,T.ELOC_PLC_NO,
+           CASE WHEN T.CMD_TYPE = 'I' THEN '入库' WHEN T.CMD_TYPE = 'O' THEN '出库'
+           WHEN T.CMD_TYPE = 'M' THEN '移库' END CMD_TYPE,
+           T.PALLET_NO,T.ROUTE_NO,T.TRANSFER_NO,
+           CASE WHEN T.TRANSFER_TYPE = '10' THEN '堆垛机' WHEN T.TRANSFER_TYPE = '20' THEN '输送线' 
+           WHEN T.TRANSFER_NO = '30' THEN 'AGV' END TRANSFER_TYPE,
+           '完成' CMD_STEP,
+           T.CREATION_DATE,T.EXCUTE_DATE,T.FINISH_DATE, T.ORDER_LINE_GUID
+      FROM Z50_WBS_TASK_CMD T) ta
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ORDER_LINE_GUID" prepend="AND">
+          <![CDATA[TA.ORDER_LINE_GUID =#where.ORDER_LINE_GUID# ]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY TA.CREATION_DATE
+    </select>
+  </statements>
+</sqlMap>
+

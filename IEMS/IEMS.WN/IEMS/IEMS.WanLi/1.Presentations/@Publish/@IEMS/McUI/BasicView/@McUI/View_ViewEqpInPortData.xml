@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GPORTNO" Value="GPORTNO" ></Caption>
+    <Caption Name="PALLETCOUNT" Value="PALLETCOUNT" ></Caption>
+    <Caption Name="CURRENTKEY1" Value="CURRENTKEY1" ></Caption>
+    <Caption Name="CURRENTKEY2" Value="CURRENTKEY2" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_EQP_IN_PORT_DATA">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GPORTNO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GPORTNO" ></GridColumn>
+        <GridColumn ColumnName="PALLETCOUNT" ></GridColumn>
+        <GridColumn ColumnName="CURRENTKEY1" ></GridColumn>
+        <GridColumn ColumnName="CURRENTKEY2" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GPORTNO" ></ParamField>
+        <ParamField FieldName="PALLETCOUNT" ></ParamField>
+        <ParamField FieldName="CURRENTKEY1" ></ParamField>
+        <ParamField FieldName="CURRENTKEY2" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@SearchPallet1Data" parameterClass="map" resultClass="row">
+      <![CDATA[        
+        SELECT T.PALLET_NO,T.PALLET_NAME,
+        CASE WHEN T1.MATERIAL_NO IS NOT NULL THEN T1.MATERIAL_NO
+        WHEN T1.MATERIAL_NO IS NULL AND T.LOAD_STATUS = 0 THEN '空工装'
+        ELSE '绑定异常' END MATERIAL_NO
+        FROM PSB_PALLET T 
+        LEFT JOIN PSB_PRODUCT T1 ON T1.PRODUCT_GUID = T.PRODUCT_GUID
+        WHERE T.USED_FLAG = 1
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          <![CDATA[t.PALLET_NO  like '%'|| #where.PALLET_NO# ||'%']]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY T.PALLET_NO
+    </select>
+  </statements>
+</sqlMap>

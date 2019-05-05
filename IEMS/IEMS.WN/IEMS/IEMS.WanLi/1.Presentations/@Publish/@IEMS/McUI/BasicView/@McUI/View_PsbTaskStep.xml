@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="STEP_NO" Value="步骤编码" ></Caption>
+    <Caption Name="STEP_NAME" Value="步骤名称" ></Caption>
+  </Captions>
+  <WebPage Title="任务步骤设置">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="STEP_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="STEP_NO" ></GridColumn>
+        <GridColumn ColumnName="STEP_NAME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="STEP_NO" ></ParamField>
+        <ParamField FieldName="STEP_NAME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

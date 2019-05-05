@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="BLOCK_NO" Value="编号" ></Caption>
+    <Caption Name="PLC_BLOCK_NO" Value="PLC块编号" ></Caption>
+    <Caption Name="PLC_NO" Value="PLC编号" ></Caption>
+    <Caption Name="BLOCK_START" Value="起始位置" ></Caption>
+    <Caption Name="BLOCK_LEN" Value="长度" ></Caption>
+    <Caption Name="BLOCK_DESC" Value="描述" ></Caption>
+    <Caption Name="READ_ENABLE" Value="0:不可读   1:可读 " ></Caption>
+    <Caption Name="WRITE_ENABLE" Value="0:不可写   1:可写" ></Caption>
+    <Caption Name="APP_NAME" Value="程序名称" ></Caption>
+    <Caption Name="BLOCK_ENABLE" Value="0：禁用  1：可用" ></Caption>
+  </Captions>
+  <WebPage Title="PLC块信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BLOCK_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="BLOCK_NO" ></GridColumn>
+        <GridColumn ColumnName="PLC_BLOCK_NO" ></GridColumn>
+        <GridColumn ColumnName="PLC_NO" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_START" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_LEN" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_DESC" ></GridColumn>
+        <GridColumn ColumnName="READ_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="WRITE_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="APP_NAME" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_ENABLE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="BLOCK_NO" ></ParamField>
+        <ParamField FieldName="PLC_BLOCK_NO" ></ParamField>
+        <ParamField FieldName="PLC_NO" ></ParamField>
+        <ParamField FieldName="BLOCK_START" ></ParamField>
+        <ParamField FieldName="BLOCK_LEN" ></ParamField>
+        <ParamField FieldName="BLOCK_DESC" ></ParamField>
+        <ParamField FieldName="READ_ENABLE" ></ParamField>
+        <ParamField FieldName="WRITE_ENABLE" ></ParamField>
+        <ParamField FieldName="APP_NAME" ></ParamField>
+        <ParamField FieldName="BLOCK_ENABLE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

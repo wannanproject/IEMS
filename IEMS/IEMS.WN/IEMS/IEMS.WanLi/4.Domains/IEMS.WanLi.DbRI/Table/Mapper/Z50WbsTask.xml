@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.Z50WbsTaskService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="Z50WbsTask" type="IEMS.WanLi.Entity.Z50WbsTask, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_Z50WbsTask" class="Z50WbsTask">
+    <result property="ObjId" column="OBJID"/>
+    <result property="TaskGuid" column="TASK_GUID"/>
+    <result property="TaskNo" column="TASK_NO"/>
+    <result property="Emergency" column="EMERGENCY"/>
+    <result property="IoType" column="IO_TYPE"/>
+    <result property="TransferNo" column="TRANSFER_NO"/>
+    <result property="SlocNo" column="SLOC_NO"/>
+    <result property="ElocNo" column="ELOC_NO"/>
+    <result property="PalletNo" column="PALLET_NO"/>
+    <result property="MaterialNo" column="MATERIAL_NO"/>
+    <result property="OrderLineGuid" column="ORDER_LINE_GUID"/>
+    <result property="SortId" column="SORT_ID"/>
+    <result property="CreationDate" column="CREATION_DATE"/>
+    <result property="TaskExecStartDt" column="TASK_EXEC_START_DT"/>
+    <result property="TaskExecEndDt" column="TASK_EXEC_END_DT"/>
+    <result property="LastUpdateDate" column="LAST_UPDATE_DATE"/>
+    <result property="FinishFlag" column="FINISH_FLAG"/>
+    <result property="ErrNo" column="ERR_NO"/>
+    <result property="BinNo" column="BIN_NO"/>
+    <result property="UseQty" column="USE_QTY"/>
+    <result property="PalletType" column="PALLET_TYPE"/>
+    <result property="TaskStep" column="TASK_STEP"/>
+    <result property="FinishDesc" column="FINISH_DESC"/>
+    <result property="Fdesc" column="FDESC"/>
+    <result property="PareaNo" column="PAREA_NO"/>
+    <result property="BTransFlag" column="B_TRANS_FLAG"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_Z50WbsTask" class="Z50WbsTask">
+    <parameter property="ObjId" column="ObjId"/>
+    <parameter property="TaskGuid" column="TaskGuid"/>
+    <parameter property="TaskNo" column="TaskNo"/>
+    <parameter property="Emergency" column="Emergency"/>
+    <parameter property="IoType" column="IoType"/>
+    <parameter property="TransferNo" column="TransferNo"/>
+    <parameter property="SlocNo" column="SlocNo"/>
+    <parameter property="ElocNo" column="ElocNo"/>
+    <parameter property="PalletNo" column="PalletNo"/>
+    <parameter property="MaterialNo" column="MaterialNo"/>
+    <parameter property="OrderLineGuid" column="OrderLineGuid"/>
+    <parameter property="SortId" column="SortId"/>
+    <parameter property="CreationDate" column="CreationDate"/>
+    <parameter property="TaskExecStartDt" column="TaskExecStartDt"/>
+    <parameter property="TaskExecEndDt" column="TaskExecEndDt"/>
+    <parameter property="LastUpdateDate" column="LastUpdateDate"/>
+    <parameter property="FinishFlag" column="FinishFlag"/>
+    <parameter property="ErrNo" column="ErrNo"/>
+    <parameter property="BinNo" column="BinNo"/>
+    <parameter property="UseQty" column="UseQty"/>
+    <parameter property="PalletType" column="PalletType"/>
+    <parameter property="TaskStep" column="TaskStep"/>
+    <parameter property="FinishDesc" column="FinishDesc"/>
+    <parameter property="Fdesc" column="Fdesc"/>
+    <parameter property="PareaNo" column="PareaNo"/>
+    <parameter property="BTransFlag" column="BTransFlag"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM Z50_WBS_TASK ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.ObjId" prepend="AND">
+            <![CDATA[OBJID = #where.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="where.TaskGuid" prepend="AND">
+          <isEqual property="where.TaskGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TASK_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.TaskGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_GUID = #where.TaskGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskNo" prepend="AND">
+            <![CDATA[TASK_NO = #where.TaskNo#]]>
+        </isNotNull>
+        <isNotNull property="where.Emergency" prepend="AND">
+          <isEqual property="where.Emergency" compareValue="-1147483648">
+            <![CDATA[EMERGENCY IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Emergency" compareValue="-1147483647">
+            <![CDATA[EMERGENCY IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Emergency" compareValue="-1147483648">
+          <isNotEqual property="where.Emergency" compareValue="-1147483647">
+            <![CDATA[EMERGENCY = #where.Emergency#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.IoType" prepend="AND">
+          <isEqual property="where.IoType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[IO_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.IoType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[IO_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.IoType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.IoType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[IO_TYPE = #where.IoType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TransferNo" prepend="AND">
+          <isEqual property="where.TransferNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TRANSFER_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TransferNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TRANSFER_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TransferNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.TransferNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TRANSFER_NO = #where.TransferNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SlocNo" prepend="AND">
+          <isEqual property="where.SlocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SlocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SlocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.SlocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[SLOC_NO = #where.SlocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ElocNo" prepend="AND">
+          <isEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO = #where.ElocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletNo" prepend="AND">
+          <isEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_NO = #where.PalletNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterialNo" prepend="AND">
+          <isEqual property="where.MaterialNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATERIAL_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterialNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATERIAL_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterialNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterialNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATERIAL_NO = #where.MaterialNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderLineGuid" prepend="AND">
+          <isEqual property="where.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderLineGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OrderLineGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID = #where.OrderLineGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SortId" prepend="AND">
+          <isEqual property="where.SortId" compareValue="-1147483648">
+            <![CDATA[SORT_ID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SortId" compareValue="-1147483647">
+            <![CDATA[SORT_ID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SortId" compareValue="-1147483648">
+          <isNotEqual property="where.SortId" compareValue="-1147483647">
+            <![CDATA[SORT_ID = #where.SortId#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CreationDate" prepend="AND">
+          <isEqual property="where.CreationDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_DATE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CreationDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_DATE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CreationDate" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.CreationDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_DATE = #where.CreationDate#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskExecStartDt" prepend="AND">
+          <isEqual property="where.TaskExecStartDt" compareValue="1234/12/23 0:00:00">
+            <![CDATA[TASK_EXEC_START_DT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskExecStartDt" compareValue="1234/12/24 0:00:00">
+            <![CDATA[TASK_EXEC_START_DT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskExecStartDt" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.TaskExecStartDt" compareValue="1234/12/24 0:00:00">
+            <![CDATA[TASK_EXEC_START_DT = #where.TaskExecStartDt#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskExecEndDt" prepend="AND">
+          <isEqual property="where.TaskExecEndDt" compareValue="1234/12/23 0:00:00">
+            <![CDATA[TASK_EXEC_END_DT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskExecEndDt" compareValue="1234/12/24 0:00:00">
+            <![CDATA[TASK_EXEC_END_DT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskExecEndDt" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.TaskExecEndDt" compareValue="1234/12/24 0:00:00">
+            <![CDATA[TASK_EXEC_END_DT = #where.TaskExecEndDt#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LastUpdateDate" prepend="AND">
+          <isEqual property="where.LastUpdateDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[LAST_UPDATE_DATE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LastUpdateDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[LAST_UPDATE_DATE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LastUpdateDate" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.LastUpdateDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[LAST_UPDATE_DATE = #where.LastUpdateDate#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.FinishFlag" prepend="AND">
+          <isEqual property="where.FinishFlag" compareValue="-1147483648">
+            <![CDATA[FINISH_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.FinishFlag" compareValue="-1147483647">
+            <![CDATA[FINISH_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.FinishFlag" compareValue="-1147483648">
+          <isNotEqual property="where.FinishFlag" compareValue="-1147483647">
+            <![CDATA[FINISH_FLAG = #where.FinishFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrNo" prepend="AND">
+          <isEqual property="where.ErrNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ErrNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_NO = #where.ErrNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinNo" prepend="AND">
+          <isEqual property="where.BinNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_NO = #where.BinNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.UseQty" prepend="AND">
+          <isEqual property="where.UseQty" compareValue="-1147483648">
+            <![CDATA[USE_QTY IS NULL]]>
+          </isEqual>
+          <isEqual property="where.UseQty" compareValue="-1147483647">
+            <![CDATA[USE_QTY IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.UseQty" compareValue="-1147483648">
+          <isNotEqual property="where.UseQty" compareValue="-1147483647">
+            <![CDATA[USE_QTY = #where.UseQty#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PalletType" prepend="AND">
+          <isEqual property="where.PalletType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PalletType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PalletType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PalletType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PALLET_TYPE = #where.PalletType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.TaskStep" prepend="AND">
+          <isEqual property="where.TaskStep" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TASK_STEP IS NULL]]>
+          </isEqual>
+          <isEqual property="where.TaskStep" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_STEP IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.TaskStep" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.TaskStep" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[TASK_STEP = #where.TaskStep#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.FinishDesc" prepend="AND">
+          <isEqual property="where.FinishDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FINISH_DESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.FinishDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FINISH_DESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.FinishDesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.FinishDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FINISH_DESC = #where.FinishDesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Fdesc" prepend="AND">
+          <isEqual property="where.Fdesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FDESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Fdesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FDESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Fdesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Fdesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FDESC = #where.Fdesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.PareaNo" prepend="AND">
+          <isEqual property="where.PareaNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PAREA_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.PareaNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PAREA_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.PareaNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.PareaNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PAREA_NO = #where.PareaNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BTransFlag" prepend="AND">
+          <isEqual property="where.BTransFlag" compareValue="-1147483648">
+            <![CDATA[B_TRANS_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BTransFlag" compareValue="-1147483647">
+            <![CDATA[B_TRANS_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BTransFlag" compareValue="-1147483648">
+          <isNotEqual property="where.BTransFlag" compareValue="-1147483647">
+            <![CDATA[B_TRANS_FLAG = #where.BTransFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO Z50_WBS_TASK]]>
+       <dynamic prepend="(">
+        <isNotNull property="TaskGuid" prepend=",">TASK_GUID</isNotNull>
+        <isNotNull property="ObjId" prepend=",">OBJID</isNotNull>
+        <isNotNull property="TaskNo" prepend=",">TASK_NO</isNotNull>
+        <isNotNull property="Emergency" prepend=",">EMERGENCY</isNotNull>
+        <isNotNull property="IoType" prepend=",">IO_TYPE</isNotNull>
+        <isNotNull property="TransferNo" prepend=",">TRANSFER_NO</isNotNull>
+        <isNotNull property="SlocNo" prepend=",">SLOC_NO</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">ELOC_NO</isNotNull>
+        <isNotNull property="PalletNo" prepend=",">PALLET_NO</isNotNull>
+        <isNotNull property="MaterialNo" prepend=",">MATERIAL_NO</isNotNull>
+        <isNotNull property="OrderLineGuid" prepend=",">ORDER_LINE_GUID</isNotNull>
+        <isNotNull property="SortId" prepend=",">SORT_ID</isNotNull>
+        <isNotNull property="CreationDate" prepend=",">CREATION_DATE</isNotNull>
+        <isNotNull property="TaskExecStartDt" prepend=",">TASK_EXEC_START_DT</isNotNull>
+        <isNotNull property="TaskExecEndDt" prepend=",">TASK_EXEC_END_DT</isNotNull>
+        <isNotNull property="LastUpdateDate" prepend=",">LAST_UPDATE_DATE</isNotNull>
+        <isNotNull property="FinishFlag" prepend=",">FINISH_FLAG</isNotNull>
+        <isNotNull property="ErrNo" prepend=",">ERR_NO</isNotNull>
+        <isNotNull property="BinNo" prepend=",">BIN_NO</isNotNull>
+        <isNotNull property="UseQty" prepend=",">USE_QTY</isNotNull>
+        <isNotNull property="PalletType" prepend=",">PALLET_TYPE</isNotNull>
+        <isNotNull property="TaskStep" prepend=",">TASK_STEP</isNotNull>
+        <isNotNull property="FinishDesc" prepend=",">FINISH_DESC</isNotNull>
+        <isNotNull property="Fdesc" prepend=",">FDESC</isNotNull>
+        <isNotNull property="PareaNo" prepend=",">PAREA_NO</isNotNull>
+        <isNotNull property="BTransFlag" prepend=",">B_TRANS_FLAG</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="TaskGuid" prepend=",">#TaskGuid#</isNotNull>
+        <isNotNull property="ObjId" prepend=",">#ObjId#</isNotNull>
+        <isNotNull property="TaskNo" prepend=",">#TaskNo#</isNotNull>
+        <isNotNull property="Emergency" prepend=",">#Emergency#</isNotNull>
+        <isNotNull property="IoType" prepend=",">#IoType#</isNotNull>
+        <isNotNull property="TransferNo" prepend=",">#TransferNo#</isNotNull>
+        <isNotNull property="SlocNo" prepend=",">#SlocNo#</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">#ElocNo#</isNotNull>
+        <isNotNull property="PalletNo" prepend=",">#PalletNo#</isNotNull>
+        <isNotNull property="MaterialNo" prepend=",">#MaterialNo#</isNotNull>
+        <isNotNull property="OrderLineGuid" prepend=",">#OrderLineGuid#</isNotNull>
+        <isNotNull property="SortId" prepend=",">#SortId#</isNotNull>
+        <isNotNull property="CreationDate" prepend=",">#CreationDate#</isNotNull>
+        <isNotNull property="TaskExecStartDt" prepend=",">#TaskExecStartDt#</isNotNull>
+        <isNotNull property="TaskExecEndDt" prepend=",">#TaskExecEndDt#</isNotNull>
+        <isNotNull property="LastUpdateDate" prepend=",">#LastUpdateDate#</isNotNull>
+        <isNotNull property="FinishFlag" prepend=",">#FinishFlag#</isNotNull>
+        <isNotNull property="ErrNo" prepend=",">#ErrNo#</isNotNull>
+        <isNotNull property="BinNo" prepend=",">#BinNo#</isNotNull>
+        <isNotNull property="UseQty" prepend=",">#UseQty#</isNotNull>
+        <isNotNull property="PalletType" prepend=",">#PalletType#</isNotNull>
+        <isNotNull property="TaskStep" prepend=",">#TaskStep#</isNotNull>
+        <isNotNull property="FinishDesc" prepend=",">#FinishDesc#</isNotNull>
+        <isNotNull property="Fdesc" prepend=",">#Fdesc#</isNotNull>
+        <isNotNull property="PareaNo" prepend=",">#PareaNo#</isNotNull>
+        <isNotNull property="BTransFlag" prepend=",">#BTransFlag#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE Z50_WBS_TASK]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.ObjId" prepend=",">
+          <![CDATA[OBJID = #update.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="update.TaskNo" prepend=",">
+          <![CDATA[TASK_NO = #update.TaskNo#]]>
+        </isNotNull>
+        <isNotNull property="update.Emergency" prepend=",">
+          <isEqual property="update.Emergency" compareValue="-1147483648">
+            <![CDATA[EMERGENCY = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Emergency" compareValue="-1147483648">
+          <![CDATA[EMERGENCY = #update.Emergency#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.IoType" prepend=",">
+          <isEqual property="update.IoType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[IO_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.IoType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[IO_TYPE = #update.IoType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TransferNo" prepend=",">
+          <isEqual property="update.TransferNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TRANSFER_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TransferNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[TRANSFER_NO = #update.TransferNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SlocNo" prepend=",">
+          <isEqual property="update.SlocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[SLOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SlocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[SLOC_NO = #update.SlocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ElocNo" prepend=",">
+          <isEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ELOC_NO = #update.ElocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletNo" prepend=",">
+          <isEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_NO = #update.PalletNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterialNo" prepend=",">
+          <isEqual property="update.MaterialNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATERIAL_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterialNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATERIAL_NO = #update.MaterialNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OrderLineGuid" prepend=",">
+          <isEqual property="update.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ORDER_LINE_GUID = #update.OrderLineGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SortId" prepend=",">
+          <isEqual property="update.SortId" compareValue="-1147483648">
+            <![CDATA[SORT_ID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SortId" compareValue="-1147483648">
+          <![CDATA[SORT_ID = #update.SortId#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CreationDate" prepend=",">
+          <isEqual property="update.CreationDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_DATE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CreationDate" compareValue="1234/12/23 0:00:00">
+          <![CDATA[CREATION_DATE = #update.CreationDate#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskExecStartDt" prepend=",">
+          <isEqual property="update.TaskExecStartDt" compareValue="1234/12/23 0:00:00">
+            <![CDATA[TASK_EXEC_START_DT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskExecStartDt" compareValue="1234/12/23 0:00:00">
+          <![CDATA[TASK_EXEC_START_DT = #update.TaskExecStartDt#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskExecEndDt" prepend=",">
+          <isEqual property="update.TaskExecEndDt" compareValue="1234/12/23 0:00:00">
+            <![CDATA[TASK_EXEC_END_DT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskExecEndDt" compareValue="1234/12/23 0:00:00">
+          <![CDATA[TASK_EXEC_END_DT = #update.TaskExecEndDt#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LastUpdateDate" prepend=",">
+          <isEqual property="update.LastUpdateDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[LAST_UPDATE_DATE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LastUpdateDate" compareValue="1234/12/23 0:00:00">
+          <![CDATA[LAST_UPDATE_DATE = #update.LastUpdateDate#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.FinishFlag" prepend=",">
+          <isEqual property="update.FinishFlag" compareValue="-1147483648">
+            <![CDATA[FINISH_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.FinishFlag" compareValue="-1147483648">
+          <![CDATA[FINISH_FLAG = #update.FinishFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrNo" prepend=",">
+          <isEqual property="update.ErrNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ERR_NO = #update.ErrNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinNo" prepend=",">
+          <isEqual property="update.BinNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_NO = #update.BinNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.UseQty" prepend=",">
+          <isEqual property="update.UseQty" compareValue="-1147483648">
+            <![CDATA[USE_QTY = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.UseQty" compareValue="-1147483648">
+          <![CDATA[USE_QTY = #update.UseQty#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PalletType" prepend=",">
+          <isEqual property="update.PalletType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PALLET_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PalletType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PALLET_TYPE = #update.PalletType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.TaskStep" prepend=",">
+          <isEqual property="update.TaskStep" compareValue="STRING_NULL_VALUE">
+            <![CDATA[TASK_STEP = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.TaskStep" compareValue="STRING_NULL_VALUE">
+          <![CDATA[TASK_STEP = #update.TaskStep#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.FinishDesc" prepend=",">
+          <isEqual property="update.FinishDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FINISH_DESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.FinishDesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[FINISH_DESC = #update.FinishDesc#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Fdesc" prepend=",">
+          <isEqual property="update.Fdesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FDESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Fdesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[FDESC = #update.Fdesc#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.PareaNo" prepend=",">
+          <isEqual property="update.PareaNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PAREA_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.PareaNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PAREA_NO = #update.PareaNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BTransFlag" prepend=",">
+          <isEqual property="update.BTransFlag" compareValue="-1147483648">
+            <![CDATA[B_TRANS_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BTransFlag" compareValue="-1147483648">
+          <![CDATA[B_TRANS_FLAG = #update.BTransFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM Z50_WBS_TASK]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_Z50WbsTask">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM Z50_WBS_TASK]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM Z50_WBS_TASK]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_Z50WbsTask" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

@@ -1,0 +1,17 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.AppBiz.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.AppBiz.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.DbCI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.DbRI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.Entity.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\MSTL.DbAccess.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\MSTL.LogAgent.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.DbMapper.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.Entity.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\bin\Debug\IEMS.Frame.VoDto.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\obj\Debug\IEMS.Frame.AppBiz.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\obj\Debug\IEMS.Frame.AppBiz.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\obj\Debug\IEMS.Frame.AppBiz.csproj.CopyComplete
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\obj\Debug\IEMS.Frame.AppBiz.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\3.Applications\IEMS.Frame.AppBiz\obj\Debug\IEMS.Frame.AppBiz.pdb

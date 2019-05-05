@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="IP_ADDRESS" Value="IP地址" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号" ></Caption>
+    <Caption Name="LOC_NO" Value="线边库编号" ></Caption>
+    <Caption Name="HEX_STRING" Value="16进制" ></Caption>
+    <Caption Name="IS_SUCCESS" Value="IS_SUCCESS" ></Caption>
+    <Caption Name="READ_DATE" Value="读取时间" ></Caption>
+  </Captions>
+  <WebPage Title="BK_RFID_READ">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="IP_ADDRESS"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="IP_ADDRESS" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="HEX_STRING" ></GridColumn>
+        <GridColumn ColumnName="IS_SUCCESS" ></GridColumn>
+        <GridColumn ColumnName="READ_DATE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="IP_ADDRESS" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="HEX_STRING" ></ParamField>
+        <ParamField FieldName="IS_SUCCESS" ></ParamField>
+        <ParamField FieldName="READ_DATE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

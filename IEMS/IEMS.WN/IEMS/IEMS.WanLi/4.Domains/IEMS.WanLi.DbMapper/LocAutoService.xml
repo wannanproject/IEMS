@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.LocService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <statements>
+    <select id="GetLocDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        SELECT T.LOC_NO,T.LOC_NAME,T.AUTO_PALLET_REQUEST,T.PALLET_TYPE,
+       CASE T.AUTO_PALLET_REQUEST WHEN 0 THEN '不允许' ELSE '允许' END
+          AS AUTO_PALLET_REQUEST1
+       FROM PSB_LOC T
+       WHERE T.PALLET_TYPE IS NOT NULL and T.LOC_TYPE_NO ='2001'
+       ORDER BY T.LOC_NO
+      ]]>
+    </select>
+
+    <select id="GetInputLocDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        SELECT T.LOC_NO,T.LOC_NAME,T.LOC_ENABLE,T.LOC_PLC_NO,
+       CASE T.LOC_ENABLE WHEN 1 THEN '可用' ELSE '不可用' END
+          AS LOC_ENABLE1
+       FROM PSB_LOC T
+       WHERE T.LOC_TYPE_NO ='7001'
+       ORDER BY T.LOC_NO
+      ]]>
+    </select>
+    <select id="GetPsbLocLock" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       select loc_no,
+       loc_plc_no,
+       loc_type_no,
+       loc_name,
+       loc_mes_no,
+       loc_priority,
+       loc_enable,
+       area_no,
+       transfer_no,
+       limit_cmd_qty,
+       case
+         when wms_mes_lock = 0 then
+          'WMS拉动'
+         when wms_mes_lock = 1 then
+          'MES拉动'
+       end as wms_mes_lock
+      from psb_loc
+      WHERE loc_type_no in ('3000', '6002', '5000', '7002', '2002')
+      ]]>
+    </select>
+    <select id="GetLocStatus" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       SELECT LOC.LOC_NO,LOC.LOC_PLC_NO,LOC.LOC_NAME,LOC.LOC_TYPE_NO,LT.LOC_TYPE_NAME,LOC.AREA_NO,AREA.PAREA_NO,
+        OM.REQUEST_FLAG TASK_REQUEST_FLAG,OM.REQUEST_DATE TASK_REQUEST_DATE,OM.PALLET_NO TASK_REQUEST_PALLET_NO,
+        OM.ERR_DESC  TASK_REQUEST_ERR_DESC,
+        CM.REQUEST_FLAG CMD_REQUEST_FLAG,CM.REQUEST_DATE CMD_REQUEST_REQUEST_DATE,CM.ERR_DESC CMD_REQUEST_ERR_DESC,
+        CM.TASK_NO CMD_REQUEST_TASK_NO,CM.PALLET_NO CMD_REQUEST_PALLET_NO,
+        LS.TASK_NO CURRENT_TASK_NO,LS.PALLET_NO CURRENT_PALLET_NO,LS.UPDATE_DATE CURRENT_UPDATE_DATE
+        FROM PSB_LOC LOC 
+        JOIN PSB_AREA AREA ON LOC.AREA_NO = AREA.AREA_NO
+        JOIN PSB_LOC_TYPE LT ON LOC.LOC_TYPE_NO = LT.LOC_TYPE_NO
+        JOIN Z30_LOC_0101_ORDER_MONITOR OM ON LOC.LOC_NO = OM.LOC_NO
+        JOIN Z30_LOC_0301_CMD_MONITOR CM ON LOC.LOC_NO = CM.LOC_NO
+        JOIN PEM_LOC_STATUS LS ON LOC.LOC_NO = LS.LOC_NO
+        WHERE LOC.LOC_ENABLE = 1
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.PAREA_NO" prepend="AND">
+          AREA.PAREA_NO LIKE '%'||#where.PAREA_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.LOC_TYPE_NO" prepend="AND">
+          LOC.LOC_TYPE_NO LIKE '%'||#where.LOC_TYPE_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.LOC_PLC_NO" prepend="AND">
+          LOC.LOC_PLC_NO LIKE '%'||#where.LOC_PLC_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      ORDER BY LOC.LOC_NO
+    </select>
+    <select id="GetTaskBySlocNo" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.TASK_NO,
+      CASE T.IO_TYPE
+        WHEN 'I' THEN '入库'
+        WHEN 'O' THEN '出库'
+        WHEN 'T' THEN '移位'
+        WHEN 'S' THEN '移库' ELSE '未知' END IO_TYPE,
+      WC.SLOC_NO,WC.SLOC_PLC_NO,WC.ELOC_NO,WC.ELOC_PLC_NO,
+      T.PALLET_NO,T.MATERIAL_NO,
+      CASE  T.TASK_STEP
+        WHEN '0000' THEN '等待'
+        WHEN '1000' THEN '堆垛机-等待'
+        WHEN '1002' THEN '堆垛机-执行'
+        WHEN '1004' THEN '堆垛机-完成'
+        WHEN '2000' THEN '输送线-等待'
+        WHEN '2002' THEN '输送线-执行'
+        WHEN '2004' THEN '输送线-完成' ELSE '未知' END TASK_STEP,
+      T.CREATION_DATE,T.TASK_EXEC_START_DT START_DATE,WC.FINISH_DATE 
+      FROM WBS_TASK T JOIN WBS_TASK_CMD WC ON T.TASK_GUID =  WC.TASK_GUID
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.LOC_NO" prepend="AND">
+          WC.SLOC_NO LIKE '%'||#where.LOC_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      ORDER BY T.CREATION_DATE
+    </select>
+    <select id="GetTaskByElocNo" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.TASK_NO,
+      CASE T.IO_TYPE
+        WHEN 'I' THEN '入库'
+        WHEN 'O' THEN '出库'
+        WHEN 'T' THEN '移位'
+        WHEN 'S' THEN '移库' ELSE '未知' END IO_TYPE,
+      WC.SLOC_NO,WC.SLOC_PLC_NO,WC.ELOC_NO,WC.ELOC_PLC_NO,
+      T.PALLET_NO,T.MATERIAL_NO,
+      CASE  T.TASK_STEP
+        WHEN '0000' THEN '等待'
+        WHEN '1000' THEN '堆垛机-等待'
+        WHEN '1002' THEN '堆垛机-执行'
+        WHEN '1004' THEN '堆垛机-完成'
+        WHEN '2000' THEN '输送线-等待'
+        WHEN '2002' THEN '输送线-执行'
+        WHEN '2004' THEN '输送线-完成' ELSE '未知' END TASK_STEP,
+      T.CREATION_DATE,T.TASK_EXEC_START_DT START_DATE,WC.FINISH_DATE 
+      FROM WBS_TASK T JOIN WBS_TASK_CMD WC ON T.TASK_GUID =  WC.TASK_GUID
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.LOC_NO" prepend="AND">
+          WC.ELOC_NO LIKE '%'||#where.LOC_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      ORDER BY T.CREATION_DATE
+    </select>
+
+    <select id="GetLocTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        SELECT T.LOC_NO,T.LOC_PLC_NO,T.LOC_NAME,T.LOC_ENABLE FROM PSB_LOC T 
+      ]]>
+    </select>
+    
+  </statements>
+</sqlMap>

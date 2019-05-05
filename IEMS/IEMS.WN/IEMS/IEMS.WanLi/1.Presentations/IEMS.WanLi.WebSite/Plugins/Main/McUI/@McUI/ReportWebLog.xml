@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="日志编号"></Caption>
+    <Caption Name="USER_NAME" Value="用户名称"></Caption>
+    <Caption Name="REAL_NAME" Value="真实姓名"></Caption>
+    <Caption Name="USER_IP" Value="用户IP"></Caption>
+    <Caption Name="PAGE_ID" Value="操作页面"></Caption>
+    <Caption Name="METHOD_ID" Value="操作功能"></Caption>
+    <Caption Name="METHOD_RESULT" Value="操作内容"></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间"></Caption>
+    <Caption Name="REMARK" Value="备注内容"></Caption>
+    <Caption Name="START_TIME" Value="开始时间"></Caption>
+    <Caption Name="END_TIME" Value="结束时间"></Caption>
+  </Captions>
+  <WebPage Title="系统管理日志">
+  </WebPage>
+  <Crud TableName="SSL_WEB_LOG">
+    <PrimaryKey FieldName="OBJID" Identity="true"></PrimaryKey>
+  </Crud>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="USER_NAME"></ParamField>
+        <ParamField FieldName="START_TIME"  Type="DateTimeBox"  DefaultValue="-1"></ParamField>
+        <ParamField FieldName="END_TIME"  Type="DateTimeBox"  DefaultValue="1"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="T1.OBJID">
+      <GridColumns>
+        <GridColumn ColumnName="USER_NAME" Width="60"></GridColumn>
+        <GridColumn ColumnName="REAL_NAME" Width="60"></GridColumn>
+        <GridColumn ColumnName="USER_IP" Width="100"></GridColumn>
+        <GridColumn ColumnName="PAGE_ID" Width="250"></GridColumn>
+        <GridColumn ColumnName="METHOD_ID" Width="150"></GridColumn>
+        <GridColumn ColumnName="METHOD_RESULT"></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ColumnType="Date" Width="150"></GridColumn>
+        <GridColumn ColumnName="REMARK" Width="150"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

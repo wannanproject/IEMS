@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PczBizModule" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PCZ_BIZ_MODULE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.GUID" prepend="AND">
+           T1.GUID LIKE '%'||#where.GUID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY GUID
+     </select>
+     <select id="Select@View_PczBizModule@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PCZ_BIZ_MODULE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.GUID" prepend = "AND">
+           T1.GUID = #where.GUID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

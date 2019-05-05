@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbCI.PageMenuService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <alias>
+    <typeAlias alias="SspPageMenu" type="IEMS.Main.Entity.SspPageMenu, IEMS.Main.Entity" />
+  </alias>
+
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_SspPageMenu" class="SspPageMenu">
+    <result property="ObjId" column="OBJID"/>
+    <result property="MenuLevel" column="MENU_LEVEL"/>
+    <result property="ShowName" column="SHOW_NAME"/>
+    <result property="Remark" column="REMARK"/>
+    <result property="PageUrl" column="PAGE_URL"/>
+    <result property="IcoName" column="ICO_NAME"/>
+    <result property="IsShow" column="IS_SHOW"/>
+    <result property="RecordUserId" column="RECORD_USER_ID"/>
+    <result property="RecordTime" column="RECORD_TIME"/>
+    <result property="SeqIndex" column="SEQ_INDEX"/>
+    <result property="DeleteFlag" column="DELETE_FLAG"/>
+    <result property="BakupFlag" column="BAKUP_FLAG"/>
+    <result property="BakupTime" column="BAKUP_TIME"/>
+    <result property="HttpUrl" column="HTTP_URL"/>
+  </resultMap>
+  
+   <statements>
+     <!--调用用户菜单存储过程-->
+     <procedure id="GetUserMenuPageList" parameterClass="map" resultMap="R_SspPageMenu">
+       PROC_PAGE_MENU_USER
+       @{UserID,column=UserID}
+       @{MenuLevel,column=MenuLevel}
+       @{curTable,column=curTable,direction=Output,dbType=RefCursor}
+     </procedure>
+
+
+     <select id="GetMenuLevel99ChildMenu" parameterClass="map" resultClass="Row">
+       <![CDATA[  
+         select   t1.* from ssp_page_menu t1
+            where substr(t1.menu_level,1,2)='99' and nvl(length(t1.menu_level),0)>2
+            order by t1.menu_level
+       ]]>
+     </select>
+
+     <select id="GetMenuLevel99ChildMenuAction" parameterClass="int" resultClass="Row">
+       <![CDATA[ 
+        select  ta.*,t1.menu_level from ssp_page_action ta
+          inner join ssp_page_menu t1 on t1.objid=ta.page_menu_id and substr(t1.menu_level,1,2)='99' and nvl(length(t1.menu_level),0)>2
+          inner join v_ssp_user_all_action t2 on ta.objid=t2.ACTION_ID
+          WHERE t2.USER_ID = #UserId#
+      ]]>
+     </select>
+
+
+     <!--获取所有菜单列表的方法-->
+     <select id="GetAllPageMenuList" parameterClass="int" resultClass="row">
+       <![CDATA[
+          SELECT T1.OBJID ,T1.MENU_LEVEL  ,T1.SHOW_NAME ,T1.REMARK  ,T1.PAGE_URL  
+                ,T1.ICO_NAME  ,T3.YES_NO_NAME AS IS_SHOW ,T2.USER_NAME AS RECORD_USER_ID  
+                ,T1.RECORD_TIME ,T1.SEQ_INDEX ,T1.DELETE_FLAG   FROM SSP_PAGE_MENU T1 
+            LEFT JOIN SSB_USER       T2 ON T1.RECORD_USER_ID = T2.OBJID
+            LEFT JOIN SSB_YES_NO     T3 ON T1.IS_SHOW = T3.OBJID
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend="AND">
+           <![CDATA[T1.OBJID = #where.OBJID#]]>
+         </isNotNull>
+         <isNotNull property="where.SHOW_NAME" prepend="AND">
+           T1.SHOW_NAME  like '%'||#where.SHOW_NAME#||'%'
+         </isNotNull>
+         <isNotNull property="where.MENU_LEVEL" prepend="AND">
+           T1.MENU_LEVEL  like #where.MENU_LEVEL#||'%'
+         </isNotNull>
+         <isNotNull property="where.MENU_LEVEL" prepend="AND">
+           LENGTH(T1.MENU_LEVEL) = LENGTH(#where.MENU_LEVEL#) + 2
+         </isNotNull>
+         <isNotNull property="where.DELETE_FLAG" prepend="AND">
+           <![CDATA[T1.DELETE_FLAG = #where.DELETE_FLAG#]]>
+         </isNotNull>
+         <isNotNull property="where.REMARK" prepend="AND">
+           <![CDATA[T1.REMARK = #where.REMARK#]]>
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="OrderString" prepend="">
+         ORDER BY $OrderString$
+       </isNotNull>
+     </select>
+
+     <!---->
+     <select id="GetMainPageMenuList" parameterClass="map" resultMap="R_SspPageMenu">
+       SELECT * FROM SSP_PAGE_MENU WHERE DELETE_FLAG = 0 AND IS_SHOW = 1
+       <dynamic prepend="">
+         <isNotEmpty  property="MenuLevelLike" prepend="AND">
+           MENU_LEVEL LIKE   #MenuLevelLike#||'%'
+         </isNotEmpty>
+         <isNotNull property="MenuLevelLength" prepend="AND">
+              LENGTH(MENU_LEVEL) =  #MenuLevelLength#
+         </isNotNull>
+       </dynamic>
+              ORDER BY SEQ_INDEX
+     </select>
+  </statements>
+</sqlMap>

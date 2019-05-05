@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PARAM_NO" Value="参数编码" ></Caption>
+    <Caption Name="PARAM_DESC" Value="参数描述" ></Caption>
+    <Caption Name="PARAM_TYPE" Value="参数类型" ></Caption>
+    <Caption Name="PARAM_VALUE" Value="参数值" ></Caption>
+  </Captions>
+  <WebPage Title="系统参数">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PARAM_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PARAM_NO" ></GridColumn>
+        <GridColumn ColumnName="PARAM_DESC" ></GridColumn>
+        <GridColumn ColumnName="PARAM_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PARAM_VALUE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PARAM_NO" ></ParamField>
+        <ParamField FieldName="PARAM_DESC" ></ParamField>
+        <ParamField FieldName="PARAM_TYPE" ></ParamField>
+        <ParamField FieldName="PARAM_VALUE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

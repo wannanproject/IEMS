@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PsbPlcBlock" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PSB_PLC_BLOCK T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.BLOCK_NO" prepend="AND">
+           T1.BLOCK_NO LIKE '%'||#where.BLOCK_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY BLOCK_NO
+     </select>
+     <select id="Select@View_PsbPlcBlock@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_PLC_BLOCK T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.BLOCK_NO" prepend = "AND">
+           T1.BLOCK_NO = #where.BLOCK_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

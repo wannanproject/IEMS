@@ -1,0 +1,6 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\bin\Debug\IEMS.Frame.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\bin\Debug\IEMS.Frame.DbMapper.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\obj\Debug\IEMS.Frame.DbMapper.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\obj\Debug\IEMS.Frame.DbMapper.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\obj\Debug\IEMS.Frame.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.DbMapper\obj\Debug\IEMS.Frame.DbMapper.pdb

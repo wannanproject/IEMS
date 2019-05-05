@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="站台号码" ></Caption>
+    <Caption Name="LOC_TYPE_NO" Value="站台类型" ></Caption>
+    <Caption Name="LOC_MES_NO" Value="MES编码" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装编码" ></Caption>
+    <Caption Name="REQUEST_FLAG" Value="请求标志 1：有请求  0：无请求" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="物料GUID" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="物料编码" ></Caption>
+    <Caption Name="LOADED_STATUS" Value="1:有载  0：空载" ></Caption>
+    <Caption Name="REQUEST_DATE" Value="请求日期" ></Caption>
+    <Caption Name="ORDER_NO" Value="订单号码" ></Caption>
+    <Caption Name="RETRY_COUNT" Value="重试次数" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+    <Caption Name="ERR_CODE" Value="错误编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误描述" ></Caption>
+    <Caption Name="BIZ_COUNT" Value="发生业务累计数量" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="生成的包号" ></Caption>
+    <Caption Name="ORDER_REQUEST_OBJID" Value="ORDER_REQUEST_OBJID" ></Caption>
+  </Captions>
+  <WebPage Title="订单监控">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_NO" ></GridColumn>
+        <GridColumn ColumnName="LOADED_STATUS" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_DATE" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="RETRY_COUNT" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="BIZ_COUNT" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="ORDER_REQUEST_OBJID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" ></ParamField>
+        <ParamField FieldName="LOC_MES_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="REQUEST_FLAG" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+        <ParamField FieldName="LOADED_STATUS" ></ParamField>
+        <ParamField FieldName="REQUEST_DATE" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="RETRY_COUNT" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="BIZ_COUNT" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="ORDER_REQUEST_OBJID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

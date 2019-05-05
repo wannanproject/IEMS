@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="CrudSspRole" uri="@McUI\CrudSspRole.xml"/>
+  
+  <McUI name="ReportLoginLog" uri="@McUI\ReportLoginLog.xml"/>
+  <McUI name="ReportWebLog" uri="@McUI\ReportWebLog.xml"/>
+
+  <McUI name="SearchBoxSsbDept" uri="@McUI\SearchBoxSsbDept.xml"/>
+  <McUI name="SearchBoxSspRole" uri="@McUI\SearchBoxSspRole.xml"/>
+  <McUI name="SearchBoxSsbUser" uri="@McUI\SearchBoxSsbUser.xml"/>
+  <McUI name="SearchBoxSsbWork" uri="@McUI\SearchBoxSsbWork.xml"/>
+  <McUI name="SearchBoxSsbWorkshop" uri="@McUI\SearchBoxSsbWorkshop.xml"/>
+</McUIConfig>

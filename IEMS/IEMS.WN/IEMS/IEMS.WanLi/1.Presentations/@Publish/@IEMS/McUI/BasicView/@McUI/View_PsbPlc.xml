@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PLC_NO" Value="PLC编号" ></Caption>
+    <Caption Name="PLC_ASSEMBLY" Value="PLC类库程序集" ></Caption>
+    <Caption Name="PLC_TYPE" Value="PLC类型" ></Caption>
+    <Caption Name="PLC_CON" Value="PLC连接" ></Caption>
+    <Caption Name="PLC_DESC" Value="描述" ></Caption>
+    <Caption Name="PLC_ENABLE" Value="可用状态 1：可用 0：不可用" ></Caption>
+  </Captions>
+  <WebPage Title="PSB_PLC">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PLC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PLC_NO" ></GridColumn>
+        <GridColumn ColumnName="PLC_ASSEMBLY" ></GridColumn>
+        <GridColumn ColumnName="PLC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PLC_CON" ></GridColumn>
+        <GridColumn ColumnName="PLC_DESC" ></GridColumn>
+        <GridColumn ColumnName="PLC_ENABLE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PLC_NO" ></ParamField>
+        <ParamField FieldName="PLC_ASSEMBLY" ></ParamField>
+        <ParamField FieldName="PLC_TYPE" ></ParamField>
+        <ParamField FieldName="PLC_CON" ></ParamField>
+        <ParamField FieldName="PLC_DESC" ></ParamField>
+        <ParamField FieldName="PLC_ENABLE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

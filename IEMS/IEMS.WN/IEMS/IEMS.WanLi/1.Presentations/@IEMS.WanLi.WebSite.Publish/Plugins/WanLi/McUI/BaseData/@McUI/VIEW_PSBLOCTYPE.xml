@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_TYPE_NO" Value="站台类型编号" ></Caption>
+    <Caption Name="LOC_TYPE_NAME" Value="站台类型名称" ></Caption>
+  </Captions>
+  <WebPage Title="库位类型">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_TYPE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="LOC_TYPE_NO" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NAME" WIDTH="180"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

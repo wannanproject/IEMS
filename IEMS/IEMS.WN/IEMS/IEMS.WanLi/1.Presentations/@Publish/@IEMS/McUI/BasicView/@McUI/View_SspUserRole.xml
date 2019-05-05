@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="自增主键编号" ></Caption>
+    <Caption Name="USER_ID" Value="用户编号" ></Caption>
+    <Caption Name="ROLE_ID" Value="角色编号" ></Caption>
+    <Caption Name="RECORD_USER_ID" Value="记录人" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption>
+    <Caption Name="BAKUP_FLAG" Value="备份标识" ></Caption>
+    <Caption Name="BAKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="FOREIGN_NO" Value="外部接口编号" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="排序列" ></Caption>
+    <Caption Name="REMARK" Value="备注" ></Caption>
+    <Caption Name="DELETE_FLAG" Value="删除标志" ></Caption>
+    <Caption Name="BACKUP_FLAG" Value="备份标志" ></Caption>
+    <Caption Name="BACKUP_TIME" Value="备份时间" ></Caption>
+  </Captions>
+  <WebPage Title="系统权限管理-用户角色">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="USER_ID" ></GridColumn>
+        <GridColumn ColumnName="ROLE_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_USER_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="FOREIGN_NO" ></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" ></GridColumn>
+        <GridColumn ColumnName="REMARK" ></GridColumn>
+        <GridColumn ColumnName="DELETE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="USER_ID" ></ParamField>
+        <ParamField FieldName="ROLE_ID" ></ParamField>
+        <ParamField FieldName="RECORD_USER_ID" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+        <ParamField FieldName="BAKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_TIME" ></ParamField>
+        <ParamField FieldName="FOREIGN_NO" ></ParamField>
+        <ParamField FieldName="SEQ_INDEX" ></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+        <ParamField FieldName="DELETE_FLAG" ></ParamField>
+        <ParamField FieldName="BACKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BACKUP_TIME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

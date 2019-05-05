@@ -1,0 +1,6 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\bin\Debug\IEMS.Frame.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\bin\Debug\IEMS.Frame.VoDto.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\obj\Debug\IEMS.Frame.VoDto.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\obj\Debug\IEMS.Frame.VoDto.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\obj\Debug\IEMS.Frame.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\4.Domains\IEMS.Frame.VoDto\obj\Debug\IEMS.Frame.VoDto.pdb

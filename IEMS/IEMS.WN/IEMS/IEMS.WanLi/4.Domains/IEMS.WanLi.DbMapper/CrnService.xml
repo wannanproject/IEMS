@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.CrnService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <statements>
+    <select id="GetCrnDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.CRN_FORK_NO,T.CRN_FORK_ENABLE,T1.*,
+             CASE T.CRN_FORK_ENABLE WHEN 0 THEN '禁用' ELSE '可用' END
+                AS CRN_FORK_ENABLE_DESC,
+             CASE T1.CRN_IN_ENABLE WHEN 0 THEN '禁用' ELSE '可用' END
+                AS CRN_IN_ENABLE_DESC,
+             CASE T1.CRN_OUT_ENABLE WHEN 0 THEN '禁用' ELSE '可用' END
+                AS CRN_OUT_ENABLE_DESC
+        FROM PSB_CRN_FORK T
+        JOIN PSB_CRN T1 
+          ON T1.CRN_NO = T.CRN_NO
+      ]]>
+    </select>
+    <select id="GetCrnForkErrorStatus" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        SELECT FS.CRN_NO,
+              FS.CRN_FORK_NO,
+              FS.TASK_NO,
+              CASE FS.TASK_TYPE WHEN 'I' THEN '入库' WHEN 'M' THEN '移库' ELSE '出库' END AS TASK_TYPE,
+                CASE WHEN T2.ERR_NAME IS NULL THEN '正常' ELSE T2.ERR_NAME END AS FAULT_NAME,
+              FS.FROM_BIN,FS.TO_BIN,FS.ACT_POS_X,FS.ACT_POS_Y,
+              FS.FIP_FAULT_NO,
+              FS.FIP_DATE,
+              FS.FIP_HANDLE_RESULT,
+              CASE FS.FIP_FLAG WHEN 0 THEN '正常' WHEN 1 THEN '待确认' WHEN 2 THEN '已确认' WHEN 3 THEN '已处理' END AS FIP_FLAG
+        FROM PEM_CRN_FORK_STATUS FS 
+        LEFT JOIN PSB_CRN_ERR T2 ON FS.FAULT_NO = T2.ERR_NO
+       ORDER BY FS.CRN_NO,FS.CRN_FORK_NO
+      ]]>
+    </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbCrnService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbCrn" type="IEMS.WanLi.Entity.PsbCrn, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbCrn" class="PsbCrn">
+    <result property="CrnNo" column="CRN_NO"/>
+    <result property="CrnName" column="CRN_NAME"/>
+    <result property="CrnForkCount" column="CRN_FORK_COUNT"/>
+    <result property="MaxOutTaskCount" column="MAX_OUT_TASK_COUNT"/>
+    <result property="MaxInTaskCount" column="MAX_IN_TASK_COUNT"/>
+    <result property="CrnStatus" column="CRN_STATUS"/>
+    <result property="CrnInEnable" column="CRN_IN_ENABLE"/>
+    <result property="CrnOutEnable" column="CRN_OUT_ENABLE"/>
+    <result property="LimitTaskSize" column="LIMIT_TASK_SIZE"/>
+    <result property="ExtensionSize" column="EXTENSION_SIZE"/>
+    <result property="ColSize" column="COL_SIZE"/>
+    <result property="LayerSize" column="LAYER_SIZE"/>
+    <result property="WhNo" column="WH_NO"/>
+    <result property="OpcGroupNo" column="OPC_GROUP_NO"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbCrn" class="PsbCrn">
+    <parameter property="CrnNo" column="CrnNo"/>
+    <parameter property="CrnName" column="CrnName"/>
+    <parameter property="CrnForkCount" column="CrnForkCount"/>
+    <parameter property="MaxOutTaskCount" column="MaxOutTaskCount"/>
+    <parameter property="MaxInTaskCount" column="MaxInTaskCount"/>
+    <parameter property="CrnStatus" column="CrnStatus"/>
+    <parameter property="CrnInEnable" column="CrnInEnable"/>
+    <parameter property="CrnOutEnable" column="CrnOutEnable"/>
+    <parameter property="LimitTaskSize" column="LimitTaskSize"/>
+    <parameter property="ExtensionSize" column="ExtensionSize"/>
+    <parameter property="ColSize" column="ColSize"/>
+    <parameter property="LayerSize" column="LayerSize"/>
+    <parameter property="WhNo" column="WhNo"/>
+    <parameter property="OpcGroupNo" column="OpcGroupNo"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_CRN ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.CrnNo" prepend="AND">
+          <isEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO = #where.CrnNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnName" prepend="AND">
+          <isEqual property="where.CrnName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NAME = #where.CrnName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnForkCount" prepend="AND">
+          <isEqual property="where.CrnForkCount" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_COUNT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkCount" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_COUNT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkCount" compareValue="-1147483648">
+          <isNotEqual property="where.CrnForkCount" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_COUNT = #where.CrnForkCount#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaxOutTaskCount" prepend="AND">
+          <isEqual property="where.MaxOutTaskCount" compareValue="-1147483648">
+            <![CDATA[MAX_OUT_TASK_COUNT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaxOutTaskCount" compareValue="-1147483647">
+            <![CDATA[MAX_OUT_TASK_COUNT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaxOutTaskCount" compareValue="-1147483648">
+          <isNotEqual property="where.MaxOutTaskCount" compareValue="-1147483647">
+            <![CDATA[MAX_OUT_TASK_COUNT = #where.MaxOutTaskCount#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaxInTaskCount" prepend="AND">
+          <isEqual property="where.MaxInTaskCount" compareValue="-1147483648">
+            <![CDATA[MAX_IN_TASK_COUNT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaxInTaskCount" compareValue="-1147483647">
+            <![CDATA[MAX_IN_TASK_COUNT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaxInTaskCount" compareValue="-1147483648">
+          <isNotEqual property="where.MaxInTaskCount" compareValue="-1147483647">
+            <![CDATA[MAX_IN_TASK_COUNT = #where.MaxInTaskCount#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnStatus" prepend="AND">
+          <isEqual property="where.CrnStatus" compareValue="-1147483648">
+            <![CDATA[CRN_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnStatus" compareValue="-1147483647">
+            <![CDATA[CRN_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnStatus" compareValue="-1147483648">
+          <isNotEqual property="where.CrnStatus" compareValue="-1147483647">
+            <![CDATA[CRN_STATUS = #where.CrnStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnInEnable" prepend="AND">
+          <isEqual property="where.CrnInEnable" compareValue="-1147483648">
+            <![CDATA[CRN_IN_ENABLE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnInEnable" compareValue="-1147483647">
+            <![CDATA[CRN_IN_ENABLE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnInEnable" compareValue="-1147483648">
+          <isNotEqual property="where.CrnInEnable" compareValue="-1147483647">
+            <![CDATA[CRN_IN_ENABLE = #where.CrnInEnable#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnOutEnable" prepend="AND">
+          <isEqual property="where.CrnOutEnable" compareValue="-1147483648">
+            <![CDATA[CRN_OUT_ENABLE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnOutEnable" compareValue="-1147483647">
+            <![CDATA[CRN_OUT_ENABLE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnOutEnable" compareValue="-1147483648">
+          <isNotEqual property="where.CrnOutEnable" compareValue="-1147483647">
+            <![CDATA[CRN_OUT_ENABLE = #where.CrnOutEnable#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LimitTaskSize" prepend="AND">
+          <isEqual property="where.LimitTaskSize" compareValue="-1147483648">
+            <![CDATA[LIMIT_TASK_SIZE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LimitTaskSize" compareValue="-1147483647">
+            <![CDATA[LIMIT_TASK_SIZE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LimitTaskSize" compareValue="-1147483648">
+          <isNotEqual property="where.LimitTaskSize" compareValue="-1147483647">
+            <![CDATA[LIMIT_TASK_SIZE = #where.LimitTaskSize#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ExtensionSize" prepend="AND">
+          <isEqual property="where.ExtensionSize" compareValue="-1147483648">
+            <![CDATA[EXTENSION_SIZE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ExtensionSize" compareValue="-1147483647">
+            <![CDATA[EXTENSION_SIZE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ExtensionSize" compareValue="-1147483648">
+          <isNotEqual property="where.ExtensionSize" compareValue="-1147483647">
+            <![CDATA[EXTENSION_SIZE = #where.ExtensionSize#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ColSize" prepend="AND">
+          <isEqual property="where.ColSize" compareValue="-1147483648">
+            <![CDATA[COL_SIZE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ColSize" compareValue="-1147483647">
+            <![CDATA[COL_SIZE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ColSize" compareValue="-1147483648">
+          <isNotEqual property="where.ColSize" compareValue="-1147483647">
+            <![CDATA[COL_SIZE = #where.ColSize#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LayerSize" prepend="AND">
+          <isEqual property="where.LayerSize" compareValue="-1147483648">
+            <![CDATA[LAYER_SIZE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LayerSize" compareValue="-1147483647">
+            <![CDATA[LAYER_SIZE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LayerSize" compareValue="-1147483648">
+          <isNotEqual property="where.LayerSize" compareValue="-1147483647">
+            <![CDATA[LAYER_SIZE = #where.LayerSize#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.WhNo" prepend="AND">
+          <isEqual property="where.WhNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[WH_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.WhNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[WH_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.WhNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.WhNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[WH_NO = #where.WhNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OpcGroupNo" prepend="AND">
+          <isEqual property="where.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OpcGroupNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OpcGroupNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO = #where.OpcGroupNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_CRN]]>
+       <dynamic prepend="(">
+        <isNotNull property="CrnNo" prepend=",">CRN_NO</isNotNull>
+        <isNotNull property="CrnName" prepend=",">CRN_NAME</isNotNull>
+        <isNotNull property="CrnForkCount" prepend=",">CRN_FORK_COUNT</isNotNull>
+        <isNotNull property="MaxOutTaskCount" prepend=",">MAX_OUT_TASK_COUNT</isNotNull>
+        <isNotNull property="MaxInTaskCount" prepend=",">MAX_IN_TASK_COUNT</isNotNull>
+        <isNotNull property="CrnStatus" prepend=",">CRN_STATUS</isNotNull>
+        <isNotNull property="CrnInEnable" prepend=",">CRN_IN_ENABLE</isNotNull>
+        <isNotNull property="CrnOutEnable" prepend=",">CRN_OUT_ENABLE</isNotNull>
+        <isNotNull property="LimitTaskSize" prepend=",">LIMIT_TASK_SIZE</isNotNull>
+        <isNotNull property="ExtensionSize" prepend=",">EXTENSION_SIZE</isNotNull>
+        <isNotNull property="ColSize" prepend=",">COL_SIZE</isNotNull>
+        <isNotNull property="LayerSize" prepend=",">LAYER_SIZE</isNotNull>
+        <isNotNull property="WhNo" prepend=",">WH_NO</isNotNull>
+        <isNotNull property="OpcGroupNo" prepend=",">OPC_GROUP_NO</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="CrnNo" prepend=",">#CrnNo#</isNotNull>
+        <isNotNull property="CrnName" prepend=",">#CrnName#</isNotNull>
+        <isNotNull property="CrnForkCount" prepend=",">#CrnForkCount#</isNotNull>
+        <isNotNull property="MaxOutTaskCount" prepend=",">#MaxOutTaskCount#</isNotNull>
+        <isNotNull property="MaxInTaskCount" prepend=",">#MaxInTaskCount#</isNotNull>
+        <isNotNull property="CrnStatus" prepend=",">#CrnStatus#</isNotNull>
+        <isNotNull property="CrnInEnable" prepend=",">#CrnInEnable#</isNotNull>
+        <isNotNull property="CrnOutEnable" prepend=",">#CrnOutEnable#</isNotNull>
+        <isNotNull property="LimitTaskSize" prepend=",">#LimitTaskSize#</isNotNull>
+        <isNotNull property="ExtensionSize" prepend=",">#ExtensionSize#</isNotNull>
+        <isNotNull property="ColSize" prepend=",">#ColSize#</isNotNull>
+        <isNotNull property="LayerSize" prepend=",">#LayerSize#</isNotNull>
+        <isNotNull property="WhNo" prepend=",">#WhNo#</isNotNull>
+        <isNotNull property="OpcGroupNo" prepend=",">#OpcGroupNo#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_CRN]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.CrnName" prepend=",">
+          <isEqual property="update.CrnName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRN_NAME = #update.CrnName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnForkCount" prepend=",">
+          <isEqual property="update.CrnForkCount" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_COUNT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnForkCount" compareValue="-1147483648">
+          <![CDATA[CRN_FORK_COUNT = #update.CrnForkCount#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaxOutTaskCount" prepend=",">
+          <isEqual property="update.MaxOutTaskCount" compareValue="-1147483648">
+            <![CDATA[MAX_OUT_TASK_COUNT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaxOutTaskCount" compareValue="-1147483648">
+          <![CDATA[MAX_OUT_TASK_COUNT = #update.MaxOutTaskCount#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaxInTaskCount" prepend=",">
+          <isEqual property="update.MaxInTaskCount" compareValue="-1147483648">
+            <![CDATA[MAX_IN_TASK_COUNT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaxInTaskCount" compareValue="-1147483648">
+          <![CDATA[MAX_IN_TASK_COUNT = #update.MaxInTaskCount#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnStatus" prepend=",">
+          <isEqual property="update.CrnStatus" compareValue="-1147483648">
+            <![CDATA[CRN_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnStatus" compareValue="-1147483648">
+          <![CDATA[CRN_STATUS = #update.CrnStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnInEnable" prepend=",">
+          <isEqual property="update.CrnInEnable" compareValue="-1147483648">
+            <![CDATA[CRN_IN_ENABLE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnInEnable" compareValue="-1147483648">
+          <![CDATA[CRN_IN_ENABLE = #update.CrnInEnable#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnOutEnable" prepend=",">
+          <isEqual property="update.CrnOutEnable" compareValue="-1147483648">
+            <![CDATA[CRN_OUT_ENABLE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnOutEnable" compareValue="-1147483648">
+          <![CDATA[CRN_OUT_ENABLE = #update.CrnOutEnable#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LimitTaskSize" prepend=",">
+          <isEqual property="update.LimitTaskSize" compareValue="-1147483648">
+            <![CDATA[LIMIT_TASK_SIZE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LimitTaskSize" compareValue="-1147483648">
+          <![CDATA[LIMIT_TASK_SIZE = #update.LimitTaskSize#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ExtensionSize" prepend=",">
+          <isEqual property="update.ExtensionSize" compareValue="-1147483648">
+            <![CDATA[EXTENSION_SIZE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ExtensionSize" compareValue="-1147483648">
+          <![CDATA[EXTENSION_SIZE = #update.ExtensionSize#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ColSize" prepend=",">
+          <isEqual property="update.ColSize" compareValue="-1147483648">
+            <![CDATA[COL_SIZE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ColSize" compareValue="-1147483648">
+          <![CDATA[COL_SIZE = #update.ColSize#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LayerSize" prepend=",">
+          <isEqual property="update.LayerSize" compareValue="-1147483648">
+            <![CDATA[LAYER_SIZE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LayerSize" compareValue="-1147483648">
+          <![CDATA[LAYER_SIZE = #update.LayerSize#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.WhNo" prepend=",">
+          <isEqual property="update.WhNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[WH_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.WhNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[WH_NO = #update.WhNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OpcGroupNo" prepend=",">
+          <isEqual property="update.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[OPC_GROUP_NO = #update.OpcGroupNo#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_CRN]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbCrn">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_CRN]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_CRN]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbCrn" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

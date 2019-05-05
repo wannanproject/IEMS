@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+<Captions>
+  <Caption Name="OBJID" Value="编号" ></Caption>
+    <Caption Name="CRN_FORK_NO" Value="叉编号" ></Caption>
+    <Caption Name="ERR_NAME" Value="错误名称" ></Caption>
+    <Caption Name="ERR_NO" Value="错误编码" ></Caption>
+    <Caption Name="TASK_NO" Value="任务号" ></Caption>
+    <Caption Name="SLOC_NO" Value="起始站台" ></Caption>
+    <Caption Name="ELOC_NO" Value="结束站台" ></Caption>
+    <Caption Name="PALLET_NO" Value="托盘号" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption> 
+    <Caption Name="ERR_BEGIN_TIME" Value="报警开始时间" ></Caption>
+    <Caption Name="ERR_END_TIME" Value="报警结束时间" ></Caption>
+    <Caption Name="ERR_SECONDS" Value="报警持续时间(秒)" ></Caption>
+    <Caption Name="B_TIME" Value="开始时间" ></Caption>
+    <Caption Name="E_TIME" Value="结束时间" ></Caption>
+</Captions>
+<WebPage Title="堆垛机报警历史">
+ </WebPage>
+ <Select>
+   <ParamPanel>
+     <ParamFields>
+       <ParamField FieldName="CRN_FORK_NO"></ParamField>
+       <ParamField FieldName="ERR_NO"></ParamField>
+       <ParamField FieldName="B_TIME" Type="DateBox" DefaultValue="0"></ParamField>
+       <ParamField FieldName="E_TIME" Type="DateBox" DefaultValue="0"></ParamField>
+     </ParamFields>
+   </ParamPanel>
+   <MainGrid>     
+     <GridColumns>
+       <GridColumn ColumnName="OBJID" Width="60"></GridColumn>
+       <GridColumn ColumnName="CRN_FORK_NO" Width="80"></GridColumn>
+       <GridColumn ColumnName="TASK_NO" Width="80"></GridColumn>
+       <GridColumn ColumnName="ERR_NO" Width="60"></GridColumn>
+       <GridColumn ColumnName="ERR_NAME" Width="160"></GridColumn>
+       <GridColumn ColumnName="SLOC_NO" Width="100"></GridColumn>
+       <GridColumn ColumnName="ELOC_NO" Width="100"></GridColumn>
+       <GridColumn ColumnName="PALLET_NO" Width="150"></GridColumn>
+       <GridColumn ColumnName="RECORD_TIME" Width="150"></GridColumn>
+       <GridColumn ColumnName="ERR_BEGIN_TIME" Width="150"></GridColumn>
+       <GridColumn ColumnName="ERR_END_TIME" Width="150"></GridColumn>
+       <GridColumn ColumnName="ERR_SECONDS" Width="100"></GridColumn>
+     </GridColumns>            
+   </MainGrid>
+ </Select>
+</UiConfig>
+

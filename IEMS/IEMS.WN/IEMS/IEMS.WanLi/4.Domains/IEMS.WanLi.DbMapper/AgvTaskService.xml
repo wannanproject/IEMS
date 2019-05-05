@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="IEMS.WanLi.DbCI.AgvTaskService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <statements>
+    <select id="GetAgvTaskData" parameterClass="map" resultClass="Row">
+      <![CDATA[
+              SELECT T.TASK_NO,
+                     T.SLOC_NO,
+                     SLOC.LOC_PLC_NO AS SLOC_PLC_CODE,
+                     SLOC.LOC_NAME   AS SLOC_NAME,
+                     T.ELOC_NO,
+                     ELOC.LOC_PLC_NO AS ELOC_PLC_CODE,
+                     ELOC.LOC_NAME   AS ELOC_NAME,
+                     T.PALLET_NO,
+                     T.CMD_STEP,
+                     T.CREATION_DATE
+                FROM WBS_TASK_CMD T
+                LEFT JOIN PSB_LOC SLOC
+                  ON T.SLOC_NO = SLOC.LOC_NO
+                LEFT JOIN PSB_LOC ELOC
+                  ON T.ELOC_NO = ELOC.LOC_NO
+               WHERE T.TRANSFER_TYPE = 30
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          <![CDATA[T.TASK_NO like '%'||#where.TASK_NO#||'%']]>
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          <![CDATA[T.PALLET_NO like '%'||#where.PALLET_NO#||'%']]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY T.CREATION_DATE DESC
+    </select>
+    <select id="GetAgvTaskTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+SELECT T.TASK_NO,T.SLOC_NO,P.LOC_NAME,T.ELOC_NO,T.PALLET_NO,T.CREATION_DATE FROM WBS_TASK T 
+JOIN PSB_LOC P
+ON P.LOC_NO = T.SLOC_NO
+WHERE T.PALLET_TYPE = '2000' AND T.SLOC_NO LIKE '6001%' AND T.ROUTE_NOS LIKE '03%' 
+AND T.TASK_GUID NOT IN(SELECT T1.TASK_GUID FROM WBS_TASK_CMD T1)
+ORDER BY T.CREATION_DATE DESC
+]]>
+    </select>
+  </statements>
+
+</sqlMap>

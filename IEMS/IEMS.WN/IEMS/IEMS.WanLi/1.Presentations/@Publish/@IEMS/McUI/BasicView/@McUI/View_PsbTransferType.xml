@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="TRANSFER_TYPE_NO" Value="TRANSFER_TYPE_NO" ></Caption>
+    <Caption Name="TRANSFER_TYPE_NAME" Value="TRANSFER_TYPE_NAME" ></Caption>
+  </Captions>
+  <WebPage Title="输送设备维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TRANSFER_TYPE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TRANSFER_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="TRANSFER_TYPE_NAME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TRANSFER_TYPE_NO" ></ParamField>
+        <ParamField FieldName="TRANSFER_TYPE_NAME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

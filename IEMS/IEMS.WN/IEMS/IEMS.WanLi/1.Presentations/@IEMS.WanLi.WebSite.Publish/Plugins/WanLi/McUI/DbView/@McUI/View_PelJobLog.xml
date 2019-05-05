@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="序列" ></Caption>
+    <Caption Name="JOB_NO" Value="作业编码" ></Caption>
+    <Caption Name="START_DATE" Value="执行时间" ></Caption>
+    <Caption Name="JOB_STATUS" Value="状态" ></Caption>
+    <Caption Name="ERR_NO" Value="ERR_NO" ></Caption>
+    <Caption Name="ERR_DESC" Value="ERR_DESC" ></Caption>
+    <Caption Name="END_DATE" Value="END_DATE" ></Caption>
+    <Caption Name="USED_TIME" Value="秒钟" ></Caption>
+  </Captions>
+  <WebPage Title="作业日志">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="JOB_NO" ></GridColumn>
+        <GridColumn ColumnName="START_DATE" ></GridColumn>
+        <GridColumn ColumnName="JOB_STATUS" ></GridColumn>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="END_DATE" ></GridColumn>
+        <GridColumn ColumnName="USED_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="JOB_NO" ></ParamField>
+        <ParamField FieldName="START_DATE" ></ParamField>
+        <ParamField FieldName="JOB_STATUS" ></ParamField>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="END_DATE" ></ParamField>
+        <ParamField FieldName="USED_TIME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

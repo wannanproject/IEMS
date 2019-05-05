@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="TRAN_ID" Value="TRAN_ID" ></Caption>
+    <Caption Name="TRAN_NAME" Value="TRAN_NAME" ></Caption>
+    <Caption Name="TRAN_NO" Value="TRAN_NO" ></Caption>
+    <Caption Name="TRAN_CODE" Value="TRAN_CODE" ></Caption>
+    <Caption Name="FREE_FLAG" Value="FREE_FLAG" ></Caption>
+    <Caption Name="MAX_PALLET_QTY" Value="MAX_PALLET_QTY" ></Caption>
+    <Caption Name="TASK_QTY" Value="TASK_QTY" ></Caption>
+    <Caption Name="AREA_NO" Value="AREA_NO" ></Caption>
+    <Caption Name="EMPTY_QTY" Value="EMPTY_QTY" ></Caption>
+    <Caption Name="UPDATE_DATE" Value="UPDATE_DATE" ></Caption>
+    <Caption Name="PLC_ENABLE" Value="PLC_ENABLE" ></Caption>
+    <Caption Name="TRAN_ENABLE" Value="TRAN_ENABLE" ></Caption>
+    <Caption Name="IS_A_TRAN" Value="IS_A_TRAN" ></Caption>
+    <Caption Name="A_TRAN_ID" Value="A_TRAN_ID" ></Caption>
+    <Caption Name="SHIP_PORT_ID" Value="SHIP_PORT_ID" ></Caption>
+    <Caption Name="LIST_NO" Value="LIST_NO" ></Caption>
+    <Caption Name="SORT_ID" Value="SORT_ID" ></Caption>
+    <Caption Name="PORT_EXISTS_PALLET" Value="PORT_EXISTS_PALLET" ></Caption>
+  </Captions>
+  <WebPage Title="TMP_TMP_TASK_SHIP_TRAN">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TRAN_ID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TRAN_ID" ></GridColumn>
+        <GridColumn ColumnName="TRAN_NAME" ></GridColumn>
+        <GridColumn ColumnName="TRAN_NO" ></GridColumn>
+        <GridColumn ColumnName="TRAN_CODE" ></GridColumn>
+        <GridColumn ColumnName="FREE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="MAX_PALLET_QTY" ></GridColumn>
+        <GridColumn ColumnName="TASK_QTY" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="EMPTY_QTY" ></GridColumn>
+        <GridColumn ColumnName="UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="PLC_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="TRAN_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="IS_A_TRAN" ></GridColumn>
+        <GridColumn ColumnName="A_TRAN_ID" ></GridColumn>
+        <GridColumn ColumnName="SHIP_PORT_ID" ></GridColumn>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="PORT_EXISTS_PALLET" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TRAN_ID" ></ParamField>
+        <ParamField FieldName="TRAN_NAME" ></ParamField>
+        <ParamField FieldName="TRAN_NO" ></ParamField>
+        <ParamField FieldName="TRAN_CODE" ></ParamField>
+        <ParamField FieldName="FREE_FLAG" ></ParamField>
+        <ParamField FieldName="MAX_PALLET_QTY" ></ParamField>
+        <ParamField FieldName="TASK_QTY" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="EMPTY_QTY" ></ParamField>
+        <ParamField FieldName="UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="PLC_ENABLE" ></ParamField>
+        <ParamField FieldName="TRAN_ENABLE" ></ParamField>
+        <ParamField FieldName="IS_A_TRAN" ></ParamField>
+        <ParamField FieldName="A_TRAN_ID" ></ParamField>
+        <ParamField FieldName="SHIP_PORT_ID" ></ParamField>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="PORT_EXISTS_PALLET" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

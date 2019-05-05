@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbMaterialService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbMaterial" type="IEMS.WanLi.Entity.PsbMaterial, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbMaterial" class="PsbMaterial">
+    <result property="MaterNo" column="MATER_NO"/>
+    <result property="MaterName" column="MATER_NAME"/>
+    <result property="MaterCode" column="MATER_CODE"/>
+    <result property="MaterMkind" column="MATER_MKIND"/>
+    <result property="MaterType" column="MATER_TYPE"/>
+    <result property="MinTime" column="MIN_TIME"/>
+    <result property="MaxTime" column="MAX_TIME"/>
+    <result property="MainUnit" column="MAIN_UNIT"/>
+    <result property="MaterSpec" column="MATER_SPEC"/>
+    <result property="MaterDesc" column="MATER_DESC"/>
+    <result property="CreationTime" column="CREATION_TIME"/>
+    <result property="MkindName" column="MKIND_NAME"/>
+    <result property="IkindName" column="IKIND_NAME"/>
+    <result property="ErrWeight" column="ERR_WEIGHT"/>
+    <result property="SeqIndex" column="SEQ_INDEX"/>
+    <result property="DelFlag" column="DEL_FLAG"/>
+    <result property="MesNo" column="MES_NO"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbMaterial" class="PsbMaterial">
+    <parameter property="MaterNo" column="MaterNo"/>
+    <parameter property="MaterName" column="MaterName"/>
+    <parameter property="MaterCode" column="MaterCode"/>
+    <parameter property="MaterMkind" column="MaterMkind"/>
+    <parameter property="MaterType" column="MaterType"/>
+    <parameter property="MinTime" column="MinTime"/>
+    <parameter property="MaxTime" column="MaxTime"/>
+    <parameter property="MainUnit" column="MainUnit"/>
+    <parameter property="MaterSpec" column="MaterSpec"/>
+    <parameter property="MaterDesc" column="MaterDesc"/>
+    <parameter property="CreationTime" column="CreationTime"/>
+    <parameter property="MkindName" column="MkindName"/>
+    <parameter property="IkindName" column="IkindName"/>
+    <parameter property="ErrWeight" column="ErrWeight"/>
+    <parameter property="SeqIndex" column="SeqIndex"/>
+    <parameter property="DelFlag" column="DelFlag"/>
+    <parameter property="MesNo" column="MesNo"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_MATERIAL ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.MaterNo" prepend="AND">
+          <isEqual property="where.MaterNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_NO = #where.MaterNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterName" prepend="AND">
+          <isEqual property="where.MaterName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_NAME = #where.MaterName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterCode" prepend="AND">
+          <isEqual property="where.MaterCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_CODE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_CODE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterCode" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterCode" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_CODE = #where.MaterCode#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterMkind" prepend="AND">
+          <isEqual property="where.MaterMkind" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_MKIND IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterMkind" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_MKIND IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterMkind" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterMkind" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_MKIND = #where.MaterMkind#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterType" prepend="AND">
+          <isEqual property="where.MaterType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_TYPE = #where.MaterType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MinTime" prepend="AND">
+          <isEqual property="where.MinTime" compareValue="-1147483648">
+            <![CDATA[MIN_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MinTime" compareValue="-1147483647">
+            <![CDATA[MIN_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MinTime" compareValue="-1147483648">
+          <isNotEqual property="where.MinTime" compareValue="-1147483647">
+            <![CDATA[MIN_TIME = #where.MinTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaxTime" prepend="AND">
+          <isEqual property="where.MaxTime" compareValue="-1147483648">
+            <![CDATA[MAX_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaxTime" compareValue="-1147483647">
+            <![CDATA[MAX_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaxTime" compareValue="-1147483648">
+          <isNotEqual property="where.MaxTime" compareValue="-1147483647">
+            <![CDATA[MAX_TIME = #where.MaxTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MainUnit" prepend="AND">
+          <isEqual property="where.MainUnit" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MAIN_UNIT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MainUnit" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MAIN_UNIT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MainUnit" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MainUnit" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MAIN_UNIT = #where.MainUnit#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterSpec" prepend="AND">
+          <isEqual property="where.MaterSpec" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_SPEC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterSpec" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_SPEC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterSpec" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterSpec" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_SPEC = #where.MaterSpec#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MaterDesc" prepend="AND">
+          <isEqual property="where.MaterDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_DESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MaterDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_DESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MaterDesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MaterDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MATER_DESC = #where.MaterDesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CreationTime" prepend="AND">
+          <isEqual property="where.CreationTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CreationTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CreationTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.CreationTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_TIME = #where.CreationTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MkindName" prepend="AND">
+          <isEqual property="where.MkindName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MKIND_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MkindName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MKIND_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MkindName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MkindName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MKIND_NAME = #where.MkindName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.IkindName" prepend="AND">
+          <isEqual property="where.IkindName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[IKIND_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.IkindName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[IKIND_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.IkindName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.IkindName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[IKIND_NAME = #where.IkindName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrWeight" prepend="AND">
+          <isEqual property="where.ErrWeight" compareValue="-1147483648">
+            <![CDATA[ERR_WEIGHT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrWeight" compareValue="-1147483647">
+            <![CDATA[ERR_WEIGHT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrWeight" compareValue="-1147483648">
+          <isNotEqual property="where.ErrWeight" compareValue="-1147483647">
+            <![CDATA[ERR_WEIGHT = #where.ErrWeight#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SeqIndex" prepend="AND">
+          <isEqual property="where.SeqIndex" compareValue="-1147483648">
+            <![CDATA[SEQ_INDEX IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SeqIndex" compareValue="-1147483647">
+            <![CDATA[SEQ_INDEX IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SeqIndex" compareValue="-1147483648">
+          <isNotEqual property="where.SeqIndex" compareValue="-1147483647">
+            <![CDATA[SEQ_INDEX = #where.SeqIndex#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.DelFlag" prepend="AND">
+          <isEqual property="where.DelFlag" compareValue="-1147483648">
+            <![CDATA[DEL_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.DelFlag" compareValue="-1147483647">
+            <![CDATA[DEL_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.DelFlag" compareValue="-1147483648">
+          <isNotEqual property="where.DelFlag" compareValue="-1147483647">
+            <![CDATA[DEL_FLAG = #where.DelFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.MesNo" prepend="AND">
+          <isEqual property="where.MesNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MES_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.MesNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MES_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.MesNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.MesNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[MES_NO = #where.MesNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_MATERIAL]]>
+       <dynamic prepend="(">
+        <isNotNull property="MaterNo" prepend=",">MATER_NO</isNotNull>
+        <isNotNull property="MaterName" prepend=",">MATER_NAME</isNotNull>
+        <isNotNull property="MaterCode" prepend=",">MATER_CODE</isNotNull>
+        <isNotNull property="MaterMkind" prepend=",">MATER_MKIND</isNotNull>
+        <isNotNull property="MaterType" prepend=",">MATER_TYPE</isNotNull>
+        <isNotNull property="MinTime" prepend=",">MIN_TIME</isNotNull>
+        <isNotNull property="MaxTime" prepend=",">MAX_TIME</isNotNull>
+        <isNotNull property="MainUnit" prepend=",">MAIN_UNIT</isNotNull>
+        <isNotNull property="MaterSpec" prepend=",">MATER_SPEC</isNotNull>
+        <isNotNull property="MaterDesc" prepend=",">MATER_DESC</isNotNull>
+        <isNotNull property="CreationTime" prepend=",">CREATION_TIME</isNotNull>
+        <isNotNull property="MkindName" prepend=",">MKIND_NAME</isNotNull>
+        <isNotNull property="IkindName" prepend=",">IKIND_NAME</isNotNull>
+        <isNotNull property="ErrWeight" prepend=",">ERR_WEIGHT</isNotNull>
+        <isNotNull property="SeqIndex" prepend=",">SEQ_INDEX</isNotNull>
+        <isNotNull property="DelFlag" prepend=",">DEL_FLAG</isNotNull>
+        <isNotNull property="MesNo" prepend=",">MES_NO</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="MaterNo" prepend=",">#MaterNo#</isNotNull>
+        <isNotNull property="MaterName" prepend=",">#MaterName#</isNotNull>
+        <isNotNull property="MaterCode" prepend=",">#MaterCode#</isNotNull>
+        <isNotNull property="MaterMkind" prepend=",">#MaterMkind#</isNotNull>
+        <isNotNull property="MaterType" prepend=",">#MaterType#</isNotNull>
+        <isNotNull property="MinTime" prepend=",">#MinTime#</isNotNull>
+        <isNotNull property="MaxTime" prepend=",">#MaxTime#</isNotNull>
+        <isNotNull property="MainUnit" prepend=",">#MainUnit#</isNotNull>
+        <isNotNull property="MaterSpec" prepend=",">#MaterSpec#</isNotNull>
+        <isNotNull property="MaterDesc" prepend=",">#MaterDesc#</isNotNull>
+        <isNotNull property="CreationTime" prepend=",">#CreationTime#</isNotNull>
+        <isNotNull property="MkindName" prepend=",">#MkindName#</isNotNull>
+        <isNotNull property="IkindName" prepend=",">#IkindName#</isNotNull>
+        <isNotNull property="ErrWeight" prepend=",">#ErrWeight#</isNotNull>
+        <isNotNull property="SeqIndex" prepend=",">#SeqIndex#</isNotNull>
+        <isNotNull property="DelFlag" prepend=",">#DelFlag#</isNotNull>
+        <isNotNull property="MesNo" prepend=",">#MesNo#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_MATERIAL]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.MaterName" prepend=",">
+          <isEqual property="update.MaterName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_NAME = #update.MaterName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterCode" prepend=",">
+          <isEqual property="update.MaterCode" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_CODE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterCode" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_CODE = #update.MaterCode#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterMkind" prepend=",">
+          <isEqual property="update.MaterMkind" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_MKIND = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterMkind" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_MKIND = #update.MaterMkind#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterType" prepend=",">
+          <isEqual property="update.MaterType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_TYPE = #update.MaterType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MinTime" prepend=",">
+          <isEqual property="update.MinTime" compareValue="-1147483648">
+            <![CDATA[MIN_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MinTime" compareValue="-1147483648">
+          <![CDATA[MIN_TIME = #update.MinTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaxTime" prepend=",">
+          <isEqual property="update.MaxTime" compareValue="-1147483648">
+            <![CDATA[MAX_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaxTime" compareValue="-1147483648">
+          <![CDATA[MAX_TIME = #update.MaxTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MainUnit" prepend=",">
+          <isEqual property="update.MainUnit" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MAIN_UNIT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MainUnit" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MAIN_UNIT = #update.MainUnit#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterSpec" prepend=",">
+          <isEqual property="update.MaterSpec" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_SPEC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterSpec" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_SPEC = #update.MaterSpec#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MaterDesc" prepend=",">
+          <isEqual property="update.MaterDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MATER_DESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MaterDesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MATER_DESC = #update.MaterDesc#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CreationTime" prepend=",">
+          <isEqual property="update.CreationTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CreationTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[CREATION_TIME = #update.CreationTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MkindName" prepend=",">
+          <isEqual property="update.MkindName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MKIND_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MkindName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MKIND_NAME = #update.MkindName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.IkindName" prepend=",">
+          <isEqual property="update.IkindName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[IKIND_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.IkindName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[IKIND_NAME = #update.IkindName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrWeight" prepend=",">
+          <isEqual property="update.ErrWeight" compareValue="-1147483648">
+            <![CDATA[ERR_WEIGHT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrWeight" compareValue="-1147483648">
+          <![CDATA[ERR_WEIGHT = #update.ErrWeight#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SeqIndex" prepend=",">
+          <isEqual property="update.SeqIndex" compareValue="-1147483648">
+            <![CDATA[SEQ_INDEX = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SeqIndex" compareValue="-1147483648">
+          <![CDATA[SEQ_INDEX = #update.SeqIndex#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.DelFlag" prepend=",">
+          <isEqual property="update.DelFlag" compareValue="-1147483648">
+            <![CDATA[DEL_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.DelFlag" compareValue="-1147483648">
+          <![CDATA[DEL_FLAG = #update.DelFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.MesNo" prepend=",">
+          <isEqual property="update.MesNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[MES_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.MesNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[MES_NO = #update.MesNo#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_MATERIAL]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbMaterial">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_MATERIAL]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_MATERIAL]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbMaterial" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

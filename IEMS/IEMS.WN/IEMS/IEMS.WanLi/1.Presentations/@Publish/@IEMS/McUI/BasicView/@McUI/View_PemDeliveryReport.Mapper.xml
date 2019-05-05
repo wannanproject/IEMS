@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PemDeliveryReport" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PEM_DELIVERY_REPORT T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.GLOBAL_GUID" prepend="AND">
+           T1.GLOBAL_GUID LIKE '%'||#where.GLOBAL_GUID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY GLOBAL_GUID
+     </select>
+     <select id="Select@View_PemDeliveryReport@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PEM_DELIVERY_REPORT T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.GLOBAL_GUID" prepend = "AND">
+           T1.GLOBAL_GUID = #where.GLOBAL_GUID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

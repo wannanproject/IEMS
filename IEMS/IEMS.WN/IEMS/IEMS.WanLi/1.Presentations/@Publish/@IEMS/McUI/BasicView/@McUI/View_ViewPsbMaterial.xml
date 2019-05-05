@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="MATER_NO" ></Caption>
+    <Caption Name="MATER_NAME" Value="MATER_NAME" ></Caption>
+    <Caption Name="MATER_CODE" Value="MATER_CODE" ></Caption>
+    <Caption Name="MATER_MKIND" Value="MATER_MKIND" ></Caption>
+    <Caption Name="MATER_TYPE" Value="MATER_TYPE" ></Caption>
+    <Caption Name="MIN_TIME" Value="MIN_TIME" ></Caption>
+    <Caption Name="MAX_TIME" Value="MAX_TIME" ></Caption>
+    <Caption Name="MAIN_UNIT" Value="MAIN_UNIT" ></Caption>
+    <Caption Name="MATER_SPEC" Value="MATER_SPEC" ></Caption>
+    <Caption Name="MATER_DESC" Value="MATER_DESC" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="SEQ_INDEX" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_PSB_MATERIAL">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO" ></GridColumn>
+        <GridColumn ColumnName="MATER_NAME" ></GridColumn>
+        <GridColumn ColumnName="MATER_CODE" ></GridColumn>
+        <GridColumn ColumnName="MATER_MKIND" ></GridColumn>
+        <GridColumn ColumnName="MATER_TYPE" ></GridColumn>
+        <GridColumn ColumnName="MIN_TIME" ></GridColumn>
+        <GridColumn ColumnName="MAX_TIME" ></GridColumn>
+        <GridColumn ColumnName="MAIN_UNIT" ></GridColumn>
+        <GridColumn ColumnName="MATER_SPEC" ></GridColumn>
+        <GridColumn ColumnName="MATER_DESC" ></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>
+        <ParamField FieldName="MATER_NAME" ></ParamField>
+        <ParamField FieldName="MATER_CODE" ></ParamField>
+        <ParamField FieldName="MATER_MKIND" ></ParamField>
+        <ParamField FieldName="MATER_TYPE" ></ParamField>
+        <ParamField FieldName="MIN_TIME" ></ParamField>
+        <ParamField FieldName="MAX_TIME" ></ParamField>
+        <ParamField FieldName="MAIN_UNIT" ></ParamField>
+        <ParamField FieldName="MATER_SPEC" ></ParamField>
+        <ParamField FieldName="MATER_DESC" ></ParamField>
+        <ParamField FieldName="SEQ_INDEX" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@SearchSrmData" parameterClass="map" resultClass="row">
+      <![CDATA[        
+       SELECT T.CRN_NO,T.CRN_NAME,
+      (SELECT MIN(SUBSTR(F.BIN_NO,3,2)) FROM PSB_BIN_STATUS F WHERE F.CRN_NO = T.CRN_NO) MIN_BAY,
+      (SELECT MAX(SUBSTR(F.BIN_NO,3,2)) FROM PSB_BIN_STATUS F WHERE F.CRN_NO = T.CRN_NO) MAX_BAY
+       FROM PSB_CRN T
+      ]]>
+    </select>
+  </statements>
+</sqlMap>

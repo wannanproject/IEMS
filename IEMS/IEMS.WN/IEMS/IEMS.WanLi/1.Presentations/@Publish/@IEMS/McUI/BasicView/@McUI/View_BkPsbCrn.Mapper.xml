@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_BkPsbCrn" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM BK_PSB_CRN T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.BK_OBJID" prepend="AND">
+           T1.BK_OBJID LIKE '%'||#where.BK_OBJID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY BK_OBJID
+     </select>
+     <select id="Select@View_BkPsbCrn@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM BK_PSB_CRN T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.BK_OBJID" prepend = "AND">
+           T1.BK_OBJID = #where.BK_OBJID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

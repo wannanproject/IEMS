@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <NoCheckAuthentication>
+    <!--修改请重启服务-->
+    <RedirectTo path="~/Index.htm">
+    </RedirectTo>
+    <location path="NoPermit.aspx">
+      <system.web>
+        <authorization>
+          <allow users="*"/>
+        </authorization>
+      </system.web>
+    </location>
+    <location path="Plugins/Main/Login.aspx">
+      <system.web>
+        <authorization>
+          <allow users="*"/>
+        </authorization>
+      </system.web>
+    </location>
+    <location path="Plugins/Main/Logout.aspx">
+      <system.web>
+        <authorization>
+          <allow users="*"/>
+        </authorization>
+      </system.web>
+    </location>
+  </NoCheckAuthentication>
+</configuration>

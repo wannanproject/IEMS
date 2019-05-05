@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@Custom_WbsTaskCmdRgv" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t.task_no,t.objid,t.cmd_type,t.sloc_no,t.eloc_no,t.transfer_type,t.transfer_no,t.pallet_no,t.finish_status,t.cmd_step,t5.order_no,t5.line_id,
+      t.creation_date,t.excute_date,t.finish_date,
+      t.sloc_plc_no,t.eloc_plc_no,t.err_no,t.err_name,
+      t2.fmem,t3.mater_type,t4.transfer_type_name
+      from WBS_TASK_CMD t
+      LEFT JOIN wbs_task t1 ON t.task_guid = t1.task_guid
+      LEFT JOIN PSB_ROUTE t2 ON t.route_no = t2.route_no
+      LEFT JOIN PSB_MATERIAL t3 ON t.product_no = t3.mater_no
+      LEFT JOIN PSB_TRANSFER_TYPE t4 ON t.transfer_type = t4.transfer_type_no
+      LEFT JOIN wbs_order_line t5 ON t.order_line_guid = t5.order_line_guid
+      where t4.transfer_type_no='40'
+      ]]>
+      <dynamic prepend="">
+         <isNotNull property="where.OBJID" prepend="AND">
+           T.OBJID LIKE '%'||#where.OBJID#||'%'
+         </isNotNull>
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          T.TASK_NO LIKE '%'||#where.TASK_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.CMD_TYPE" prepend="AND">
+          T.CMD_TYPE LIKE '%'||#where.CMD_TYPE#||'%'
+        </isNotNull>
+       </dynamic>
+       ORDER BY t.OBJID
+     </select>
+     <select id="Select@Custom_WbsTaskCmdRgv@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM WBS_TASK_CMD T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend = "AND">
+           T1.OBJID = #where.OBJID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

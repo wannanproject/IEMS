@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="WbsTaskCmdCrn"                  uri="@McUI\WbsTaskCmdCrn.xml"/>
+  <McUI name="Z50WbsTaskCmdCrn"               uri="@McUI\Z50WbsTaskCmdCrn.xml"/>
+  <McUI name="ViewAgvTaskLog"                 uri="@McUI\ViewAgvTaskLog.xml"/>
+  <McUI name="ViewAgvTask"                    uri="@McUI\ViewAgvTask.xml"/>
+  <McUI name="TaskLogQuery"                    uri="@McUI\TaskLogQuery.xml"/>
+
+</McUIConfig>

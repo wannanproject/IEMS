@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@SearchLocData" parameterClass="map" resultClass="row">
+      <![CDATA[        
+       select * from psb_loc t where t.loc_enable = 1
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.LOC_TYPE" prepend="AND">
+          <isNotEqual property="where.LOC_TYPE" compareValue="QT">
+            <![CDATA[t.loc_type_no  = #where.LOC_TYPE#]]>
+          </isNotEqual>
+          <isEqual property="where.LOC_TYPE" compareValue="QT">
+            <![CDATA[t.loc_plc_no in ('J3108','J4108')]]>
+          </isEqual>
+        </isNotNull>
+        <isNotNull property="where.LOC_NAME" prepend="AND">
+          <![CDATA[t.LOC_NAME  like '%'|| #where.LOC_NAME# ||'%']]>
+        </isNotNull>
+        <isNotNull property="where.LOC_PLC_NO" prepend="AND">
+          <![CDATA[t.LOC_PLC_NO  like '%'|| #where.LOC_PLC_NO# ||'%']]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY t.LOC_INDEX,t.LOC_NAME
+    </select>
+
+
+    <!--查询负载状态信息，ID值固定为GetComboBoxData@Select@Pallet@ERROR_STATUS字段，id值不允许重复-->
+    <select id="GetComboBoxData@Select@SearchLocData@LOC_TYPE" parameterClass="map" resultClass="Row">
+      <![CDATA[ 
+        select a.loc_type_no as sskey, a.loc_type_name as ssValue
+  from (select t.loc_type_no, t.loc_type_name, 1 as idx
+           from psb_loc_type t
+          where t.loc_type_no in ('2001', '2002')
+         union
+         select t.loc_type_no, t.loc_type_name, 2 as idx
+           from psb_loc_type t
+          where t.loc_type_no in ('1000',
+                                  '7001',
+                                  '7002',
+                                  '5000',
+                                  '4000',
+                                  '3001',
+                                  '3002',
+                                  '3000',
+                                  '6001',
+                                  '6002',
+                                  '6021',
+                                  '6022',
+                                  '3011')
+         union
+         select 'QT' as loc_type_no, '其他（三角胶）' as loc_type_name, 1000 as idx
+           from dual) a
+ order by a.idx
+
+      ]]>
+    </select>
+
+  </statements>
+</sqlMap>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="班组编号" ></Caption>
+    <Caption Name="CONFIG_KEY" Value="配置项名称" ></Caption>
+    <Caption Name="CONFIG_VALUE" Value="配置项值" ></Caption>
+    <Caption Name="DELETE_FLAG" Value="删除标志" ></Caption>
+    <Caption Name="RECORD_USER_ID" Value="记录人编号" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption>
+    <Caption Name="BAKUP_FLAG" Value="备份标识" ></Caption>
+    <Caption Name="BAKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="REMARK" Value="备注" ></Caption>
+  </Captions>
+  <WebPage Title="系统基础资料-配置信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="CONFIG_KEY" ></GridColumn>
+        <GridColumn ColumnName="CONFIG_VALUE" ></GridColumn>
+        <GridColumn ColumnName="DELETE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="RECORD_USER_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="REMARK" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="CONFIG_KEY" ></ParamField>
+        <ParamField FieldName="CONFIG_VALUE" ></ParamField>
+        <ParamField FieldName="DELETE_FLAG" ></ParamField>
+        <ParamField FieldName="RECORD_USER_ID" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+        <ParamField FieldName="BAKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_TIME" ></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

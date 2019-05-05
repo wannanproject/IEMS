@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbRI.SeqSsbConfigService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <select id="SEQ_SSB_CONFIG.NEXTVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_SSB_CONFIG.NEXTVAL FROM DUAL]]>
+    </select>
+    <select id="SEQ_SSB_CONFIG.CURRVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_SSB_CONFIG.CURRVAL FROM DUAL]]>
+    </select>
+  </statements>
+</sqlMap>

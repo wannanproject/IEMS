@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+<Captions>
+    <Caption Name="CRN_NO"          Value="堆垛机编号" ></Caption>
+    <Caption Name="CRN_FORK_NO"     Value="堆垛机叉编号" ></Caption>
+    <Caption Name="LAST_TASK_TYPE"  Value="上次任务类型" ></Caption>
+    <Caption Name="TASK_TYPE"       Value="当前任务类型" ></Caption>
+    <Caption Name="TASK_NO"         Value="任务号" ></Caption>
+    <Caption Name="FROM_BIN"        Value="起始位置" ></Caption>
+    <Caption Name="TO_BIN"          Value="目的位置" ></Caption>
+    <Caption Name="STEP"            Value="执行类型" ></Caption>
+    <Caption Name="LOADING"         Value="有载状态" ></Caption>
+    <Caption Name="RETRY_COUNT"     Value="重下命令次数" ></Caption>
+    <Caption Name="CRN_MODE"        Value="堆垛机模式" ></Caption>
+    <Caption Name="STATUS"          Value="任务状态" ></Caption>
+    <Caption Name="ACT_POS_X"       Value="当前列" ></Caption>
+    <Caption Name="ACT_POS_Y"       Value="当前层" ></Caption>
+    <Caption Name="ACT_POS_Z"       Value="Z轴浅货叉位置" ></Caption>
+    <Caption Name="ACT_SPEED_X"     Value="行走速度" ></Caption>
+    <Caption Name="ACT_SPEED_Y"     Value="升降速度" ></Caption>
+    <Caption Name="ACT_SPEED_Z"     Value="浅库位货叉当前速度" ></Caption>
+    <Caption Name="RECORD_TIME"     Value="记录时间" ></Caption>
+    <Caption Name="FAULT_NO"        Value="错误代码" ></Caption>
+    <Caption Name="FAULT_NAME"      Value="报警内容" ></Caption>
+</Captions>
+<WebPage Title="堆垛机状态信息">
+ </WebPage>
+ <Select>
+   <MainGrid>
+     <GridColumns>
+       <GridColumn ColumnName="CRN_FORK_NO"     Width="90"></GridColumn>
+       <GridColumn ColumnName="CRN_NO"          Width="90"></GridColumn>
+       <GridColumn ColumnName="CRN_MODE"        Width="90"></GridColumn>
+       <GridColumn ColumnName="FAULT_NAME"      Width="120"></GridColumn>
+       <GridColumn ColumnName="STATUS"          Width="90"></GridColumn>
+       <GridColumn ColumnName="LOADING"         Width="80"></GridColumn>
+       <GridColumn ColumnName="STEP"            Width="80"></GridColumn>       
+       <GridColumn ColumnName="ACT_POS_X"       Width="80"></GridColumn>
+       <GridColumn ColumnName="ACT_POS_Y"       Width="80"></GridColumn>
+       <GridColumn ColumnName="ACT_SPEED_X"     Width="90"></GridColumn>
+       <GridColumn ColumnName="ACT_SPEED_Y"     Width="90"></GridColumn> 
+       <GridColumn ColumnName="LAST_TASK_TYPE"  Width="100"></GridColumn>
+       <GridColumn ColumnName="TASK_TYPE"       Width="100"></GridColumn>
+       <GridColumn ColumnName="TASK_NO"         Width="80"></GridColumn>
+       <GridColumn ColumnName="FROM_BIN"        Width="90"></GridColumn>
+       <GridColumn ColumnName="TO_BIN"          Width="90"></GridColumn>
+       <GridColumn ColumnName="RECORD_TIME"     Width="90"></GridColumn>
+     </GridColumns>
+   </MainGrid>
+ </Select>
+</UiConfig>
+

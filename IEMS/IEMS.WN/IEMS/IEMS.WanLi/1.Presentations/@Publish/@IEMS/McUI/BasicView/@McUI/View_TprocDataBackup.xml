@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="主键  编号" ></Caption>
+    <Caption Name="ERR_CODE" Value="错误编号" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误信息" ></Caption>
+    <Caption Name="PROC_STATUS" Value="0 为执行  1已执行" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="启动时间" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="执行时间" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="完成时间" ></Caption>
+    <Caption Name="DATA_TYPE" Value="备份类型" ></Caption>
+    <Caption Name="CRUD_TYPE" Value="C:创建  R:查询 U:更新 D:删除" ></Caption>
+    <Caption Name="BACKUP_SYS" Value="备份系统" ></Caption>
+    <Caption Name="BACKUP_SYS_OBJID" Value="备份系统 OBJID" ></Caption>
+    <Caption Name="BACKUP_METHOD" Value="备份函数" ></Caption>
+    <Caption Name="BACKUP_POINT" Value="备份位置" ></Caption>
+    <Caption Name="PARAM_01" Value="参数1" ></Caption>
+    <Caption Name="PARAM_02" Value="参数2" ></Caption>
+    <Caption Name="PARAM_03" Value="参数3" ></Caption>
+    <Caption Name="PARAM_04" Value="参数4" ></Caption>
+    <Caption Name="PARAM_05" Value="参数5" ></Caption>
+    <Caption Name="PARAM_06" Value="参数6" ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="GLOBAL_GUID" ></Caption>
+  </Captions>
+  <WebPage Title="存储过程参数 - 数据日志备份">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="DATA_TYPE" ></GridColumn>
+        <GridColumn ColumnName="CRUD_TYPE" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_SYS" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_SYS_OBJID" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_METHOD" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_POINT" ></GridColumn>
+        <GridColumn ColumnName="PARAM_01" ></GridColumn>
+        <GridColumn ColumnName="PARAM_02" ></GridColumn>
+        <GridColumn ColumnName="PARAM_03" ></GridColumn>
+        <GridColumn ColumnName="PARAM_04" ></GridColumn>
+        <GridColumn ColumnName="PARAM_05" ></GridColumn>
+        <GridColumn ColumnName="PARAM_06" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="DATA_TYPE" ></ParamField>
+        <ParamField FieldName="CRUD_TYPE" ></ParamField>
+        <ParamField FieldName="BACKUP_SYS" ></ParamField>
+        <ParamField FieldName="BACKUP_SYS_OBJID" ></ParamField>
+        <ParamField FieldName="BACKUP_METHOD" ></ParamField>
+        <ParamField FieldName="BACKUP_POINT" ></ParamField>
+        <ParamField FieldName="PARAM_01" ></ParamField>
+        <ParamField FieldName="PARAM_02" ></ParamField>
+        <ParamField FieldName="PARAM_03" ></ParamField>
+        <ParamField FieldName="PARAM_04" ></ParamField>
+        <ParamField FieldName="PARAM_05" ></ParamField>
+        <ParamField FieldName="PARAM_06" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

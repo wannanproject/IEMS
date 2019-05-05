@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GPORTNO" Value="GPORTNO" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="EQUIPMENT_NAME" ></Caption>
+    <Caption Name="PORT_NAME" Value="PORT_NAME" ></Caption>
+    <Caption Name="CACHE_SIZE" Value="CACHE_SIZE" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_EQP_IN_PORT">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GPORTNO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GPORTNO" ></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="PORT_NAME" ></GridColumn>
+        <GridColumn ColumnName="CACHE_SIZE" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GPORTNO" ></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME" ></ParamField>
+        <ParamField FieldName="PORT_NAME" ></ParamField>
+        <ParamField FieldName="CACHE_SIZE" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

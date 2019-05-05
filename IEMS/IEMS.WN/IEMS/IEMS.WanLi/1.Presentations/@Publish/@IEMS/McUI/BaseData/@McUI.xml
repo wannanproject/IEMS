@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="VIEW_PSBMATERIAL" uri="@McUI\VIEW_PSBMATERIAL.xml"/>
+  <McUI name="VIEW_PSBAREA" uri="@McUI\VIEW_PSBAREA.xml"/>
+  <McUI name="VIEW_PSBLOC" uri="@McUI\VIEW_PSBLOC.xml"/>
+  <McUI name="VIEW_PSBLOCGROUP" uri="@McUI\VIEW_PSBLOCGROUP.xml"/>
+  <McUI name="VIEW_PSBLOCTYPE" uri="@McUI\VIEW_PSBLOCTYPE.xml"/>
+  <McUI name="VIEW_PSBPALLET" uri="@McUI\VIEW_PSBPALLET.xml"/>
+  <McUI name="VIEW_PSBPALLETLOADED" uri="@McUI\VIEW_PSBPALLETLOADED.xml"/>
+  <McUI name="VIEW_PSBPALLETLOADEDERR" uri="@McUI\VIEW_PSBPALLETLOADEDERR.xml"/>
+  <McUI name="VIEW_PSBPALLETLOADNOPRO" uri="@McUI\VIEW_PSBPALLETLOADNOPRO.xml"/>
+</McUIConfig>

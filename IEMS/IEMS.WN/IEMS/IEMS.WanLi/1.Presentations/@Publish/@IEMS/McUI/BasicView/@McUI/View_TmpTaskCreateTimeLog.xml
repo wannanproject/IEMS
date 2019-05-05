@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="日志标记" ></Caption>
+    <Caption Name="RECORD_DATE" Value="记录时间" ></Caption>
+    <Caption Name="LOG_DATA" Value="日志内容" ></Caption>
+    <Caption Name="LOG_DESC" Value="日志说明" ></Caption>
+    <Caption Name="RECORD_TIME" Value="毫秒时间戳" ></Caption>
+  </Captions>
+  <WebPage Title="任务生成时间日志记录">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_DATE" ></GridColumn>
+        <GridColumn ColumnName="LOG_DATA" ></GridColumn>
+        <GridColumn ColumnName="LOG_DESC" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="RECORD_DATE" ></ParamField>
+        <ParamField FieldName="LOG_DATA" ></ParamField>
+        <ParamField FieldName="LOG_DESC" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

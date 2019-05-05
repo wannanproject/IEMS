@@ -1,0 +1,12 @@
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.WanLi.WebUI.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.WanLi.WebUI.pdb
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.Frame.WebUI.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.Frame.AppBiz.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.Frame.Entity.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.Frame.DbCI.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\bin\Release\IEMS.Frame.DbRI.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\obj\Release\IEMS.WanLi.WebUI.csprojResolveAssemblyReference.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\obj\Release\IEMS.WanLi.WebUI.csproj.CoreCompileInputs.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\obj\Release\IEMS.WanLi.WebUI.csproj.CopyComplete
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\obj\Release\IEMS.WanLi.WebUI.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\1.Presentations\IEMS.WanLi.WebUI\obj\Release\IEMS.WanLi.WebUI.pdb

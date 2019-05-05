@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbRI.SslLoginLogService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="SslLoginLog" type="IEMS.Main.Entity.SslLoginLog, IEMS.Main.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_SslLoginLog" class="SslLoginLog">
+    <result property="ObjId" column="OBJID"/>
+    <result property="UserId" column="USER_ID"/>
+    <result property="LoginTime" column="LOGIN_TIME"/>
+    <result property="LoginIp" column="LOGIN_IP"/>
+    <result property="LogoutTime" column="LOGOUT_TIME"/>
+    <result property="LogoutIp" column="LOGOUT_IP"/>
+    <result property="Remark" column="REMARK"/>
+    <result property="BakupFlag" column="BAKUP_FLAG"/>
+    <result property="BakupTime" column="BAKUP_TIME"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_SslLoginLog" class="SslLoginLog">
+    <parameter property="ObjId" column="ObjId"/>
+    <parameter property="UserId" column="UserId"/>
+    <parameter property="LoginTime" column="LoginTime"/>
+    <parameter property="LoginIp" column="LoginIp"/>
+    <parameter property="LogoutTime" column="LogoutTime"/>
+    <parameter property="LogoutIp" column="LogoutIp"/>
+    <parameter property="Remark" column="Remark"/>
+    <parameter property="BakupFlag" column="BakupFlag"/>
+    <parameter property="BakupTime" column="BakupTime"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM SSL_LOGIN_LOG ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.ObjId" prepend="AND">
+            <![CDATA[OBJID = #where.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="where.UserId" prepend="AND">
+            <![CDATA[USER_ID = #where.UserId#]]>
+        </isNotNull>
+        <isNotNull property="where.LoginTime" prepend="AND">
+          <isEqual property="where.LoginTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[LOGIN_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LoginTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[LOGIN_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LoginTime" compareValue="1234-12-23 0:00:00">
+          <isNotEqual property="where.LoginTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[LOGIN_TIME = #where.LoginTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LoginIp" prepend="AND">
+          <isEqual property="where.LoginIp" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LOGIN_IP IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LoginIp" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LOGIN_IP IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LoginIp" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.LoginIp" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LOGIN_IP = #where.LoginIp#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LogoutTime" prepend="AND">
+          <isEqual property="where.LogoutTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[LOGOUT_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LogoutTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[LOGOUT_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LogoutTime" compareValue="1234-12-23 0:00:00">
+          <isNotEqual property="where.LogoutTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[LOGOUT_TIME = #where.LogoutTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.LogoutIp" prepend="AND">
+          <isEqual property="where.LogoutIp" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LOGOUT_IP IS NULL]]>
+          </isEqual>
+          <isEqual property="where.LogoutIp" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LOGOUT_IP IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.LogoutIp" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.LogoutIp" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[LOGOUT_IP = #where.LogoutIp#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Remark" prepend="AND">
+          <isEqual property="where.Remark" compareValue="STRING_NULL_VALUE">
+            <![CDATA[REMARK IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Remark" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[REMARK IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Remark" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Remark" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[REMARK = #where.Remark#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BakupFlag" prepend="AND">
+          <isEqual property="where.BakupFlag" compareValue="-1147483648">
+            <![CDATA[BAKUP_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BakupFlag" compareValue="-1147483647">
+            <![CDATA[BAKUP_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BakupFlag" compareValue="-1147483648">
+          <isNotEqual property="where.BakupFlag" compareValue="-1147483647">
+            <![CDATA[BAKUP_FLAG = #where.BakupFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BakupTime" prepend="AND">
+          <isEqual property="where.BakupTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[BAKUP_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BakupTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[BAKUP_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BakupTime" compareValue="1234-12-23 0:00:00">
+          <isNotEqual property="where.BakupTime" compareValue="1234-12-24 0:00:00">
+            <![CDATA[BAKUP_TIME = #where.BakupTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO SSL_LOGIN_LOG]]>
+       <dynamic prepend="(">
+        <isNull property="ObjId" prepend=",">OBJID</isNull>
+        <isNotNull property="ObjId" prepend=",">OBJID</isNotNull>
+        <isNotNull property="UserId" prepend=",">USER_ID</isNotNull>
+        <isNotNull property="LoginTime" prepend=",">LOGIN_TIME</isNotNull>
+        <isNotNull property="LoginIp" prepend=",">LOGIN_IP</isNotNull>
+        <isNotNull property="LogoutTime" prepend=",">LOGOUT_TIME</isNotNull>
+        <isNotNull property="LogoutIp" prepend=",">LOGOUT_IP</isNotNull>
+        <isNotNull property="Remark" prepend=",">REMARK</isNotNull>
+        <isNotNull property="BakupFlag" prepend=",">BAKUP_FLAG</isNotNull>
+        <isNotNull property="BakupTime" prepend=",">BAKUP_TIME</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNull property="ObjId" prepend=",">SEQ_SSL_LOGIN_LOG.NEXTVAL</isNull>
+        <isNotNull property="ObjId" prepend=",">#ObjId#</isNotNull>
+        <isNotNull property="UserId" prepend=",">#UserId#</isNotNull>
+        <isNotNull property="LoginTime" prepend=",">#LoginTime#</isNotNull>
+        <isNotNull property="LoginIp" prepend=",">#LoginIp#</isNotNull>
+        <isNotNull property="LogoutTime" prepend=",">#LogoutTime#</isNotNull>
+        <isNotNull property="LogoutIp" prepend=",">#LogoutIp#</isNotNull>
+        <isNotNull property="Remark" prepend=",">#Remark#</isNotNull>
+        <isNotNull property="BakupFlag" prepend=",">#BakupFlag#</isNotNull>
+        <isNotNull property="BakupTime" prepend=",">#BakupTime#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE SSL_LOGIN_LOG]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.UserId" prepend=",">
+          <![CDATA[USER_ID = #update.UserId#]]>
+        </isNotNull>
+        <isNotNull property="update.LoginTime" prepend=",">
+          <isEqual property="update.LoginTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[LOGIN_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LoginTime" compareValue="1234-12-23 0:00:00">
+          <![CDATA[LOGIN_TIME = #update.LoginTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LoginIp" prepend=",">
+          <isEqual property="update.LoginIp" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LOGIN_IP = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LoginIp" compareValue="STRING_NULL_VALUE">
+          <![CDATA[LOGIN_IP = #update.LoginIp#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LogoutTime" prepend=",">
+          <isEqual property="update.LogoutTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[LOGOUT_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LogoutTime" compareValue="1234-12-23 0:00:00">
+          <![CDATA[LOGOUT_TIME = #update.LogoutTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.LogoutIp" prepend=",">
+          <isEqual property="update.LogoutIp" compareValue="STRING_NULL_VALUE">
+            <![CDATA[LOGOUT_IP = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.LogoutIp" compareValue="STRING_NULL_VALUE">
+          <![CDATA[LOGOUT_IP = #update.LogoutIp#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Remark" prepend=",">
+          <isEqual property="update.Remark" compareValue="STRING_NULL_VALUE">
+            <![CDATA[REMARK = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Remark" compareValue="STRING_NULL_VALUE">
+          <![CDATA[REMARK = #update.Remark#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BakupFlag" prepend=",">
+          <isEqual property="update.BakupFlag" compareValue="-1147483648">
+            <![CDATA[BAKUP_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BakupFlag" compareValue="-1147483648">
+          <![CDATA[BAKUP_FLAG = #update.BakupFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BakupTime" prepend=",">
+          <isEqual property="update.BakupTime" compareValue="1234-12-23 0:00:00">
+            <![CDATA[BAKUP_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BakupTime" compareValue="1234-12-23 0:00:00">
+          <![CDATA[BAKUP_TIME = #update.BakupTime#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM SSL_LOGIN_LOG]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_SslLoginLog">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM SSL_LOGIN_LOG]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM SSL_LOGIN_LOG]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_SslLoginLog" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

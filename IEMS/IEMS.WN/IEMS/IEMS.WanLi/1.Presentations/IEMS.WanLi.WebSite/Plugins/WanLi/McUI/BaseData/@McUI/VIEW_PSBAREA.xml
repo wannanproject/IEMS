@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="AREA_NO" Value="区域编码" ></Caption>
+    <Caption Name="AREA_NAME" Value="区域名称" ></Caption>
+    <Caption Name="AREA_LEVEL" Value="区域级别" ></Caption>
+    <Caption Name="PAREA_NO" Value="父级区域" ></Caption>
+    <Caption Name="MAX_TASK_SIZE" Value="最大任务数" ></Caption>
+    <Caption Name="FMEM" Value="备注" ></Caption>
+    <Caption Name="LAST_LEVEL_FLAG" Value="最后一级标识" ></Caption>   
+  </Captions>
+  <WebPage Title="区域维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="AREA_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="AREA_NO" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="AREA_NAME" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="AREA_LEVEL" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="LAST_LEVEL_FLAG" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="PAREA_NO" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="MAX_TASK_SIZE" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="FMEM" WIDTH="200"></GridColumn>
+      </GridColumns>
+    </MainGrid>   
+  </Select>
+</UiConfig>

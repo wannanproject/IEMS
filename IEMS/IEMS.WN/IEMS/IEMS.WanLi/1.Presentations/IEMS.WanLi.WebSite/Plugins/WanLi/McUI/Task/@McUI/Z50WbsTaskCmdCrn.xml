@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID"           Value="指令ID" ></Caption>
+    <Caption Name="TASK_GUID"       Value="任务GUID" ></Caption>
+    <Caption Name="TASK_NO"         Value="任务号" ></Caption>
+    <Caption Name="CMD_TYPE"        Value="指令类型" ></Caption>
+    <Caption Name="SLOC_NO"         Value="源地址" ></Caption>
+    <Caption Name="SLOC_PLC_NO"     Value="源PLC地址" ></Caption>
+    <Caption Name="ELOC_NO"         Value="目标地址"></Caption>
+    <Caption Name="ELOC_PLC_NO"     Value="目标PLC地址" ></Caption>
+    <Caption Name="CREATION_DATE"   Value="创建时间" ></Caption>
+    <Caption Name="DOWNLOAD_DATE"   Value="下传时间" ></Caption>
+    <Caption Name="EXCUTE_DATE"     Value="执行时间" ></Caption>
+    <Caption Name="FINISH_DATE"     Value="完成时间" ></Caption>
+    <Caption Name="ERR_NO"          Value="错误编码" ></Caption>
+    <Caption Name="ERR_NAME"        Value="错误信息" ></Caption>
+    <Caption Name="ROUTE_NO"        Value="路径编号" ></Caption>
+    <Caption Name="TRANSFER_NO"     Value="输送设备号码" ></Caption>
+    <Caption Name="FINISH_STATUS"   Value="结束状态" ></Caption>
+    <Caption Name="PALLET_NO"       Value="工装号" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行项目GUID" ></Caption>
+    <Caption Name="CMD_STEP"        Value="指令步骤" ></Caption>
+    <Caption Name="PACKAGE_GUID"    Value="包装标识" ></Caption>
+    <Caption Name="MATERIAL_NO"     Value="物料编码" ></Caption>
+    <Caption Name="MATER_SPEC"      Value="物料描述" ></Caption>
+    <Caption Name="BTIME"           Value="查询开始时间" ></Caption>
+    <Caption Name="ETIME"           Value="查询结束时间" ></Caption>
+  </Captions>
+  <WebPage Title="堆垛机历史指令">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TASK_NO"></ParamField>
+        <ParamField FieldName="MATERIAL_NO"></ParamField>
+        <ParamField FieldName="SLOC_PLC_NO"></ParamField>
+        <ParamField FieldName="BTIME" Type="DateBox" DefaultValue="0"></ParamField>
+        <ParamField FieldName="ETIME" Type="DateBox" DefaultValue="0"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="TASK_NO" Width="70"></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" Width="140"></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="MATER_SPEC" Width="100"></GridColumn>
+        <GridColumn ColumnName="SLOC_PLC_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="ELOC_PLC_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="ERR_NAME" Width="120"></GridColumn>
+        <GridColumn ColumnName="CMD_TYPE" Width="70"></GridColumn>
+        <GridColumn ColumnName="CMD_STEP" Width="70"></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="DOWNLOAD_DATE" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="EXCUTE_DATE" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="FINISH_DATE" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID"           ></ParamField>
+        <ParamField FieldName="TASK_GUID"       ></ParamField>
+        <ParamField FieldName="TASK_NO"         ></ParamField>
+        <ParamField FieldName="CMD_TYPE"        ></ParamField>
+        <ParamField FieldName="SLOC_NO"         ></ParamField>
+        <ParamField FieldName="SLOC_PLC_NO"     ></ParamField>
+        <ParamField FieldName="ELOC_NO"         ></ParamField>
+        <ParamField FieldName="ELOC_PLC_NO"     ></ParamField>
+        <ParamField FieldName="CREATION_DATE"   ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+        <ParamField FieldName="DOWNLOAD_DATE"   ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+        <ParamField FieldName="EXCUTE_DATE"     ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+        <ParamField FieldName="FINISH_DATE"     ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+        <ParamField FieldName="ERR_NO"          ></ParamField>
+        <ParamField FieldName="ERR_NAME"        ></ParamField>
+        <ParamField FieldName="ROUTE_NO"        ></ParamField>
+        <ParamField FieldName="TRANSFER_NO"     ></ParamField>
+        <ParamField FieldName="FINISH_STATUS"   ></ParamField>
+        <ParamField FieldName="PALLET_NO"       ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="CMD_STEP"        ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID"    ></ParamField>
+        <ParamField FieldName="MATERIAL_NO"     ></ParamField>
+        <ParamField FieldName="MATER_SPEC"      ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

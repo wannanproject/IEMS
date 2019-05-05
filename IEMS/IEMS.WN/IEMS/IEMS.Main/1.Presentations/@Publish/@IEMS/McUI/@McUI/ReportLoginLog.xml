@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="日志编号"></Caption>
+    <Caption Name="USER_NAME" Value="用户名称"></Caption>
+    <Caption Name="LOGIN_TIME" Value="登陆时间"></Caption>
+    <Caption Name="LOGIN_IP" Value="登陆IP"></Caption>
+    <Caption Name="LOGOUT_TIME" Value="登出时间"></Caption>
+    <Caption Name="LOGOUT_IP" Value="登出IP"></Caption>
+    <Caption Name="START_TIME" Value="开始时间"></Caption>
+    <Caption Name="END_TIME" Value="登陆时间"></Caption>
+    <Caption Name="REMARK" Value="备注内容"></Caption>
+  </Captions>
+  <WebPage Title="系统登陆日志">
+  </WebPage>
+  <Crud TableName="SSL_WEB_LOG">
+    <PrimaryKey FieldName="OBJID" Identity="true"></PrimaryKey>
+  </Crud>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="USER_NAME"></ParamField>
+        <ParamField FieldName="START_TIME"  Type="DateTimeBox" DefaultValue="-1"></ParamField>
+        <ParamField FieldName="END_TIME"  Type="DateTimeBox" DefaultValue="1"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="T1.OBJID">
+      <GridColumns>
+        <GridColumn ColumnName="USER_NAME" Width="150"></GridColumn>
+        <GridColumn ColumnName="LOGIN_TIME" ColumnType="Date" Width="150" ></GridColumn>
+        <GridColumn ColumnName="LOGIN_IP" Width="150"></GridColumn>
+        <GridColumn ColumnName="LOGOUT_TIME" ColumnType="Date" Width="150" ></GridColumn>
+        <GridColumn ColumnName="LOGOUT_IP" Width="150"></GridColumn>
+        <GridColumn ColumnName="REMARK"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

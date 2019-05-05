@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@ViewOrderDtl" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+            SELECT T1.LIST_NO,
+                   CASE T1.STATUS
+                     WHEN 0 THEN
+                      '未执行'
+                     WHEN 1 THEN
+                      '出库中'
+                     WHEN 2 THEN
+                      '已完成'
+                     WHEN 3 THEN
+                      '已取消'
+                   END AS STATUS,
+                   CASE T1.SOURCE_BY
+                     WHEN '1' THEN
+                      'WMS'
+                     WHEN '2' THEN
+                      'MES'
+                     WHEN '3' THEN
+                      'WCS'
+                   END AS SOURCE_BY,
+                   T1.CREATION_DATE,
+                   T1.LAST_UPDATE_DATE,
+                   CASE T1.SLMS_FLAG
+                     WHEN 1 THEN
+                      '新增'
+                     WHEN 2 THEN
+                      '修改'
+                     WHEN 3 THEN
+                      '删除'
+                     WHEN 0 THEN
+                      '复位'
+                   END AS SLMS_FLAG,
+                   T2.LINE_ID,
+                   T2.MATER_NO,
+                   T2.GRADE,
+                   T2.REQUIRE_QTY,
+                   T2.ACT_QTY,
+                   T2.SHIP_QTY,
+                   T2.PRODUCT_GUID,
+                   CASE T2.STATUS
+                     WHEN 0 THEN
+                      '未执行'
+                     WHEN 1 THEN
+                      '发货中'
+                     WHEN 2 THEN
+                      '已完成'
+                   END AS LINE_STATUS,
+                   T2.STOP_FLAG,
+                   T2.DLOC_NO,
+                   T2.ERR_FLAG,
+                   T2.REMARKS,
+                   CASE T2.SLMS_FLAG
+                     WHEN 1 THEN
+                      '新增'
+                     WHEN 2 THEN
+                      '修改'
+                     WHEN 3 THEN
+                      '删除'
+                     WHEN 0 THEN
+                      '复位'
+                   END AS LINE_SLMS_FLAG,
+                   T2.EQUIPMENT_NAME,
+                   T2.BATCH_NO,
+                   T2.REQUEST_CATEGORY,
+                   T2.MES_STATUS,
+                   T2.EQU_STATUS
+              FROM VIEW_ORDER_LIST T1
+             INNER JOIN VIEW_ORDER_DTL T2
+                ON T1.LIST_NO = T2.LIST_NO
+
+      ]]>
+      <dynamic prepend="where">
+         <isNotNull property="where.LIST_NO" prepend="AND">
+           T1.LIST_NO LIKE '%'||#where.LIST_NO#||'%'
+         </isNotNull>
+        <isNotNull property="where.MATER_NO" prepend="AND">
+          T2.MATER_NO LIKE '%'||#where.MATER_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.DLOC_NO" prepend="AND">
+          T2.DLOC_NO LIKE '%'||#where.DLOC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.EQUIPMENT_NAME" prepend="AND">
+          T2.EQUIPMENT_NAME LIKE '%'||#where.EQUIPMENT_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.REQUEST_CATEGORY" prepend="AND">
+          T2.REQUEST_CATEGORY LIKE '%'||#where.REQUEST_CATEGORY#||'%'
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.CREATION_DATE >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.CREATION_DATE < #where.END_TIME# + 1]]>
+        </isNotNull>
+       </dynamic>
+      ORDER BY t1.creation_date desc
+    </select>
+     <select id="Select@ViewOrderDtl@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+            SELECT T1.LIST_NO,
+                   CASE T1.STATUS
+                     WHEN 0 THEN
+                      '未执行'
+                     WHEN 1 THEN
+                      '出库中'
+                     WHEN 2 THEN
+                      '已完成'
+                     WHEN 3 THEN
+                      '已取消'
+                   END AS STATUS,
+                   CASE T1.SOURCE_BY
+                     WHEN '1' THEN
+                      'WMS'
+                     WHEN '2' THEN
+                      'MES'
+                     WHEN '3' THEN
+                      'WCS'
+                   END AS SOURCE_BY,
+                   T1.CREATION_DATE,
+                   T1.LAST_UPDATE_DATE,
+                   CASE T1.SLMS_FLAG
+                     WHEN 1 THEN
+                      '新增'
+                     WHEN 2 THEN
+                      '修改'
+                     WHEN 3 THEN
+                      '删除'
+                     WHEN 0 THEN
+                      '复位'
+                   END AS SLMS_FLAG,
+                   T2.LINE_ID,
+                   T2.MATER_NO,
+                   T2.GRADE,
+                   T2.REQUIRE_QTY,
+                   T2.ACT_QTY,
+                   T2.SHIP_QTY,
+                   T2.PRODUCT_GUID,
+                   CASE T2.STATUS
+                     WHEN 0 THEN
+                      '未执行'
+                     WHEN 1 THEN
+                      '发货中'
+                     WHEN 2 THEN
+                      '已完成'
+                   END AS LINE_STATUS,
+                   T2.STOP_FLAG,
+                   T2.DLOC_NO,
+                   T2.ERR_FLAG,
+                   T2.REMARKS,
+                   CASE T2.SLMS_FLAG
+                     WHEN 1 THEN
+                      '新增'
+                     WHEN 2 THEN
+                      '修改'
+                     WHEN 3 THEN
+                      '删除'
+                     WHEN 0 THEN
+                      '复位'
+                   END AS LINE_SLMS_FLAG,
+                   T2.EQUIPMENT_NAME,
+                   T2.BATCH_NO,
+                   T2.REQUEST_CATEGORY,
+                   T2.MES_STATUS,
+                   T2.EQU_STATUS
+              FROM VIEW_ORDER_LIST T1
+             INNER JOIN VIEW_ORDER_DTL T2
+                ON T1.LIST_NO = T2.LIST_NO
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LIST_NO" prepend = "AND">
+           T1.LIST_NO = #where.LIST_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

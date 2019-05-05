@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GLOBAL_GUID" Value="唯一标识" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="产成品唯一标识" ></Caption>
+    <Caption Name="REQUEST_NO" Value="回应号" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装编码" ></Caption>
+    <Caption Name="TRANS_DATE" Value="输送时间" ></Caption>
+    <Caption Name="TLOC_NO" Value="输送目标" ></Caption>
+    <Caption Name="DELIVERY_FLAG" Value="标志：1: 等待报产 0：已经报产" ></Caption>
+    <Caption Name="TLOC_MES_NO" Value="MES目标" ></Caption>
+    <Caption Name="RPT_TYPE" Value="报产分类 1:出库报产 2：回库报产" ></Caption>
+  </Captions>
+  <WebPage Title="输送报产记录">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GLOBAL_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="TRANS_DATE" ></GridColumn>
+        <GridColumn ColumnName="TLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="DELIVERY_FLAG" ></GridColumn>
+        <GridColumn ColumnName="TLOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="RPT_TYPE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="REQUEST_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="TRANS_DATE" ></ParamField>
+        <ParamField FieldName="TLOC_NO" ></ParamField>
+        <ParamField FieldName="DELIVERY_FLAG" ></ParamField>
+        <ParamField FieldName="TLOC_MES_NO" ></ParamField>
+        <ParamField FieldName="RPT_TYPE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

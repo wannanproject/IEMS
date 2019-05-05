@@ -1,0 +1,5 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbMapper\bin\Debug\IEMS.Main.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbMapper\bin\Debug\IEMS.Main.DbMapper.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbMapper\obj\Debug\IEMS.Main.DbMapper.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbMapper\obj\Debug\IEMS.Main.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbMapper\obj\Debug\IEMS.Main.DbMapper.pdb

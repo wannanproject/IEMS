@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="叠盘机编码" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码" ></Caption>
+    <Caption Name="ORDER_ID" Value="序号" ></Caption>
+  </Captions>
+  <WebPage Title="叠盘机空笼队列">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_ID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="ORDER_ID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

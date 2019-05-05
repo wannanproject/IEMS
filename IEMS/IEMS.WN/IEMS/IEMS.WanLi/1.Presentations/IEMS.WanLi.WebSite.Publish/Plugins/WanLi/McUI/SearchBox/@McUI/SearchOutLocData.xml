@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_TYPE" Value="站台类型"></Caption>
+    <Caption Name="LOC_NO" Value="库位编号"></Caption>
+    <Caption Name="LOC_PLC_NO" Value="PLC编号"></Caption>
+    <Caption Name="LOC_NAME" Value="站台名称"></Caption>
+  </Captions>
+  <WebPage Title="库位信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_TYPE" Type="ComboBox" Nullable="false"></ParamField>
+        <ParamField FieldName="LOC_PLC_NO"></ParamField>
+        <ParamField FieldName="LOC_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="LOC_PLC_NO" Width="60"></GridColumn>
+        <GridColumn ColumnName="LOC_NAME"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

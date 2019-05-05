@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID_NO" ></Caption>
+    <Caption Name="PAINT_NO" Value="PAINT_NO" ></Caption>
+    <Caption Name="PALLET_TYPE" Value="A,B,C,D,E" ></Caption>
+    <Caption Name="PALLET_NAME" Value="PALLET_NAME" ></Caption>
+    <Caption Name="USED_FLAG" Value="USED_FLAG" ></Caption>
+    <Caption Name="PALLET_WEIGHT" Value="PALLET_WEIGHT" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="LAST_PRODUCT_GUID" Value="LAST_PRODUCT_GUID" ></Caption>
+    <Caption Name="BINDING_TIME" Value="BINDING_TIME" ></Caption>
+    <Caption Name="LOAD_STATUS" Value="1:有载 0：空载" ></Caption>
+    <Caption Name="ERROR_STATUS" Value="1:正常 0：异常" ></Caption>
+    <Caption Name="FMEM" Value="FMEM" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="产品号" ></Caption>
+    <Caption Name="CHECK_RESULT" Value="检验结果" ></Caption>
+  </Captions>
+  <WebPage Title="PSB_PALLET">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="PAINT_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NAME" ></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PALLET_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="LAST_PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="BINDING_TIME" ></GridColumn>
+        <GridColumn ColumnName="LOAD_STATUS" ></GridColumn>
+        <GridColumn ColumnName="ERROR_STATUS" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_NO" ></GridColumn>
+        <GridColumn ColumnName="CHECK_RESULT" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="PAINT_NO" ></ParamField>
+        <ParamField FieldName="PALLET_TYPE" ></ParamField>
+        <ParamField FieldName="PALLET_NAME" ></ParamField>
+        <ParamField FieldName="USED_FLAG" ></ParamField>
+        <ParamField FieldName="PALLET_WEIGHT" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="LAST_PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="BINDING_TIME" ></ParamField>
+        <ParamField FieldName="LOAD_STATUS" ></ParamField>
+        <ParamField FieldName="ERROR_STATUS" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+        <ParamField FieldName="CHECK_RESULT" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.SeqWbsOrderService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <select id="SEQ_WBS_ORDER.NEXTVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_WBS_ORDER.NEXTVAL FROM DUAL]]>
+    </select>
+    <select id="SEQ_WBS_ORDER.CURRVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_WBS_ORDER.CURRVAL FROM DUAL]]>
+    </select>
+  </statements>
+</sqlMap>

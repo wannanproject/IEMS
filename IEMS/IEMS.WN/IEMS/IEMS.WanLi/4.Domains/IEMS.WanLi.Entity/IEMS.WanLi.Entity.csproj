@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B322627C-9F72-417B-BFF8-754319E5BCF2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.WanLi.Entity</RootNamespace>
+    <AssemblyName>IEMS.WanLi.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Procedure\Proc0100TaskRequest.cs" />
+    <Compile Include="Procedure\Proc0200CmdRequest.cs" />
+    <Compile Include="Procedure\Proc0303CmdFinish.cs" />
+    <Compile Include="Procedure\Proc3001DataBackup.cs" />
+    <Compile Include="Procedure\ProcGetBinstore.cs" />
+    <Compile Include="Procedure\ProcGetBinstoreBatchno.cs" />
+    <Compile Include="Procedure\ProcTaskFinish.cs" />
+    <Compile Include="Procedure\ProcWmsDeleteBin.cs" />
+    <Compile Include="Procedure\ProcWmsDeleteCmd.cs" />
+    <Compile Include="Procedure\ProcWmsDeleteTask.cs" />
+    <Compile Include="Procedure\ProcWmsFinishCmd.cs" />
+    <Compile Include="Procedure\ProcWmsUpdateSrmArea.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\PemCrnForkStatus.cs" />
+    <Compile Include="Table\PsbBinStatus.cs" />
+    <Compile Include="Table\PsbCrn.cs" />
+    <Compile Include="Table\PsbCrnFork.cs" />
+    <Compile Include="Table\PsbGrade.cs" />
+    <Compile Include="Table\PsbLoc.cs" />
+    <Compile Include="Table\PsbLocType.cs" />
+    <Compile Include="Table\PsbMaterial.cs" />
+    <Compile Include="Table\PsbMino.cs" />
+    <Compile Include="Table\PsbPallet.cs" />
+    <Compile Include="Table\Tproc0100TaskRequest.cs" />
+    <Compile Include="Table\Tproc0200CmdRequest.cs" />
+    <Compile Include="Table\Tproc0303CmdFinish.cs" />
+    <Compile Include="Table\TprocDataBackup.cs" />
+    <Compile Include="Table\WbsOrder.cs" />
+    <Compile Include="Table\WbsOrderLine.cs" />
+    <Compile Include="Table\WbsTask.cs" />
+    <Compile Include="Table\WbsTaskCmd.cs" />
+    <Compile Include="Table\Z30BinStore.cs" />
+    <Compile Include="Table\Z30Loc0101OrderMonitor.cs" />
+    <Compile Include="Table\Z30Loc0102OrderMonitor.cs" />
+    <Compile Include="Table\Z30Loc0301CmdMonitor.cs" />
+    <Compile Include="Table\Z50WbsTask.cs" />
+    <Compile Include="Table\Z50WbsTaskCmd.cs" />
+    <Compile Include="View\ViewPallet.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

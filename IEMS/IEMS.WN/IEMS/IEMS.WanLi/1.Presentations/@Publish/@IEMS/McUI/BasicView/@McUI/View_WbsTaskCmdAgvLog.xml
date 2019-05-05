@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="AGV_GUID" Value="SYS_GUID()" ></Caption>
+    <Caption Name="AGV_NO" Value="AGV编号" ></Caption>
+    <Caption Name="AGV_TASKNO" Value="AGV任务号" ></Caption>
+    <Caption Name="TASK_NO" Value="任务号码" ></Caption>
+    <Caption Name="SLOC_NO" Value="开始库位" ></Caption>
+    <Caption Name="ELOC_NO" Value="结束库位" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装编码" ></Caption>
+    <Caption Name="CREATE_DATE" Value="任务下达时间" ></Caption>
+    <Caption Name="TASK_TYPE" Value="1:必须按照顺序发货 0：未受限" ></Caption>
+    <Caption Name="DOWN_LOAD_DATE" Value="任务下发指派时间" ></Caption>
+    <Caption Name="EXEC_DATE" Value="任务执行时间" ></Caption>
+    <Caption Name="END_DATE" Value="任务执行完毕时间" ></Caption>
+    <Caption Name="SLMS_STATUS" Value="0：下发 1 确认  2: 异常" ></Caption>
+    <Caption Name="AGV_STATUS" Value="0：等待确认 1 ：已确认  2： 下发任务  3：开始执行 4、完毕 5:异常  " ></Caption>
+    <Caption Name="FMEM" Value="FMEM" ></Caption>
+    <Caption Name="PRODUCT_ID" Value="PRODUCT_ID" ></Caption>
+    <Caption Name="TASK_ORDER_OBJID" Value="TASK_ORDER_OBJID" ></Caption>
+    <Caption Name="ACCOUNT_ID" Value="ACCOUNT_ID" ></Caption>
+    <Caption Name="LOADED_FLAG" Value="是否装载" ></Caption>
+  </Captions>
+  <WebPage Title="WBS_TASK_CMD_AGV_LOG">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="AGV_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="AGV_GUID" ></GridColumn>
+        <GridColumn ColumnName="AGV_NO" ></GridColumn>
+        <GridColumn ColumnName="AGV_TASKNO" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="CREATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="TASK_TYPE" ></GridColumn>
+        <GridColumn ColumnName="DOWN_LOAD_DATE" ></GridColumn>
+        <GridColumn ColumnName="EXEC_DATE" ></GridColumn>
+        <GridColumn ColumnName="END_DATE" ></GridColumn>
+        <GridColumn ColumnName="SLMS_STATUS" ></GridColumn>
+        <GridColumn ColumnName="AGV_STATUS" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_ID" ></GridColumn>
+        <GridColumn ColumnName="TASK_ORDER_OBJID" ></GridColumn>
+        <GridColumn ColumnName="ACCOUNT_ID" ></GridColumn>
+        <GridColumn ColumnName="LOADED_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="AGV_GUID" ></ParamField>
+        <ParamField FieldName="AGV_NO" ></ParamField>
+        <ParamField FieldName="AGV_TASKNO" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="ELOC_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="CREATE_DATE" ></ParamField>
+        <ParamField FieldName="TASK_TYPE" ></ParamField>
+        <ParamField FieldName="DOWN_LOAD_DATE" ></ParamField>
+        <ParamField FieldName="EXEC_DATE" ></ParamField>
+        <ParamField FieldName="END_DATE" ></ParamField>
+        <ParamField FieldName="SLMS_STATUS" ></ParamField>
+        <ParamField FieldName="AGV_STATUS" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="PRODUCT_ID" ></ParamField>
+        <ParamField FieldName="TASK_ORDER_OBJID" ></ParamField>
+        <ParamField FieldName="ACCOUNT_ID" ></ParamField>
+        <ParamField FieldName="LOADED_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

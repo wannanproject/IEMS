@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.Proc0100TaskRequestService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--执行存储过程-->
+    <procedure id="PROC_0100_TASK_REQUEST" parameterClass = "map" resultClass="string">
+      PROC_0100_TASK_REQUEST
+      @{IParamObjid, column=I_PARAM_OBJID}
+    </procedure>
+  </statements>
+</sqlMap>

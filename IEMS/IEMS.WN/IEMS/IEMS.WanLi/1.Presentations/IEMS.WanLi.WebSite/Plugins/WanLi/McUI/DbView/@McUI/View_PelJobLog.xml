@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="JOBNO" Value="作业编码" ></Caption>
+    <Caption Name="JOBNAME" Value="作业名称" ></Caption>
+    <Caption Name="EXCUTERESULT" Value="错误描述" ></Caption>
+
+    <Caption Name="JOBSTATUS" Value="状态" ></Caption>
+    <Caption Name="USEDFLAG" Value="可用标志" ></Caption>
+    <Caption Name="LASTEXCUTETIME" Value="上次执行时间" ></Caption>
+    <Caption Name="MAXEXCUTETIME" Value="最长执行时间" ></Caption>
+    <Caption Name="MINEXCUTETIME" Value="最短执行时间" ></Caption>
+  </Captions>
+  <WebPage Title="作业日志">
+  </WebPage>
+  <Select>
+    
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="JOBNO" ></GridColumn>
+        <GridColumn ColumnName="JOBNAME" ></GridColumn>
+        <GridColumn ColumnName="EXCUTERESULT" ></GridColumn>
+
+        <GridColumn ColumnName="JOBSTATUS" ></GridColumn>
+        <GridColumn ColumnName="USEDFLAG" ></GridColumn>
+        <GridColumn ColumnName="LASTEXCUTETIME" ></GridColumn>
+        <GridColumn ColumnName="MAXEXCUTETIME" ></GridColumn>
+        <GridColumn ColumnName="MINEXCUTETIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+   
+  </Select>
+</UiConfig>

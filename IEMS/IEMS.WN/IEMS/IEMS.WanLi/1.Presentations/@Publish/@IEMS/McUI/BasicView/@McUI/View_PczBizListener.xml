@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GUID" Value="主键编号" ></Caption>
+    <Caption Name="LISTEN_INTERVAL" Value="读取频率，单位毫秒" ></Caption>
+    <Caption Name="REFLECTION_GUID" Value="类型编号" ></Caption>
+    <Caption Name="LISTENER_CONSTR" Value="连接字段串" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+  </Captions>
+  <WebPage Title="业务监听">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GUID" ></GridColumn>
+        <GridColumn ColumnName="LISTEN_INTERVAL" ></GridColumn>
+        <GridColumn ColumnName="REFLECTION_GUID" ></GridColumn>
+        <GridColumn ColumnName="LISTENER_CONSTR" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GUID" ></ParamField>
+        <ParamField FieldName="LISTEN_INTERVAL" ></ParamField>
+        <ParamField FieldName="REFLECTION_GUID" ></ParamField>
+        <ParamField FieldName="LISTENER_CONSTR" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

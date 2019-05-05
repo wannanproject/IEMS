@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBLOC" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       select t1.loc_no,t1.loc_plc_no,t1.loc_type_no,t1.loc_name,t1.loc_index,t1.max_buffer,t1.loc_group_no,t1.loc_mes_no,t1.loc_agv_no,
+      t1.loc_priority,t1.loc_enable,t1.last_used_date,t1.enable_recorrect_flag,t1.enable_repackage_flag,t1.enable_request_flag,t1.auto_request_mode,
+      t1.limit_pallet_valid_type,t1.limit_order_valid,t1.job_monitor_flag,t1.limit_cmd_finish,t2.loc_group_name,t3.loc_type_name
+      from PSB_LOC t1
+      LEFT JOIN psb_loc_group t2 ON t1.loc_group_no = t2.loc_group_no
+      LEFT JOIN psb_loc_type t3 ON t1.loc_type_no = t3.loc_type_no
+      ]]>
+      <dynamic prepend="WHERE">
+          <isNotNull property="where.LOC_NO" prepend="AND">
+           T1.LOC_NO LIKE '%'||#where.LOC_NO#||'%'
+          </isNotNull>
+          <isNotNull property="where.LOC_TYPE_NO" prepend="AND">
+            T1.LOC_TYPE_NO = #where.LOC_TYPE_NO#
+          </isNotNull>
+          <isNotNull property="where.LOC_GROUP_NO" prepend="AND">
+            T1.LOC_GROUP_NO = #where.LOC_GROUP_NO#
+          </isNotNull>
+       </dynamic>
+       ORDER BY LOC_NO
+     </select>
+     <select id="Select@VIEW_PSBLOC@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_LOC T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_NO" prepend = "AND">
+           T1.LOC_NO = #where.LOC_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+     <!--查询站台组信息，ID值固定为GetComboBoxData@Select@View_PsbLoc@LOC_GROUP_NO字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@VIEW_PSBLOC@LOC_GROUP_NO" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        select loc_group_no sskey,loc_group_name ssValue from PSB_LOC_GROUP order by loc_group_no
+      ]]>
+     </select>
+     <!--查询站台类型信息，ID值固定为GetComboBoxData@Select@View_PsbLoc@LOC_TYPE_NO字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@VIEW_PSBLOC@LOC_TYPE_NO" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        select t.loc_type_no sskey,t.loc_type_name ssValue from psb_loc_type t order BY t.loc_type_no
+      ]]>
+     </select>
+  </statements>
+</sqlMap>

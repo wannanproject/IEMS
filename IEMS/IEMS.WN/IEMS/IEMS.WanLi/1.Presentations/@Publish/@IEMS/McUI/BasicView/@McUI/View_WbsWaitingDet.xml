@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="货笼ID" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="生成信息唯一标示" ></Caption>
+    <Caption Name="LOCK_FLAG" Value="上锁标志(0:正常,1:锁定)" ></Caption>
+    <Caption Name="PRODUCT_DATE" Value="生产日期(硫化时间)" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="包GUID" ></Caption>
+    <Caption Name="STACK_IDX" Value="1,2,3,4,5" ></Caption>
+    <Caption Name="LAYER_IDX" Value="1,2,3,4,5,6,7" ></Caption>
+  </Captions>
+  <WebPage Title="出库资料暂存明细表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="LOCK_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_DATE" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="STACK_IDX" ></GridColumn>
+        <GridColumn ColumnName="LAYER_IDX" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="LOCK_FLAG" ></ParamField>
+        <ParamField FieldName="PRODUCT_DATE" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="STACK_IDX" ></ParamField>
+        <ParamField FieldName="LAYER_IDX" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

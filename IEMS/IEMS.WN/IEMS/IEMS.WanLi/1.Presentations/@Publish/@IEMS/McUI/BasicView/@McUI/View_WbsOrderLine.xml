@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ORDER_LINE_GUID" Value="ORDER_LINE_GUID" ></Caption>
+    <Caption Name="ORDER_NO" Value="单号" ></Caption>
+    <Caption Name="LINE_ID" Value="单LINE" ></Caption>
+    <Caption Name="LINE_STATUS" Value="单据行状态 0:等待  1 执行中 2 结束" ></Caption>
+    <Caption Name="DELETE_FLAG" Value="是否已经删除（Y:已删除，N:未删除）" ></Caption>
+    <Caption Name="SORT_ID" Value="此单发货顺序" ></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料编码" ></Caption>
+    <Caption Name="PRODUCT_GRADE" Value="品级" ></Caption>
+    <Caption Name="SLOC_NO" Value="发起站台(库位)" ></Caption>
+    <Caption Name="ELOC_NO" Value="目标站台(库位)" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="单据数量  单据生成时需求数量" ></Caption>
+    <Caption Name="ACT_QTY" Value="已经生成任务的数量" ></Caption>
+    <Caption Name="SHIP_QTY" Value="实发数量" ></Caption>
+    <Caption Name="LIMIT_DATE_START" Value="限制-开始时间" ></Caption>
+    <Caption Name="LIMIT_DATE_END" Value="限制-结束时间" ></Caption>
+    <Caption Name="LIMIT_BIN_NO" Value="限制-库位    0" ></Caption>
+    <Caption Name="LIMIT_PRODUCT_GUID" Value="限制-货物GUID   2" ></Caption>
+    <Caption Name="LIMIT_BATCH_NO" Value="限制-批次号" ></Caption>
+    <Caption Name="LIMIT_PALLET_ID" Value="限制-托盘号   1" ></Caption>
+    <Caption Name="LINE_PRIORITY" Value="行项目优先级" ></Caption>
+    <Caption Name="LINE_TASK_FLAG" Value="出库任务分解 1分解  0:等待" ></Caption>
+    <Caption Name="LAST_TASK_TIME" Value="最后生成任务时间" ></Caption>
+    <Caption Name="BIN_ERR_DESC" Value="库存异常信息" ></Caption>
+    <Caption Name="FMEM" Value="备注" ></Caption>
+    <Caption Name="LOCK_END_LOC" Value="锁定目标 1：锁定 0：未锁定" ></Caption>
+  </Captions>
+  <WebPage Title="出库单明细表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ORDER_LINE_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="LINE_STATUS" ></GridColumn>
+        <GridColumn ColumnName="DELETE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GRADE" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_START" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_END" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_BIN_NO" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PALLET_ID" ></GridColumn>
+        <GridColumn ColumnName="LINE_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LINE_TASK_FLAG" ></GridColumn>
+        <GridColumn ColumnName="LAST_TASK_TIME" ></GridColumn>
+        <GridColumn ColumnName="BIN_ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="LOCK_END_LOC" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="LINE_STATUS" ></ParamField>
+        <ParamField FieldName="DELETE_FLAG" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="MATERIAL_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_GRADE" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="ELOC_NO" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="ACT_QTY" ></ParamField>
+        <ParamField FieldName="SHIP_QTY" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_START" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_END" ></ParamField>
+        <ParamField FieldName="LIMIT_BIN_NO" ></ParamField>
+        <ParamField FieldName="LIMIT_PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="LIMIT_BATCH_NO" ></ParamField>
+        <ParamField FieldName="LIMIT_PALLET_ID" ></ParamField>
+        <ParamField FieldName="LINE_PRIORITY" ></ParamField>
+        <ParamField FieldName="LINE_TASK_FLAG" ></ParamField>
+        <ParamField FieldName="LAST_TASK_TIME" ></ParamField>
+        <ParamField FieldName="BIN_ERR_DESC" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="LOCK_END_LOC" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

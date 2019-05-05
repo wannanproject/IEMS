@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@EQPProduction" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t1.id_key, t1.request_no, t1.plan_name, t1.equipment_name, t1.port_name, t1.trans_type, t1.trans_time, 
+      t1.batch_no,  t1.product_no,t1.rfid_no, t1.part_number, t1.qty,
+      CASE t1.pass_flag WHEN '0' THEN '未放行' WHEN '1' THEN '允许放行' WHEN '2' THEN '禁止放行' END AS pass_flag, 
+      t1.destination, t1.remarks, t1.als_status, t1.create_time, t1.set_weight, t1.real_weight, t1.set_num, t1.real_num,
+      CASE t2.load_status WHEN 1 THEN '有载' WHEN 0 THEN '空载' END AS load_status,t2.binding_time
+      FROM View_Pm_Eqp_Production t1
+      LEFT JOIN view_pallet t2 ON t1.id_key = t2.product_guid
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.RFID_NO" prepend="AND">
+          T1.RFID_NO LIKE '%'||#where.RFID_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PART_NUMBER" prepend="AND">
+          T1.PART_NUMBER LIKE '%'||#where.PART_NUMBER#||'%'
+        </isNotNull>
+        <isNotNull property="where.EQUIPMENT_NAME" prepend="AND">
+          T1.EQUIPMENT_NAME LIKE '%'||#where.EQUIPMENT_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.trans_time >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.trans_time < #where.END_TIME# + 1]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY t1.trans_time,t1.equipment_name
+    </select>
+    <select id="Select@EQPProduction@MainDetail" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+         select t1.* from view_pm_eqp_production t1
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ID_KEY" prepend="AND">
+          T1.ID_KEY = #where.ID_KEY#
+        </isNotNull>
+      </dynamic>
+    </select>
+  </statements>
+</sqlMap>

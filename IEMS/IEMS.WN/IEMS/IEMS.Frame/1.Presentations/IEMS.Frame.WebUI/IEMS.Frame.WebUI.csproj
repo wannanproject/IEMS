@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11F23E50-FBA6-4C3A-8A35-0AEFBFACD4A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.Frame.WebUI</RootNamespace>
+    <AssemblyName>IEMS.Frame.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\@packages\Ext.net\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\@packages\Ext.net\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.ExcelData">
+      <HintPath>..\..\@packages\@MSTL\MSTL.ExcelData.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.Extensions">
+      <HintPath>..\..\@packages\@MSTL\MSTL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.LogAgent">
+      <HintPath>..\..\@packages\@MSTL\MSTL.LogAgent.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.ResultStruct">
+      <HintPath>..\..\@packages\@MSTL\MSTL.ResultStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.XmlOrm">
+      <HintPath>..\..\@packages\@MSTL\MSTL.XmlOrm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\@packages\Ext.net\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Transformer.NET">
+      <HintPath>..\..\@packages\Ext.net\Transformer.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\PageAction.cs" />
+    <Compile Include="Entity\PageMenu.cs" />
+    <Compile Include="Entity\PageMethod.cs" />
+    <Compile Include="Entity\WebLog.cs" />
+    <Compile Include="FieldExtend\ComboBoxExtend.cs" />
+    <Compile Include="FieldExtend\DateFieldExtend.cs" />
+    <Compile Include="FieldExtend\NumberField.cs" />
+    <Compile Include="FieldExtend\TextFieldExtend.cs" />
+    <Compile Include="FieldExtend\TimeFieldExtend.cs" />
+    <Compile Include="FieldExtend\TriggerFieldExtend.cs" />
+    <Compile Include="PageData\DbPage.cs" />
+    <Compile Include="PageData\IPageAction.cs" />
+    <Compile Include="PageData\PageData.cs" />
+    <Compile Include="Page\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageLog.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageRole.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageUrl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\3.Applications\IEMS.Frame.AppBiz\IEMS.Frame.AppBiz.csproj">
+      <Project>{37569469-6fbc-45f0-95c7-88ab6ea08e2b}</Project>
+      <Name>IEMS.Frame.AppBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.Domains\IEMS.Frame.Entity\IEMS.Frame.Entity.csproj">
+      <Project>{6447f87e-acfc-44a7-856e-213958a5800a}</Project>
+      <Name>IEMS.Frame.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEMS.Frame.WebGlobal\IEMS.Frame.WebGlobal.csproj">
+      <Project>{bc808ab1-1f91-40da-9d26-a2ff08085f8b}</Project>
+      <Name>IEMS.Frame.WebGlobal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

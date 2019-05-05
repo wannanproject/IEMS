@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+<Captions>
+    <Caption Name="MATERIAL_NO" Value="物料编号" ></Caption>
+    <Caption Name="MATERIAL_NUM" Value="数量" ></Caption>
+    <Caption Name="MATER_SPEC" Value="描述1" ></Caption>
+    <Caption Name="MATER_DESC" Value="描述2" ></Caption>
+    <Caption Name="MATER_MKIND" Value="大类" ></Caption>
+    <Caption Name="MATER_TYPE" Value="小类" ></Caption>
+</Captions>
+<WebPage Title="库存统计">
+ </WebPage>
+ <Select>
+ <ParamPanel>
+   <ParamFields>
+    <ParamField FieldName="MATERIAL_NO"></ParamField>
+   </ParamFields>
+  </ParamPanel>
+ <MainGrid PageSize="50">
+  <GridColumns>
+     <GridColumn ColumnName="MATERIAL_NO" width="100"></GridColumn>
+     <GridColumn ColumnName="MATERIAL_NUM" width="60"></GridColumn>
+     <GridColumn ColumnName="MATER_SPEC" width="80"></GridColumn>
+     <GridColumn ColumnName="MATER_DESC" width="100"></GridColumn>
+     <GridColumn ColumnName="MATER_MKIND" width="100"></GridColumn>
+     <GridColumn ColumnName="MATER_TYPE" width="100"></GridColumn>
+  </GridColumns>
+ </MainGrid>
+ </Select>
+</UiConfig>

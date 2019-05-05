@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ID_KEY" Value="ID_KEY" ></Caption>
+    <Caption Name="REQUEST_NO" Value="REQUEST_NO" ></Caption>
+    <Caption Name="PLAN_NAME" Value="PLAN_NAME" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="EQUIPMENT_NAME" ></Caption>
+    <Caption Name="PORT_NAME" Value="PORT_NAME" ></Caption>
+    <Caption Name="TRANS_TYPE" Value="TRANS_TYPE" ></Caption>
+    <Caption Name="TRANS_TIME" Value="TRANS_TIME" ></Caption>
+    <Caption Name="BATCH_NO" Value="BATCH_NO" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="PRODUCT_NO" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID_NO" ></Caption>
+    <Caption Name="PART_NUMBER" Value="PART_NUMBER" ></Caption>
+    <Caption Name="QTY" Value="QTY" ></Caption>
+    <Caption Name="PASS_FLAG" Value="PASS_FLAG" ></Caption>
+    <Caption Name="DESTINATION" Value="DESTINATION" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="ALS_STATUS" Value="ALS_STATUS" ></Caption>
+    <Caption Name="CREATE_TIME" Value="CREATE_TIME" ></Caption>
+    <Caption Name="SET_WEIGHT" Value="SET_WEIGHT" ></Caption>
+    <Caption Name="REAL_WEIGHT" Value="REAL_WEIGHT" ></Caption>
+    <Caption Name="SET_NUM" Value="SET_NUM" ></Caption>
+    <Caption Name="REAL_NUM" Value="REAL_NUM" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_PM_EQP_PRODUCTION">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ID_KEY" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" ></GridColumn>
+        <GridColumn ColumnName="PLAN_NAME" ></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="PORT_NAME" ></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TRANS_TIME" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_NO" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="PART_NUMBER" ></GridColumn>
+        <GridColumn ColumnName="QTY" ></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="DESTINATION" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="ALS_STATUS" ></GridColumn>
+        <GridColumn ColumnName="CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="SET_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="REAL_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="SET_NUM" ></GridColumn>
+        <GridColumn ColumnName="REAL_NUM" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY" ></ParamField>
+        <ParamField FieldName="REQUEST_NO" ></ParamField>
+        <ParamField FieldName="PLAN_NAME" ></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME" ></ParamField>
+        <ParamField FieldName="PORT_NAME" ></ParamField>
+        <ParamField FieldName="TRANS_TYPE" ></ParamField>
+        <ParamField FieldName="TRANS_TIME" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+        <ParamField FieldName="RFID_NO" ></ParamField>
+        <ParamField FieldName="PART_NUMBER" ></ParamField>
+        <ParamField FieldName="QTY" ></ParamField>
+        <ParamField FieldName="PASS_FLAG" ></ParamField>
+        <ParamField FieldName="DESTINATION" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="ALS_STATUS" ></ParamField>
+        <ParamField FieldName="CREATE_TIME" ></ParamField>
+        <ParamField FieldName="SET_WEIGHT" ></ParamField>
+        <ParamField FieldName="REAL_WEIGHT" ></ParamField>
+        <ParamField FieldName="SET_NUM" ></ParamField>
+        <ParamField FieldName="REAL_NUM" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

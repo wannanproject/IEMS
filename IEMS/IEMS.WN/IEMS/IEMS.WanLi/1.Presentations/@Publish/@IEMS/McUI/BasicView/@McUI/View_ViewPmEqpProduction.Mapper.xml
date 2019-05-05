@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_ViewPmEqpProduction" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM VIEW_PM_EQP_PRODUCTION T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.ID_KEY" prepend="AND">
+           T1.ID_KEY LIKE '%'||#where.ID_KEY#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY ID_KEY
+     </select>
+     <select id="Select@View_ViewPmEqpProduction@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM VIEW_PM_EQP_PRODUCTION T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.ID_KEY" prepend = "AND">
+           T1.ID_KEY = #where.ID_KEY#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

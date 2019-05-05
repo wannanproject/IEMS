@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ORDER_NO" Value="订单号码" ></Caption>
+    <Caption Name="CREATION_DATE" Value="下达时间" ></Caption>
+    <Caption Name="OUT_PRIORITY" Value="优先级" ></Caption>
+    <Caption Name="LINE_ID" Value="行号" ></Caption>
+    <Caption Name="MATER_NO" Value="物料编码" ></Caption>
+    <Caption Name="GRADE" Value="等级" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="需求数量" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="GUID" ></Caption>
+    <Caption Name="STOP_FLAG" Value="Y 终止" ></Caption>
+    <Caption Name="TLOC_MES_NO" Value="MES目标" ></Caption>
+    <Caption Name="TLOC_NO" Value="目标值" ></Caption>
+    <Caption Name="ERR_FLAG" Value="异常标志 0:无异常 1：异常" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="设备名称" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号码" ></Caption>
+    <Caption Name="REMARKS" Value="摘要" ></Caption>
+    <Caption Name="MES_DATA_FLAG" Value="上行标志  1： 执行  2：异常   3：完毕  WCS---->MES   0：默认" ></Caption>
+    <Caption Name="WCS_DATA_FLAG" Value="下行标志  1:新增  2：修改  MES ------ > WCS  0：默认" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="行项目GUID" ></Caption>
+    <Caption Name="ACT_QTY" Value="执行数量" ></Caption>
+    <Caption Name="SHIP_QTY" Value="创建任务数量" ></Caption>
+    <Caption Name="REQUEST_CATEGORY" Value="REQUEST_CATEGORY" ></Caption>
+    <Caption Name="ORDER_STATUS" Value="订单状态（0:未执行，1:发货中，2:已完成）" ></Caption>
+    <Caption Name="LINE_STATUS" Value="订单行状态（0:未执行，1:发货中，2:已完成）" ></Caption>
+  </Captions>
+  <WebPage Title="中间表数据">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ORDER_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="OUT_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="MATER_NO" ></GridColumn>
+        <GridColumn ColumnName="GRADE" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="STOP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="TLOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="TLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_FLAG" ></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="MES_DATA_FLAG" ></GridColumn>
+        <GridColumn ColumnName="WCS_DATA_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_CATEGORY" ></GridColumn>
+        <GridColumn ColumnName="ORDER_STATUS" ></GridColumn>
+        <GridColumn ColumnName="LINE_STATUS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="OUT_PRIORITY" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="MATER_NO" ></ParamField>
+        <ParamField FieldName="GRADE" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="STOP_FLAG" ></ParamField>
+        <ParamField FieldName="TLOC_MES_NO" ></ParamField>
+        <ParamField FieldName="TLOC_NO" ></ParamField>
+        <ParamField FieldName="ERR_FLAG" ></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="MES_DATA_FLAG" ></ParamField>
+        <ParamField FieldName="WCS_DATA_FLAG" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="ACT_QTY" ></ParamField>
+        <ParamField FieldName="SHIP_QTY" ></ParamField>
+        <ParamField FieldName="REQUEST_CATEGORY" ></ParamField>
+        <ParamField FieldName="ORDER_STATUS" ></ParamField>
+        <ParamField FieldName="LINE_STATUS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

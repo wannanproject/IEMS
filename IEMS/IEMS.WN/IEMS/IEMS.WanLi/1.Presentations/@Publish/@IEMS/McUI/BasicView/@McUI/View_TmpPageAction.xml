@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MENU_ID" Value="MENU_ID" ></Caption>
+    <Caption Name="MENU_LEVEL" Value="MENU_LEVEL" ></Caption>
+    <Caption Name="ACTION_ID" Value="ACTION_ID" ></Caption>
+  </Captions>
+  <WebPage Title="TMP_PAGE_ACTION">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MENU_ID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="MENU_ID" ></GridColumn>
+        <GridColumn ColumnName="MENU_LEVEL" ></GridColumn>
+        <GridColumn ColumnName="ACTION_ID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MENU_ID" ></ParamField>
+        <ParamField FieldName="MENU_LEVEL" ></ParamField>
+        <ParamField FieldName="ACTION_ID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

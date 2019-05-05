@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="生产绑定工装"></Caption>
+    <Caption Name="PALLET_TYPE" Value="工装类型"></Caption>
+    <Caption Name="USED_FLAG" Value="启用"></Caption>
+    <Caption Name="PRODUCT_GUID" Value="产品GUID"></Caption>
+    <Caption Name="BINDING_TIME" Value="绑定时间"></Caption>
+    <Caption Name="LOAD_STATUS" Value="工装状态"></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料编码"></Caption>
+    <Caption Name="PRODUCT_GRADE" Value="产品等级"></Caption>
+    <Caption Name="BATCH_NO" Value="批次号"></Caption>
+    <Caption Name="REQUEST_NO" Value="请求号码"></Caption>
+    <Caption Name="PLAN_NO" Value="计划号"></Caption>
+    <Caption Name="PASS_FLAG" Value="放行状态"></Caption>
+    <Caption Name="MATER_SPEC" Value="物料信息"></Caption>
+    <Caption Name="MATER_DESC" Value="物料描述"></Caption>
+    <Caption Name="MATER_MKIND" Value="大类"></Caption>
+    <Caption Name="MATER_TYPE" Value="小类"></Caption>
+    <Caption Name="PRODUCT_DATE" Value="生产时间"></Caption>
+    <Caption Name="BTIME" Value="查询起始时间"></Caption>
+    <Caption Name="ETIME" Value="查询结束时间"></Caption>
+  </Captions>
+  <WebPage Title="同步信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+        <ParamField FieldName="MATERIAL_NO"></ParamField>
+        <ParamField FieldName="BTIME" Type="DateBox" DefaultValue="0"></ParamField>
+        <ParamField FieldName="ETIME" Type="DateBox" DefaultValue="0"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" Width="120"></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="MATER_TYPE" Width="80"></GridColumn>
+        <GridColumn ColumnName="LOAD_STATUS" Width="60"></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" Width="80"></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GRADE" Width="60"></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="PLAN_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="PRODUCT_DATE" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="BINDING_TIME" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+     <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>
+        <ParamField FieldName="PALLET_TYPE"></ParamField>
+        <ParamField FieldName="USED_FLAG"></ParamField>
+        <ParamField FieldName="PRODUCT_GUID"></ParamField>
+        <ParamField FieldName="BINDING_TIME" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+        <ParamField FieldName="LOAD_STATUS"></ParamField>
+        <ParamField FieldName="MATERIAL_NO"></ParamField>
+        <ParamField FieldName="PRODUCT_GRADE"></ParamField>
+        <ParamField FieldName="BATCH_NO"></ParamField>
+        <ParamField FieldName="REQUEST_NO"></ParamField>
+        <ParamField FieldName="PLAN_NO"></ParamField>
+        <ParamField FieldName="PASS_FLAG"></ParamField>
+        <ParamField FieldName="MATER_SPEC"></ParamField>
+        <ParamField FieldName="MATER_DESC"></ParamField>
+        <ParamField FieldName="MATER_MKIND"></ParamField>
+        <ParamField FieldName="MATER_TYPE"></ParamField>
+        <ParamField FieldName="PRODUCT_DATE" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></ParamField>
+      </ParamFields>
+    </MainDetail>
+
+  </Select>
+</UiConfig>

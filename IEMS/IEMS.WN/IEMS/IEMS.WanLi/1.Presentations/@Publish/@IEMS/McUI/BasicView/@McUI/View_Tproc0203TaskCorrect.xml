@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="序列" ></Caption>
+    <Caption Name="ERR_CODE" Value="ERR_CODE" ></Caption>
+    <Caption Name="ERR_DESC" Value="ERR_DESC" ></Caption>
+    <Caption Name="PROC_STATUS" Value="PROC_STATUS" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="PROC_CREATE_TIME" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="PROC_EXCUTE_TIME" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="PROC_FINISH_TIME" ></Caption>
+    <Caption Name="TASK_GUID" Value="【必填项】：任务序列" ></Caption>
+    <Caption Name="TASK_NO" Value="【必填项】：任务号             " ></Caption>
+    <Caption Name="CURR_LOC_NO" Value="【必填项】：当前所在站台      " ></Caption>
+    <Caption Name="SLOC_NO" Value="发起站台号" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="发起站台类型" ></Caption>
+    <Caption Name="SLOC_AREA" Value="发起站台区域" ></Caption>
+    <Caption Name="CURR_LOC_TYPE" Value="当前站台类型" ></Caption>
+    <Caption Name="CURR_LOC_AREA" Value="当前站台区域" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行项目唯一GUID" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="包GUID" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+    <Caption Name="OLD_ELOC_NO" Value="旧目标" ></Caption>
+    <Caption Name="OLD_ELOC_TYPE" Value="旧目标类型" ></Caption>
+    <Caption Name="OLD_ELOC_AREA" Value="旧目标区域" ></Caption>
+    <Caption Name="NEW_ELOC_NO" Value="新目标" ></Caption>
+    <Caption Name="NEW_ELOC_TYPE" Value="新目标类型" ></Caption>
+    <Caption Name="NEW_ELOC_AREA" Value="新目标区域" ></Caption>
+    <Caption Name="OLD_PALLET_NO" Value="旧工装号" ></Caption>
+    <Caption Name="NEW_PALLET_NO" Value="【必填项】：新工装号" ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="全局唯一GUID" ></Caption>
+    <Caption Name="OLD_IO_TYPE" Value="旧任务类型" ></Caption>
+    <Caption Name="NEW_IO_TYPE" Value="新任务类型" ></Caption>
+    <Caption Name="TRANSFER_TYPE_NO" Value="输送设备类型" ></Caption>
+    <Caption Name="TRANSFER_NO" Value="输送设备编码" ></Caption>
+    <Caption Name="ROUTE_NO" Value="路径编码" ></Caption>
+  </Captions>
+  <WebPage Title="I/T类任务修正存储参数表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="CURR_LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="SLOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="CURR_LOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="CURR_LOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+        <GridColumn ColumnName="OLD_ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="OLD_ELOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="OLD_ELOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="NEW_ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="NEW_ELOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="NEW_ELOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="OLD_PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="NEW_PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="OLD_IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="NEW_IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TRANSFER_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="TRANSFER_NO" ></GridColumn>
+        <GridColumn ColumnName="ROUTE_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="CURR_LOC_NO" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="SLOC_AREA" ></ParamField>
+        <ParamField FieldName="CURR_LOC_TYPE" ></ParamField>
+        <ParamField FieldName="CURR_LOC_AREA" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+        <ParamField FieldName="OLD_ELOC_NO" ></ParamField>
+        <ParamField FieldName="OLD_ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="OLD_ELOC_AREA" ></ParamField>
+        <ParamField FieldName="NEW_ELOC_NO" ></ParamField>
+        <ParamField FieldName="NEW_ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="NEW_ELOC_AREA" ></ParamField>
+        <ParamField FieldName="OLD_PALLET_NO" ></ParamField>
+        <ParamField FieldName="NEW_PALLET_NO" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="OLD_IO_TYPE" ></ParamField>
+        <ParamField FieldName="NEW_IO_TYPE" ></ParamField>
+        <ParamField FieldName="TRANSFER_TYPE_NO" ></ParamField>
+        <ParamField FieldName="TRANSFER_NO" ></ParamField>
+        <ParamField FieldName="ROUTE_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

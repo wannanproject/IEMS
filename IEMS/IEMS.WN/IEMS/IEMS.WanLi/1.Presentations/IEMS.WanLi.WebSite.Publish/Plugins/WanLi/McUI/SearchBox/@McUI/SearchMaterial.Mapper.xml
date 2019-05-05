@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@SearchMaterial" parameterClass="map" resultClass="row">
+
+      <![CDATA[        
+      SELECT 'NOREAD' AS MATER_NO, 'NOREAD' AS MATER_NAME, 1 AS IDX
+        FROM DUAL
+      UNION
+      SELECT 'BPALLET' AS MATER_NO, 'BPALLET' AS MATER_NAME, 2 AS IDX
+        FROM DUAL
+      UNION
+      SELECT TO_CHAR(T1.MATER_NO), TO_CHAR(T1.MATER_NAME), 3 AS IDX
+        FROM VIEW_PSB_MATERIAL T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.MATER_NAME" prepend="AND">
+           T1.MATER_NAME like '%'||#where.MATER_NAME#||'%'
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="OrderString" prepend="">
+          ORDER BY $OrderString$
+       </isNotNull>
+     </select>
+  </statements>
+</sqlMap>

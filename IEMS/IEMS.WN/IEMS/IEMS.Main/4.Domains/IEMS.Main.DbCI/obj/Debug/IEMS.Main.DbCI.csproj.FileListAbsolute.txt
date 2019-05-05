@@ -1,0 +1,17 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbCI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbCI.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbMapper.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbRI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.Entity.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\MSTL.DbAccess.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\MSTL.LogAgent.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbMapper.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.Entity.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.VoDto.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\obj\Debug\IEMS.Main.DbCI.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\obj\Debug\IEMS.Main.DbCI.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\obj\Debug\IEMS.Main.DbCI.csproj.CopyComplete
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\obj\Debug\IEMS.Main.DbCI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\obj\Debug\IEMS.Main.DbCI.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.DbCI\bin\Debug\IEMS.Main.DbRI.pdb

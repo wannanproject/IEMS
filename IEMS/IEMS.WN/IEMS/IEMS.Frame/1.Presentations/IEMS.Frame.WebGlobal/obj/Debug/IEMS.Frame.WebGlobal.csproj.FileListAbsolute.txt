@@ -1,0 +1,8 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\bin\Debug\IEMS.Frame.WebGlobal.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\bin\Debug\IEMS.Frame.WebGlobal.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\bin\Debug\MSTL.LogAgent.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\obj\Debug\IEMS.Frame.WebGlobal.csprojResolveAssemblyReference.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\obj\Debug\IEMS.Frame.WebGlobal.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\obj\Debug\IEMS.Frame.WebGlobal.csproj.CopyComplete
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\obj\Debug\IEMS.Frame.WebGlobal.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Frame\1.Presentations\IEMS.Frame.WebGlobal\obj\Debug\IEMS.Frame.WebGlobal.pdb

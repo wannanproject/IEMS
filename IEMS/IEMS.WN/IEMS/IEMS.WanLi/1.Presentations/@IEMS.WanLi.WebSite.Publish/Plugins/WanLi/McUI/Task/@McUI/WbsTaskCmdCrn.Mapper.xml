@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@WbsTaskCmdCrn" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+              SELECT ZWBTC.OBJID,
+                     ZWBTC.TASK_GUID,
+                     ZWBTC.TASK_NO,
+                     CASE ZWBTC.CMD_TYPE
+                       WHEN 'I' THEN
+                        '入库'
+                       WHEN 'O' THEN
+                        '出库'
+                       ELSE
+                        '异常'
+                     END CMD_TYPE,
+                     ZWBTC.SLOC_NO,
+                     ZWBTC.ELOC_NO,
+                     ZWBTC.SLOC_PLC_NO,
+                     ZWBTC.ELOC_PLC_NO,
+                     ZWBTC.CREATION_DATE,
+                     ZWBTC.EXCUTE_DATE,
+                     ZWBTC.FINISH_DATE,
+                     ZWBTC.ERR_NO,
+                     ZWBTC.ERR_NAME,
+                     ZWBTC.ROUTE_NO,
+                     ZWBTC.TRANSFER_NO,
+                     ZWBTC.FINISH_STATUS,
+                     ZWBTC.PALLET_NO,
+                     ZWBTC.ORDER_LINE_GUID,
+                     CASE ZWBTC.CMD_STEP
+                       WHEN '00' THEN
+                        '指令生成'
+                       WHEN '01' THEN
+                        '指令复位'
+                       WHEN '02' THEN
+                        '指令下传'
+                       WHEN '03' THEN
+                        '指令执行'
+                       WHEN '04' THEN
+                        '指令结束'
+                       ELSE
+                        '异常'
+                     END AS CMD_STEP,
+                     ZWBTC.DOWNLOAD_DATE,
+                     ZWBTC.PACKAGE_GUID,
+                     WPD.MATERIAL_NO,
+                     WPD.MATER_SPEC
+                FROM WBS_TASK_CMD ZWBTC
+                LEFT JOIN WBS_PACKAGE_DATA WPD
+                  ON ZWBTC.PACKAGE_GUID = WPD.PACKAGE_GUID
+               WHERE ZWBTC.TRANSFER_TYPE = 10
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          ZWBTC.TASK_NO  like '%'||#where.TASK_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.SLOC_PLC_NO" prepend="AND">
+          ZWBTC.SLOC_PLC_NO  like '%'||#where.SLOC_PLC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.ELOC_PLC_NO" prepend="AND">
+          ZWBTC.ELOC_PLC_NO  like '%'||#where.ELOC_PLC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          ZWBTC.PALLET_NO  like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATERIAL_NO" prepend="AND">
+          WPD.MATERIAL_NO  like '%'||#where.MATERIAL_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.BTIME" prepend="AND">
+          <![CDATA[ ZWBTC.CREATION_DATE >=#where.BTIME#  ]]>
+        </isNotNull>
+        <isNotNull property="where.ETIME" prepend="AND">
+          <![CDATA[ ZWBTC.CREATION_DATE <= 1+#where.ETIME#  ]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY ZWBTC.OBJID DESC
+    </select>
+
+     <select id="Select@WbsTaskCmdCrn@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[
+              SELECT ZWBTC.OBJID,
+                     ZWBTC.TASK_GUID,
+                     ZWBTC.TASK_NO,
+                     CASE ZWBTC.CMD_TYPE
+                       WHEN 'I' THEN
+                        '入库'
+                       WHEN 'O' THEN
+                        '出库'
+                       ELSE
+                        '异常'
+                     END CMD_TYPE,
+                     ZWBTC.SLOC_NO,
+                     ZWBTC.ELOC_NO,
+                     ZWBTC.SLOC_PLC_NO,
+                     ZWBTC.ELOC_PLC_NO,
+                     ZWBTC.CREATION_DATE,
+                     ZWBTC.EXCUTE_DATE,
+                     ZWBTC.FINISH_DATE,
+                     ZWBTC.ERR_NO,
+                     ZWBTC.ERR_NAME,
+                     ZWBTC.ROUTE_NO,
+                     ZWBTC.TRANSFER_NO,
+                     ZWBTC.FINISH_STATUS,
+                     ZWBTC.PALLET_NO,
+                     ZWBTC.ORDER_LINE_GUID,
+                     CASE ZWBTC.CMD_STEP
+                       WHEN '00' THEN
+                        '指令生成'
+                       WHEN '01' THEN
+                        '指令复位'
+                       WHEN '02' THEN
+                        '指令下传'
+                       WHEN '03' THEN
+                        '指令执行'
+                       WHEN '04' THEN
+                        '指令结束'
+                       ELSE
+                        '异常'
+                     END AS CMD_STEP,
+                     ZWBTC.DOWNLOAD_DATE,
+                     ZWBTC.PACKAGE_GUID,
+                     WPD.MATERIAL_NO,
+                     WPD.MATER_SPEC
+                FROM WBS_TASK_CMD ZWBTC
+                LEFT JOIN WBS_PACKAGE_DATA WPD
+                  ON ZWBTC.PACKAGE_GUID = WPD.PACKAGE_GUID
+               WHERE ZWBTC.TRANSFER_TYPE = 10
+       ]]>
+       <dynamic prepend="">
+         <isNotNull property="where.OBJID" prepend="AND">
+           <![CDATA[ (ZWBTC.OBJID = #OBJID#)]]>
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

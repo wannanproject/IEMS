@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_TmpTaskCreateType" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TMP_TASK_CREATE_TYPE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.TYPE_CODE" prepend="AND">
+           T1.TYPE_CODE LIKE '%'||#where.TYPE_CODE#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY TYPE_CODE
+     </select>
+     <select id="Select@View_TmpTaskCreateType@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TMP_TASK_CREATE_TYPE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.TYPE_CODE" prepend = "AND">
+           T1.TYPE_CODE = #where.TYPE_CODE#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

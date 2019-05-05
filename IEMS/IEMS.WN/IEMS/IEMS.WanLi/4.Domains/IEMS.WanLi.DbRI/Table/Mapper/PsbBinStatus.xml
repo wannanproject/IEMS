@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbBinStatusService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbBinStatus" type="IEMS.WanLi.Entity.PsbBinStatus, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbBinStatus" class="PsbBinStatus">
+    <result property="BinNo" column="BIN_NO"/>
+    <result property="UsedFlag" column="USED_FLAG"/>
+    <result property="BinSize" column="BIN_SIZE"/>
+    <result property="BinStatus" column="BIN_STATUS"/>
+    <result property="BinBizStatus" column="BIN_BIZ_STATUS"/>
+    <result property="BinWeight" column="BIN_WEIGHT"/>
+    <result property="BinArea" column="BIN_AREA"/>
+    <result property="CrnNo" column="CRN_NO"/>
+    <result property="GroupLocNo" column="GROUP_LOC_NO"/>
+    <result property="OrderLineGuid" column="ORDER_LINE_GUID"/>
+    <result property="BinPlcNo" column="BIN_PLC_NO"/>
+    <result property="GroupExtensionNo" column="GROUP_EXTENSION_NO"/>
+    <result property="WhNo" column="WH_NO"/>
+    <result property="OutBinBizStatus" column="OUT_BIN_BIZ_STATUS"/>
+    <result property="RealGroupNo" column="REAL_GROUP_NO"/>
+    <result property="ColumnIndex" column="COLUMN_INDEX"/>
+    <result property="RowIndex" column="ROW_INDEX"/>
+    <result property="ChannelNo" column="CHANNEL_NO"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbBinStatus" class="PsbBinStatus">
+    <parameter property="BinNo" column="BinNo"/>
+    <parameter property="UsedFlag" column="UsedFlag"/>
+    <parameter property="BinSize" column="BinSize"/>
+    <parameter property="BinStatus" column="BinStatus"/>
+    <parameter property="BinBizStatus" column="BinBizStatus"/>
+    <parameter property="BinWeight" column="BinWeight"/>
+    <parameter property="BinArea" column="BinArea"/>
+    <parameter property="CrnNo" column="CrnNo"/>
+    <parameter property="GroupLocNo" column="GroupLocNo"/>
+    <parameter property="OrderLineGuid" column="OrderLineGuid"/>
+    <parameter property="BinPlcNo" column="BinPlcNo"/>
+    <parameter property="GroupExtensionNo" column="GroupExtensionNo"/>
+    <parameter property="WhNo" column="WhNo"/>
+    <parameter property="OutBinBizStatus" column="OutBinBizStatus"/>
+    <parameter property="RealGroupNo" column="RealGroupNo"/>
+    <parameter property="ColumnIndex" column="ColumnIndex"/>
+    <parameter property="RowIndex" column="RowIndex"/>
+    <parameter property="ChannelNo" column="ChannelNo"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_BIN_STATUS ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.BinNo" prepend="AND">
+          <isEqual property="where.BinNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_NO = #where.BinNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.UsedFlag" prepend="AND">
+          <isEqual property="where.UsedFlag" compareValue="-1147483648">
+            <![CDATA[USED_FLAG IS NULL]]>
+          </isEqual>
+          <isEqual property="where.UsedFlag" compareValue="-1147483647">
+            <![CDATA[USED_FLAG IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.UsedFlag" compareValue="-1147483648">
+          <isNotEqual property="where.UsedFlag" compareValue="-1147483647">
+            <![CDATA[USED_FLAG = #where.UsedFlag#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinSize" prepend="AND">
+          <isEqual property="where.BinSize" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_SIZE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinSize" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_SIZE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinSize" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinSize" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_SIZE = #where.BinSize#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinStatus" prepend="AND">
+          <isEqual property="where.BinStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinStatus" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_STATUS = #where.BinStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinBizStatus" prepend="AND">
+          <isEqual property="where.BinBizStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_BIZ_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinBizStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_BIZ_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinBizStatus" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinBizStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_BIZ_STATUS = #where.BinBizStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinWeight" prepend="AND">
+          <isEqual property="where.BinWeight" compareValue="-1147483648">
+            <![CDATA[BIN_WEIGHT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinWeight" compareValue="-1147483647">
+            <![CDATA[BIN_WEIGHT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinWeight" compareValue="-1147483648">
+          <isNotEqual property="where.BinWeight" compareValue="-1147483647">
+            <![CDATA[BIN_WEIGHT = #where.BinWeight#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinArea" prepend="AND">
+          <isEqual property="where.BinArea" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_AREA IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinArea" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_AREA IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinArea" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinArea" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_AREA = #where.BinArea#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnNo" prepend="AND">
+          <isEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO = #where.CrnNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.GroupLocNo" prepend="AND">
+          <isEqual property="where.GroupLocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GROUP_LOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GroupLocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GROUP_LOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GroupLocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GroupLocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GROUP_LOC_NO = #where.GroupLocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderLineGuid" prepend="AND">
+          <isEqual property="where.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderLineGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OrderLineGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID = #where.OrderLineGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BinPlcNo" prepend="AND">
+          <isEqual property="where.BinPlcNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_PLC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BinPlcNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_PLC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BinPlcNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BinPlcNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BIN_PLC_NO = #where.BinPlcNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.GroupExtensionNo" prepend="AND">
+          <isEqual property="where.GroupExtensionNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GROUP_EXTENSION_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GroupExtensionNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GROUP_EXTENSION_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GroupExtensionNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GroupExtensionNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GROUP_EXTENSION_NO = #where.GroupExtensionNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.WhNo" prepend="AND">
+          <isEqual property="where.WhNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[WH_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.WhNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[WH_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.WhNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.WhNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[WH_NO = #where.WhNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OutBinBizStatus" prepend="AND">
+          <isEqual property="where.OutBinBizStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OUT_BIN_BIZ_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OutBinBizStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OUT_BIN_BIZ_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OutBinBizStatus" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OutBinBizStatus" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OUT_BIN_BIZ_STATUS = #where.OutBinBizStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.RealGroupNo" prepend="AND">
+          <isEqual property="where.RealGroupNo" compareValue="-1147483648">
+            <![CDATA[REAL_GROUP_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.RealGroupNo" compareValue="-1147483647">
+            <![CDATA[REAL_GROUP_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.RealGroupNo" compareValue="-1147483648">
+          <isNotEqual property="where.RealGroupNo" compareValue="-1147483647">
+            <![CDATA[REAL_GROUP_NO = #where.RealGroupNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ColumnIndex" prepend="AND">
+          <isEqual property="where.ColumnIndex" compareValue="-1147483648">
+            <![CDATA[COLUMN_INDEX IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ColumnIndex" compareValue="-1147483647">
+            <![CDATA[COLUMN_INDEX IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ColumnIndex" compareValue="-1147483648">
+          <isNotEqual property="where.ColumnIndex" compareValue="-1147483647">
+            <![CDATA[COLUMN_INDEX = #where.ColumnIndex#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.RowIndex" prepend="AND">
+          <isEqual property="where.RowIndex" compareValue="-1147483648">
+            <![CDATA[ROW_INDEX IS NULL]]>
+          </isEqual>
+          <isEqual property="where.RowIndex" compareValue="-1147483647">
+            <![CDATA[ROW_INDEX IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.RowIndex" compareValue="-1147483648">
+          <isNotEqual property="where.RowIndex" compareValue="-1147483647">
+            <![CDATA[ROW_INDEX = #where.RowIndex#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ChannelNo" prepend="AND">
+          <isEqual property="where.ChannelNo" compareValue="-1147483648">
+            <![CDATA[CHANNEL_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ChannelNo" compareValue="-1147483647">
+            <![CDATA[CHANNEL_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ChannelNo" compareValue="-1147483648">
+          <isNotEqual property="where.ChannelNo" compareValue="-1147483647">
+            <![CDATA[CHANNEL_NO = #where.ChannelNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_BIN_STATUS]]>
+       <dynamic prepend="(">
+        <isNotNull property="BinNo" prepend=",">BIN_NO</isNotNull>
+        <isNotNull property="UsedFlag" prepend=",">USED_FLAG</isNotNull>
+        <isNotNull property="BinSize" prepend=",">BIN_SIZE</isNotNull>
+        <isNotNull property="BinStatus" prepend=",">BIN_STATUS</isNotNull>
+        <isNotNull property="BinBizStatus" prepend=",">BIN_BIZ_STATUS</isNotNull>
+        <isNotNull property="BinWeight" prepend=",">BIN_WEIGHT</isNotNull>
+        <isNotNull property="BinArea" prepend=",">BIN_AREA</isNotNull>
+        <isNotNull property="CrnNo" prepend=",">CRN_NO</isNotNull>
+        <isNotNull property="GroupLocNo" prepend=",">GROUP_LOC_NO</isNotNull>
+        <isNotNull property="OrderLineGuid" prepend=",">ORDER_LINE_GUID</isNotNull>
+        <isNotNull property="BinPlcNo" prepend=",">BIN_PLC_NO</isNotNull>
+        <isNotNull property="GroupExtensionNo" prepend=",">GROUP_EXTENSION_NO</isNotNull>
+        <isNotNull property="WhNo" prepend=",">WH_NO</isNotNull>
+        <isNotNull property="OutBinBizStatus" prepend=",">OUT_BIN_BIZ_STATUS</isNotNull>
+        <isNotNull property="RealGroupNo" prepend=",">REAL_GROUP_NO</isNotNull>
+        <isNotNull property="ColumnIndex" prepend=",">COLUMN_INDEX</isNotNull>
+        <isNotNull property="RowIndex" prepend=",">ROW_INDEX</isNotNull>
+        <isNotNull property="ChannelNo" prepend=",">CHANNEL_NO</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="BinNo" prepend=",">#BinNo#</isNotNull>
+        <isNotNull property="UsedFlag" prepend=",">#UsedFlag#</isNotNull>
+        <isNotNull property="BinSize" prepend=",">#BinSize#</isNotNull>
+        <isNotNull property="BinStatus" prepend=",">#BinStatus#</isNotNull>
+        <isNotNull property="BinBizStatus" prepend=",">#BinBizStatus#</isNotNull>
+        <isNotNull property="BinWeight" prepend=",">#BinWeight#</isNotNull>
+        <isNotNull property="BinArea" prepend=",">#BinArea#</isNotNull>
+        <isNotNull property="CrnNo" prepend=",">#CrnNo#</isNotNull>
+        <isNotNull property="GroupLocNo" prepend=",">#GroupLocNo#</isNotNull>
+        <isNotNull property="OrderLineGuid" prepend=",">#OrderLineGuid#</isNotNull>
+        <isNotNull property="BinPlcNo" prepend=",">#BinPlcNo#</isNotNull>
+        <isNotNull property="GroupExtensionNo" prepend=",">#GroupExtensionNo#</isNotNull>
+        <isNotNull property="WhNo" prepend=",">#WhNo#</isNotNull>
+        <isNotNull property="OutBinBizStatus" prepend=",">#OutBinBizStatus#</isNotNull>
+        <isNotNull property="RealGroupNo" prepend=",">#RealGroupNo#</isNotNull>
+        <isNotNull property="ColumnIndex" prepend=",">#ColumnIndex#</isNotNull>
+        <isNotNull property="RowIndex" prepend=",">#RowIndex#</isNotNull>
+        <isNotNull property="ChannelNo" prepend=",">#ChannelNo#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_BIN_STATUS]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.UsedFlag" prepend=",">
+          <isEqual property="update.UsedFlag" compareValue="-1147483648">
+            <![CDATA[USED_FLAG = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.UsedFlag" compareValue="-1147483648">
+          <![CDATA[USED_FLAG = #update.UsedFlag#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinSize" prepend=",">
+          <isEqual property="update.BinSize" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_SIZE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinSize" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_SIZE = #update.BinSize#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinStatus" prepend=",">
+          <isEqual property="update.BinStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinStatus" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_STATUS = #update.BinStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinBizStatus" prepend=",">
+          <isEqual property="update.BinBizStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_BIZ_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinBizStatus" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_BIZ_STATUS = #update.BinBizStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinWeight" prepend=",">
+          <isEqual property="update.BinWeight" compareValue="-1147483648">
+            <![CDATA[BIN_WEIGHT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinWeight" compareValue="-1147483648">
+          <![CDATA[BIN_WEIGHT = #update.BinWeight#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinArea" prepend=",">
+          <isEqual property="update.BinArea" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_AREA = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinArea" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_AREA = #update.BinArea#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnNo" prepend=",">
+          <isEqual property="update.CrnNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRN_NO = #update.CrnNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.GroupLocNo" prepend=",">
+          <isEqual property="update.GroupLocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GROUP_LOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.GroupLocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[GROUP_LOC_NO = #update.GroupLocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OrderLineGuid" prepend=",">
+          <isEqual property="update.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_LINE_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderLineGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ORDER_LINE_GUID = #update.OrderLineGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BinPlcNo" prepend=",">
+          <isEqual property="update.BinPlcNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BIN_PLC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BinPlcNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BIN_PLC_NO = #update.BinPlcNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.GroupExtensionNo" prepend=",">
+          <isEqual property="update.GroupExtensionNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GROUP_EXTENSION_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.GroupExtensionNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[GROUP_EXTENSION_NO = #update.GroupExtensionNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.WhNo" prepend=",">
+          <isEqual property="update.WhNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[WH_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.WhNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[WH_NO = #update.WhNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OutBinBizStatus" prepend=",">
+          <isEqual property="update.OutBinBizStatus" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OUT_BIN_BIZ_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OutBinBizStatus" compareValue="STRING_NULL_VALUE">
+          <![CDATA[OUT_BIN_BIZ_STATUS = #update.OutBinBizStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.RealGroupNo" prepend=",">
+          <isEqual property="update.RealGroupNo" compareValue="-1147483648">
+            <![CDATA[REAL_GROUP_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.RealGroupNo" compareValue="-1147483648">
+          <![CDATA[REAL_GROUP_NO = #update.RealGroupNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ColumnIndex" prepend=",">
+          <isEqual property="update.ColumnIndex" compareValue="-1147483648">
+            <![CDATA[COLUMN_INDEX = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ColumnIndex" compareValue="-1147483648">
+          <![CDATA[COLUMN_INDEX = #update.ColumnIndex#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.RowIndex" prepend=",">
+          <isEqual property="update.RowIndex" compareValue="-1147483648">
+            <![CDATA[ROW_INDEX = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.RowIndex" compareValue="-1147483648">
+          <![CDATA[ROW_INDEX = #update.RowIndex#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ChannelNo" prepend=",">
+          <isEqual property="update.ChannelNo" compareValue="-1147483648">
+            <![CDATA[CHANNEL_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ChannelNo" compareValue="-1147483648">
+          <![CDATA[CHANNEL_NO = #update.ChannelNo#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_BIN_STATUS]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbBinStatus">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_BIN_STATUS]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_BIN_STATUS]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbBinStatus" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

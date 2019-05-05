@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@Material" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t1.MATER_NO,t1.MATER_NAME,t1.MATER_CODE,t1.MATER_MKIND,t1.MATER_TYPE,t1.MIN_TIME,t1.MAX_TIME,
+      t1.MAIN_UNIT,t1.MATER_SPEC,t1.MATER_DESC,t1.SEQ_INDEX,
+      CASE t1.slms_flag WHEN '0' THEN '复位' WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' END AS slms_flag
+      from View_Psb_Material t1
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.MATER_NO" prepend="AND">
+          T1.MATER_NO LIKE '%'||#where.MATER_NO#||'%'
+        </isNotNull>       
+        <isNotNull property="where.MATER_MKIND" prepend="AND">
+          T1.MATER_MKIND LIKE '%'||#where.MATER_MKIND#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATER_TYPE" prepend="AND">
+          T1.MATER_TYPE LIKE '%'||#where.MATER_TYPE#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATER_SPEC" prepend="AND">
+          T1.MATER_SPEC LIKE '%'||#where.MATER_SPEC#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATER_DESC" prepend="AND">
+          T1.MATER_DESC LIKE '%'||#where.MATER_DESC#||'%'
+        </isNotNull>
+       </dynamic>
+      ORDER BY t1.MATER_MKIND,t1.MATER_TYPE,t1.MATER_NO
+    </select>
+      <select id="Select@Material@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+         select t1.* from View_Psb_Material t1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.MATER_NO" prepend="AND">
+           T1.MATER_NO = #where.MATER_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

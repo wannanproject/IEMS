@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="序列SEQ_PEM_ALARM_LOG" ></Caption>
+    <Caption Name="EQUIP_NO" Value="设备号" ></Caption>
+    <Caption Name="START_TIME" Value="开始时间" ></Caption>
+    <Caption Name="END_TIME" Value="结束时间" ></Caption>
+    <Caption Name="ERR_NO" Value="报警编号" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误描述" ></Caption>
+    <Caption Name="ERR_GUID" Value="唯一标识" ></Caption>
+    <Caption Name="DEAL_DESC" Value="处理办法" ></Caption>
+    <Caption Name="EQUIP_NAME" Value="设备名称" ></Caption>
+    <Caption Name="EQUIP_TYPE" Value="设备类型" ></Caption>
+    <Caption Name="SAVED_FLAG" Value="归档标志" ></Caption>
+    <Caption Name="STORE_AREA" Value="库区编码" ></Caption>
+    <Caption Name="EQUIP_GROUP" Value="设备组" ></Caption>
+    <Caption Name="UPDATE_FLAG" Value="1-新增,2-修改,3-删除,0-复位" ></Caption>
+  </Captions>
+  <WebPage Title="设备报警信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="EQUIP_NO" ></GridColumn>
+        <GridColumn ColumnName="START_TIME" ></GridColumn>
+        <GridColumn ColumnName="END_TIME" ></GridColumn>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="ERR_GUID" ></GridColumn>
+        <GridColumn ColumnName="DEAL_DESC" ></GridColumn>
+        <GridColumn ColumnName="EQUIP_NAME" ></GridColumn>
+        <GridColumn ColumnName="EQUIP_TYPE" ></GridColumn>
+        <GridColumn ColumnName="SAVED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="STORE_AREA" ></GridColumn>
+        <GridColumn ColumnName="EQUIP_GROUP" ></GridColumn>
+        <GridColumn ColumnName="UPDATE_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="EQUIP_NO" ></ParamField>
+        <ParamField FieldName="START_TIME" ></ParamField>
+        <ParamField FieldName="END_TIME" ></ParamField>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="ERR_GUID" ></ParamField>
+        <ParamField FieldName="DEAL_DESC" ></ParamField>
+        <ParamField FieldName="EQUIP_NAME" ></ParamField>
+        <ParamField FieldName="EQUIP_TYPE" ></ParamField>
+        <ParamField FieldName="SAVED_FLAG" ></ParamField>
+        <ParamField FieldName="STORE_AREA" ></ParamField>
+        <ParamField FieldName="EQUIP_GROUP" ></ParamField>
+        <ParamField FieldName="UPDATE_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

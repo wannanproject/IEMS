@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@InOutBin" parameterClass="map" resultClass="row">
+
+      <![CDATA[ 
+            SELECT ZWTC.OBJID,
+                   ZWTC.TASK_NO,
+                   ZWTC.SLOC_NO,
+                   ZWTC.SLOC_PLC_NO,
+                   ZWTC.ELOC_NO,
+                   ZWTC.ELOC_PLC_NO,
+                   ZWTC.CREATION_DATE,
+                   ZWTC.EXCUTE_DATE,
+                   ZWTC.FINISH_DATE,
+                   ZWTC.ERR_NAME,
+                   ZWTC.PRODUCT_NO,
+                   ZWTC.PALLET_NO,
+                   CASE ZWTC.CMD_TYPE
+                     WHEN 'I' THEN
+                   '入库'
+                     WHEN 'O' THEN
+                      '出库'
+                     ELSE
+                      '异常'
+                   END CMD_TYPE,
+                   NVL(ZWPD.MATER_NO, WPD.MATER_NO) AS MATER_NO,
+                   NVL(ZWPD.BATCH_NO, WPD.BATCH_NO) AS BATCH_NO,
+                   NVL(ZWPD.MATER_TYPE, WPD.MATER_TYPE) AS MATER_TYPE
+              FROM Z50_WBS_TASK_CMD ZWTC
+              LEFT JOIN Z50_WBS_PACKAGE_DATA ZWPD
+                ON ZWPD.PACKAGE_GUID = ZWTC.PACKAGE_GUID
+              LEFT JOIN WBS_PACKAGE_DATA WPD
+                ON WPD.PACKAGE_GUID = ZWTC.PACKAGE_GUID
+
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          ZWTC.TASK_NO like '%'||#where.TASK_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.SLOC_PLC_NO" prepend="AND">
+          ZWTC.SLOC_PLC_NO like '%'||#where.SLOC_PLC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          ZWTC.PALLET_NO like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.BTIME" prepend="AND">
+          <![CDATA[ ZWTC.CREATION_DATE >=#where.BTIME#  ]]>
+        </isNotNull>
+        <isNotNull property="where.ETIME" prepend="AND">
+          <![CDATA[ ZWTC.CREATION_DATE <= 1+#where.ETIME#  ]]>
+        </isNotNull>
+      </dynamic>
+      <![CDATA[ order by ZWTC.Creation_Date desc]]>
+
+    </select>
+    <select id="Select@InOutBin@MainDetail" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+            SELECT ZWTC.OBJID,
+                   ZWTC.TASK_NO,
+                   ZWTC.SLOC_NO,
+                   ZWTC.SLOC_PLC_NO,
+                   ZWTC.ELOC_NO,
+                   ZWTC.ELOC_PLC_NO,
+                   ZWTC.CREATION_DATE,
+                   ZWTC.EXCUTE_DATE,
+                   ZWTC.FINISH_DATE,
+                   ZWTC.ERR_NAME,
+                   ZWTC.PRODUCT_NO,
+                   ZWTC.PALLET_NO,
+                   CASE ZWTC.CMD_TYPE
+                     WHEN 'I' THEN
+                   '入库'
+                     WHEN 'O' THEN
+                      '出库'
+                     ELSE
+                      '异常'
+                   END CMD_TYPE,
+                   NVL(ZWPD.MATERIAL_NO, WPD.MATERIAL_NO) AS MATER_NO,
+                   NVL(ZWPD.BATCH_NO, WPD.BATCH_NO) AS BATCH_NO,
+                   NVL(ZWPD.MATER_TYPE, WPD.MATER_TYPE) AS MATER_TYPE
+              FROM Z50_WBS_TASK_CMD ZWTC
+              LEFT JOIN Z50_WBS_PACKAGE_DATA ZWPD
+                ON ZWPD.PACKAGE_GUID = ZWTC.PACKAGE_GUID
+              LEFT JOIN WBS_PACKAGE_DATA WPD
+                ON WPD.PACKAGE_GUID = ZWTC.PACKAGE_GUID
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.OBJID" prepend = "AND">
+          ZWTC.OBJID = #where.OBJID#
+        </isNotNull>
+      </dynamic>
+
+    </select>
+  </statements>
+</sqlMap>

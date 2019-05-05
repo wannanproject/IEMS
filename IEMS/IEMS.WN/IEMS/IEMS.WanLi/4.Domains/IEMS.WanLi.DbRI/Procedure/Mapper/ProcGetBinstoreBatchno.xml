@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.ProcGetBinstoreBatchnoService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--执行存储过程-->
+    <procedure id="PROC_GET_BINSTORE_BATCHNO" parameterClass = "map" resultClass="row">
+      PROC_GET_BINSTORE_BATCHNO
+      @{IBtime, column=I_BTIME}
+      @{IEdate, column=I_EDATE}
+      @{IBatchNo, column=I_BATCH_NO}
+      @{OCurtable, column=O_CURTABLE,direction=Output,dbType=RefCursor}
+    </procedure>
+  </statements>
+</sqlMap>

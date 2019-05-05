@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO"                        Value="站台号" ></Caption>
+    <Caption Name="LOC_PLC_NO"                    Value="站台PLC号" ></Caption>
+    <Caption Name="LOC_TYPE_NO"                   Value="站台类型" ></Caption>
+    <Caption Name="LOC_NAME"                      Value="站台名称" ></Caption>
+    <Caption Name="LOC_INDEX"                     Value="站台顺序号" ></Caption>
+    <Caption Name="MAX_BUFFER"                    Value="缓存区大小" ></Caption>
+    <Caption Name="LOC_GROUP_NO"                  Value="站台组" ></Caption>
+    <Caption Name="LOC_MES_NO"                    Value="MES编码" ></Caption>
+    <Caption Name="LOC_AGV_NO"                    Value="AGV编码" ></Caption>
+    <Caption Name="LOC_PRIORITY"                  Value="优先级" ></Caption>
+    <Caption Name="LOC_ENABLE"                    Value="可用状态" ></Caption>
+    <Caption Name="LOC_TYPE_NAME"                 Value="站台类型" ></Caption>
+  </Captions>
+  <WebPage Title="站台信息维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" Type="ComboBox" Nullable="true" Caption="站台类型"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO"           WIDTH="70"></GridColumn>
+        <GridColumn ColumnName="LOC_PLC_NO"       WIDTH="70"></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NO"      WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="LOC_NAME"         WIDTH="140"></GridColumn>   
+        <GridColumn ColumnName="LOC_INDEX"        WIDTH="70"></GridColumn>
+        <GridColumn ColumnName="MAX_BUFFER"       WIDTH="70"></GridColumn>       
+        <GridColumn ColumnName="LOC_GROUP_NO"     WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="LOC_MES_NO"       WIDTH="100"></GridColumn>
+        <GridColumn ColumnName="LOC_AGV_NO"       WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="LOC_PRIORITY"     WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="LOC_ENABLE"       WIDTH="70"></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NAME"    WIDTH="80"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"        ></ParamField>
+        <ParamField FieldName="LOC_PLC_NO"    ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO"   ></ParamField>
+        <ParamField FieldName="LOC_NAME"      ></ParamField>
+        <ParamField FieldName="LOC_INDEX"     ></ParamField>
+        <ParamField FieldName="MAX_BUFFER"    ></ParamField>
+        <ParamField FieldName="LOC_GROUP_NO"  ></ParamField>
+        <ParamField FieldName="LOC_MES_NO"    ></ParamField>
+        <ParamField FieldName="LOC_AGV_NO"    ></ParamField>
+        <ParamField FieldName="LOC_PRIORITY"  ></ParamField>
+        <ParamField FieldName="LOC_ENABLE"    ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NAME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

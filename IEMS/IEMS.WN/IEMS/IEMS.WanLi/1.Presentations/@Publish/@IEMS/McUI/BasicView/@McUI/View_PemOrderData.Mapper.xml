@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_PemOrderData" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PEM_ORDER_DATA T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.ORDER_NO" prepend="AND">
+           T1.ORDER_NO LIKE '%'||#where.ORDER_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY ORDER_NO
+     </select>
+     <select id="Select@View_PemOrderData@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PEM_ORDER_DATA T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.ORDER_NO" prepend = "AND">
+           T1.ORDER_NO = #where.ORDER_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

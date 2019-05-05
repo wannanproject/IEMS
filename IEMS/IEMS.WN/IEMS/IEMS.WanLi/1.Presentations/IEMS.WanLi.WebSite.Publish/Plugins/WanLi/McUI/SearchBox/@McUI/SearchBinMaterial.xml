@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="物料编码"></Caption>
+    <Caption Name="MATER_NAME"  Value="物料名称"></Caption>
+    <Caption Name="BIN_COUNT"   Value="库存数量"></Caption>
+  </Captions>
+  <WebPage Title="物料信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO"></ParamField>
+        <ParamField FieldName="MATER_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO"  Width="120"></GridColumn>
+        <GridColumn ColumnName="MATER_NAME"   Width="120"></GridColumn>
+        <GridColumn ColumnName="BIN_COUNT"    Width="60"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@ViewProduction" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+          SELECT * FROM VIEW_PM_EQP_PRODUCTION T
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.id_key" prepend="AND">
+          T.id_key like '%'||#where.id_key#||'%'
+        </isNotNull>
+        <isNotNull property="where.part_number" prepend="AND">
+          T.part_number like '%'||#where.part_number#||'%'
+        </isNotNull>
+        <isNotNull property="where.PLAN_NAME" prepend="AND">
+          T.PLAN_NAME like '%'||#where.PLAN_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.REQUEST_NO" prepend="AND">
+          T.REQUEST_NO like '%'||#where.REQUEST_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      <![CDATA[ ORDER BY T.CREATE_TIME DESC  ]]>
+    </select>
+
+     <select id="Select@ViewProduction@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+          SELECT * FROM VIEW_PM_EQP_PRODUCTION T
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.id_key" prepend="AND">
+           T.id_key like '%'||#where.id_key#||'%'
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

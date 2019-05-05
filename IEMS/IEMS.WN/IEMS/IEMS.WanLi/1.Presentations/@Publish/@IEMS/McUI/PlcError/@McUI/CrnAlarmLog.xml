@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="序列" ></Caption>
+    <Caption Name="EQUIP_NO" Value="设备号" ></Caption>
+    <Caption Name="START_TIME" Value="开始时间" ></Caption>
+    <Caption Name="END_TIME" Value="结束时间" ></Caption>
+    <Caption Name="ERR_NO" Value="报警编号" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误描述" ></Caption>
+    <Caption Name="ERR_GUID" Value="唯一标识" ></Caption>
+    <Caption Name="DEAL_DESC" Value="处理办法" ></Caption>
+    <Caption Name="EQUIP_NAME" Value="设备名称" ></Caption>
+    <Caption Name="EQUIP_TYPE" Value="设备类型" ></Caption>
+    <Caption Name="SAVED_FLAG" Value="归档标志" ></Caption>
+    <Caption Name="STORE_AREA" Value="库区编码" ></Caption>
+    <Caption Name="EQUIP_GROUP" Value="设备组" ></Caption>
+    <Caption Name="UPDATE_FLAG" Value="标志位" ></Caption>
+    <Caption Name="BTIME" Value="开始时间" ></Caption>
+    <Caption Name="ETIME" Value="结束时间" ></Caption>
+  </Captions>
+  <WebPage Title="堆垛机报警信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BTIME" Type="DateTimeBox" DefaultValue="-1"></ParamField>
+        <ParamField FieldName="ETIME" Type="DateTimeBox" DefaultValue="1"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" IsShow="false"></GridColumn>
+        <GridColumn ColumnName="EQUIP_NO" ></GridColumn>
+        <GridColumn ColumnName="EQUIP_NAME"></GridColumn>
+        <GridColumn ColumnName="START_TIME"  ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="END_TIME"  ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="DEAL_DESC" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

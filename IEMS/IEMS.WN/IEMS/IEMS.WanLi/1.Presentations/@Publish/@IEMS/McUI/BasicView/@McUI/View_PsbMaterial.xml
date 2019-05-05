@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="物料编码" ></Caption>
+    <Caption Name="MATER_NAME" Value="物料名称" ></Caption>
+    <Caption Name="MATER_CODE" Value="物料编码" ></Caption>
+    <Caption Name="MATER_MKIND" Value="分类" ></Caption>
+    <Caption Name="MATER_TYPE" Value="分类" ></Caption>
+    <Caption Name="MIN_TIME" Value="最短时间(小时)" ></Caption>
+    <Caption Name="MAX_TIME" Value="最长时间(小时)" ></Caption>
+    <Caption Name="MAIN_UNIT" Value="主单位" ></Caption>
+    <Caption Name="MATER_SPEC" Value="描述1" ></Caption>
+    <Caption Name="MATER_DESC" Value="描述2" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="??" ></Caption>
+    <Caption Name="DEL_FLAG" Value="删除标记 1：删除 0：正常" ></Caption>
+    <Caption Name="MES_NO" Value="MES_NO" ></Caption>
+  </Captions>
+  <WebPage Title="物料维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO" ></GridColumn>
+        <GridColumn ColumnName="MATER_NAME" ></GridColumn>
+        <GridColumn ColumnName="MATER_CODE" ></GridColumn>
+        <GridColumn ColumnName="MATER_MKIND" ></GridColumn>
+        <GridColumn ColumnName="MATER_TYPE" ></GridColumn>
+        <GridColumn ColumnName="MIN_TIME" ></GridColumn>
+        <GridColumn ColumnName="MAX_TIME" ></GridColumn>
+        <GridColumn ColumnName="MAIN_UNIT" ></GridColumn>
+        <GridColumn ColumnName="MATER_SPEC" ></GridColumn>
+        <GridColumn ColumnName="MATER_DESC" ></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" ></GridColumn>
+        <GridColumn ColumnName="DEL_FLAG" ></GridColumn>
+        <GridColumn ColumnName="MES_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>
+        <ParamField FieldName="MATER_NAME" ></ParamField>
+        <ParamField FieldName="MATER_CODE" ></ParamField>
+        <ParamField FieldName="MATER_MKIND" ></ParamField>
+        <ParamField FieldName="MATER_TYPE" ></ParamField>
+        <ParamField FieldName="MIN_TIME" ></ParamField>
+        <ParamField FieldName="MAX_TIME" ></ParamField>
+        <ParamField FieldName="MAIN_UNIT" ></ParamField>
+        <ParamField FieldName="MATER_SPEC" ></ParamField>
+        <ParamField FieldName="MATER_DESC" ></ParamField>
+        <ParamField FieldName="SEQ_INDEX" ></ParamField>
+        <ParamField FieldName="DEL_FLAG" ></ParamField>
+        <ParamField FieldName="MES_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

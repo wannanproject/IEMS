@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="站台号码" ></Caption>
+    <Caption Name="LOC_GROUP_NO" Value="站台组" ></Caption>
+    <Caption Name="TASK_NO" Value="任务号码" ></Caption>
+    <Caption Name="TASK_DATE" Value="任务日期" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装编码" ></Caption>
+    <Caption Name="LOADED_STATUS" Value="有载标志 1:有载  0:空载" ></Caption>
+    <Caption Name="LOC_PRIORITY" Value="站台优先级  默认20  越小优先级越高" ></Caption>
+    <Caption Name="ORDER_NO" Value="订单号" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行唯一编码" ></Caption>
+    <Caption Name="FREE_FLAG" Value="空闲标志 1：空闲  0:不空闲 --作业使用" ></Caption>
+    <Caption Name="TASK_QTY" Value="当前任务数量" ></Caption>
+    <Caption Name="EMPTY_QTY" Value="不满足量" ></Caption>
+    <Caption Name="UPDATE_DATE" Value="修改时间" ></Caption>
+    <Caption Name="SCAN_RFID_NO" Value="扫描到的条码号" ></Caption>
+    <Caption Name="LOC_TYPE_NO" Value="站台分类" ></Caption>
+    <Caption Name="REQUEST_FLAG" Value="AGV到站请求标志 1：发起请求  0：无请求" ></Caption>
+  </Captions>
+  <WebPage Title="站台状态表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="TASK_DATE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="LOADED_STATUS" ></GridColumn>
+        <GridColumn ColumnName="LOC_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="FREE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="TASK_QTY" ></GridColumn>
+        <GridColumn ColumnName="EMPTY_QTY" ></GridColumn>
+        <GridColumn ColumnName="UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="SCAN_RFID_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_GROUP_NO" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="TASK_DATE" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="LOADED_STATUS" ></ParamField>
+        <ParamField FieldName="LOC_PRIORITY" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="FREE_FLAG" ></ParamField>
+        <ParamField FieldName="TASK_QTY" ></ParamField>
+        <ParamField FieldName="EMPTY_QTY" ></ParamField>
+        <ParamField FieldName="UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="SCAN_RFID_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" ></ParamField>
+        <ParamField FieldName="REQUEST_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

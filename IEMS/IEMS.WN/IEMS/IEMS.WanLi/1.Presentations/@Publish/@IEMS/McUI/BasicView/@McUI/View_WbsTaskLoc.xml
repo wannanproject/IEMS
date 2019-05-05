@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="TASK_GUID" Value="任务号码" ></Caption>
+    <Caption Name="LOCK_LOC_NO" Value="锁定的途径点" ></Caption>
+    <Caption Name="ORDER_ID" Value="序号" ></Caption>
+    <Caption Name="PASS_FLAG" Value="1:已经经过 0：未经过" ></Caption>
+  </Captions>
+  <WebPage Title="任务节点管理">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TASK_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="LOCK_LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_ID" ></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="LOCK_LOC_NO" ></ParamField>
+        <ParamField FieldName="ORDER_ID" ></ParamField>
+        <ParamField FieldName="PASS_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

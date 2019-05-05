@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@CrnAlarmLog" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PEM_ALARM_LOG T1
+       INNER JOIN PSB_CRN T2 ON T1.EQUIP_NO=T2.CRN_NO
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend="AND">
+           T1.OBJID LIKE '%'||#where.OBJID#||'%'
+         </isNotNull>
+        <isNotNull property="where.BTIME" prepend="AND">
+          <![CDATA[ 
+          T1.START_TIME >= #where.BTIME#
+          ]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[ 
+          T1.START_TIME <= #where.END_TIME#
+          ]]>
+        </isNotNull>
+       </dynamic>
+       ORDER BY OBJID
+     </select>
+     <select id="Select@CrnAlarmLog@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PEM_ALARM_LOG T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend = "AND">
+           T1.OBJID = #where.OBJID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_TmpTaskOrderWeight" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TMP_TASK_ORDER_WEIGHT T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.CRN_NO" prepend="AND">
+           T1.CRN_NO LIKE '%'||#where.CRN_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY CRN_NO
+     </select>
+     <select id="Select@View_TmpTaskOrderWeight@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TMP_TASK_ORDER_WEIGHT T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.CRN_NO" prepend = "AND">
+           T1.CRN_NO = #where.CRN_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

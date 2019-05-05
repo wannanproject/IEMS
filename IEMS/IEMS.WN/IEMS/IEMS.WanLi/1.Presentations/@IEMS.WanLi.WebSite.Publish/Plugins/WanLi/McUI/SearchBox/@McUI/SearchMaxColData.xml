@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="COL_NO"   Value="列值"></Caption>
+    <Caption Name="CRN_NO" Value="当前归属设备"></Caption>
+  </Captions>
+  <WebPage Title="列值信息">
+  </WebPage>
+  <Select>
+    <MainGrid  PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="COL_NO" Width="60"></GridColumn>
+        <GridColumn ColumnName="CRN_NO" Width="100"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.SeqZ50WbsTaskService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <select id="SEQ_Z50_WBS_TASK.NEXTVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_Z50_WBS_TASK.NEXTVAL FROM DUAL]]>
+    </select>
+    <select id="SEQ_Z50_WBS_TASK.CURRVAL" resultClass="int">
+	  <![CDATA[SELECT SEQ_Z50_WBS_TASK.CURRVAL FROM DUAL]]>
+    </select>
+  </statements>
+</sqlMap>

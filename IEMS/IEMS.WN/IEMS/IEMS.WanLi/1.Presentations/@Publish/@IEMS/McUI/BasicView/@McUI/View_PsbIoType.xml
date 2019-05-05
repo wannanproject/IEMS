@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="IO_TYPE_NO" Value="类型编码" ></Caption>
+    <Caption Name="IO_TYPE_NAME" Value="类型名称" ></Caption>
+  </Captions>
+  <WebPage Title="任务类型">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="IO_TYPE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="IO_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE_NAME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="IO_TYPE_NO" ></ParamField>
+        <ParamField FieldName="IO_TYPE_NAME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

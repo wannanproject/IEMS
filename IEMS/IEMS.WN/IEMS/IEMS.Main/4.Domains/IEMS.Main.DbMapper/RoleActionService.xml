@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbCI.RoleActionService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <insert id="RolePowerInsertCopy" parameterClass="map">
+      INSERT INTO SSP_ROLE_ACTION(OBJID,ROLE_ID,ACTION_ID)
+      SELECT SEQ_SSP_ROLE_ACTION.NEXTVAL,t.*
+      FROM (
+      SELECT #TargetRoleID#,ACTION_ID FROM SSP_ROLE_ACTION WHERE ROLE_ID=#SourceRoleID#
+      ) t
+    </insert>
+  </statements>
+</sqlMap>

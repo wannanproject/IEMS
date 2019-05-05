@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="WH_NO" Value="仓库" ></Caption>
+    <Caption Name="LIST_NO" Value="单号" ></Caption>
+    <Caption Name="LINE_ID" Value="单LINE" ></Caption>
+    <Caption Name="LINE_STATUS" Value="单据状态" ></Caption>
+    <Caption Name="SORT_ID" Value="此单发货顺序" ></Caption>
+    <Caption Name="PRODUCT_ID" Value="物料编码" ></Caption>
+    <Caption Name="PRODUCT_GRADE" Value="品级" ></Caption>
+    <Caption Name="PLATFORM_TYPE" Value="出库站台类型" ></Caption>
+    <Caption Name="PLATFORM_NO" Value="出库站台号" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="单据数量  单据生成时需求数量" ></Caption>
+    <Caption Name="LINE_DATE" Value="创建日期" ></Caption>
+    <Caption Name="LIMIT_DATE_S1" Value="限制-时间1" ></Caption>
+    <Caption Name="LIMIT_DATE_S2" Value="限制-时间2" ></Caption>
+    <Caption Name="LIMIT_DATE_01" Value="限制-时间1" ></Caption>
+    <Caption Name="LIMIT_DATE_02" Value="限制-时间2" ></Caption>
+    <Caption Name="LIMIT_BIN_NO_01" Value="限制-库位1" ></Caption>
+    <Caption Name="LIMIT_BIN_NO_02" Value="限制-库位2" ></Caption>
+    <Caption Name="LIMIT_PRO_GUID" Value="限制-货物GUID" ></Caption>
+    <Caption Name="LIMIT_BATCH_NO" Value="限制-批次号" ></Caption>
+    <Caption Name="LIMIT_PALLET_RFID" Value="限制-托盘号" ></Caption>
+    <Caption Name="LIMIT_PALLET_ID" Value="限制-托盘号" ></Caption>
+    <Caption Name="LIST_PRIORITY" Value="单据优先级   根据物料在堆垛机的分布情况可能会=主表LIST_PRIORITY-1" ></Caption>
+    <Caption Name="LINE_PRIORITY" Value="行项目优先级" ></Caption>
+    <Caption Name="LAST_TASK_TIME" Value="最后生成任务时间" ></Caption>
+    <Caption Name="AREA_NO" Value="出库站台区域信息" ></Caption>
+    <Caption Name="ACT_QTY" Value="实际数量  已经完成订单的数量" ></Caption>
+    <Caption Name="LINE_SORT_ID" Value="单据生成任务的顺序号" ></Caption>
+    <Caption Name="OBJID" Value="主键" ></Caption>
+    <Caption Name="FIRST_PROD_DATE" Value="限制-时间1" ></Caption>
+    <Caption Name="SHIP_PORT_ID" Value="发货站台" ></Caption>
+    <Caption Name="SHIP_TRAN_ID" Value="发货输送线" ></Caption>
+    <Caption Name="LIST_KIND" Value="单据类型" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="--" ></Caption>
+  </Captions>
+  <WebPage Title="出库单明细表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="WH_NO" ></GridColumn>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="LINE_STATUS" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_ID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GRADE" ></GridColumn>
+        <GridColumn ColumnName="PLATFORM_TYPE" ></GridColumn>
+        <GridColumn ColumnName="PLATFORM_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="LINE_DATE" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_S1" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_S2" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_01" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_DATE_02" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_BIN_NO_01" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_BIN_NO_02" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PRO_GUID" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PALLET_RFID" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PALLET_ID" ></GridColumn>
+        <GridColumn ColumnName="LIST_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LINE_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LAST_TASK_TIME" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="LINE_SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="FIRST_PROD_DATE" ></GridColumn>
+        <GridColumn ColumnName="SHIP_PORT_ID" ></GridColumn>
+        <GridColumn ColumnName="SHIP_TRAN_ID" ></GridColumn>
+        <GridColumn ColumnName="LIST_KIND" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="WH_NO" ></ParamField>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="LINE_STATUS" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="PRODUCT_ID" ></ParamField>
+        <ParamField FieldName="PRODUCT_GRADE" ></ParamField>
+        <ParamField FieldName="PLATFORM_TYPE" ></ParamField>
+        <ParamField FieldName="PLATFORM_NO" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="LINE_DATE" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_S1" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_S2" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_01" ></ParamField>
+        <ParamField FieldName="LIMIT_DATE_02" ></ParamField>
+        <ParamField FieldName="LIMIT_BIN_NO_01" ></ParamField>
+        <ParamField FieldName="LIMIT_BIN_NO_02" ></ParamField>
+        <ParamField FieldName="LIMIT_PRO_GUID" ></ParamField>
+        <ParamField FieldName="LIMIT_BATCH_NO" ></ParamField>
+        <ParamField FieldName="LIMIT_PALLET_RFID" ></ParamField>
+        <ParamField FieldName="LIMIT_PALLET_ID" ></ParamField>
+        <ParamField FieldName="LIST_PRIORITY" ></ParamField>
+        <ParamField FieldName="LINE_PRIORITY" ></ParamField>
+        <ParamField FieldName="LAST_TASK_TIME" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="ACT_QTY" ></ParamField>
+        <ParamField FieldName="LINE_SORT_ID" ></ParamField>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="FIRST_PROD_DATE" ></ParamField>
+        <ParamField FieldName="SHIP_PORT_ID" ></ParamField>
+        <ParamField FieldName="SHIP_TRAN_ID" ></ParamField>
+        <ParamField FieldName="LIST_KIND" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

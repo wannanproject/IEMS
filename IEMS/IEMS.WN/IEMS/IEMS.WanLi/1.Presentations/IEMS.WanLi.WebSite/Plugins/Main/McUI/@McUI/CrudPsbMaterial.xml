@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="物料编号"></Caption>
+    <Caption Name="MATER_NAME" Value="物料名称"></Caption>
+    <Caption Name="CREATION_TIME" Value="创建时间"></Caption>
+  </Captions>
+  <WebPage Title="物料管理">
+  </WebPage>
+  <Crud TableName="PSB_MATERIAL">
+    <PrimaryKey FieldName="MATER_NO" Identity="true"></PrimaryKey>
+    <DeleteFlag Value="DEL_FLAG"></DeleteFlag>
+    <Uniques>
+      <Unique Fields="MATER_NAME"></Unique>
+    </Uniques>
+    <!--<SeqFields>
+      <SeqField FieldName="OBJID" SeqName="SEQ_SSP_ROLE"></SeqField>
+    </SeqFields>-->
+  </Crud>
+  <Insert UserField="RECORD_USER_ID" TimeField="RECORD_TIME">
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO"></ParamField>
+        <ParamField FieldName="MATER_NAME"></ParamField>
+        <!--<ParamField FieldName="REMARK" Nullable="true"></ParamField>-->
+      </ParamFields>
+    </ParamPanel>
+  </Insert>
+  <Update>
+    <ParamPanel>
+      <ParamFields>
+        <!--<ParamField FieldName="ROLE_NAME"></ParamField>
+        <ParamField FieldName="REMARK" Nullable="true"></ParamField>-->
+        <ParamField FieldName="MATER_NO"></ParamField>
+        <ParamField FieldName="MATER_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+  </Update>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <!--<ParamField FieldName="ROLE_NAME"></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>-->
+        <ParamField FieldName="MATER_NO"></ParamField>
+        <ParamField FieldName="MATER_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="MATER_NO">
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="MATER_NAME" Width="200"></GridColumn>
+        <GridColumn ColumnName="CREATION_TIME" Width="200"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

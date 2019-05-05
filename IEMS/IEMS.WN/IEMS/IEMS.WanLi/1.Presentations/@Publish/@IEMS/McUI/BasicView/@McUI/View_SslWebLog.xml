@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="自增主键编号" ></Caption>
+    <Caption Name="USER_ID" Value="用户编号" ></Caption>
+    <Caption Name="PAGE_ID" Value="页面编号" ></Caption>
+    <Caption Name="METHOD_ID" Value="函数名称" ></Caption>
+    <Caption Name="USER_IP" Value="用户ip地址" ></Caption>
+    <Caption Name="SHOW_NAME" Value="显示名称" ></Caption>
+    <Caption Name="METHOD_RESULT" Value="函数执行结果" ></Caption>
+    <Caption Name="PAGE_REQUEST" Value="页面提交数据" ></Caption>
+    <Caption Name="REMARK" Value="备注" ></Caption>
+    <Caption Name="RECORD_USER_ID" Value="记录人编号" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption>
+    <Caption Name="BAKUP_FLAG" Value="备份标识" ></Caption>
+    <Caption Name="BAKUP_TIME" Value="备份时间" ></Caption>
+  </Captions>
+  <WebPage Title="增、删、改必须记录。">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="USER_ID" ></GridColumn>
+        <GridColumn ColumnName="PAGE_ID" ></GridColumn>
+        <GridColumn ColumnName="METHOD_ID" ></GridColumn>
+        <GridColumn ColumnName="USER_IP" ></GridColumn>
+        <GridColumn ColumnName="SHOW_NAME" ></GridColumn>
+        <GridColumn ColumnName="METHOD_RESULT" ></GridColumn>
+        <GridColumn ColumnName="PAGE_REQUEST" ></GridColumn>
+        <GridColumn ColumnName="REMARK" ></GridColumn>
+        <GridColumn ColumnName="RECORD_USER_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="USER_ID" ></ParamField>
+        <ParamField FieldName="PAGE_ID" ></ParamField>
+        <ParamField FieldName="METHOD_ID" ></ParamField>
+        <ParamField FieldName="USER_IP" ></ParamField>
+        <ParamField FieldName="SHOW_NAME" ></ParamField>
+        <ParamField FieldName="METHOD_RESULT" ></ParamField>
+        <ParamField FieldName="PAGE_REQUEST" ></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+        <ParamField FieldName="RECORD_USER_ID" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+        <ParamField FieldName="BAKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_TIME" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

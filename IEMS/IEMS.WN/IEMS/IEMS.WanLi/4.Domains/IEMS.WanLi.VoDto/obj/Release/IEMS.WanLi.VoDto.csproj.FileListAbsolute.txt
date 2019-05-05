@@ -1,0 +1,6 @@
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\bin\Release\IEMS.WanLi.VoDto.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\bin\Release\IEMS.WanLi.VoDto.pdb
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\obj\Release\IEMS.WanLi.VoDto.csproj.CoreCompileInputs.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\obj\Release\IEMS.WanLi.VoDto.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\obj\Release\IEMS.WanLi.VoDto.pdb
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.VoDto\obj\Release\IEMS.WanLi.VoDto.csprojResolveAssemblyReference.cache

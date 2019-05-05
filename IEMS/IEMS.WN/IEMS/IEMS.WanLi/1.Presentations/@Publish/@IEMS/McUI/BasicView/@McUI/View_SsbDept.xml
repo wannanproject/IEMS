@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="部门编号" ></Caption>
+    <Caption Name="DEPT_NAME" Value="部门名称" ></Caption>
+    <Caption Name="DEPT_LEVEL" Value="部门级别" ></Caption>
+    <Caption Name="PARENT_ID" Value="上级部门编号" ></Caption>
+    <Caption Name="REMARK" Value="备注" ></Caption>
+    <Caption Name="DISPLAY_ID" Value="显示序号" ></Caption>
+    <Caption Name="DELETE_FLAG" Value="删除标志" ></Caption>
+    <Caption Name="BAKUP_FLAG" Value="备份标识" ></Caption>
+    <Caption Name="BAKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="RECORD_USER_ID" Value="记录人" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="排序列" ></Caption>
+    <Caption Name="BACKUP_FLAG" Value="备份标志" ></Caption>
+    <Caption Name="BACKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="FOREIGN_NO" Value="外部接口编号" ></Caption>
+  </Captions>
+  <WebPage Title="系统基础资料-部门信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="DEPT_NAME" ></GridColumn>
+        <GridColumn ColumnName="DEPT_LEVEL" ></GridColumn>
+        <GridColumn ColumnName="PARENT_ID" ></GridColumn>
+        <GridColumn ColumnName="REMARK" ></GridColumn>
+        <GridColumn ColumnName="DISPLAY_ID" ></GridColumn>
+        <GridColumn ColumnName="DELETE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="RECORD_USER_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="FOREIGN_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="DEPT_NAME" ></ParamField>
+        <ParamField FieldName="DEPT_LEVEL" ></ParamField>
+        <ParamField FieldName="PARENT_ID" ></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+        <ParamField FieldName="DISPLAY_ID" ></ParamField>
+        <ParamField FieldName="DELETE_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_TIME" ></ParamField>
+        <ParamField FieldName="RECORD_USER_ID" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+        <ParamField FieldName="SEQ_INDEX" ></ParamField>
+        <ParamField FieldName="BACKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BACKUP_TIME" ></ParamField>
+        <ParamField FieldName="FOREIGN_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

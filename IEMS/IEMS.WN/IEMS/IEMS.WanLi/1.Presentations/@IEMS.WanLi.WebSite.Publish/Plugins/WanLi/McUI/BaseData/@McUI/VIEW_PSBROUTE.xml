@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ROUTE_NO" Value="编号" ></Caption>
+    <Caption Name="SLOC_AREA" Value="发起区域" ></Caption>
+    <Caption Name="ELOC_AREA" Value="目标区域" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="发起类型" ></Caption>
+    <Caption Name="ELOC_TYPE" Value="目标类型" ></Caption>
+    <Caption Name="DEFAULT_PRIORITY" Value="优先级" ></Caption>
+    <Caption Name="IO_TYPE" Value="输送类型" ></Caption>
+    <Caption Name="FMEM" Value="解释" ></Caption>
+    <Caption Name="TRANS_TYPE_NO" Value="输送设备" ></Caption>
+    <Caption Name="USED_FLAG" Value="启用标记" ></Caption>
+    <Caption Name="TERMINAL_FLAG" Value="节点类型" ></Caption>
+    <Caption Name="LIMIT_CAPACITY" Value="限制流量" ></Caption>
+    <Caption Name="CURR_CAPACITY" Value="当前流量" ></Caption>
+    <Caption Name="PALLET_TYPE" Value="限定工装类型" ></Caption>
+  </Captions>
+  <WebPage Title="路径信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO" ></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="ROUTE_NO" WIDTH="70"></GridColumn>
+        <GridColumn ColumnName="SLOC_AREA" WIDTH="100"></GridColumn>
+        <GridColumn ColumnName="ELOC_AREA" WIDTH="90"></GridColumn>
+        <GridColumn ColumnName="DEFAULT_PRIORITY" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="IO_TYPE" WIDTH="60"></GridColumn>              
+        <GridColumn ColumnName="FMEM" WIDTH="150"></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE_NO" WIDTH="130"></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="TERMINAL_FLAG" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="PALLET_TYPE" WIDTH="100"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO"></ParamField>
+        <ParamField FieldName="SLOC_AREA"></ParamField>
+        <ParamField FieldName="ELOC_AREA"></ParamField>
+        <ParamField FieldName="SLOC_TYPE"></ParamField>
+        <ParamField FieldName="ELOC_TYPE"></ParamField>
+        <ParamField FieldName="DEFAULT_PRIORITY"></ParamField>
+        <ParamField FieldName="IO_TYPE"></ParamField>
+        <ParamField FieldName="FMEM"></ParamField>
+        <ParamField FieldName="TRANS_TYPE_NO"></ParamField>
+        <ParamField FieldName="USED_FLAG"></ParamField>
+        <ParamField FieldName="TERMINAL_FLAG"></ParamField>
+        <ParamField FieldName="LIMIT_CAPACITY"></ParamField>
+        <ParamField FieldName="CURR_CAPACITY"></ParamField>
+        <ParamField FieldName="PALLET_TYPE"></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

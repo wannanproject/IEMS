@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GUID" Value="主键编号" ></Caption>
+    <Caption Name="REFLECTION_GUID" Value="业务编号" ></Caption>
+    <Caption Name="BIZ_PARAM" Value="参数信息 [JSON格式]" ></Caption>
+    <Caption Name="APP_NAME" Value="可执行程序名称【大写】" ></Caption>
+    <Caption Name="BIZ_ENABLE" Value="任务是否可用 0:禁用  1:可用" ></Caption>
+    <Caption Name="LISTENER_GUID" Value="读取数据块编号" ></Caption>
+    <Caption Name="BLOCK_OFFSET" Value="数据偏移位置" ></Caption>
+    <Caption Name="BLOCK_LENGTH" Value="数据长度" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="MODULE_IDX" Value="MODULE_IDX" ></Caption>
+  </Captions>
+  <WebPage Title="应用程序业务">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GUID" ></GridColumn>
+        <GridColumn ColumnName="REFLECTION_GUID" ></GridColumn>
+        <GridColumn ColumnName="BIZ_PARAM" ></GridColumn>
+        <GridColumn ColumnName="APP_NAME" ></GridColumn>
+        <GridColumn ColumnName="BIZ_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="LISTENER_GUID" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_OFFSET" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_LENGTH" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="MODULE_IDX" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GUID" ></ParamField>
+        <ParamField FieldName="REFLECTION_GUID" ></ParamField>
+        <ParamField FieldName="BIZ_PARAM" ></ParamField>
+        <ParamField FieldName="APP_NAME" ></ParamField>
+        <ParamField FieldName="BIZ_ENABLE" ></ParamField>
+        <ParamField FieldName="LISTENER_GUID" ></ParamField>
+        <ParamField FieldName="BLOCK_OFFSET" ></ParamField>
+        <ParamField FieldName="BLOCK_LENGTH" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="MODULE_IDX" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="SROUTE_NO" Value="SROUTE_NO" ></Caption>
+    <Caption Name="EROUTE_NO" Value="EROUTE_NO" ></Caption>
+    <Caption Name="CALC_LEVEL" Value="CALC_LEVEL" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="SLOC_TYPE" ></Caption>
+    <Caption Name="SLOC_AREA" Value="SLOC_AREA" ></Caption>
+    <Caption Name="ELOC_TYPE" Value="ELOC_TYPE" ></Caption>
+    <Caption Name="ELOC_AREA" Value="ELOC_AREA" ></Caption>
+    <Caption Name="IO_TYPE" Value="IO_TYPE" ></Caption>
+    <Caption Name="TEMP_GUID" Value="TEMP_GUID" ></Caption>
+    <Caption Name="CREATE_DATE" Value="CREATE_DATE" ></Caption>
+    <Caption Name="TERMINAL_FLAG" Value="TERMINAL_FLAG" ></Caption>
+    <Caption Name="PRIORITY" Value="PRIORITY" ></Caption>
+    <Caption Name="CLOGGED" Value="是否" ></Caption>
+  </Captions>
+  <WebPage Title="TMP_TASK_ORDER_ROUTE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="SROUTE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="SROUTE_NO" ></GridColumn>
+        <GridColumn ColumnName="EROUTE_NO" ></GridColumn>
+        <GridColumn ColumnName="CALC_LEVEL" ></GridColumn>
+        <GridColumn ColumnName="SLOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="SLOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="ELOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="ELOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TEMP_GUID" ></GridColumn>
+        <GridColumn ColumnName="CREATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="TERMINAL_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="CLOGGED" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="SROUTE_NO" ></ParamField>
+        <ParamField FieldName="EROUTE_NO" ></ParamField>
+        <ParamField FieldName="CALC_LEVEL" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="SLOC_AREA" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_AREA" ></ParamField>
+        <ParamField FieldName="IO_TYPE" ></ParamField>
+        <ParamField FieldName="TEMP_GUID" ></ParamField>
+        <ParamField FieldName="CREATE_DATE" ></ParamField>
+        <ParamField FieldName="TERMINAL_FLAG" ></ParamField>
+        <ParamField FieldName="PRIORITY" ></ParamField>
+        <ParamField FieldName="CLOGGED" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

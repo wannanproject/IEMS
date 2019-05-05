@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PLC_BIZ_NO" Value="主键编号" ></Caption>
+    <Caption Name="PLC_BIZ_DESC" Value="说明" ></Caption>
+    <Caption Name="BLOCK_NO" Value="读取编号" ></Caption>
+    <Caption Name="BIZ_NO" Value="业务编号" ></Caption>
+    <Caption Name="BUFF_OFFSET" Value="偏移位置" ></Caption>
+    <Caption Name="BUFF_LEN" Value="长度" ></Caption>
+    <Caption Name="BIZ_ENABLE" Value="0：禁用  1：可用" ></Caption>
+    <Caption Name="BIZ_PARAM" Value="业务参数" ></Caption>
+    <Caption Name="WRITE_BLOCK_NO" Value="写块信息" ></Caption>
+    <Caption Name="LOCNO" Value="工位编号" ></Caption>
+  </Captions>
+  <WebPage Title="PSB_PLC_BIZ">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PLC_BIZ_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PLC_BIZ_NO" ></GridColumn>
+        <GridColumn ColumnName="PLC_BIZ_DESC" ></GridColumn>
+        <GridColumn ColumnName="BLOCK_NO" ></GridColumn>
+        <GridColumn ColumnName="BIZ_NO" ></GridColumn>
+        <GridColumn ColumnName="BUFF_OFFSET" ></GridColumn>
+        <GridColumn ColumnName="BUFF_LEN" ></GridColumn>
+        <GridColumn ColumnName="BIZ_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="BIZ_PARAM" ></GridColumn>
+        <GridColumn ColumnName="WRITE_BLOCK_NO" ></GridColumn>
+        <GridColumn ColumnName="LOCNO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PLC_BIZ_NO" ></ParamField>
+        <ParamField FieldName="PLC_BIZ_DESC" ></ParamField>
+        <ParamField FieldName="BLOCK_NO" ></ParamField>
+        <ParamField FieldName="BIZ_NO" ></ParamField>
+        <ParamField FieldName="BUFF_OFFSET" ></ParamField>
+        <ParamField FieldName="BUFF_LEN" ></ParamField>
+        <ParamField FieldName="BIZ_ENABLE" ></ParamField>
+        <ParamField FieldName="BIZ_PARAM" ></ParamField>
+        <ParamField FieldName="WRITE_BLOCK_NO" ></ParamField>
+        <ParamField FieldName="LOCNO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

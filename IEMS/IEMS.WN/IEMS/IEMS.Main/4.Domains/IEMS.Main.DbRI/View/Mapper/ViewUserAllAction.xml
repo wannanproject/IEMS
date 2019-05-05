@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbRI.ViewUserAllActionService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="ViewUserAllAction" type="IEMS.Main.Entity.ViewUserAllAction, IEMS.Main.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_ViewUserAllAction" class="ViewUserAllAction">
+    <result property="UserId" column="USER_ID"/>
+    <result property="ActionId" column="ACTION_ID"/>
+    <result property="M" column="M"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_ViewUserAllAction" class="ViewUserAllAction">
+    <parameter property="UserId" column="UserId"/>
+    <parameter property="ActionId" column="ActionId"/>
+    <parameter property="M" column="M"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM VIEW_USER_ALL_ACTION ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.UserId" prepend="AND">
+          <isEqual property="where.UserId" compareValue="-1147483648">
+            <![CDATA[USER_ID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.UserId" compareValue="-1147483647">
+            <![CDATA[USER_ID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.UserId" compareValue="-1147483648">
+          <isNotEqual property="where.UserId" compareValue="-1147483647">
+            <![CDATA[USER_ID = #where.UserId#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ActionId" prepend="AND">
+            <![CDATA[ACTION_ID = #where.ActionId#]]>
+        </isNotNull>
+        <isNotNull property="where.M" prepend="AND">
+          <isEqual property="where.M" compareValue="-1147483648">
+            <![CDATA[M IS NULL]]>
+          </isEqual>
+          <isEqual property="where.M" compareValue="-1147483647">
+            <![CDATA[M IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.M" compareValue="-1147483648">
+          <isNotEqual property="where.M" compareValue="-1147483647">
+            <![CDATA[M = #where.M#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO VIEW_USER_ALL_ACTION]]>
+       <dynamic prepend="(">
+        <isNotNull property="UserId" prepend=",">USER_ID</isNotNull>
+        <isNotNull property="ActionId" prepend=",">ACTION_ID</isNotNull>
+        <isNotNull property="M" prepend=",">M</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="UserId" prepend=",">#UserId#</isNotNull>
+        <isNotNull property="ActionId" prepend=",">#ActionId#</isNotNull>
+        <isNotNull property="M" prepend=",">#M#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE VIEW_USER_ALL_ACTION]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.UserId" prepend=",">
+          <isEqual property="update.UserId" compareValue="-1147483648">
+            <![CDATA[USER_ID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.UserId" compareValue="-1147483648">
+          <![CDATA[USER_ID = #update.UserId#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ActionId" prepend=",">
+          <![CDATA[ACTION_ID = #update.ActionId#]]>
+        </isNotNull>
+        <isNotNull property="update.M" prepend=",">
+          <isEqual property="update.M" compareValue="-1147483648">
+            <![CDATA[M = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.M" compareValue="-1147483648">
+          <![CDATA[M = #update.M#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM VIEW_USER_ALL_ACTION]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_ViewUserAllAction">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM VIEW_USER_ALL_ACTION]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM VIEW_USER_ALL_ACTION]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_ViewUserAllAction" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

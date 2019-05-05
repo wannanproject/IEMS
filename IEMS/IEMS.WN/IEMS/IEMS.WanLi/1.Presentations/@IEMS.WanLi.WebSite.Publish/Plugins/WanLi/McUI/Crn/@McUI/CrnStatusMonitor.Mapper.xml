@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+     <select id="Select@CrnStatusMonitor" parameterClass="map" resultClass="row">    
+      <![CDATA[ 
+      SELECT T1.CRN_FORK_NO,
+       T1.CRN_NO,
+       CASE LAST_TASK_TYPE WHEN 'I' THEN '入库' WHEN 'M' THEN '移库' ELSE '出库' END AS LAST_TASK_TYPE,
+       CASE TASK_TYPE WHEN 'I' THEN '入库' WHEN 'M' THEN '移库' ELSE '出库' END AS TASK_TYPE,
+       TASK_NO,FROM_BIN,TO_BIN,
+       CASE STEP WHEN 0 THEN '无任务' WHEN 1 THEN '取放货' WHEN 2 THEN '移动至取货位' WHEN 3 THEN '取货' WHEN 4 THEN '移动至放货位' ELSE '放货' END STEP,
+       CASE LOADING WHEN 1 THEN '有载' ELSE '无载' END AS LOADING,
+       RETRY_COUNT,
+       CASE CRN_MODE WHEN 1 THEN '自动' WHEN 2 THEN '半自动'  WHEN 3 THEN '手动' ELSE '应急点动' END AS CRN_MODE,
+       CASE STATUS WHEN 0 THEN '空闲' WHEN 1 THEN '执行中' WHEN 2 THEN '完成'  ELSE '异常' END AS STATUS,
+       ACT_POS_X, ACT_POS_Y,ACT_POS_Z,ACT_SPEED_X,ACT_SPEED_Y,ACT_SPEED_Z,RECORD_TIME,
+       CASE WHEN T2.ERR_NAME IS NULL THEN '正常' ELSE T2.ERR_NAME END AS FAULT_NAME
+       FROM PEM_CRN_FORK_STATUS T1 
+       LEFT JOIN PSB_CRN_ERR T2 ON T1.FAULT_NO = T2.ERR_NO
+       ORDER BY T1.CRN_NO,T1.CRN_FORK_NO
+      ]]>
+     </select>
+   </statements>
+</sqlMap>

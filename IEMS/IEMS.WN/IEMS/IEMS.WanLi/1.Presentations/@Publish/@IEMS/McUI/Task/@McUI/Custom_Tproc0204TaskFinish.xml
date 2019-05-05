@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="指令ID序列" ></Caption>
+    <Caption Name="ERR_CODE" Value="错误编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误信息" ></Caption>        
+    <Caption Name="PROC_STATUS" Value="过程执行状态" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="过程创建时间" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="过程执行时间" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="过程完成时间" ></Caption>  
+    <Caption Name="TASK_NO" Value="任务号" ></Caption>
+    <Caption Name="FINISH_STATUS" Value="任务结束状态" ></Caption>   
+    <Caption Name="CMD_TYPE" Value="任务类型" ></Caption>   
+    <Caption Name="GLOBAL_GUID" Value="全局GUID" ></Caption>   
+    <Caption Name="TASK_GUID" Value="任务GUID" ></Caption>
+    <Caption Name="SLOC_NO" Value="源库位" ></Caption>
+    <Caption Name="ELOC_NO" Value="目的库位" ></Caption>      
+    <Caption Name="SLOC_TYPE" Value="源库位类型" ></Caption>   
+    <Caption Name="ELOC_TYPE" Value="目的库位类型" ></Caption>   
+    <Caption Name="FINISH_DESC" Value="过程操作描述" ></Caption>
+  </Captions>
+  <WebPage Title="结束任务过程">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>      
+        <ParamField FieldName="TASK_NO"></ParamField>
+        <ParamField FieldName="OBJID"></ParamField>
+        <ParamField FieldName="SLOC_NO"></ParamField>      
+        <ParamField FieldName="ELOC_NO"></ParamField>       
+        <ParamField FieldName="CMD_TYPE"></ParamField>      
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="CMD_TYPE" WIDTH="60"></GridColumn>     
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="FINISH_STATUS" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" WIDTH="120"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="FINISH_DESC"></ParamField>                   
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

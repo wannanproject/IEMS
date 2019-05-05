@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbGradeService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbGrade" type="IEMS.WanLi.Entity.PsbGrade, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbGrade" class="PsbGrade">
+    <result property="GradeNo" column="GRADE_NO"/>
+    <result property="GradeDesc" column="GRADE_DESC"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbGrade" class="PsbGrade">
+    <parameter property="GradeNo" column="GradeNo"/>
+    <parameter property="GradeDesc" column="GradeDesc"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_GRADE ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.GradeNo" prepend="AND">
+          <isEqual property="where.GradeNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GRADE_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GradeNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GRADE_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GradeNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GradeNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GRADE_NO = #where.GradeNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.GradeDesc" prepend="AND">
+          <isEqual property="where.GradeDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GRADE_DESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GradeDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GRADE_DESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GradeDesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GradeDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GRADE_DESC = #where.GradeDesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_GRADE]]>
+       <dynamic prepend="(">
+        <isNotNull property="GradeNo" prepend=",">GRADE_NO</isNotNull>
+        <isNotNull property="GradeDesc" prepend=",">GRADE_DESC</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="GradeNo" prepend=",">#GradeNo#</isNotNull>
+        <isNotNull property="GradeDesc" prepend=",">#GradeDesc#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_GRADE]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.GradeDesc" prepend=",">
+          <isEqual property="update.GradeDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GRADE_DESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.GradeDesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[GRADE_DESC = #update.GradeDesc#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_GRADE]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbGrade">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_GRADE]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_GRADE]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbGrade" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

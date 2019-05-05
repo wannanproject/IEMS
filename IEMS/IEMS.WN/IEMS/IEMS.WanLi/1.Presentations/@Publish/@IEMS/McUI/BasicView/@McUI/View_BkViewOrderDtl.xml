@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LIST_NO" Value="LIST_NO" ></Caption>
+    <Caption Name="LINE_ID" Value="LINE_ID" ></Caption>
+    <Caption Name="CREATION_DATE" Value="CREATION_DATE" ></Caption>
+    <Caption Name="MATER_NO" Value="MATER_NO" ></Caption>
+    <Caption Name="GRADE" Value="GRADE" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="REQUIRE_QTY" ></Caption>
+    <Caption Name="ACT_QTY" Value="ACT_QTY" ></Caption>
+    <Caption Name="SHIP_QTY" Value="SHIP_QTY" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="STATUS" Value="STATUS" ></Caption>
+    <Caption Name="STOP_FLAG" Value="STOP_FLAG" ></Caption>
+    <Caption Name="DLOC_NO" Value="DLOC_NO" ></Caption>
+    <Caption Name="ERR_FLAG" Value="ERR_FLAG" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="EQUIPMENT_NAME" ></Caption>
+    <Caption Name="BATCH_NO" Value="BATCH_NO" ></Caption>
+    <Caption Name="REQUEST_CATEGORY" Value="REQUEST_CATEGORY" ></Caption>
+    <Caption Name="MES_STATUS" Value="MES_STATUS" ></Caption>
+    <Caption Name="EQU_STATUS" Value="EQU_STATUS" ></Caption>
+    <Caption Name="CLIENT_NAME" Value="CLIENT_NAME" ></Caption>
+    <Caption Name="CLIENT_IP" Value="CLIENT_IP" ></Caption>
+    <Caption Name="RESERVED1" Value="RESERVED1" ></Caption>
+    <Caption Name="RESERVED2" Value="RESERVED2" ></Caption>
+    <Caption Name="RESERVED3" Value="RESERVED3" ></Caption>
+    <Caption Name="RESERVED4" Value="RESERVED4" ></Caption>
+    <Caption Name="RESERVED5" Value="RESERVED5" ></Caption>
+    <Caption Name="RESERVED6" Value="RESERVED6" ></Caption>
+    <Caption Name="RESERVED7" Value="RESERVED7" ></Caption>
+    <Caption Name="RESERVED8" Value="RESERVED8" ></Caption>
+    <Caption Name="BK_OBJID" Value="主键" ></Caption>
+    <Caption Name="BK_PROC_CRUD" Value="日志类型   C:创建  R:查询 U:修改 D:删除" ></Caption>
+    <Caption Name="BK_PROC_TIME" Value="日志创建时间" ></Caption>
+    <Caption Name="BK_PROC_BY" Value="日志创建者" ></Caption>
+    <Caption Name="BK_PROC_SYS" Value="备份系统" ></Caption>
+    <Caption Name="BK_PROC_METHOD" Value="备份函数" ></Caption>
+    <Caption Name="BK_PROC_POINT" Value="备份位置" ></Caption>
+    <Caption Name="BK_PROC_OBJID" Value="日志唯一值" ></Caption>
+  </Captions>
+  <WebPage Title="BK_VIEW_ORDER_DTL">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BK_OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="MATER_NO" ></GridColumn>
+        <GridColumn ColumnName="GRADE" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="STATUS" ></GridColumn>
+        <GridColumn ColumnName="STOP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="DLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_FLAG" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_CATEGORY" ></GridColumn>
+        <GridColumn ColumnName="MES_STATUS" ></GridColumn>
+        <GridColumn ColumnName="EQU_STATUS" ></GridColumn>
+        <GridColumn ColumnName="CLIENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="CLIENT_IP" ></GridColumn>
+        <GridColumn ColumnName="RESERVED1" ></GridColumn>
+        <GridColumn ColumnName="RESERVED2" ></GridColumn>
+        <GridColumn ColumnName="RESERVED3" ></GridColumn>
+        <GridColumn ColumnName="RESERVED4" ></GridColumn>
+        <GridColumn ColumnName="RESERVED5" ></GridColumn>
+        <GridColumn ColumnName="RESERVED6" ></GridColumn>
+        <GridColumn ColumnName="RESERVED7" ></GridColumn>
+        <GridColumn ColumnName="RESERVED8" ></GridColumn>
+        <GridColumn ColumnName="BK_OBJID" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_CRUD" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_TIME" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_BY" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_SYS" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_METHOD" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_POINT" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_OBJID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="MATER_NO" ></ParamField>
+        <ParamField FieldName="GRADE" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="ACT_QTY" ></ParamField>
+        <ParamField FieldName="SHIP_QTY" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="STATUS" ></ParamField>
+        <ParamField FieldName="STOP_FLAG" ></ParamField>
+        <ParamField FieldName="DLOC_NO" ></ParamField>
+        <ParamField FieldName="ERR_FLAG" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="REQUEST_CATEGORY" ></ParamField>
+        <ParamField FieldName="MES_STATUS" ></ParamField>
+        <ParamField FieldName="EQU_STATUS" ></ParamField>
+        <ParamField FieldName="CLIENT_NAME" ></ParamField>
+        <ParamField FieldName="CLIENT_IP" ></ParamField>
+        <ParamField FieldName="RESERVED1" ></ParamField>
+        <ParamField FieldName="RESERVED2" ></ParamField>
+        <ParamField FieldName="RESERVED3" ></ParamField>
+        <ParamField FieldName="RESERVED4" ></ParamField>
+        <ParamField FieldName="RESERVED5" ></ParamField>
+        <ParamField FieldName="RESERVED6" ></ParamField>
+        <ParamField FieldName="RESERVED7" ></ParamField>
+        <ParamField FieldName="RESERVED8" ></ParamField>
+        <ParamField FieldName="BK_OBJID" ></ParamField>
+        <ParamField FieldName="BK_PROC_CRUD" ></ParamField>
+        <ParamField FieldName="BK_PROC_TIME" ></ParamField>
+        <ParamField FieldName="BK_PROC_BY" ></ParamField>
+        <ParamField FieldName="BK_PROC_SYS" ></ParamField>
+        <ParamField FieldName="BK_PROC_METHOD" ></ParamField>
+        <ParamField FieldName="BK_PROC_POINT" ></ParamField>
+        <ParamField FieldName="BK_PROC_OBJID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

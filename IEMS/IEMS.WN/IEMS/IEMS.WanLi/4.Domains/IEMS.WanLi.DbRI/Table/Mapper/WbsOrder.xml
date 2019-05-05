@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.WbsOrderService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="WbsOrder" type="IEMS.WanLi.Entity.WbsOrder, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_WbsOrder" class="WbsOrder">
+    <result property="OrderNo" column="ORDER_NO"/>
+    <result property="OrderStatus" column="ORDER_STATUS"/>
+    <result property="OrderTypeNo" column="ORDER_TYPE_NO"/>
+    <result property="OrderTypeModule" column="ORDER_TYPE_MODULE"/>
+    <result property="CreationDate" column="CREATION_DATE"/>
+    <result property="CreatedBy" column="CREATED_BY"/>
+    <result property="Fmem" column="FMEM"/>
+    <result property="OrderPriority" column="ORDER_PRIORITY"/>
+    <result property="SourceType" column="SOURCE_TYPE"/>
+    <result property="RequestObjid" column="REQUEST_OBJID"/>
+    <result property="ElocNo" column="ELOC_NO"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_WbsOrder" class="WbsOrder">
+    <parameter property="OrderNo" column="OrderNo"/>
+    <parameter property="OrderStatus" column="OrderStatus"/>
+    <parameter property="OrderTypeNo" column="OrderTypeNo"/>
+    <parameter property="OrderTypeModule" column="OrderTypeModule"/>
+    <parameter property="CreationDate" column="CreationDate"/>
+    <parameter property="CreatedBy" column="CreatedBy"/>
+    <parameter property="Fmem" column="Fmem"/>
+    <parameter property="OrderPriority" column="OrderPriority"/>
+    <parameter property="SourceType" column="SourceType"/>
+    <parameter property="RequestObjid" column="RequestObjid"/>
+    <parameter property="ElocNo" column="ElocNo"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM WBS_ORDER ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.OrderNo" prepend="AND">
+          <isEqual property="where.OrderNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OrderNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_NO = #where.OrderNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderStatus" prepend="AND">
+          <isEqual property="where.OrderStatus" compareValue="-1147483648">
+            <![CDATA[ORDER_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderStatus" compareValue="-1147483647">
+            <![CDATA[ORDER_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderStatus" compareValue="-1147483648">
+          <isNotEqual property="where.OrderStatus" compareValue="-1147483647">
+            <![CDATA[ORDER_STATUS = #where.OrderStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderTypeNo" prepend="AND">
+          <isEqual property="where.OrderTypeNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderTypeNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderTypeNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OrderTypeNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_NO = #where.OrderTypeNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderTypeModule" prepend="AND">
+          <isEqual property="where.OrderTypeModule" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_MODULE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderTypeModule" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_MODULE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderTypeModule" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OrderTypeModule" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_MODULE = #where.OrderTypeModule#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CreationDate" prepend="AND">
+          <isEqual property="where.CreationDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_DATE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CreationDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_DATE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CreationDate" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.CreationDate" compareValue="1234/12/24 0:00:00">
+            <![CDATA[CREATION_DATE = #where.CreationDate#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CreatedBy" prepend="AND">
+          <isEqual property="where.CreatedBy" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CREATED_BY IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CreatedBy" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CREATED_BY IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CreatedBy" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CreatedBy" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CREATED_BY = #where.CreatedBy#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Fmem" prepend="AND">
+          <isEqual property="where.Fmem" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FMEM IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Fmem" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FMEM IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Fmem" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Fmem" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[FMEM = #where.Fmem#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OrderPriority" prepend="AND">
+          <isEqual property="where.OrderPriority" compareValue="-1147483648">
+            <![CDATA[ORDER_PRIORITY IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OrderPriority" compareValue="-1147483647">
+            <![CDATA[ORDER_PRIORITY IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OrderPriority" compareValue="-1147483648">
+          <isNotEqual property="where.OrderPriority" compareValue="-1147483647">
+            <![CDATA[ORDER_PRIORITY = #where.OrderPriority#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.SourceType" prepend="AND">
+          <isEqual property="where.SourceType" compareValue="-1147483648">
+            <![CDATA[SOURCE_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.SourceType" compareValue="-1147483647">
+            <![CDATA[SOURCE_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.SourceType" compareValue="-1147483648">
+          <isNotEqual property="where.SourceType" compareValue="-1147483647">
+            <![CDATA[SOURCE_TYPE = #where.SourceType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.RequestObjid" prepend="AND">
+            <![CDATA[REQUEST_OBJID = #where.RequestObjid#]]>
+        </isNotNull>
+        <isNotNull property="where.ElocNo" prepend="AND">
+          <isEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ElocNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ELOC_NO = #where.ElocNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO WBS_ORDER]]>
+       <dynamic prepend="(">
+        <isNotNull property="OrderNo" prepend=",">ORDER_NO</isNotNull>
+        <isNotNull property="OrderStatus" prepend=",">ORDER_STATUS</isNotNull>
+        <isNotNull property="OrderTypeNo" prepend=",">ORDER_TYPE_NO</isNotNull>
+        <isNotNull property="OrderTypeModule" prepend=",">ORDER_TYPE_MODULE</isNotNull>
+        <isNotNull property="CreationDate" prepend=",">CREATION_DATE</isNotNull>
+        <isNotNull property="CreatedBy" prepend=",">CREATED_BY</isNotNull>
+        <isNotNull property="Fmem" prepend=",">FMEM</isNotNull>
+        <isNotNull property="OrderPriority" prepend=",">ORDER_PRIORITY</isNotNull>
+        <isNotNull property="SourceType" prepend=",">SOURCE_TYPE</isNotNull>
+        <isNotNull property="RequestObjid" prepend=",">REQUEST_OBJID</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">ELOC_NO</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="OrderNo" prepend=",">#OrderNo#</isNotNull>
+        <isNotNull property="OrderStatus" prepend=",">#OrderStatus#</isNotNull>
+        <isNotNull property="OrderTypeNo" prepend=",">#OrderTypeNo#</isNotNull>
+        <isNotNull property="OrderTypeModule" prepend=",">#OrderTypeModule#</isNotNull>
+        <isNotNull property="CreationDate" prepend=",">#CreationDate#</isNotNull>
+        <isNotNull property="CreatedBy" prepend=",">#CreatedBy#</isNotNull>
+        <isNotNull property="Fmem" prepend=",">#Fmem#</isNotNull>
+        <isNotNull property="OrderPriority" prepend=",">#OrderPriority#</isNotNull>
+        <isNotNull property="SourceType" prepend=",">#SourceType#</isNotNull>
+        <isNotNull property="RequestObjid" prepend=",">#RequestObjid#</isNotNull>
+        <isNotNull property="ElocNo" prepend=",">#ElocNo#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE WBS_ORDER]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.OrderStatus" prepend=",">
+          <isEqual property="update.OrderStatus" compareValue="-1147483648">
+            <![CDATA[ORDER_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderStatus" compareValue="-1147483648">
+          <![CDATA[ORDER_STATUS = #update.OrderStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OrderTypeNo" prepend=",">
+          <isEqual property="update.OrderTypeNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderTypeNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ORDER_TYPE_NO = #update.OrderTypeNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OrderTypeModule" prepend=",">
+          <isEqual property="update.OrderTypeModule" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ORDER_TYPE_MODULE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderTypeModule" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ORDER_TYPE_MODULE = #update.OrderTypeModule#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CreationDate" prepend=",">
+          <isEqual property="update.CreationDate" compareValue="1234/12/23 0:00:00">
+            <![CDATA[CREATION_DATE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CreationDate" compareValue="1234/12/23 0:00:00">
+          <![CDATA[CREATION_DATE = #update.CreationDate#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CreatedBy" prepend=",">
+          <isEqual property="update.CreatedBy" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CREATED_BY = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CreatedBy" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CREATED_BY = #update.CreatedBy#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Fmem" prepend=",">
+          <isEqual property="update.Fmem" compareValue="STRING_NULL_VALUE">
+            <![CDATA[FMEM = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Fmem" compareValue="STRING_NULL_VALUE">
+          <![CDATA[FMEM = #update.Fmem#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OrderPriority" prepend=",">
+          <isEqual property="update.OrderPriority" compareValue="-1147483648">
+            <![CDATA[ORDER_PRIORITY = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OrderPriority" compareValue="-1147483648">
+          <![CDATA[ORDER_PRIORITY = #update.OrderPriority#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.SourceType" prepend=",">
+          <isEqual property="update.SourceType" compareValue="-1147483648">
+            <![CDATA[SOURCE_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.SourceType" compareValue="-1147483648">
+          <![CDATA[SOURCE_TYPE = #update.SourceType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.RequestObjid" prepend=",">
+          <![CDATA[REQUEST_OBJID = #update.RequestObjid#]]>
+        </isNotNull>
+        <isNotNull property="update.ElocNo" prepend=",">
+          <isEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ELOC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ElocNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ELOC_NO = #update.ElocNo#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM WBS_ORDER]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_WbsOrder">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM WBS_ORDER]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM WBS_ORDER]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_WbsOrder" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@PsbProduct" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+              SELECT PT.PALLET_NO,
+                     PT.PALLET_TYPE,
+                     CASE PT.USED_FLAG
+                       WHEN '1' THEN
+                        '启用'
+                       ELSE
+                        '禁用'
+                     END AS USED_FLAG,
+                     PT.PRODUCT_GUID,
+                     PT.BINDING_TIME,
+                     CASE PT.LOAD_STATUS
+                       WHEN 1 THEN
+                        '有载'
+                       WHEN 0 THEN
+                        '无载'
+                       ELSE
+                        '异常'
+                     END AS LOAD_STATUS,
+                     PD.MATERIAL_NO,
+                     PD.PRODUCT_DATE,
+                     PD.PRODUCT_GRADE,
+                     PD.BATCH_NO,
+                     PD.REQUEST_NO,
+                     PD.PLAN_NO,
+                     CASE PD.PASS_FLAG
+                       WHEN 0 THEN
+                        '未放行'
+                       WHEN 1 THEN
+                        '已放行'
+                       WHEN 2 THEN
+                        '锁定'
+                       ELSE
+                        '异常'
+                     END PASS_FLAG,
+                     PM.MATER_SPEC,
+                     PM.MATER_DESC,
+                     PM.MATER_MKIND,
+                     PM.MATER_TYPE
+                FROM PSB_PALLET PT
+                LEFT JOIN PSB_PRODUCT PD
+                  ON PT.PRODUCT_GUID = PD.PRODUCT_GUID
+                LEFT JOIN PSB_MATERIAL PM
+                  ON PM.MATER_NO = PD.MATERIAL_NO
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          PT.PALLET_NO like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.MATERIAL_NO" prepend="AND">
+          PD.MATERIAL_NO like '%'||#where.MATERIAL_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.BATCH_NO" prepend="AND">
+          PD.BATCH_NO like '%'||#where.BATCH_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.BTIME" prepend="AND">
+          <![CDATA[ PD.PRODUCT_DATE >=#where.BTIME#  ]]>
+        </isNotNull>
+        <isNotNull property="where.ETIME" prepend="AND">
+          <![CDATA[ PD.PRODUCT_DATE <= 1+#where.ETIME#  ]]>
+        </isNotNull>
+      </dynamic>
+      <![CDATA[ ORDER BY PT.USED_FLAG DESC, PT.BINDING_TIME DESC  ]]>
+    </select>
+     
+     <select id="Select@PsbProduct@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+              SELECT PT.PALLET_NO,
+                     PT.PALLET_TYPE,
+                     CASE PT.USED_FLAG
+                       WHEN '1' THEN
+                        '启用'
+                       ELSE
+                        '禁用'
+                     END AS USED_FLAG,
+                     PT.PRODUCT_GUID,
+                     PT.BINDING_TIME,
+                     CASE PT.LOAD_STATUS
+                       WHEN 1 THEN
+                        '有载'
+                       WHEN 0 THEN
+                        '无载'
+                       ELSE
+                        '异常'
+                     END AS LOAD_STATUS,
+                     PD.MATERIAL_NO,
+                     PD.PRODUCT_DATE,
+                     PD.PRODUCT_GRADE,
+                     PD.BATCH_NO,
+                     PD.REQUEST_NO,
+                     PD.PLAN_NO,
+                     CASE PD.PASS_FLAG
+                       WHEN 0 THEN
+                        '未放行'
+                       WHEN 1 THEN
+                        '已放行'
+                       WHEN 2 THEN
+                        '锁定'
+                       ELSE
+                        '异常'
+                     END PASS_FLAG,
+                     PM.MATER_SPEC,
+                     PM.MATER_DESC,
+                     PM.MATER_MKIND,
+                     PM.MATER_TYPE
+                FROM PSB_PALLET PT
+                LEFT JOIN PSB_PRODUCT PD
+                  ON PT.PRODUCT_GUID = PD.PRODUCT_GUID
+                LEFT JOIN PSB_MATERIAL PM
+                  ON PM.MATER_NO = PD.MATERIAL_NO
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.PALLET_NO" prepend="AND">
+           PT.PALLET_NO like '%'||#where.PALLET_NO#||'%'
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

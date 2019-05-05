@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="序列" ></Caption>
+    <Caption Name="ERR_CODE" Value="错误代码" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误描述" ></Caption>
+    <Caption Name="PROC_STATUS" Value="状态 0：默认  1：执行中 2：执行完毕" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="PROC_CREATE_TIME" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="PROC_EXCUTE_TIME" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="PROC_FINISH_TIME" ></Caption>
+    <Caption Name="CLOC_NO" Value="当前站台" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装号码" ></Caption>
+    <Caption Name="CLOC_TYPE" Value="当前站台类型" ></Caption>
+    <Caption Name="CLOC_AREA" Value="当前站台区域" ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="GLOBAL_GUID" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="PACKAGE_GUID" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+  </Captions>
+  <WebPage Title="TPROC_0501_PALLET_PACKAGE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="CLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="CLOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="CLOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="CLOC_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="CLOC_TYPE" ></ParamField>
+        <ParamField FieldName="CLOC_AREA" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GUID" Value="主键编号" ></Caption>
+    <Caption Name="BIZ_MODULE_GUID" Value="业务编号" ></Caption>
+    <Caption Name="PLC_BLOCK_GUID" Value="块编号" ></Caption>
+    <Caption Name="BIZ_BLOCK_INDEX" Value="业务内索引号1.2.." ></Caption>
+    <Caption Name="READ_ENABLE" Value="可读" ></Caption>
+    <Caption Name="WRITE_ENABLE" Value="可写" ></Caption>
+  </Captions>
+  <WebPage Title="PLC数据读取">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GUID" ></GridColumn>
+        <GridColumn ColumnName="BIZ_MODULE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PLC_BLOCK_GUID" ></GridColumn>
+        <GridColumn ColumnName="BIZ_BLOCK_INDEX" ></GridColumn>
+        <GridColumn ColumnName="READ_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="WRITE_ENABLE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GUID" ></ParamField>
+        <ParamField FieldName="BIZ_MODULE_GUID" ></ParamField>
+        <ParamField FieldName="PLC_BLOCK_GUID" ></ParamField>
+        <ParamField FieldName="BIZ_BLOCK_INDEX" ></ParamField>
+        <ParamField FieldName="READ_ENABLE" ></ParamField>
+        <ParamField FieldName="WRITE_ENABLE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

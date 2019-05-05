@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/IEMS.WanLi.WebSite/global.asax" hash="121eeebc" filehash="27bd3aed4bd6" flags="150000" assembly="IEMS.WanLi.WebSite" type="ASP._global_asax">
+  <filedeps>
+    <filedep name="/IEMS.WanLi.WebSite/global.asax" />
+  </filedeps>
+</preserve>

@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.TprocDataBackupService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="TprocDataBackup" type="IEMS.WanLi.Entity.TprocDataBackup, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_TprocDataBackup" class="TprocDataBackup">
+    <result property="ObjId" column="OBJID"/>
+    <result property="ErrCode" column="ERR_CODE"/>
+    <result property="ErrDesc" column="ERR_DESC"/>
+    <result property="ProcStatus" column="PROC_STATUS"/>
+    <result property="ProcCreateTime" column="PROC_CREATE_TIME"/>
+    <result property="ProcExcuteTime" column="PROC_EXCUTE_TIME"/>
+    <result property="ProcFinishTime" column="PROC_FINISH_TIME"/>
+    <result property="DataType" column="DATA_TYPE"/>
+    <result property="CrudType" column="CRUD_TYPE"/>
+    <result property="BackupSys" column="BACKUP_SYS"/>
+    <result property="BackupSysObjid" column="BACKUP_SYS_OBJID"/>
+    <result property="BackupMethod" column="BACKUP_METHOD"/>
+    <result property="BackupPoint" column="BACKUP_POINT"/>
+    <result property="Param01" column="PARAM_01"/>
+    <result property="Param02" column="PARAM_02"/>
+    <result property="Param03" column="PARAM_03"/>
+    <result property="Param04" column="PARAM_04"/>
+    <result property="Param05" column="PARAM_05"/>
+    <result property="Param06" column="PARAM_06"/>
+    <result property="GlobalGuid" column="GLOBAL_GUID"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_TprocDataBackup" class="TprocDataBackup">
+    <parameter property="ObjId" column="ObjId"/>
+    <parameter property="ErrCode" column="ErrCode"/>
+    <parameter property="ErrDesc" column="ErrDesc"/>
+    <parameter property="ProcStatus" column="ProcStatus"/>
+    <parameter property="ProcCreateTime" column="ProcCreateTime"/>
+    <parameter property="ProcExcuteTime" column="ProcExcuteTime"/>
+    <parameter property="ProcFinishTime" column="ProcFinishTime"/>
+    <parameter property="DataType" column="DataType"/>
+    <parameter property="CrudType" column="CrudType"/>
+    <parameter property="BackupSys" column="BackupSys"/>
+    <parameter property="BackupSysObjid" column="BackupSysObjid"/>
+    <parameter property="BackupMethod" column="BackupMethod"/>
+    <parameter property="BackupPoint" column="BackupPoint"/>
+    <parameter property="Param01" column="Param01"/>
+    <parameter property="Param02" column="Param02"/>
+    <parameter property="Param03" column="Param03"/>
+    <parameter property="Param04" column="Param04"/>
+    <parameter property="Param05" column="Param05"/>
+    <parameter property="Param06" column="Param06"/>
+    <parameter property="GlobalGuid" column="GlobalGuid"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM TPROC_DATA_BACKUP ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.ObjId" prepend="AND">
+            <![CDATA[OBJID = #where.ObjId#]]>
+        </isNotNull>
+        <isNotNull property="where.ErrCode" prepend="AND">
+          <isEqual property="where.ErrCode" compareValue="-1147483648">
+            <![CDATA[ERR_CODE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrCode" compareValue="-1147483647">
+            <![CDATA[ERR_CODE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrCode" compareValue="-1147483648">
+          <isNotEqual property="where.ErrCode" compareValue="-1147483647">
+            <![CDATA[ERR_CODE = #where.ErrCode#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ErrDesc" prepend="AND">
+          <isEqual property="where.ErrDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_DESC IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ErrDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_DESC IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ErrDesc" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.ErrDesc" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[ERR_DESC = #where.ErrDesc#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcStatus" prepend="AND">
+          <isEqual property="where.ProcStatus" compareValue="-1147483648">
+            <![CDATA[PROC_STATUS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcStatus" compareValue="-1147483647">
+            <![CDATA[PROC_STATUS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcStatus" compareValue="-1147483648">
+          <isNotEqual property="where.ProcStatus" compareValue="-1147483647">
+            <![CDATA[PROC_STATUS = #where.ProcStatus#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcCreateTime" prepend="AND">
+          <isEqual property="where.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_CREATE_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcCreateTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_CREATE_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcCreateTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_CREATE_TIME = #where.ProcCreateTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcExcuteTime" prepend="AND">
+          <isEqual property="where.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcExcuteTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcExcuteTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME = #where.ProcExcuteTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.ProcFinishTime" prepend="AND">
+          <isEqual property="where.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_FINISH_TIME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.ProcFinishTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_FINISH_TIME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+          <isNotEqual property="where.ProcFinishTime" compareValue="1234/12/24 0:00:00">
+            <![CDATA[PROC_FINISH_TIME = #where.ProcFinishTime#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.DataType" prepend="AND">
+          <isEqual property="where.DataType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DATA_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.DataType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DATA_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.DataType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.DataType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[DATA_TYPE = #where.DataType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrudType" prepend="AND">
+          <isEqual property="where.CrudType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRUD_TYPE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrudType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRUD_TYPE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrudType" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrudType" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRUD_TYPE = #where.CrudType#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BackupSys" prepend="AND">
+          <isEqual property="where.BackupSys" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_SYS IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BackupSys" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_SYS IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BackupSys" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BackupSys" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_SYS = #where.BackupSys#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BackupSysObjid" prepend="AND">
+            <![CDATA[BACKUP_SYS_OBJID = #where.BackupSysObjid#]]>
+        </isNotNull>
+        <isNotNull property="where.BackupMethod" prepend="AND">
+          <isEqual property="where.BackupMethod" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_METHOD IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BackupMethod" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_METHOD IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BackupMethod" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BackupMethod" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_METHOD = #where.BackupMethod#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.BackupPoint" prepend="AND">
+          <isEqual property="where.BackupPoint" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_POINT IS NULL]]>
+          </isEqual>
+          <isEqual property="where.BackupPoint" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_POINT IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.BackupPoint" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.BackupPoint" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[BACKUP_POINT = #where.BackupPoint#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param01" prepend="AND">
+          <isEqual property="where.Param01" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_01 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param01" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_01 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param01" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param01" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_01 = #where.Param01#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param02" prepend="AND">
+          <isEqual property="where.Param02" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_02 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param02" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_02 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param02" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param02" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_02 = #where.Param02#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param03" prepend="AND">
+          <isEqual property="where.Param03" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_03 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param03" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_03 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param03" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param03" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_03 = #where.Param03#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param04" prepend="AND">
+          <isEqual property="where.Param04" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_04 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param04" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_04 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param04" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param04" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_04 = #where.Param04#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param05" prepend="AND">
+          <isEqual property="where.Param05" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_05 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param05" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_05 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param05" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param05" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_05 = #where.Param05#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.Param06" prepend="AND">
+          <isEqual property="where.Param06" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_06 IS NULL]]>
+          </isEqual>
+          <isEqual property="where.Param06" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_06 IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.Param06" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.Param06" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[PARAM_06 = #where.Param06#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.GlobalGuid" prepend="AND">
+          <isEqual property="where.GlobalGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID IS NULL]]>
+          </isEqual>
+          <isEqual property="where.GlobalGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.GlobalGuid" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.GlobalGuid" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID = #where.GlobalGuid#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO TPROC_DATA_BACKUP]]>
+       <dynamic prepend="(">
+        <isNull property="ObjId" prepend=",">OBJID</isNull>
+        <isNotNull property="ObjId" prepend=",">OBJID</isNotNull>
+        <isNotNull property="ErrCode" prepend=",">ERR_CODE</isNotNull>
+        <isNotNull property="ErrDesc" prepend=",">ERR_DESC</isNotNull>
+        <isNotNull property="ProcStatus" prepend=",">PROC_STATUS</isNotNull>
+        <isNotNull property="ProcCreateTime" prepend=",">PROC_CREATE_TIME</isNotNull>
+        <isNotNull property="ProcExcuteTime" prepend=",">PROC_EXCUTE_TIME</isNotNull>
+        <isNotNull property="ProcFinishTime" prepend=",">PROC_FINISH_TIME</isNotNull>
+        <isNotNull property="DataType" prepend=",">DATA_TYPE</isNotNull>
+        <isNotNull property="CrudType" prepend=",">CRUD_TYPE</isNotNull>
+        <isNotNull property="BackupSys" prepend=",">BACKUP_SYS</isNotNull>
+        <isNotNull property="BackupSysObjid" prepend=",">BACKUP_SYS_OBJID</isNotNull>
+        <isNotNull property="BackupMethod" prepend=",">BACKUP_METHOD</isNotNull>
+        <isNotNull property="BackupPoint" prepend=",">BACKUP_POINT</isNotNull>
+        <isNotNull property="Param01" prepend=",">PARAM_01</isNotNull>
+        <isNotNull property="Param02" prepend=",">PARAM_02</isNotNull>
+        <isNotNull property="Param03" prepend=",">PARAM_03</isNotNull>
+        <isNotNull property="Param04" prepend=",">PARAM_04</isNotNull>
+        <isNotNull property="Param05" prepend=",">PARAM_05</isNotNull>
+        <isNotNull property="Param06" prepend=",">PARAM_06</isNotNull>
+        <isNotNull property="GlobalGuid" prepend=",">GLOBAL_GUID</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNull property="ObjId" prepend=",">SEQ_TPROC_DATA_BACKUP.NEXTVAL</isNull>
+        <isNotNull property="ObjId" prepend=",">#ObjId#</isNotNull>
+        <isNotNull property="ErrCode" prepend=",">#ErrCode#</isNotNull>
+        <isNotNull property="ErrDesc" prepend=",">#ErrDesc#</isNotNull>
+        <isNotNull property="ProcStatus" prepend=",">#ProcStatus#</isNotNull>
+        <isNotNull property="ProcCreateTime" prepend=",">#ProcCreateTime#</isNotNull>
+        <isNotNull property="ProcExcuteTime" prepend=",">#ProcExcuteTime#</isNotNull>
+        <isNotNull property="ProcFinishTime" prepend=",">#ProcFinishTime#</isNotNull>
+        <isNotNull property="DataType" prepend=",">#DataType#</isNotNull>
+        <isNotNull property="CrudType" prepend=",">#CrudType#</isNotNull>
+        <isNotNull property="BackupSys" prepend=",">#BackupSys#</isNotNull>
+        <isNotNull property="BackupSysObjid" prepend=",">#BackupSysObjid#</isNotNull>
+        <isNotNull property="BackupMethod" prepend=",">#BackupMethod#</isNotNull>
+        <isNotNull property="BackupPoint" prepend=",">#BackupPoint#</isNotNull>
+        <isNotNull property="Param01" prepend=",">#Param01#</isNotNull>
+        <isNotNull property="Param02" prepend=",">#Param02#</isNotNull>
+        <isNotNull property="Param03" prepend=",">#Param03#</isNotNull>
+        <isNotNull property="Param04" prepend=",">#Param04#</isNotNull>
+        <isNotNull property="Param05" prepend=",">#Param05#</isNotNull>
+        <isNotNull property="Param06" prepend=",">#Param06#</isNotNull>
+        <isNotNull property="GlobalGuid" prepend=",">#GlobalGuid#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE TPROC_DATA_BACKUP]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.ErrCode" prepend=",">
+          <isEqual property="update.ErrCode" compareValue="-1147483648">
+            <![CDATA[ERR_CODE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrCode" compareValue="-1147483648">
+          <![CDATA[ERR_CODE = #update.ErrCode#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ErrDesc" prepend=",">
+          <isEqual property="update.ErrDesc" compareValue="STRING_NULL_VALUE">
+            <![CDATA[ERR_DESC = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ErrDesc" compareValue="STRING_NULL_VALUE">
+          <![CDATA[ERR_DESC = #update.ErrDesc#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcStatus" prepend=",">
+          <isEqual property="update.ProcStatus" compareValue="-1147483648">
+            <![CDATA[PROC_STATUS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcStatus" compareValue="-1147483648">
+          <![CDATA[PROC_STATUS = #update.ProcStatus#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcCreateTime" prepend=",">
+          <isEqual property="update.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_CREATE_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcCreateTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_CREATE_TIME = #update.ProcCreateTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcExcuteTime" prepend=",">
+          <isEqual property="update.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_EXCUTE_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcExcuteTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_EXCUTE_TIME = #update.ProcExcuteTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.ProcFinishTime" prepend=",">
+          <isEqual property="update.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+            <![CDATA[PROC_FINISH_TIME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.ProcFinishTime" compareValue="1234/12/23 0:00:00">
+          <![CDATA[PROC_FINISH_TIME = #update.ProcFinishTime#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.DataType" prepend=",">
+          <isEqual property="update.DataType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[DATA_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.DataType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[DATA_TYPE = #update.DataType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrudType" prepend=",">
+          <isEqual property="update.CrudType" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRUD_TYPE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrudType" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRUD_TYPE = #update.CrudType#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BackupSys" prepend=",">
+          <isEqual property="update.BackupSys" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_SYS = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BackupSys" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BACKUP_SYS = #update.BackupSys#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BackupSysObjid" prepend=",">
+          <![CDATA[BACKUP_SYS_OBJID = #update.BackupSysObjid#]]>
+        </isNotNull>
+        <isNotNull property="update.BackupMethod" prepend=",">
+          <isEqual property="update.BackupMethod" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_METHOD = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BackupMethod" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BACKUP_METHOD = #update.BackupMethod#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.BackupPoint" prepend=",">
+          <isEqual property="update.BackupPoint" compareValue="STRING_NULL_VALUE">
+            <![CDATA[BACKUP_POINT = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.BackupPoint" compareValue="STRING_NULL_VALUE">
+          <![CDATA[BACKUP_POINT = #update.BackupPoint#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param01" prepend=",">
+          <isEqual property="update.Param01" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_01 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param01" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_01 = #update.Param01#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param02" prepend=",">
+          <isEqual property="update.Param02" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_02 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param02" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_02 = #update.Param02#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param03" prepend=",">
+          <isEqual property="update.Param03" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_03 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param03" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_03 = #update.Param03#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param04" prepend=",">
+          <isEqual property="update.Param04" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_04 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param04" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_04 = #update.Param04#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param05" prepend=",">
+          <isEqual property="update.Param05" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_05 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param05" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_05 = #update.Param05#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.Param06" prepend=",">
+          <isEqual property="update.Param06" compareValue="STRING_NULL_VALUE">
+            <![CDATA[PARAM_06 = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.Param06" compareValue="STRING_NULL_VALUE">
+          <![CDATA[PARAM_06 = #update.Param06#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.GlobalGuid" prepend=",">
+          <isEqual property="update.GlobalGuid" compareValue="STRING_NULL_VALUE">
+            <![CDATA[GLOBAL_GUID = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.GlobalGuid" compareValue="STRING_NULL_VALUE">
+          <![CDATA[GLOBAL_GUID = #update.GlobalGuid#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM TPROC_DATA_BACKUP]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_TprocDataBackup">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM TPROC_DATA_BACKUP]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM TPROC_DATA_BACKUP]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_TprocDataBackup" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

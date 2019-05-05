@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="CRN_NO" Value="CRN_NO" ></Caption>
+    <Caption Name="P_COUNT" Value="P_COUNT" ></Caption>
+    <Caption Name="P_WEIGHT" Value="P_WEIGHT" ></Caption>
+    <Caption Name="ORDER_ID" Value="ORDER_ID" ></Caption>
+    <Caption Name="TMP_GUID" Value="TMP_GUID" ></Caption>
+    <Caption Name="FREE_STOCK_PERCENT" Value="FREE_STOCK_PERCENT" ></Caption>
+    <Caption Name="TASK_ORDER_PERCENT" Value="TASK_ORDER_PERCENT" ></Caption>
+    <Caption Name="MATER_PERCENT" Value="MATER_PERCENT" ></Caption>
+    <Caption Name="PD_NO" Value="PD_NO" ></Caption>
+    <Caption Name="AREA_NO" Value="AREA_NO" ></Caption>
+    <Caption Name="CREATE_DATE" Value="CREATE_DATE" ></Caption>
+  </Captions>
+  <WebPage Title="TMP_TASK_ORDER_WEIGHT">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="CRN_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="P_COUNT" ></GridColumn>
+        <GridColumn ColumnName="P_WEIGHT" ></GridColumn>
+        <GridColumn ColumnName="ORDER_ID" ></GridColumn>
+        <GridColumn ColumnName="TMP_GUID" ></GridColumn>
+        <GridColumn ColumnName="FREE_STOCK_PERCENT" ></GridColumn>
+        <GridColumn ColumnName="TASK_ORDER_PERCENT" ></GridColumn>
+        <GridColumn ColumnName="MATER_PERCENT" ></GridColumn>
+        <GridColumn ColumnName="PD_NO" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="CREATE_DATE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="P_COUNT" ></ParamField>
+        <ParamField FieldName="P_WEIGHT" ></ParamField>
+        <ParamField FieldName="ORDER_ID" ></ParamField>
+        <ParamField FieldName="TMP_GUID" ></ParamField>
+        <ParamField FieldName="FREE_STOCK_PERCENT" ></ParamField>
+        <ParamField FieldName="TASK_ORDER_PERCENT" ></ParamField>
+        <ParamField FieldName="MATER_PERCENT" ></ParamField>
+        <ParamField FieldName="PD_NO" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="CREATE_DATE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

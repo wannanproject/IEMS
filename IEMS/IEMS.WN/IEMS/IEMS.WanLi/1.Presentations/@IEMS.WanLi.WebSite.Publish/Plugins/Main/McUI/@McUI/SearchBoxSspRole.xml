@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="角色编号"></Caption>
+    <Caption Name="ROLE_NAME" Value="角色名称"></Caption>
+    <Caption Name="REMARK" Value="备注"></Caption>
+  </Captions>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROLE_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="OBJID">
+      <GridColumns>
+        <GridColumn ColumnName="OBJID"></GridColumn>
+        <GridColumn ColumnName="ROLE_NAME"></GridColumn>
+        <GridColumn ColumnName="REMARK"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

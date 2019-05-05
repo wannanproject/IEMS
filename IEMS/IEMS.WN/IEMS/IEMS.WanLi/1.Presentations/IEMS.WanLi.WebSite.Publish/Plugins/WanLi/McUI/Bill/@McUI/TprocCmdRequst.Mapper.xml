@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@TprocCmdRequst" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+                SELECT TCR.OBJID,
+                       TCR.ERR_CODE,
+                       TCR.ERR_DESC,
+                       CASE TCR.PROC_STATUS
+                         WHEN 0 THEN
+                          '未执行'
+                         WHEN 1 THEN
+                          '执行中'
+                         WHEN 2 THEN
+                          '结束'
+                       END PROC_STATUS,
+                       TCR.TASK_NO,
+                       TCR.PROC_CREATE_TIME,
+                       TCR.PROC_EXCUTE_TIME,
+                       TCR.PROC_FINISH_TIME,
+                       TCR.PALLET_NO,
+                       TCR.CURR_LOC_NO,
+                       PL1.LOC_PLC_NO AS CURR_PLC_NO,
+                       TCR.ELOC_NO,
+                       PL2.LOC_PLC_NO AS ELOC_PLC_NO,
+                       TCR.ROUTE_NO
+                  FROM TPROC_0200_CMD_REQUEST TCR
+                  LEFT JOIN PSB_LOC PL1
+                    ON PL1.LOC_NO = TCR.CURR_LOC_NO
+                  LEFT JOIN PSB_LOC PL2
+                    ON PL2.LOC_NO = TCR.ELOC_NO
+
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.objid" prepend="AND">
+          TCR.objid like '%'||#where.objid#||'%'
+        </isNotNull>
+        <isNotNull property="where.curr_loc_no" prepend="AND">
+          TCR.curr_loc_no like '%'||#where.curr_loc_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.curr_plc_no" prepend="AND">
+          PL1.loc_plc_no like '%'||#where.curr_plc_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.pallet_no" prepend="AND">
+          TCR.pallet_no like '%'||#where.pallet_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.task_no" prepend="AND">
+          TCR.task_no like '%'||#where.task_no#||'%'
+        </isNotNull>
+      </dynamic>
+      <![CDATA[ order by TCR.OBJID desc  ]]>
+    </select>
+
+     <select id="Select@TprocCmdRequst@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+              SELECT TCR.OBJID,
+                       TCR.ERR_CODE,
+                       TCR.ERR_DESC,
+                       CASE TCR.PROC_STATUS
+                         WHEN 0 THEN
+                          '未执行'
+                         WHEN 1 THEN
+                          '执行中'
+                         WHEN 2 THEN
+                          '结束'
+                       END PROC_STATUS,
+                       TCR.TASK_NO,
+                       TCR.PROC_CREATE_TIME,
+                       TCR.PROC_EXCUTE_TIME,
+                       TCR.PROC_FINISH_TIME,
+                       TCR.PALLET_NO,
+                       TCR.CURR_LOC_NO,
+                       PL1.LOC_PLC_NO AS CURR_PLC_NO,
+                       TCR.ELOC_NO,
+                       PL2.LOC_PLC_NO AS ELOC_PLC_NO,
+                       TCR.ROUTE_NO
+                  FROM TPROC_0200_CMD_REQUEST TCR
+                  LEFT JOIN PSB_LOC PL1
+                    ON PL1.LOC_NO = TCR.CURR_LOC_NO
+                  LEFT JOIN PSB_LOC PL2
+                    ON PL2.LOC_NO = TCR.ELOC_NO
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.objid" prepend="AND">
+           TCR.objid like '%'||#where.objid#||'%'
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

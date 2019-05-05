@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{428412D0-F2E6-410F-B328-84196D888CA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.Main.DbRI</RootNamespace>
+    <AssemblyName>IEMS.Main.DbRI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Procedure\Service\ProcPageMenuActionAllService.cs" />
+    <Compile Include="Procedure\Service\ProcPageMenuUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequence\Service\SeqSsbConfigService.cs" />
+    <Compile Include="Sequence\Service\SeqSsbDeptService.cs" />
+    <Compile Include="Sequence\Service\SeqSsbUserService.cs" />
+    <Compile Include="Sequence\Service\SeqSslLoginLogService.cs" />
+    <Compile Include="Sequence\Service\SeqSspDeptRoleService.cs" />
+    <Compile Include="Sequence\Service\SeqSspPageActionService.cs" />
+    <Compile Include="Sequence\Service\SeqSspPageMenuService.cs" />
+    <Compile Include="Sequence\Service\SeqSspRoleActionService.cs" />
+    <Compile Include="Sequence\Service\SeqSspRoleService.cs" />
+    <Compile Include="Sequence\Service\SeqSspUserActionService.cs" />
+    <Compile Include="Sequence\Service\SeqSspUserRoleService.cs" />
+    <Compile Include="Table\Service\SsbConfigService.cs" />
+    <Compile Include="Table\Service\SsbDeptService.cs" />
+    <Compile Include="Table\Service\SsbUserService.cs" />
+    <Compile Include="Table\Service\SslLoginLogService.cs" />
+    <Compile Include="Table\Service\SspDeptRoleService.cs" />
+    <Compile Include="Table\Service\SspPageActionService.cs" />
+    <Compile Include="Table\Service\SspPageMenuService.cs" />
+    <Compile Include="Table\Service\SspRoleActionService.cs" />
+    <Compile Include="Table\Service\SspRoleService.cs" />
+    <Compile Include="Table\Service\SspUserActionService.cs" />
+    <Compile Include="Table\Service\SspUserRoleService.cs" />
+    <Compile Include="View\Service\ViewUserAllActionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\ProcPageMenuActionAll.xml" />
+    <EmbeddedResource Include="Procedure\Mapper\ProcPageMenuUser.xml" />
+    <Content Include="readme.txt" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSsbConfig.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSsbDept.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSsbUser.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSslLoginLog.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspDeptRole.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspPageAction.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspPageMenu.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspRole.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspRoleAction.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspUserAction.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqSspUserRole.xml" />
+    <EmbeddedResource Include="Table\Mapper\SsbConfig.xml" />
+    <EmbeddedResource Include="Table\Mapper\SsbDept.xml" />
+    <EmbeddedResource Include="Table\Mapper\SsbUser.xml" />
+    <EmbeddedResource Include="Table\Mapper\SslLoginLog.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspDeptRole.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspPageAction.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspPageMenu.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspRole.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspRoleAction.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspUserAction.xml" />
+    <EmbeddedResource Include="Table\Mapper\SspUserRole.xml" />
+    <EmbeddedResource Include="View\Mapper\ViewUserAllAction.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IEMS.Main.Entity\IEMS.Main.Entity.csproj">
+      <Project>{542af0f9-5e18-4d5c-bb45-ee3ed4b835ec}</Project>
+      <Name>IEMS.Main.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

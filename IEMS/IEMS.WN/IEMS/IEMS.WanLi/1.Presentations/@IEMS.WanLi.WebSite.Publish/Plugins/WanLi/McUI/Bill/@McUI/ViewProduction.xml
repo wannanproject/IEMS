@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ID_KEY" Value="GUID"></Caption>
+    <Caption Name="REQUEST_NO" Value="要货号码"></Caption>
+    <Caption Name="PLAN_NAME" Value="计划号码"></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="设备名称"></Caption>
+    <Caption Name="TRANS_TYPE" Value="事件"></Caption>
+    <Caption Name="TRANS_TIME" Value="上报时间"></Caption>
+    <Caption Name="BATCH_NO" Value="批次号码"></Caption>
+    <Caption Name="PRODUCT_NO" Value="产出号码"></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码"></Caption>
+    <Caption Name="PART_NUMBER" Value="物料编号"></Caption>
+    <Caption Name="QTY" Value="产出数量"></Caption>
+    <Caption Name="DESTINATION" Value="目的地"></Caption>
+    <Caption Name="REMARKS" Value="备注信息"></Caption>
+    <Caption Name="CREATE_TIME" Value="创建时间"></Caption>
+    <Caption Name="SET_WEIGHT" Value="设置重量"></Caption>
+    <Caption Name="REAL_WEIGHT" Value="实际重量"></Caption>
+    <Caption Name="SET_NUM" Value="设定数量"></Caption>
+    <Caption Name="REAL_NUM" Value="实际数量"></Caption>
+    <Caption Name="ALS_STATUS" Value="读取标记"></Caption>
+    <Caption Name="PASS_FLAG" Value="是否放行"></Caption>
+  </Captions>
+  <WebPage Title="MES同步信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY"></ParamField>
+        <ParamField FieldName="PART_NUMBER"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="ID_KEY" Width="120"></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="PLAN_NAME" Width="80"></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" Width="100"></GridColumn>
+        <GridColumn ColumnName="PART_NUMBER" Width="120"></GridColumn>
+        <GridColumn ColumnName="RFID_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="ALS_STATUS" Width="140"></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" Width="140"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+     <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ID_KEY"></ParamField>
+        <ParamField FieldName="REQUEST_NO"></ParamField>
+        <ParamField FieldName="PLAN_Name"></ParamField>
+        <ParamField FieldName="EQUIPMENT_Name"></ParamField>
+        <ParamField FieldName="TRANS_TYPE"></ParamField>
+        <ParamField FieldName="TRANS_TIME"></ParamField>
+        <ParamField FieldName="BATCH_NO"></ParamField>
+        <ParamField FieldName="PRODUCT_NO"></ParamField>
+        <ParamField FieldName="RFID_NO"></ParamField>
+        <ParamField FieldName="PART_NUMBER"></ParamField>
+        <ParamField FieldName="QTY"></ParamField>
+        <ParamField FieldName="DESTINATION"></ParamField>
+        <ParamField FieldName="REMARKS"></ParamField>
+        <ParamField FieldName="CREATE_TIME"></ParamField>
+        <ParamField FieldName="SET_WEIGHT"></ParamField>
+        <ParamField FieldName="REAL_WEIGHT"></ParamField>
+        <ParamField FieldName="SET_NUM"></ParamField>
+        <ParamField FieldName="REAL_NUM"></ParamField>
+        <ParamField FieldName="ALS_STATUS"></ParamField>
+        <ParamField FieldName="PASS_FLAG"></ParamField>
+      </ParamFields>
+    </MainDetail>
+    
+  </Select>
+</UiConfig>

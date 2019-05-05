@@ -1,0 +1,5 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.VoDto\bin\Debug\IEMS.Main.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.VoDto\bin\Debug\IEMS.Main.VoDto.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.VoDto\obj\Debug\IEMS.Main.VoDto.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.VoDto\obj\Debug\IEMS.Main.VoDto.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\4.Domains\IEMS.Main.VoDto\obj\Debug\IEMS.Main.VoDto.pdb

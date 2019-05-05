@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbRI.PsbCrnForkService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <alias>
+     <typeAlias alias="PsbCrnFork" type="IEMS.WanLi.Entity.PsbCrnFork, IEMS.WanLi.Entity" />
+   </alias>
+   
+  <!--结果集映射 resultMap-->
+  <resultMap id="R_PsbCrnFork" class="PsbCrnFork">
+    <result property="CrnForkNo" column="CRN_FORK_NO"/>
+    <result property="CrnNo" column="CRN_NO"/>
+    <result property="CrnForkName" column="CRN_FORK_NAME"/>
+    <result property="CrnForkIdx" column="CRN_FORK_IDX"/>
+    <result property="CrnForkEnable" column="CRN_FORK_ENABLE"/>
+    <result property="CrnForkPlcNo" column="CRN_FORK_PLC_NO"/>
+    <result property="OpcGroupNo" column="OPC_GROUP_NO"/>
+  </resultMap>
+  <!--参数集映射 parameterMap-->
+  <parameterMap id="P_PsbCrnFork" class="PsbCrnFork">
+    <parameter property="CrnForkNo" column="CrnForkNo"/>
+    <parameter property="CrnNo" column="CrnNo"/>
+    <parameter property="CrnForkName" column="CrnForkName"/>
+    <parameter property="CrnForkIdx" column="CrnForkIdx"/>
+    <parameter property="CrnForkEnable" column="CrnForkEnable"/>
+    <parameter property="CrnForkPlcNo" column="CrnForkPlcNo"/>
+    <parameter property="OpcGroupNo" column="OpcGroupNo"/>
+  </parameterMap>
+
+   <!--本文件为自动生成，不允许进行修改-->
+   <statements>
+    <!--查询数据-->
+    <sql id="includeSelect">
+      <![CDATA[SELECT * FROM PSB_CRN_FORK ]]>
+    </sql>
+    <!--查询条件-->
+    <sql id="includeWhere">
+	  <dynamic prepend="WHERE">
+        <isNotNull property="where.CrnForkNo" prepend="AND">
+          <isEqual property="where.CrnForkNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_FORK_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnForkNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_NO = #where.CrnForkNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnNo" prepend="AND">
+          <isEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_NO = #where.CrnNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnForkName" prepend="AND">
+          <isEqual property="where.CrnForkName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_FORK_NAME IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_NAME IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkName" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnForkName" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_NAME = #where.CrnForkName#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnForkIdx" prepend="AND">
+          <isEqual property="where.CrnForkIdx" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_IDX IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkIdx" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_IDX IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkIdx" compareValue="-1147483648">
+          <isNotEqual property="where.CrnForkIdx" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_IDX = #where.CrnForkIdx#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnForkEnable" prepend="AND">
+          <isEqual property="where.CrnForkEnable" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_ENABLE IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkEnable" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_ENABLE IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkEnable" compareValue="-1147483648">
+          <isNotEqual property="where.CrnForkEnable" compareValue="-1147483647">
+            <![CDATA[CRN_FORK_ENABLE = #where.CrnForkEnable#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.CrnForkPlcNo" prepend="AND">
+          <isEqual property="where.CrnForkPlcNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_FORK_PLC_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.CrnForkPlcNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_PLC_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.CrnForkPlcNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.CrnForkPlcNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[CRN_FORK_PLC_NO = #where.CrnForkPlcNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="where.OpcGroupNo" prepend="AND">
+          <isEqual property="where.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO IS NULL]]>
+          </isEqual>
+          <isEqual property="where.OpcGroupNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO IS NOT NULL]]>
+          </isEqual>
+          <isNotEqual property="where.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+          <isNotEqual property="where.OpcGroupNo" compareValue="STRING_NOT_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO = #where.OpcGroupNo#]]>
+          </isNotEqual>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--排序条件-->
+    <sql id="includeOrderString">
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </sql>
+    <!--添加数据-->
+   <sql id="includeInsert">
+      <![CDATA[INSERT INTO PSB_CRN_FORK]]>
+       <dynamic prepend="(">
+        <isNotNull property="CrnForkNo" prepend=",">CRN_FORK_NO</isNotNull>
+        <isNotNull property="CrnNo" prepend=",">CRN_NO</isNotNull>
+        <isNotNull property="CrnForkName" prepend=",">CRN_FORK_NAME</isNotNull>
+        <isNotNull property="CrnForkIdx" prepend=",">CRN_FORK_IDX</isNotNull>
+        <isNotNull property="CrnForkEnable" prepend=",">CRN_FORK_ENABLE</isNotNull>
+        <isNotNull property="CrnForkPlcNo" prepend=",">CRN_FORK_PLC_NO</isNotNull>
+        <isNotNull property="OpcGroupNo" prepend=",">OPC_GROUP_NO</isNotNull>
+       </dynamic>
+       <dynamic prepend=") VALUES (">
+        <isNotNull property="CrnForkNo" prepend=",">#CrnForkNo#</isNotNull>
+        <isNotNull property="CrnNo" prepend=",">#CrnNo#</isNotNull>
+        <isNotNull property="CrnForkName" prepend=",">#CrnForkName#</isNotNull>
+        <isNotNull property="CrnForkIdx" prepend=",">#CrnForkIdx#</isNotNull>
+        <isNotNull property="CrnForkEnable" prepend=",">#CrnForkEnable#</isNotNull>
+        <isNotNull property="CrnForkPlcNo" prepend=",">#CrnForkPlcNo#</isNotNull>
+        <isNotNull property="OpcGroupNo" prepend=",">#OpcGroupNo#</isNotNull>
+       </dynamic>
+       <![CDATA[)]]>
+    </sql>
+    <!--修改数据-->
+    <sql id="includeUpdate">
+      <![CDATA[UPDATE PSB_CRN_FORK]]>
+       <dynamic prepend="SET">
+        <isNotNull property="update.CrnNo" prepend=",">
+          <isEqual property="update.CrnNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRN_NO = #update.CrnNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnForkName" prepend=",">
+          <isEqual property="update.CrnForkName" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_FORK_NAME = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnForkName" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRN_FORK_NAME = #update.CrnForkName#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnForkIdx" prepend=",">
+          <isEqual property="update.CrnForkIdx" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_IDX = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnForkIdx" compareValue="-1147483648">
+          <![CDATA[CRN_FORK_IDX = #update.CrnForkIdx#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnForkEnable" prepend=",">
+          <isEqual property="update.CrnForkEnable" compareValue="-1147483648">
+            <![CDATA[CRN_FORK_ENABLE = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnForkEnable" compareValue="-1147483648">
+          <![CDATA[CRN_FORK_ENABLE = #update.CrnForkEnable#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.CrnForkPlcNo" prepend=",">
+          <isEqual property="update.CrnForkPlcNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[CRN_FORK_PLC_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.CrnForkPlcNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[CRN_FORK_PLC_NO = #update.CrnForkPlcNo#]]>
+          </isNotEqual>
+        </isNotNull>
+        <isNotNull property="update.OpcGroupNo" prepend=",">
+          <isEqual property="update.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+            <![CDATA[OPC_GROUP_NO = NULL]]>
+          </isEqual>
+          <isNotEqual property="update.OpcGroupNo" compareValue="STRING_NULL_VALUE">
+          <![CDATA[OPC_GROUP_NO = #update.OpcGroupNo#]]>
+          </isNotEqual>
+        </isNotNull>
+      </dynamic>
+    </sql>
+    <!--删除数据-->
+    <sql id="includeDelete">
+      <![CDATA[DELETE FROM PSB_CRN_FORK]]>
+    </sql>
+
+	
+    <!--增删改查配置信息-->
+    <!--指定条件的查询-->
+    <select id="GetEntityList" parameterClass="map" resultMap="R_PsbCrnFork">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--指定条件的查询-->
+    <select id="GetEntityTable" parameterClass="map" resultClass="row">
+      <include refid="includeSelect"/>
+      <include refid="includeWhere"/>
+      <include refid="includeOrderString"/>
+    </select>
+    <!--获取某个属性（数据列）的最大值-->
+    <select id="GetColumnMaxValue" parameterClass="map" resultClass="map">
+      <![CDATA[SELECT]]>
+      <isPropertyAvailable property="ColumnName" prepend=" ">
+      <![CDATA[MAX($ColumnName$)]]>
+      </isPropertyAvailable>
+      <![CDATA[FROM PSB_CRN_FORK]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--获取数据条数-->
+    <select id="GetRowCount" parameterClass="map" resultClass="int">
+      <![CDATA[SELECT COUNT(*) FROM PSB_CRN_FORK]]>
+      <include refid="includeWhere"/>
+    </select>
+    <!--添加新记录-->
+    <statement id="Insert" parameterMap="P_PsbCrnFork" resultClass="int">
+      <include refid="includeInsert"/>
+    </statement>
+    <!--更新记录-->
+    <update id="Update" parameterClass="map">
+      <include refid="includeUpdate"/>
+      <include refid="includeWhere"/>
+    </update>
+    <!--删除对象对应的记录-->
+    <delete id="Delete" parameterClass="map">
+      <include refid="includeDelete"/>
+      <include refid="includeWhere"/>
+    </delete>
+  </statements>
+</sqlMap>

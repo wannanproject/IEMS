@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBLOCTYPE" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+        SELECT T.*,T.ROWID FROM PSB_LOC_TYPE T WHERE T.ISSHOW = 1
+      ]]>
+      <dynamic>
+         <isNotNull property="where.LOC_TYPE_NO" prepend="AND">
+           T.LOC_TYPE_NO LIKE '%'||#where.LOC_TYPE_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY LOC_TYPE_NO
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBPALLET" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM PSB_PALLET T1
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          T1.PALLET_NO LIKE '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.RFID_NO" prepend="AND">
+          T1.RFID_NO LIKE '%'||#where.RFID_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PRODUCT_NO" prepend="AND">
+          T1.PRODUCT_NO LIKE '%'||#where.PRODUCT_NO#||'%'
+        </isNotNull>
+       </dynamic>
+      ORDER BY PALLET_NO
+    </select>
+     <select id="Select@VIEW_PSBPALLET@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_PALLET T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.PALLET_NO" prepend = "AND">
+           T1.PALLET_NO = #where.PALLET_NO#
+         </isNotNull>
+       </dynamic>
+     </select>     
+  </statements>
+</sqlMap>

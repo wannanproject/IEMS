@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+<Captions>
+  <Caption Name="OBJID" Value="OBJID"></Caption>
+  <Caption Name="TASK_NO" Value="任务号"></Caption>
+  <Caption Name="SLOC_NO" Value="起始站台"></Caption>
+  <Caption Name="SLOC_PLC_NO" Value="起始PLC站台"></Caption>
+  <Caption Name="ELOC_NO" Value="目的地址"></Caption>
+  <Caption Name="ELOC_PLC_NO" Value="目的PLC地址"></Caption>
+  <Caption Name="CREATION_DATE" Value="创建时间"></Caption>
+  <Caption Name="EXCUTE_DATE" Value="执行时间"></Caption>
+  <Caption Name="FINISH_DATE" Value="结束时间"></Caption>
+  <Caption Name="ERR_NAME" Value="错误描述"></Caption>
+  <Caption Name="PRODUCT_NO" Value="产品ID"></Caption>
+  <Caption Name="PALLET_NO" Value="工装号"></Caption>
+  <Caption Name="CMD_TYPE" Value="出入库"></Caption>
+  <Caption Name="MATER_NO" Value="物料编码"></Caption>
+  <Caption Name="BATCH_NO" Value="批次号"></Caption>
+  <Caption Name="MATER_TYPE" Value="小类"></Caption>
+  <Caption Name="BTIME" Value="查询起始时间"></Caption>
+  <Caption Name="ETIME" Value="查询结束时间"></Caption>
+</Captions>
+<WebPage Title="出入库历史">
+ </WebPage>
+ <Select>
+   <ParamPanel>
+     <ParamFields>
+       <ParamField FieldName="TASK_NO"></ParamField>
+       <ParamField FieldName="SLOC_PLC_NO"></ParamField>
+       <ParamField FieldName="PALLET_NO"></ParamField>
+       <ParamField FieldName="BTIME" Type="DateBox" DefaultValue="-5"></ParamField>
+       <ParamField FieldName="ETIME" Type="DateBox" DefaultValue="0"></ParamField>
+     </ParamFields>
+    </ParamPanel>
+   <MainGrid PageSize="50">
+    <GridColumns>
+      <GridColumn ColumnName="TASK_NO" Width="60"></GridColumn>
+      <GridColumn ColumnName="CMD_TYPE" Width="60"></GridColumn>
+      <GridColumn ColumnName="ERR_NANME" Width="100"></GridColumn>
+      <GridColumn ColumnName="PALLET_NO" Width="150"></GridColumn>
+      <GridColumn ColumnName="MATER_NO" Width="100"></GridColumn>
+      <GridColumn ColumnName="BATCH_NO" Width="80"></GridColumn>
+      <GridColumn ColumnName="MATER_TYPE" Width="80"></GridColumn>
+      <GridColumn ColumnName="SLOC_PLC_NO" Width="80"></GridColumn>
+      <GridColumn ColumnName="ELOC_PLC_NO" Width="80"></GridColumn>
+    </GridColumns>
+   </MainGrid>
+   <MainDetail>
+     <ParamFields>
+       <ParamField FieldName="OBJID"></ParamField>
+       <ParamField FieldName="TASK_NO"></ParamField>
+       <ParamField FieldName="SLOC_NO"></ParamField>
+       <ParamField FieldName="SLOC_PLC_NO"></ParamField>
+       <ParamField FieldName="ELOC_NO"></ParamField>
+       <ParamField FieldName="ELOC_PLC_NO"></ParamField>
+       <ParamField FieldName="CREATION_DATE"></ParamField>
+       <ParamField FieldName="EXCUTE_DATE"></ParamField>
+       <ParamField FieldName="FINISH_DATE"></ParamField>
+       <ParamField FieldName="ERR_NAME"></ParamField>
+       <ParamField FieldName="PRODUCT_NO"></ParamField>
+       <ParamField FieldName="PALLET_NO"></ParamField>
+       <ParamField FieldName="CMD_TYPE"></ParamField>
+       <ParamField FieldName="MATER_NO"></ParamField>
+       <ParamField FieldName="BATCH_NO"></ParamField>
+       <ParamField FieldName="MATER_TYPE"></ParamField>
+     </ParamFields>
+   </MainDetail>
+ </Select>
+</UiConfig>

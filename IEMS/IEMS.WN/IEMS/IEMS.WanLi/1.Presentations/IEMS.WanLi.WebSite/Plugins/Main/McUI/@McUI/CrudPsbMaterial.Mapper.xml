@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@CrudPsbMaterial" parameterClass="int" resultClass="row">
+      <![CDATA[
+          SELECT * FROM PSB_MATERIAL
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.MATER_NO" prepend="AND">
+          <![CDATA[MATER_NO = #where.MATER_NO#]]>
+        </isNotNull>
+        <isNotNull property="where.MATER_NAME" prepend="AND">
+          MATER_NAME  like '%'||#where.MATER_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.DEL_FLAG" prepend="AND">
+          <![CDATA[DEL_FLAG = #where.DEL_FLAG#]]>
+        </isNotNull>
+        <isNotNull property="where.CREATION_TIME" prepend="AND">
+          <![CDATA[CREATION_TIME = #where.CREATION_TIME#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+    <select id="Select+Update@CrudPsbMaterial" parameterClass="int" resultClass="row">
+      <![CDATA[SELECT * FROM PSB_MATERIAL ]]>
+      <dynamic prepend="WHERE">
+        <![CDATA[(MATER_NO = #MATER_NO#)]]>
+      </dynamic>
+    </select>
+  </statements>
+</sqlMap>

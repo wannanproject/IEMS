@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GPORTNO" Value="线边库编号" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="设备编号" ></Caption>
+    <Caption Name="PORT_NAME" Value="入口编号" ></Caption>
+    <Caption Name="CACHE_SIZE" Value="最大缓存数" ></Caption>   
+    <Caption Name="SLMS_FLAG" Value="更新标志" ></Caption>        
+  </Captions>
+  <WebPage Title="线边库入口">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GPORTNO"></ParamField>        
+        <ParamField FieldName="EQUIPMENT_NAME"></ParamField>
+        <ParamField FieldName="PORT_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GPORTNO" WIDTH="160"></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PORT_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="CACHE_SIZE" WIDTH="100" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" WIDTH="100"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <!--<DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="MATER_NO" WIDTH="180"></GridColumn>       
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>       
+      </ParamFields>
+    </MainDetail>-->
+  </Select>
+</UiConfig>

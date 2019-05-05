@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="OBJID" ></Caption>
+    <Caption Name="ERR_CODE" Value="ERR_CODE" ></Caption>
+    <Caption Name="ERR_DESC" Value="ERR_DESC" ></Caption>
+    <Caption Name="PROC_STATUS" Value="PROC_STATUS" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="PROC_CREATE_TIME" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="PROC_EXCUTE_TIME" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="PROC_FINISH_TIME" ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="GLOBAL_GUID" ></Caption>
+    <Caption Name="ORDER_NO" Value="【必填项目】：订单号码       " ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="【必填项目】：订单行GUID     " ></Caption>
+    <Caption Name="TASK_GUID" Value="【返回值】：任务GUID    " ></Caption>
+    <Caption Name="PASS_LOC_LIST" Value="【选填项目】：途经点. 以分号分隔，支持多个LOC_NO" ></Caption>
+    <Caption Name="TASK_NO" Value="【返回值】：任务号" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="PACKAGE_GUID" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+  </Captions>
+  <WebPage Title="TPROC_0201_TASK_CREATE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="PASS_LOC_LIST" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="PASS_LOC_LIST" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

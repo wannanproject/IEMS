@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_NO" Value="站台号码" ></Caption>
+    <Caption Name="LOC_PLC_NO" Value="下传至PLC的编码信息" ></Caption>
+    <Caption Name="LOC_TYPE_NO" Value="站台类型（PSB_LOC_TYPE）" ></Caption>
+    <Caption Name="LOC_NAME" Value="站台名称" ></Caption>
+    <Caption Name="LOC_INDEX" Value="站台顺序号" ></Caption>
+    <Caption Name="MAX_BUFFER" Value="缓存区大小" ></Caption>
+    <Caption Name="LOC_GROUP_NO" Value="站台组" ></Caption>
+    <Caption Name="LOC_MES_NO" Value="MES编码" ></Caption>
+    <Caption Name="LOC_AGV_NO" Value="AGV编码" ></Caption>
+    <Caption Name="LOC_PRIORITY" Value="优先级 20 默认 ，越小优先级越高" ></Caption>
+    <Caption Name="LOC_ENABLE" Value="可用状态  1：可用 0:不可用" ></Caption>
+    <Caption Name="LAST_USED_DATE" Value="最后使用时间" ></Caption>
+    <Caption Name="ENABLE_RECORRECT_FLAG" Value="是否允许任务修正 1:允许 0：不允许" ></Caption>
+    <Caption Name="ENABLE_REPACKAGE_FLAG" Value="是否允许重新生成资料 1:允许 0：不允许" ></Caption>
+    <Caption Name="ENABLE_REQUEST_FLAG" Value="是否允许发起订单 1:允许  0：不允许" ></Caption>
+    <Caption Name="AUTO_REQUEST_MODE" Value="是否允许自动发起  1：允许  0：不允许 " ></Caption>
+    <Caption Name="LIMIT_PALLET_VALID_TYPE" Value="限定物料非法种类" ></Caption>
+    <Caption Name="LIMIT_ORDER_VALID" Value="1:生成指令失效   2：结束订单失效   0：请求完毕失效" ></Caption>
+    <Caption Name="JOB_MONITOR_FLAG" Value="1: 作业监控   0：非监控" ></Caption>
+    <Caption Name="LIMIT_CMD_FINISH" Value="指令结束标志分类 1: 正常结束  2: 下发结束" ></Caption>
+  </Captions>
+  <WebPage Title="站台信息维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_PLC_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_NAME" ></GridColumn>
+        <GridColumn ColumnName="LOC_INDEX" ></GridColumn>
+        <GridColumn ColumnName="MAX_BUFFER" ></GridColumn>
+        <GridColumn ColumnName="LOC_GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_AGV_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="LOC_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="LAST_USED_DATE" ></GridColumn>
+        <GridColumn ColumnName="ENABLE_RECORRECT_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ENABLE_REPACKAGE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ENABLE_REQUEST_FLAG" ></GridColumn>
+        <GridColumn ColumnName="AUTO_REQUEST_MODE" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_PALLET_VALID_TYPE" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_ORDER_VALID" ></GridColumn>
+        <GridColumn ColumnName="JOB_MONITOR_FLAG" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_CMD_FINISH" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="LOC_PLC_NO" ></ParamField>
+        <ParamField FieldName="LOC_TYPE_NO" ></ParamField>
+        <ParamField FieldName="LOC_NAME" ></ParamField>
+        <ParamField FieldName="LOC_INDEX" ></ParamField>
+        <ParamField FieldName="MAX_BUFFER" ></ParamField>
+        <ParamField FieldName="LOC_GROUP_NO" ></ParamField>
+        <ParamField FieldName="LOC_MES_NO" ></ParamField>
+        <ParamField FieldName="LOC_AGV_NO" ></ParamField>
+        <ParamField FieldName="LOC_PRIORITY" ></ParamField>
+        <ParamField FieldName="LOC_ENABLE" ></ParamField>
+        <ParamField FieldName="LAST_USED_DATE" ></ParamField>
+        <ParamField FieldName="ENABLE_RECORRECT_FLAG" ></ParamField>
+        <ParamField FieldName="ENABLE_REPACKAGE_FLAG" ></ParamField>
+        <ParamField FieldName="ENABLE_REQUEST_FLAG" ></ParamField>
+        <ParamField FieldName="AUTO_REQUEST_MODE" ></ParamField>
+        <ParamField FieldName="LIMIT_PALLET_VALID_TYPE" ></ParamField>
+        <ParamField FieldName="LIMIT_ORDER_VALID" ></ParamField>
+        <ParamField FieldName="JOB_MONITOR_FLAG" ></ParamField>
+        <ParamField FieldName="LIMIT_CMD_FINISH" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

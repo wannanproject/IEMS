@@ -1,0 +1,6 @@
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\bin\Release\IEMS.WanLi.DbMapper.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\bin\Release\IEMS.WanLi.DbMapper.pdb
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\obj\Release\IEMS.WanLi.DbMapper.csprojResolveAssemblyReference.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\obj\Release\IEMS.WanLi.DbMapper.csproj.CoreCompileInputs.cache
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\obj\Release\IEMS.WanLi.DbMapper.dll
+E:\项目资料\万力与越赛\HFPLY\DataSource\IEMS\IEMS.WanLi\4.Domains\IEMS.WanLi.DbMapper\obj\Release\IEMS.WanLi.DbMapper.pdb

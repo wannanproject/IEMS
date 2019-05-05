@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+     <select id="Select@BinStatistics" parameterClass="map" resultClass="row">
+      
+       <![CDATA[ 
+               SELECT Z.MATER_NO MATERIAL_NO,
+                       Z.MATERIAL_NUM,
+                       PM.MATER_SPEC,
+                       PM.MATER_DESC,
+                       PM.MATER_TYPE,
+                       PM.MATER_MKIND   
+                  FROM (SELECT WPD.MATER_NO, SUM(NVL(WPD.PRODUCT_QTY,1)) AS MATERIAL_NUM
+                          FROM WBS_BIN T
+                         INNER JOIN WBS_PACKAGE_DATA WPD
+                            ON WPD.PACKAGE_GUID = T.PACKAGE_GUID
+                         GROUP BY WPD.MATER_NO) Z
+                  LEFT JOIN PSB_MATERIAL PM
+                    ON PM.MATER_NO = Z.MATER_NO
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.MATERIAL_NO" prepend="AND">
+           Z.MATER_NO like '%'||#where.MATERIAL_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="Order By" prepend="">
+         ORDER BY MATER_NO
+       </isNotNull>
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+<Captions>
+    <Caption Name="ERR_NO" Value="错误编号" ></Caption>
+    <Caption Name="ERR_NAME" Value="错误名称" ></Caption>
+</Captions>
+<WebPage Title="堆垛机错误信息">
+ </WebPage>
+ <Select>
+  <ParamPanel>
+    <ParamFields>
+      <ParamField FieldName="ERR_NO"></ParamField>
+    </ParamFields>
+  </ParamPanel>
+   <MainGrid PageSize ="50">
+     <GridColumns>
+       <GridColumn ColumnName="ERR_NO" Width="90"></GridColumn>
+       <GridColumn ColumnName="ERR_NAME" Width="200"></GridColumn>
+     </GridColumns>
+   </MainGrid>
+ </Select>
+</UiConfig>
+

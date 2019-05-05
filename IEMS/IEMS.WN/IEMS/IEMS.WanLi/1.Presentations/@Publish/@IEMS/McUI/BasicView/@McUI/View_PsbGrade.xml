@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GRADE_NO" Value="等级编码" ></Caption>
+    <Caption Name="GRADE_DESC" Value="等级描述" ></Caption>
+  </Captions>
+  <WebPage Title="PSB_GRADE">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GRADE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GRADE_NO" ></GridColumn>
+        <GridColumn ColumnName="GRADE_DESC" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GRADE_NO" ></ParamField>
+        <ParamField FieldName="GRADE_DESC" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

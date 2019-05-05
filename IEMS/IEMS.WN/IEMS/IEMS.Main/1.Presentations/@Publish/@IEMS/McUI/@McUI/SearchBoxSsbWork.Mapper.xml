@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@SearchBoxSsbWork" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM SSB_WORK T WHERE T.DELETE_FLAG= 0 
+      ]]>
+       <dynamic>
+         <isNotNull property="where.WORK_NAME" prepend="AND">
+           T.WORK_NAME like '%'||#where.WORK_NAME#||'%'
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="OrderString" prepend="">
+          ORDER BY $OrderString$
+       </isNotNull>
+     </select>
+  </statements>
+</sqlMap>

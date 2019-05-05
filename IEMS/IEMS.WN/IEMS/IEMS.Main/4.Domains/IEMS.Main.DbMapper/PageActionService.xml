@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Main.DbCI.PageActionService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <statements>
+     <!--查询用户页面菜单列表-->
+     <select id="GetUserPageActionList" parameterClass="map" resultClass="Row">
+       SELECT t1.* FROM SSP_PAGE_ACTION  t1
+       INNER JOIN V_SSP_USER_ALL_ACTION t2 ON t2.ACTION_ID = t1.OBJID
+       WHERE t1.PAGE_MENU_ID=#PageMenuId# AND t2.USER_ID=#UserId#
+     </select>
+  </statements>
+</sqlMap>

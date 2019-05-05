@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="指令ID序列" ></Caption>
+    <Caption Name="ERR_CODE" Value="错误编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="错误信息" ></Caption>        
+    <Caption Name="PROC_STATUS" Value="过程执行状态" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="过程创建时间" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="过程执行时间" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="过程完成时间" ></Caption>  
+    <Caption Name="GLOBAL_GUID" Value="全局GUID" ></Caption>       
+    <Caption Name="ORDER_NO" Value="订单号码" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行GUID" ></Caption>
+    <Caption Name="TASK_GUID" Value="任务GUID" ></Caption>
+    <Caption Name="PASS_LOC_LIST" Value="途经点" ></Caption>
+    <Caption Name="TASK_NO" Value="任务号" ></Caption>  
+    <Caption Name="PACKAGE_GUID" Value="包GUID" ></Caption>   
+    <Caption Name="PALLET_VALID" Value="货笼有载状态" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装编号" ></Caption>
+    <Caption Name="pack_type_name" Value="货笼有载描述" ></Caption>   
+  </Captions>
+  <WebPage Title="生成任务过程">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ORDER_NO"></ParamField>
+        <ParamField FieldName="TASK_NO"></ParamField>
+        <ParamField FieldName="OBJID"></ParamField>      
+        <ParamField FieldName="PALLET_NO"></ParamField>
+        <ParamField FieldName="PASS_LOC_LIST"></ParamField>      
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="OBJID" ></GridColumn>        
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="pack_type_name" ></GridColumn>
+        <GridColumn ColumnName="PASS_LOC_LIST" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>       
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>   
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

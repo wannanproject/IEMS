@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="Custom_WbsTaskCmd" uri="@McUI\Custom_WbsTaskCmd.xml"/>
+  <McUI name="Custom_WbsTaskCmdCrn" uri="@McUI\Custom_WbsTaskCmdCrn.xml"/>
+  <McUI name="Custom_WbsTaskCmdAgv" uri="@McUI\Custom_WbsTaskCmdAgv.xml"/>
+  <McUI name="Custom_WbsTaskCmdRgv" uri="@McUI\Custom_WbsTaskCmdRgv.xml"/>
+  <McUI name="Custom_WbsTaskCmdTrans" uri="@McUI\Custom_WbsTaskCmdTrans.xml"/>
+  <McUI name="Custom_WbsTaskCmdEms" uri="@McUI\Custom_WbsTaskCmdEms.xml"/>
+  <McUI name="Custom_Tproc0201TaskCreate" uri="@McUI\Custom_Tproc0201TaskCreate.xml"/>
+  <McUI name="Custom_Tproc0204TaskFinish" uri="@McUI\Custom_Tproc0204TaskFinish.xml"/>
+  <McUI name="Custom_Tproc0301CmdCreate" uri="@McUI\Custom_Tproc0301CmdCreate.xml"/>
+  <McUI name="Custom_Tproc0303CmdFinish" uri="@McUI\Custom_Tproc0303CmdFinish.xml"/>
+</McUIConfig>

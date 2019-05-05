@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="IEMS.WanLi.DbCI.MaterialService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <statements>
+    <select id="GetMaterialData" parameterClass="map" resultClass="Row">
+      <![CDATA[
+              SELECT mater_no,mater_name,mater_mkind,mater_type,
+       min_time,max_time,main_unit,mater_spec,mater_desc,seq_index,case del_flag when 1 then'删除' when 0 then '正常' end as del_flag,mes_no
+       FROM PSB_MATERIAL T1
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.MATER_NO" prepend="AND">
+          T1.MATER_NO LIKE '%'||#where.MATER_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      ORDER BY MATER_NO
+    </select>
+    <select id="GetAgvTaskTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+SELECT T.TASK_NO,T.SLOC_NO,P.LOC_NAME,T.ELOC_NO,T.PALLET_NO,T.CREATION_DATE FROM WBS_TASK T 
+JOIN PSB_LOC P
+ON P.LOC_NO = T.SLOC_NO
+WHERE T.PALLET_TYPE = '2000' AND T.SLOC_NO LIKE '6001%' AND T.ROUTE_NOS LIKE '03%' 
+AND T.TASK_GUID NOT IN(SELECT T1.TASK_GUID FROM WBS_TASK_CMD T1)
+ORDER BY T.CREATION_DATE DESC
+]]>
+    </select>
+  </statements>
+
+</sqlMap>

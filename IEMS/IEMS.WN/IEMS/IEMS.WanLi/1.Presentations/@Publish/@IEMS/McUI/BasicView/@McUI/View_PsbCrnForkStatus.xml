@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="CRN_NO" Value="堆垛机编码" ></Caption>
+    <Caption Name="CRN_FORK_NO" Value="堆垛机叉编码" ></Caption>
+    <Caption Name="LAST_TASK_TYPE" Value="上一次执行任务类型： 1:入  2： 出" ></Caption>
+    <Caption Name="TASK_TYPE" Value="入/出库(I:入库, O:出库)" ></Caption>
+    <Caption Name="TASK_NO" Value="任务号" ></Caption>
+    <Caption Name="FROM_BIN" Value="源仓位" ></Caption>
+    <Caption Name="TO_BIN" Value="目的仓位" ></Caption>
+    <Caption Name="STEP" Value="堆垛机叉目前执行步骤/0,无任务；1，取放货；2，移动至取货位；3，取货；4，移动至放货位；5，放货" ></Caption>
+    <Caption Name="LOADING" Value="堆垛机叉状态 0:无载 1:有载 2:完成 3:置物异常" ></Caption>
+    <Caption Name="RETRY_COUNT" Value="目前重下命令次数" ></Caption>
+    <Caption Name="CRN_MODE" Value="堆垛机模式（1-自动；2-半自动；3-手动；4-应急点动）" ></Caption>
+    <Caption Name="STATUS" Value="状态 （0 空闲 1 执行中 2 完成  3-N 异常）" ></Caption>
+    <Caption Name="ACT_POS_X" Value="当前水平位置" ></Caption>
+    <Caption Name="ACT_POS_Y" Value="当前垂直位置" ></Caption>
+    <Caption Name="ACT_POS_Z" Value="叉当前位置，编码器数值" ></Caption>
+    <Caption Name="ACT_SPEED_X" Value="当前行走速度" ></Caption>
+    <Caption Name="ACT_SPEED_Y" Value="当前升降速度" ></Caption>
+    <Caption Name="ACT_SPEED_Z" Value="叉当前速度" ></Caption>
+  </Captions>
+  <WebPage Title="堆垛机叉状态表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="CRN_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="CRN_FORK_NO" ></GridColumn>
+        <GridColumn ColumnName="LAST_TASK_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TASK_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="FROM_BIN" ></GridColumn>
+        <GridColumn ColumnName="TO_BIN" ></GridColumn>
+        <GridColumn ColumnName="STEP" ></GridColumn>
+        <GridColumn ColumnName="LOADING" ></GridColumn>
+        <GridColumn ColumnName="RETRY_COUNT" ></GridColumn>
+        <GridColumn ColumnName="CRN_MODE" ></GridColumn>
+        <GridColumn ColumnName="STATUS" ></GridColumn>
+        <GridColumn ColumnName="ACT_POS_X" ></GridColumn>
+        <GridColumn ColumnName="ACT_POS_Y" ></GridColumn>
+        <GridColumn ColumnName="ACT_POS_Z" ></GridColumn>
+        <GridColumn ColumnName="ACT_SPEED_X" ></GridColumn>
+        <GridColumn ColumnName="ACT_SPEED_Y" ></GridColumn>
+        <GridColumn ColumnName="ACT_SPEED_Z" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="CRN_FORK_NO" ></ParamField>
+        <ParamField FieldName="LAST_TASK_TYPE" ></ParamField>
+        <ParamField FieldName="TASK_TYPE" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="FROM_BIN" ></ParamField>
+        <ParamField FieldName="TO_BIN" ></ParamField>
+        <ParamField FieldName="STEP" ></ParamField>
+        <ParamField FieldName="LOADING" ></ParamField>
+        <ParamField FieldName="RETRY_COUNT" ></ParamField>
+        <ParamField FieldName="CRN_MODE" ></ParamField>
+        <ParamField FieldName="STATUS" ></ParamField>
+        <ParamField FieldName="ACT_POS_X" ></ParamField>
+        <ParamField FieldName="ACT_POS_Y" ></ParamField>
+        <ParamField FieldName="ACT_POS_Z" ></ParamField>
+        <ParamField FieldName="ACT_SPEED_X" ></ParamField>
+        <ParamField FieldName="ACT_SPEED_Y" ></ParamField>
+        <ParamField FieldName="ACT_SPEED_Z" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_TmpTaskShipTran" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TMP_TASK_SHIP_TRAN T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.TRAN_ID" prepend="AND">
+           T1.TRAN_ID LIKE '%'||#where.TRAN_ID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY TRAN_ID
+     </select>
+     <select id="Select@View_TmpTaskShipTran@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TMP_TASK_SHIP_TRAN T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.TRAN_ID" prepend = "AND">
+           T1.TRAN_ID = #where.TRAN_ID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

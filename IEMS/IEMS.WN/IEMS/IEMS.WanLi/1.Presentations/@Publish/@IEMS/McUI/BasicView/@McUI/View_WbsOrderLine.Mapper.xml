@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_WbsOrderLine" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM WBS_ORDER_LINE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.ORDER_LINE_GUID" prepend="AND">
+           T1.ORDER_LINE_GUID LIKE '%'||#where.ORDER_LINE_GUID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY ORDER_LINE_GUID
+     </select>
+     <select id="Select@View_WbsOrderLine@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM WBS_ORDER_LINE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.ORDER_LINE_GUID" prepend = "AND">
+           T1.ORDER_LINE_GUID = #where.ORDER_LINE_GUID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

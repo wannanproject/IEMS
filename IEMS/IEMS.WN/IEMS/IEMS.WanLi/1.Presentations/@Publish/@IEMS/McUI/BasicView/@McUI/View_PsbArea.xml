@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="AREA_NO" Value="区域编码" ></Caption>
+    <Caption Name="AREA_NAME" Value="区域名称" ></Caption>
+    <Caption Name="AREA_LEVEL" Value="区域级别" ></Caption>
+    <Caption Name="FMEM" Value="备注" ></Caption>
+    <Caption Name="LAST_LEVEL_FLAG" Value="最后一级标识" ></Caption>
+  </Captions>
+  <WebPage Title="区域维护">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="AREA_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="AREA_NAME" ></GridColumn>
+        <GridColumn ColumnName="AREA_LEVEL" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="LAST_LEVEL_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="AREA_NAME" ></ParamField>
+        <ParamField FieldName="AREA_LEVEL" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="LAST_LEVEL_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

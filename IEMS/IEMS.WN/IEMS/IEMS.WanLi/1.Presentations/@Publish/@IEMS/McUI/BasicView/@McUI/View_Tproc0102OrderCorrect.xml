@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="OBJID" ></Caption>
+    <Caption Name="ERR_CODE" Value="【返回值】:异常编码" ></Caption>
+    <Caption Name="ERR_DESC" Value="【返回值】:异常描述" ></Caption>
+    <Caption Name="PROC_STATUS" Value="【返回值】: 0：未执行  1：执行中  2：执行完毕" ></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="创建日期" ></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="【返回值】:执行开始时间" ></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="【返回值】:执行结束时间" ></Caption>
+    <Caption Name="TASK_GUID" Value="【必填项】：任务GUID" ></Caption>
+    <Caption Name="ORDER_NO" Value="【必填项】：订单号" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="【必填项】：订单行GUID" ></Caption>
+    <Caption Name="ACT_QTY_DIFFER" Value="【必填项】：实际任务差额" ></Caption>
+    <Caption Name="SHIP_QTY_DIFFER" Value="【必填项】：实际已发差额" ></Caption>
+    <Caption Name="ORDER_STATUS" Value="【必填项】：1：根据情况变更订单状态 2：不变更  3：结束订单行  4：取消订单行" ></Caption>
+    <Caption Name="OLD_ACT_QTY" Value="【返回值】:处理之前任务数量" ></Caption>
+    <Caption Name="NEW_ACT_QTY" Value="【返回值】:处理之后任务数量" ></Caption>
+    <Caption Name="OLD_SHIP_QTY" Value="【返回值】:处理之前发货数量" ></Caption>
+    <Caption Name="NEW_SHIP_QTY" Value="【返回值】:处理之后发货数量" ></Caption>
+    <Caption Name="OLD_LINE_STATUS" Value="【返回值】:处理之前行项目状态" ></Caption>
+    <Caption Name="NEW_LINE_STATUS" Value="【返回值】:处理之后行项目状态" ></Caption>
+    <Caption Name="OLD_ORDER_STATUS" Value="【返回值】:处理之前订单状态" ></Caption>
+    <Caption Name="NEW_ORDER_STATUS" Value="【返回值】:处理之后订单状态" ></Caption>
+    <Caption Name="GLOBAL_GUID" Value="系统GUID【自动生成】" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="【返回值】订单请求数量" ></Caption>
+  </Captions>
+  <WebPage Title="TPROC_0102_ORDER_CORRECT">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="ERR_CODE" ></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" ></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" ></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" ></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" ></GridColumn>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="ORDER_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY_DIFFER" ></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY_DIFFER" ></GridColumn>
+        <GridColumn ColumnName="ORDER_STATUS" ></GridColumn>
+        <GridColumn ColumnName="OLD_ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="NEW_ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="OLD_SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="NEW_SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="OLD_LINE_STATUS" ></GridColumn>
+        <GridColumn ColumnName="NEW_LINE_STATUS" ></GridColumn>
+        <GridColumn ColumnName="OLD_ORDER_STATUS" ></GridColumn>
+        <GridColumn ColumnName="NEW_ORDER_STATUS" ></GridColumn>
+        <GridColumn ColumnName="GLOBAL_GUID" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="ERR_CODE" ></ParamField>
+        <ParamField FieldName="ERR_DESC" ></ParamField>
+        <ParamField FieldName="PROC_STATUS" ></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME" ></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME" ></ParamField>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="ORDER_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="ACT_QTY_DIFFER" ></ParamField>
+        <ParamField FieldName="SHIP_QTY_DIFFER" ></ParamField>
+        <ParamField FieldName="ORDER_STATUS" ></ParamField>
+        <ParamField FieldName="OLD_ACT_QTY" ></ParamField>
+        <ParamField FieldName="NEW_ACT_QTY" ></ParamField>
+        <ParamField FieldName="OLD_SHIP_QTY" ></ParamField>
+        <ParamField FieldName="NEW_SHIP_QTY" ></ParamField>
+        <ParamField FieldName="OLD_LINE_STATUS" ></ParamField>
+        <ParamField FieldName="NEW_LINE_STATUS" ></ParamField>
+        <ParamField FieldName="OLD_ORDER_STATUS" ></ParamField>
+        <ParamField FieldName="NEW_ORDER_STATUS" ></ParamField>
+        <ParamField FieldName="GLOBAL_GUID" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

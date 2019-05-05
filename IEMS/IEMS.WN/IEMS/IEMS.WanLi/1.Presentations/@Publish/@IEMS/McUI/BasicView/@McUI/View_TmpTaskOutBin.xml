@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="BIN_NO" Value="堆垛机编号" ></Caption>
+    <Caption Name="IO_DISA" Value="库位禁用(Y:禁用, N:正常)" ></Caption>
+    <Caption Name="BIN_STA" Value="库位状态（_ :空库，$ :库存，I :预约入库，O :预约出库，T:移库占用,E :空出库位，P :先入库位，B :空笼库位，C :盘差库位）" ></Caption>
+    <Caption Name="BIN_WEI" Value="权重(被放置时的优先顺序,1最先,数字越大越后)" ></Caption>
+    <Caption Name="CRN_NO" Value="库位所在堆垛机编号" ></Caption>
+    <Caption Name="PRODUCT_ID" Value="物料编码" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号" ></Caption>
+    <Caption Name="GRADE" Value="等级" ></Caption>
+    <Caption Name="QTY" Value="数量" ></Caption>
+    <Caption Name="PROD_DATE" Value="生产日期" ></Caption>
+    <Caption Name="PALLET_ID" Value="货笼ID" ></Caption>
+    <Caption Name="LIST_NO" Value="出库单号" ></Caption>
+    <Caption Name="LINE_ID" Value="出库单行ID" ></Caption>
+    <Caption Name="FACTORY_NO" Value="工厂" ></Caption>
+    <Caption Name="STORE_NO" Value="库存地点" ></Caption>
+    <Caption Name="AREA_NO" Value="区域，南北环" ></Caption>
+    <Caption Name="OUT_FLAG" Value="是否可以出库" ></Caption>
+    <Caption Name="CONSIGN_FACTORY" Value="寄售工厂" ></Caption>
+    <Caption Name="CONSIGN_STORE_NO" Value="寄售库存地点" ></Caption>
+    <Caption Name="BIN_TYPE" Value="库存类型 1:单伸库位 2:双伸单笼 3:双伸外伸位 4:双伸内伸位，需移库" ></Caption>
+    <Caption Name="IS_FULL_PALLET" Value="是否满笼" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="笼GUID" ></Caption>
+  </Captions>
+  <WebPage Title="库存信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BIN_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="BIN_NO" ></GridColumn>
+        <GridColumn ColumnName="IO_DISA" ></GridColumn>
+        <GridColumn ColumnName="BIN_STA" ></GridColumn>
+        <GridColumn ColumnName="BIN_WEI" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_ID" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="GRADE" ></GridColumn>
+        <GridColumn ColumnName="QTY" ></GridColumn>
+        <GridColumn ColumnName="PROD_DATE" ></GridColumn>
+        <GridColumn ColumnName="PALLET_ID" ></GridColumn>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="FACTORY_NO" ></GridColumn>
+        <GridColumn ColumnName="STORE_NO" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="OUT_FLAG" ></GridColumn>
+        <GridColumn ColumnName="CONSIGN_FACTORY" ></GridColumn>
+        <GridColumn ColumnName="CONSIGN_STORE_NO" ></GridColumn>
+        <GridColumn ColumnName="BIN_TYPE" ></GridColumn>
+        <GridColumn ColumnName="IS_FULL_PALLET" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="BIN_NO" ></ParamField>
+        <ParamField FieldName="IO_DISA" ></ParamField>
+        <ParamField FieldName="BIN_STA" ></ParamField>
+        <ParamField FieldName="BIN_WEI" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_ID" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="GRADE" ></ParamField>
+        <ParamField FieldName="QTY" ></ParamField>
+        <ParamField FieldName="PROD_DATE" ></ParamField>
+        <ParamField FieldName="PALLET_ID" ></ParamField>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="FACTORY_NO" ></ParamField>
+        <ParamField FieldName="STORE_NO" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="OUT_FLAG" ></ParamField>
+        <ParamField FieldName="CONSIGN_FACTORY" ></ParamField>
+        <ParamField FieldName="CONSIGN_STORE_NO" ></ParamField>
+        <ParamField FieldName="BIN_TYPE" ></ParamField>
+        <ParamField FieldName="IS_FULL_PALLET" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

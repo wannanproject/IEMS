@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@TaskLogQuery" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+SELECT DISTINCT(T.TASK_NO),T2.ORDER_NO,T.IO_TYPE,T.SLOC_NO,T.ELOC_NO,T.PALLET_NO,T.TASK_EXEC_START_DT,T.TASK_EXEC_END_DT 
+FROM Z50_WBS_TASK T
+JOIN Z50_WBS_TASK_CMD T1
+ON T1.TASK_GUID = T.TASK_GUID
+LEFT JOIN WBS_ORDER_LINE T2
+ON T.ORDER_LINE_GUID = T2.ORDER_LINE_GUID
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          T.TASK_NO  like '%'||#where.TASK_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          T2.ORDER_NO  like '%'||#where.ORDER_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.IO_TYPE" prepend="AND">
+          T.IO_TYPE  like '%'||#where.IO_TYPE#||'%'
+        </isNotNull>
+        <isNotNull property="where.SLOC_NO" prepend="AND">
+          T.SLOC_NO  like '%'||#where.SLOC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.ELOC_NO" prepend="AND">
+          T.ELOC_NO  like '%'||#where.ELOC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          T.PALLET_NO  like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.TASK_EXEC_START_DT" prepend="AND">
+          <![CDATA[ T.TASK_EXEC_START_DT >=#where.TASK_EXEC_START_DT#  ]]>
+        </isNotNull>
+        <isNotNull property="where.TASK_EXEC_END_DT" prepend="AND">
+          <![CDATA[ T.TASK_EXEC_END_DT <= 1+#where.TASK_EXEC_END_DT#  ]]>
+        </isNotNull>
+      </dynamic>
+      AND T.SLOC_NO IS NOT NULL AND T.ELOC_NO IS NOT NULL AND T.TASK_EXEC_START_DT IS NOT NULL
+      ORDER BY T.TASK_EXEC_START_DT DESC,T.TASK_NO DESC
+    </select>
+  </statements>
+</sqlMap>

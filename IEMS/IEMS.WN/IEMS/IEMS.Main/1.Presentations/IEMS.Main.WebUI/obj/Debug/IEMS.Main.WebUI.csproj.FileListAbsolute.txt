@@ -1,0 +1,5 @@
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\1.Presentations\IEMS.Main.WebUI\bin\Debug\IEMS.Main.WebUI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\1.Presentations\IEMS.Main.WebUI\bin\Debug\IEMS.Main.WebUI.pdb
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\1.Presentations\IEMS.Main.WebUI\obj\Debug\IEMS.Main.WebUI.csproj.CoreCompileInputs.cache
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\1.Presentations\IEMS.Main.WebUI\obj\Debug\IEMS.Main.WebUI.dll
+E:\Git\HFPLY\DataSource\IEMS\IEMS.Main\1.Presentations\IEMS.Main.WebUI\obj\Debug\IEMS.Main.WebUI.pdb

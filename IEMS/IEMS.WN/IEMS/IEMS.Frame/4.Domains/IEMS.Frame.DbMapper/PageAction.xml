@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.PageActionService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <!--查询用户页面菜单列表-->
+    <select id="GetUserPageActionList" parameterClass="map" resultClass="Row">
+      SELECT t1.* FROM SSP_PAGE_ACTION  t1
+      INNER JOIN V_SSP_USER_ALL_ACTION t2 ON t2.ACTION_ID = t1.OBJID
+      WHERE t1.PAGE_MENU_ID=#PageMenuId# AND t2.USER_ID=#UserId#
+    </select>
+
+    <!--查询用户页面菜单列表-->
+    <select id="GetUserPageAction" parameterClass="map" resultClass="Row">
+      SELECT T1.*,t3.USER_NAME,t3.WORK_BARCODE FROM SSP_PAGE_ACTION  T1
+      INNER JOIN V_SSP_USER_ALL_ACTION T2 ON T2.ACTION_ID = T1.OBJID
+      INNER JOIN SSB_USER T3 ON T2.USER_ID=T3.OBJID
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.PageActionId" prepend="AND">
+          <![CDATA[t1.OBJID = #where.PageActionId#]]>
+        </isNotNull>
+        <isNotNull property="where.UserId" prepend="AND">
+          <![CDATA[t2.USER_ID = #where.UserId#]]>
+        </isNotNull>
+      </dynamic>
+    </select>
+  </statements>
+</sqlMap>

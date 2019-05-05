@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="ViewProduction"   uri="@McUI\ViewProduction.xml"/>
+  <McUI name="PsbProduct"       uri="@McUI\PsbProduct.xml"/>
+  <McUI name="TprocTaskRequst"  uri="@McUI\TprocTaskRequst.xml"/>
+  <McUI name="TprocCmdRequst"   uri="@McUI\TprocCmdRequst.xml"/>
+  <McUI name="ViewOrderDtl"     uri="@McUI\ViewOrderDtl.xml"/>
+</McUIConfig>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<McUIConfig>
+  <McUI name="CrnErr" uri="@McUI\CrnErr.xml"/>
+  <McUI name="CrnErrLog" uri="@McUI\CrnErrLog.xml"/>
+  <McUI name="CrnStatusMonitor" uri="@McUI\CrnStatusMonitor.xml"/>
+</McUIConfig>
+

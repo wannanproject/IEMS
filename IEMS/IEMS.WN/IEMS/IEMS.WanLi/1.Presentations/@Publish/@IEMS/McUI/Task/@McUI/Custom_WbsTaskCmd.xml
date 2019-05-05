@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="指令ID序列" ></Caption>
+    <Caption Name="TASK_GUID" Value="任务GUID" ></Caption>
+    <Caption Name="TASK_NO" Value="任务编号" ></Caption>
+    <Caption Name="CMD_TYPE" Value="指令类型" ></Caption>
+    <Caption Name="SLOC_NO" Value="源库位" ></Caption>
+    <Caption Name="ELOC_NO" Value="目标库位" ></Caption>
+    <Caption Name="SLOC_PLC_NO" Value="源PLC" ></Caption>
+    <Caption Name="ELOC_PLC_NO" Value="目标PLC" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建时间" ></Caption>
+    <Caption Name="EXCUTE_DATE" Value="执行时间" ></Caption>
+    <Caption Name="FINISH_DATE" Value="完成时间" ></Caption>
+    <Caption Name="ERR_NO" Value="错误编码" ></Caption>
+    <Caption Name="ERR_NAME" Value="错误信息" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="物料编号" ></Caption>
+    <Caption Name="TRANSFER_TYPE" Value="输送设备类型" ></Caption>
+    <Caption Name="LOCK_PRODUCT" Value="是否锁定物料输送顺序" ></Caption>
+    <Caption Name="ROUTE_NO" Value="路径编号" ></Caption>
+    <Caption Name="TRANSFER_NO" Value="输送设备号码" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="工装GUID" ></Caption>
+    <Caption Name="FINISH_STATUS" Value="结束状态" ></Caption>
+    <Caption Name="PALLET_NO" Value="工装号" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行项目GUID" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="开始站台类型" ></Caption>
+    <Caption Name="ELOC_TYPE" Value="结束站台类型" ></Caption>
+    <Caption Name="CMD_STEP" Value="指令步骤" ></Caption>
+
+    <Caption Name="fmem" Value="路径" ></Caption>
+    <Caption Name="transfer_type_name" Value="输送设备维护" ></Caption>
+    <Caption Name="order_no" Value="单号" ></Caption>
+    <Caption Name="line_id" Value="行号" ></Caption>
+  </Captions>
+  <WebPage Title="任务指令">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+        <ParamField FieldName="TASK_NO"></ParamField>
+        <ParamField FieldName="CMD_TYPE"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="CMD_TYPE" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ELOC_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="FINISH_STATUS" ></GridColumn>
+        
+        <GridColumn ColumnName="fmem" ></GridColumn>
+        <GridColumn ColumnName="transfer_type_name" ></GridColumn>
+        <GridColumn ColumnName="order_no" ></GridColumn>
+        <GridColumn ColumnName="line_id" ></GridColumn>
+        <GridColumn ColumnName="CMD_STEP" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="SLOC_PLC_NO" ></ParamField>
+        <ParamField FieldName="ELOC_PLC_NO" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="EXCUTE_DATE" ></ParamField>
+        <ParamField FieldName="FINISH_DATE" ></ParamField>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="ERR_NAME" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+        <ParamField FieldName="TRANSFER_TYPE" ></ParamField>
+        <ParamField FieldName="ROUTE_NO" ></ParamField>
+        <ParamField FieldName="TRANSFER_NO" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>     
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE" ></ParamField>     
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

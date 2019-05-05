@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LOC_GROUP_NO" Value="站台组编码" ></Caption>
+    <Caption Name="LOC_GROUP_NAME" Value="站台组名称" ></Caption>
+    <Caption Name="AREA_NO" Value="区域" ></Caption>
+    <!--<Caption Name="PRED_TRANSFER_TYPE_NO" Value="来源输送设备类型" ></Caption>-->
+    <Caption Name="PRED_TRANSFER_NO" Value="来源输送设备编码" ></Caption>
+    <!--<Caption Name="SUCC_TRANSFER_TYPE_NO" Value="目标输送设备类型" ></Caption>-->
+    <Caption Name="SUCC_TRANSFER_NO" Value="目标输送设备编码" ></Caption>
+    <!--<Caption Name="CURR_TRANSFER_TYPE_NO" Value="当前输送设备类型" ></Caption>-->
+    <Caption Name="CURR_TRANSFER_NO" Value="当前输送设备编码" ></Caption>
+    <Caption Name="LOC_COUNT" Value="站台数量" ></Caption>
+    <Caption Name="area_name" Value="区域" ></Caption>
+    <Caption Name="pred_transfer_type_name" Value="来源输送设备类型" ></Caption>
+    <Caption Name="succ_transfer_type_name" Value="目标输送设备类型" ></Caption>
+    <Caption Name="curr_transfer_type_name" Value="当前输送设备类型" ></Caption>
+  </Captions>
+  <WebPage Title="站台分组">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LOC_GROUP_NO"></ParamField>
+        <ParamField FieldName="LOC_GROUP_NAME"></ParamField>
+        <ParamField FieldName="AREA_NO" Type="ComboBox" Nullable="true" Caption="区域"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LOC_GROUP_NO" WIDTH="80"></GridColumn>
+        <GridColumn ColumnName="LOC_GROUP_NAME" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="AREA_NAME" WIDTH="180"></GridColumn>
+        <GridColumn ColumnName="pred_transfer_type_name" ></GridColumn>
+        <GridColumn ColumnName="PRED_TRANSFER_NO" ></GridColumn>
+        <GridColumn ColumnName="succ_transfer_type_name" ></GridColumn>
+        <GridColumn ColumnName="SUCC_TRANSFER_NO" ></GridColumn>
+        <GridColumn ColumnName="curr_transfer_type_name" ></GridColumn>
+        <GridColumn ColumnName="CURR_TRANSFER_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_COUNT" ></GridColumn>
+      </GridColumns>
+    </MainGrid>   
+  </Select>
+</UiConfig>

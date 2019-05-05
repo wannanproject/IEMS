@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBAREA" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       select * from PSB_AREA T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.AREA_NO" prepend="AND">
+           T1.AREA_NO LIKE '%'||#where.AREA_NO#||'%'
+         </isNotNull>
+        <isNotNull property="where.AREA_NAME" prepend="AND">
+          T1.AREA_NAME LIKE '%'||#where.AREA_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.AREA_LEVEL" prepend="AND">
+          T1.AREA_LEVEL LIKE '%'||#where.AREA_LEVEL#||'%'
+        </isNotNull>
+       </dynamic>
+      ORDER BY AREA_NO
+    </select>     
+  </statements>
+</sqlMap>

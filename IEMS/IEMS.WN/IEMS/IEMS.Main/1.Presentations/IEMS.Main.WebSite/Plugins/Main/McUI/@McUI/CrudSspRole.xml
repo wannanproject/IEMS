@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="角色编号"></Caption>
+    <Caption Name="ROLE_NAME" Value="角色名称"></Caption>
+    <Caption Name="REMARK" Value="备注"></Caption>
+  </Captions>
+  <WebPage Title="角色管理">
+  </WebPage>
+  <Crud TableName="SSP_ROLE">
+    <PrimaryKey FieldName="OBJID" Identity="true"></PrimaryKey>
+    <DeleteFlag Value="DELETE_FLAG"></DeleteFlag>
+    <Uniques>
+      <Unique Fields="ROLE_NAME"></Unique>
+    </Uniques>
+    <SeqFields>
+      <SeqField FieldName="OBJID" SeqName="SEQ_SSP_ROLE"></SeqField>
+    </SeqFields>
+  </Crud>
+  <Insert UserField="RECORD_USER_ID" TimeField="RECORD_TIME">
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROLE_NAME"></ParamField>
+        <ParamField FieldName="REMARK" Nullable="true"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+  </Insert>
+  <Update>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROLE_NAME"></ParamField>
+        <ParamField FieldName="REMARK" Nullable="true"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+  </Update>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROLE_NAME"></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="OBJID">
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" Width="100"></GridColumn>
+        <GridColumn ColumnName="ROLE_NAME" Width="200"></GridColumn>
+        <GridColumn ColumnName="REMARK" Width="200"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

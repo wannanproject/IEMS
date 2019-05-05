@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.TaskService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<statements>
+    <!--查询任务列表-->
+    <select id="GetWbsTaskData" parameterClass="map" resultClass="Row">
+        <![CDATA[
+          SELECT t1.task_guid,t1.task_no,t1.emergency, case when t1.io_type='O' then '出库' 
+          when t1.io_type='I' then '入库' when t1.io_type='T' then '移栽' 
+          when t1.io_type='S' then '巷道转移' end as io_type,
+          t1.transfer_no,t1.sloc_no,t1.eloc_no,t1.pallet_no,
+          t1.material_no,t1.order_line_guid,t1.sort_id,t1.creation_date,
+          t1.task_exec_start_dt,t1.task_exec_end_dt,t1.last_update_date,t1.finish_flag,
+          t1.err_no,t1.bin_no,t1.use_qty,t1.task_step,t1.finish_desc,
+          t1.fdesc,t2.ORDER_NO,t2.LINE_ID,t5.TRANSFER_TYPE_NAME||'('||t3.STEP_NAME||')' as STEP_NAME,
+          nvl(L1.LOC_NAME,t1.sloc_no)  as SLOC_NAME ,nvl(L2.LOC_NAME,B1.BIN_PLC_NO) as ELOC_NAME
+          FROM WBS_TASK T1 
+          left join WBS_ORDER_LINE T2 on t1.ORDER_LINE_GUID = t2.ORDER_LINE_GUID
+          left join PSB_TASK_STEP t3 on substr(T1.TASK_STEP,3,2) = t3.STEP_NO
+          left join psb_transfer_type t5 ON substr(T1.TASK_STEP,1,2) = T5.TRANSFER_TYPE_NO
+          LEFT JOIN PSB_LOC L1 on L1.LOC_NO=t1.sloc_no
+          LEFT JOIN PSB_LOC L2 on L2.LOC_NO=t1.eloc_no
+          LEFT JOIN PSB_BIN_STATUS B1 ON B1.BIN_NO = T1.ELOC_NO
+         
+        ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          <![CDATA[t1.task_no = #where.TASK_NO#]]>
+        </isNotNull>
+        <isNotNull property="where.BinNo" prepend="AND">
+          <![CDATA[t1.bin_no = #where.BinNo#]]>
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          <![CDATA[t1.PALLET_NO like '%'|| #where.PALLET_NO# ||'%'  ]]>
+        </isNotNull>
+        <isNotNull property="where.ORDER_NO" prepend="AND">
+          <![CDATA[T2.ORDER_NO like '%'|| #where.ORDER_NO# ||'%'  ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+  <select id="GetTaskData" parameterClass="map" resultClass="Row">
+    <![CDATA[
+         SELECT T.TASK_GUID,T.TASK_NO,
+                CASE T.IO_TYPE WHEN 'I' THEN '入库' WHEN 'O' THEN '出库' WHEN 'M' THEN '移库' END IO_TYPE,
+                T.TRANSFER_NO,
+                NVL(T2.BIN_PLC_NO,T3.LOC_PLC_NO) SLOC_NO,
+                NVL(T4.BIN_PLC_NO,T5.LOC_PLC_NO) ELOC_NO,
+                T.PALLET_NO,T.CREATION_DATE,T.TASK_EXEC_END_DT,
+                NVL(T1.OBJID,0) OBJID,T1.SLOC_PLC_NO,T1.ELOC_PLC_NO,
+                T1.TRANSFER_NO EQUIP_NO,
+                CASE WHEN T1.CMD_STEP = '00' THEN '等待' WHEN T1.CMD_STEP = '02' THEN '执行' WHEN T1.CMD_STEP IS NULL THEN '未生成指令' END CMD_STEP
+          FROM WBS_TASK T
+          LEFT JOIN WBS_TASK_CMD T1
+            ON T1.TASK_GUID = T.TASK_GUID
+          LEFT JOIN PSB_BIN_STATUS T2
+            ON T2.BIN_NO = T.SLOC_NO
+          LEFT JOIN PSB_LOC T3
+            ON T3.LOC_NO = T.SLOC_NO
+          LEFT JOIN PSB_BIN_STATUS T4
+            ON T4.BIN_NO = T.ELOC_NO
+          LEFT JOIN PSB_LOC T5
+            ON T5.LOC_NO = T.ELOC_NO
+          WHERE (T.TRANSFER_NO IS NOT NULL
+            OR T1.TRANSFER_TYPE = 10)
+        ]]>
+    <dynamic prepend="">
+      <isNotNull property="where.TASK_NO" prepend="AND">
+        <![CDATA[t.TASK_NO = #where.TASK_NO#]]>
+      </isNotNull>
+      <isNotNull property="where.PALLET_NO" prepend="AND">
+        <![CDATA[t.PALLET_NO like '%'|| #where.PALLET_NO# ||'%']]>
+      </isNotNull>
+    </dynamic>
+    <isNotNull property="OrderString" prepend=" ">
+      ORDER BY $OrderString$
+    </isNotNull>
+  </select>
+  
+
+  <procedure id="pack_3010_system_operation" parameterClass = "map" resultClass="string">
+    pack_3010_system_operation.manual_task
+    @{ILocNo, column=I_LOC_NO}
+    @{IPalletNo, column=I_PALLET_NO}
+  </procedure>
+  </statements>
+</sqlMap>

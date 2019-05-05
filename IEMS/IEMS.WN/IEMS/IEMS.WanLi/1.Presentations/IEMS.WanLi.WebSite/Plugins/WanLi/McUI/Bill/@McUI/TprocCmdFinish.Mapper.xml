@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@TprocCmdFinish" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+select * from tproc_0300_cmd_finish t 
+left join psb_loc t1
+on t.curr_loc_no = t1.loc_no
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.LOC_PLC_NO" prepend="AND">
+          t1.LOC_PLC_NO like '%'||#where.LOC_PLC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          t.PALLET_NO like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.TASK_NO" prepend="AND">
+          t.TASK_NO like '%'||#where.TASK_NO#||'%'
+        </isNotNull>
+      </dynamic>
+      <![CDATA[ order by t.OBJID desc  ]]>
+    </select>
+
+     <select id="Select@TprocCmdFinish@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+             select * from tproc_0300_cmd_finish t 
+left join psb_loc t1
+on t.curr_loc_no = t1.loc_no
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.objid" prepend="AND">
+           t.objid like '%'||#where.objid#||'%'
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

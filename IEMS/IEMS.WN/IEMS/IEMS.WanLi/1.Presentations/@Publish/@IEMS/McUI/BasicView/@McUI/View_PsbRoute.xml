@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="ROUTE_NO" Value="ROUTE_NO" ></Caption>
+    <Caption Name="SLOC_AREA" Value="发起库位区域" ></Caption>
+    <Caption Name="SLOC_TYPE" Value="发起库位类型" ></Caption>
+    <Caption Name="ELOC_TYPE" Value="目标库位类型" ></Caption>
+    <Caption Name="ELOC_AREA" Value="目标库位区域" ></Caption>
+    <Caption Name="DEFAULT_PRIORITY" Value="优先级" ></Caption>
+    <Caption Name="ROUTE_TYPE" Value="1: 正常 2：叠盘路径 3：异常路径" ></Caption>
+    <Caption Name="IO_TYPE" Value="IT :    OS   :   IT/OS" ></Caption>
+    <Caption Name="FMEM" Value="备注" ></Caption>
+    <Caption Name="TRANS_TYPE_NO" Value="10:堆垛机  20：输送线  30：AGV    40：RGV 50：EMS" ></Caption>
+    <Caption Name="USED_FLAG" Value="1:使用 0：未用" ></Caption>
+    <Caption Name="TERMINAL_FLAG" Value="1：末端路径  0：节点路径 " ></Caption>
+    <Caption Name="LIMIT_CAPACITY" Value="限制流量" ></Caption>
+    <Caption Name="CURR_CAPACITY" Value="当前流量" ></Caption>
+    <Caption Name="CLOGGED_FLAG" Value="CLOGGED_FLAG" ></Caption>
+  </Captions>
+  <WebPage Title="路径设置">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="ROUTE_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="SLOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="ELOC_TYPE" ></GridColumn>
+        <GridColumn ColumnName="ELOC_AREA" ></GridColumn>
+        <GridColumn ColumnName="DEFAULT_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="ROUTE_TYPE" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="FMEM" ></GridColumn>
+        <GridColumn ColumnName="TRANS_TYPE_NO" ></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" ></GridColumn>
+        <GridColumn ColumnName="TERMINAL_FLAG" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_CAPACITY" ></GridColumn>
+        <GridColumn ColumnName="CURR_CAPACITY" ></GridColumn>
+        <GridColumn ColumnName="CLOGGED_FLAG" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="ROUTE_NO" ></ParamField>
+        <ParamField FieldName="SLOC_AREA" ></ParamField>
+        <ParamField FieldName="SLOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_TYPE" ></ParamField>
+        <ParamField FieldName="ELOC_AREA" ></ParamField>
+        <ParamField FieldName="DEFAULT_PRIORITY" ></ParamField>
+        <ParamField FieldName="ROUTE_TYPE" ></ParamField>
+        <ParamField FieldName="IO_TYPE" ></ParamField>
+        <ParamField FieldName="FMEM" ></ParamField>
+        <ParamField FieldName="TRANS_TYPE_NO" ></ParamField>
+        <ParamField FieldName="USED_FLAG" ></ParamField>
+        <ParamField FieldName="TERMINAL_FLAG" ></ParamField>
+        <ParamField FieldName="LIMIT_CAPACITY" ></ParamField>
+        <ParamField FieldName="CURR_CAPACITY" ></ParamField>
+        <ParamField FieldName="CLOGGED_FLAG" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

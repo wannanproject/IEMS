@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBPALLET" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select * from( SELECT PALLET_NO,PALLET_TYPE,PALLET_NAME,
+              CASE USED_FLAG WHEN '1' THEN '可用' ELSE '不可用' END USED_FLAG,
+              PRODUCT_GUID,LAST_PRODUCT_GUID,BINDING_TIME,
+              CASE LOAD_STATUS WHEN 1 THEN '有载' WHEN 0 THEN '无载' ELSE '异常' END LOAD_STATUS,
+              FACTORY,CREATION_DATE,CREATION_USER FROM PSB_PALLET T1 
+              union 
+        SELECT PALLET_NO,PALLET_TYPE,PALLET_NAME,
+              CASE USED_FLAG WHEN '1' THEN '可用' ELSE '不可用' END USED_FLAG,
+              PRODUCT_GUID,LAST_PRODUCT_GUID,BINDING_TIME,
+              CASE LOAD_STATUS WHEN 1 THEN '有载' WHEN 0 THEN '无载' ELSE '异常' END LOAD_STATUS,
+              FACTORY,CREATION_DATE,CREATION_USER FROM PSB_PALLET_STATOR T2 ) m
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          m.PALLET_NO LIKE '%'||#where.PALLET_NO#||'%' 
+        </isNotNull>
+       </dynamic>
+      ORDER BY PALLET_NO
+    </select>   
+  </statements>
+</sqlMap>

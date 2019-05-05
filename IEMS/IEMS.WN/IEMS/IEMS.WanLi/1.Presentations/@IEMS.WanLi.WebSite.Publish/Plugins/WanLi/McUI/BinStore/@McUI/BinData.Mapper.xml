@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+     <select id="Select@BinData" parameterClass="map" resultClass="row">
+      
+       <![CDATA[ 
+            SELECT T.BIN_PLC_NO,
+                   WPD.MATERIAL_NO,
+                   WPD.MATER_NAME,
+                   WPD.MATER_MKIND,
+                   WPD.MATER_TYPE,
+                   WPD.MATER_SPEC,
+                   WPD.PRODUCTION_DATE,
+                   WPD.PALLET_NO1,
+                   WPD.PALLET_NO2,
+                   WB.CREATION_DATE
+              FROM PSB_BIN_STATUS T
+             INNER JOIN WBS_BIN WB
+                ON WB.BIN_NO = T.BIN_NO
+              JOIN WBS_PACKAGE_DATA WPD
+                ON WPD.PACKAGE_GUID = WB.PACKAGE_GUID
+
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.MATERIAL_NO" prepend="AND">
+           WPD.MATERIAL_NO like '%'||#where.MATERIAL_NO#||'%'
+         </isNotNull>
+         <isNotNull property="where.BIN_PLC_NO" prepend="AND">
+           T.BIN_PLC_NO like '%'||#where.BIN_PLC_NO#||'%'
+         </isNotNull>
+         <isNotNull property="where.PALLET_NO1" prepend="AND">
+           WPD.PALLET_NO1 like '%'||#where.PALLET_NO1#||'%'
+         </isNotNull>
+         <isNotNull property="where.PALLET_NO2" prepend="AND">
+           WPD.PALLET_NO1 like '%'||#where.PALLET_NO1#||'%'
+         </isNotNull>
+         <isNotNull property="where.BTIME" prepend="AND">
+           <![CDATA[ WB.CREATION_DATE >=#where.BTIME#  ]]>
+         </isNotNull>
+         <isNotNull property="where.ETIME" prepend="AND">
+           <![CDATA[ WB.CREATION_DATE <= 1+#where.ETIME#  ]]>
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="Order By" prepend="">
+         ORDER BY T.BIN_PLC_NO
+       </isNotNull>
+     </select>
+  </statements>
+</sqlMap>

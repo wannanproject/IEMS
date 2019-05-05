@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBLOCGROUP" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT t1.loc_group_no,t1.loc_group_name,t1.area_no,
+      t1.pred_transfer_type_no,t1.succ_transfer_type_no,t1.curr_transfer_type_no,
+      t1.pred_transfer_no,t1.succ_transfer_no,t1.curr_transfer_no,
+      t1.loc_count,t2.area_name,
+      t3.transfer_type_name AS pred_transfer_type_name,t4.transfer_type_name AS succ_transfer_type_name,t5.transfer_type_name AS curr_transfer_type_name
+      FROM PSB_LOC_GROUP T1
+      LEFT JOIN psb_area t2 ON t1.area_no = t2.area_no
+      LEFT JOIN psb_transfer_type t3 ON t1.pred_transfer_type_no = t3.transfer_type_no
+      LEFT JOIN psb_transfer_type t4 ON t1.succ_transfer_type_no = t4.transfer_type_no
+      LEFT JOIN psb_transfer_type t5 ON t1.curr_transfer_type_no = t5.transfer_type_no       
+      ]]>
+      <dynamic prepend="WHERE">
+          <isNotNull property="where.LOC_GROUP_NO" prepend="AND">
+            T1.LOC_GROUP_NO LIKE '%'||#where.LOC_GROUP_NO#||'%'
+          </isNotNull>
+          <isNotNull property="where.LOC_GROUP_NAME" prepend="AND">
+            T1.LOC_GROUP_NAME LIKE '%'||#where.LOC_GROUP_NAME#||'%'
+          </isNotNull>
+          <isNotNull property="where.AREA_NO" prepend="AND">
+            T1.AREA_NO = #where.AREA_NO#
+          </isNotNull>
+      </dynamic>
+       ORDER BY LOC_GROUP_NO
+     </select>
+     <!--查询区域信息，ID值固定为GetComboBoxData@Select@VIEW_PSBAREA@AREA_NO字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@VIEW_PSBLOCGROUP@AREA_NO" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+         select t1.area_no sskey,t1.area_name ssValue from PSB_AREA T1 ORDER BY t1.area_no
+      ]]>
+     </select>
+  </statements>
+</sqlMap>

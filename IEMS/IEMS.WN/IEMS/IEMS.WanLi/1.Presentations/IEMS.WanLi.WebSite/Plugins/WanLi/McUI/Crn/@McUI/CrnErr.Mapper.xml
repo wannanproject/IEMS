@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+     <select id="Select@CrnErr" parameterClass="map" resultClass="row">    
+      <![CDATA[ 
+      select * from PSB_CRN_ERR t where 1=1
+      ]]>
+       <dynamic prepend="">
+         <isNotNull property="where.ERR_NO" prepend="AND">
+           <![CDATA[ T.ERR_NO = #where.ERR_NO# ]]>
+         </isNotNull>
+       </dynamic>
+       <isNotNull property="OrderString" prepend="">
+         ORDER BY T.ERR_NO
+       </isNotNull>
+     </select>
+   </statements>
+</sqlMap>

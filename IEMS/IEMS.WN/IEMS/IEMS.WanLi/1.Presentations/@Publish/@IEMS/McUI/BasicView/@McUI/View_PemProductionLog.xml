@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="OBJID" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="REQUEST_NO" Value="REQUEST_NO" ></Caption>
+    <Caption Name="PLAN_NO" Value="PLAN_NO" ></Caption>
+    <Caption Name="SLOC_MES_NO" Value="SLOC_MES_NO" ></Caption>
+    <Caption Name="SLOC_NO" Value="SLOC_NO" ></Caption>
+    <Caption Name="BATCH_NO" Value="BATCH_NO" ></Caption>
+    <Caption Name="PALLET_NO" Value="PALLET_NO" ></Caption>
+    <Caption Name="PRODUCT_NO" Value="PRODUCT_NO" ></Caption>
+    <Caption Name="QTY" Value="QTY" ></Caption>
+    <Caption Name="CREATE_TIME" Value="CREATE_TIME" ></Caption>
+    <Caption Name="TLOC_MES_NO" Value="TLOC_MES_NO" ></Caption>
+    <Caption Name="TLOC_NO" Value="TLOC_NO" ></Caption>
+    <Caption Name="PASS_FLAG" Value="PASS_FLAG" ></Caption>
+    <Caption Name="ORDER_FLAG" Value="ORDER_FLAG" ></Caption>
+    <Caption Name="DEL_FLAG" Value="DEL_FLAG" ></Caption>
+    <Caption Name="LOG_DATE" Value="LOG_DATE" ></Caption>
+    <Caption Name="LOG_TYPE" Value="1:新增 2：修改  3:删除" ></Caption>
+  </Captions>
+  <WebPage Title="PEM_PRODUCTION_LOG">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_NO" ></GridColumn>
+        <GridColumn ColumnName="PLAN_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_NO" ></GridColumn>
+        <GridColumn ColumnName="QTY" ></GridColumn>
+        <GridColumn ColumnName="CREATE_TIME" ></GridColumn>
+        <GridColumn ColumnName="TLOC_MES_NO" ></GridColumn>
+        <GridColumn ColumnName="TLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="PASS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ORDER_FLAG" ></GridColumn>
+        <GridColumn ColumnName="DEL_FLAG" ></GridColumn>
+        <GridColumn ColumnName="LOG_DATE" ></GridColumn>
+        <GridColumn ColumnName="LOG_TYPE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="REQUEST_NO" ></ParamField>
+        <ParamField FieldName="PLAN_NO" ></ParamField>
+        <ParamField FieldName="SLOC_MES_NO" ></ParamField>
+        <ParamField FieldName="SLOC_NO" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_NO" ></ParamField>
+        <ParamField FieldName="QTY" ></ParamField>
+        <ParamField FieldName="CREATE_TIME" ></ParamField>
+        <ParamField FieldName="TLOC_MES_NO" ></ParamField>
+        <ParamField FieldName="TLOC_NO" ></ParamField>
+        <ParamField FieldName="PASS_FLAG" ></ParamField>
+        <ParamField FieldName="ORDER_FLAG" ></ParamField>
+        <ParamField FieldName="DEL_FLAG" ></ParamField>
+        <ParamField FieldName="LOG_DATE" ></ParamField>
+        <ParamField FieldName="LOG_TYPE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

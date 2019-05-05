@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_WbsWaitingDet" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM WBS_WAITING_DET T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.PALLET_NO" prepend="AND">
+           T1.PALLET_NO LIKE '%'||#where.PALLET_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY PALLET_NO
+     </select>
+     <select id="Select@View_WbsWaitingDet@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM WBS_WAITING_DET T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.PALLET_NO" prepend = "AND">
+           T1.PALLET_NO = #where.PALLET_NO#
+         </isNotNull><isNotNull property="where.PRODUCT_GUID" prepend = "AND">
+           T1.PRODUCT_GUID = #where.PRODUCT_GUID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

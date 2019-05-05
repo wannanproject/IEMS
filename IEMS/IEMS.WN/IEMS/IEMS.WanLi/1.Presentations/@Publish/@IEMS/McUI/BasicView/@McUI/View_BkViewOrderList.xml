@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LIST_NO" Value="LIST_NO" ></Caption>
+    <Caption Name="STATUS" Value="STATUS" ></Caption>
+    <Caption Name="SOURCE_BY" Value="SOURCE_BY" ></Caption>
+    <Caption Name="CREATION_DATE" Value="CREATION_DATE" ></Caption>
+    <Caption Name="CREATED_BY" Value="CREATED_BY" ></Caption>
+    <Caption Name="LAST_UPDATE_DATE" Value="LAST_UPDATE_DATE" ></Caption>
+    <Caption Name="LAST_UPDATED_BY" Value="LAST_UPDATED_BY" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="OUT_PRIORITY" Value="OUT_PRIORITY" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+    <Caption Name="BK_OBJID" Value="主键" ></Caption>
+    <Caption Name="BK_PROC_CRUD" Value="日志类型   C:创建  R:查询 U:修改 D:删除" ></Caption>
+    <Caption Name="BK_PROC_TIME" Value="日志创建时间" ></Caption>
+    <Caption Name="BK_PROC_BY" Value="日志创建者" ></Caption>
+    <Caption Name="BK_PROC_SYS" Value="备份系统" ></Caption>
+    <Caption Name="BK_PROC_METHOD" Value="备份函数" ></Caption>
+    <Caption Name="BK_PROC_POINT" Value="备份位置" ></Caption>
+    <Caption Name="BK_PROC_OBJID" Value="日志唯一值" ></Caption>
+  </Captions>
+  <WebPage Title="BK_VIEW_ORDER_LIST">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="BK_OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="STATUS" ></GridColumn>
+        <GridColumn ColumnName="SOURCE_BY" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="CREATED_BY" ></GridColumn>
+        <GridColumn ColumnName="LAST_UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="LAST_UPDATED_BY" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="OUT_PRIORITY" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BK_OBJID" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_CRUD" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_TIME" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_BY" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_SYS" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_METHOD" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_POINT" ></GridColumn>
+        <GridColumn ColumnName="BK_PROC_OBJID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="STATUS" ></ParamField>
+        <ParamField FieldName="SOURCE_BY" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="CREATED_BY" ></ParamField>
+        <ParamField FieldName="LAST_UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="LAST_UPDATED_BY" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="OUT_PRIORITY" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+        <ParamField FieldName="BK_OBJID" ></ParamField>
+        <ParamField FieldName="BK_PROC_CRUD" ></ParamField>
+        <ParamField FieldName="BK_PROC_TIME" ></ParamField>
+        <ParamField FieldName="BK_PROC_BY" ></ParamField>
+        <ParamField FieldName="BK_PROC_SYS" ></ParamField>
+        <ParamField FieldName="BK_PROC_METHOD" ></ParamField>
+        <ParamField FieldName="BK_PROC_POINT" ></ParamField>
+        <ParamField FieldName="BK_PROC_OBJID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

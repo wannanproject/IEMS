@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PACKAGE_GUID" Value="当前包装单位唯一识别码" ></Caption>
+    <Caption Name="PALLET_NO" Value="货笼ID" ></Caption>
+    <Caption Name="LOC_NO" Value="发起站台" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="单号" ></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料编码" ></Caption>
+    <Caption Name="PRODUCT_GRADE" Value="品级" ></Caption>
+    <Caption Name="PRODUCT_QTY" Value="数量" ></Caption>
+    <Caption Name="PRODUCT_STATUS" Value="状态 （0：待入库 ,1：正在入库 ）" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建日期" ></Caption>
+    <Caption Name="CREATION_USER" Value="创建人" ></Caption>
+    <Caption Name="BATCH_NO" Value="批次号" ></Caption>
+    <Caption Name="PRODUCT_DATE" Value="货笼最早生产时间" ></Caption>
+    <Caption Name="DEADLINE_DATE" Value="到期时间" ></Caption>
+    <Caption Name="DEL_FLAG" Value="删除标志  1：删除  0：正常" ></Caption>
+    <Caption Name="PALLET_VALID" Value="检验有效性  PSB_PACKAGE_TYPE" ></Caption>
+    <Caption Name="PACKAGE_DATE" Value="打包时间" ></Caption>
+    <Caption Name="DEL_DATE" Value="删除时间" ></Caption>
+    <Caption Name="TASK_GUID" Value="任务GUID" ></Caption>
+  </Captions>
+  <WebPage Title="入库资料主表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PACKAGE_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GRADE" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_QTY" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_STATUS" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="CREATION_USER" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_DATE" ></GridColumn>
+        <GridColumn ColumnName="DEADLINE_DATE" ></GridColumn>
+        <GridColumn ColumnName="DEL_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_DATE" ></GridColumn>
+        <GridColumn ColumnName="DEL_DATE" ></GridColumn>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="LOC_NO" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="MATERIAL_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_GRADE" ></ParamField>
+        <ParamField FieldName="PRODUCT_QTY" ></ParamField>
+        <ParamField FieldName="PRODUCT_STATUS" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="CREATION_USER" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="PRODUCT_DATE" ></ParamField>
+        <ParamField FieldName="DEADLINE_DATE" ></ParamField>
+        <ParamField FieldName="DEL_FLAG" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+        <ParamField FieldName="PACKAGE_DATE" ></ParamField>
+        <ParamField FieldName="DEL_DATE" ></ParamField>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="用户编号" ></Caption>
+    <Caption Name="USER_NAME" Value="用户名称" ></Caption>
+    <Caption Name="USER_PWD" Value="用户密码" ></Caption>
+    <Caption Name="REAL_NAME" Value="真实姓名" ></Caption>
+    <Caption Name="SEX" Value="性别" ></Caption>
+    <Caption Name="TELEPHONE" Value="电话" ></Caption>
+    <Caption Name="WORK_BARCODE" Value="用户工号" ></Caption>
+    <Caption Name="DEPT_ID" Value="所属部门" ></Caption>
+    <Caption Name="WORK_ID" Value="所属岗位" ></Caption>
+    <Caption Name="SHIFT_ID" Value="所属班次" ></Caption>
+    <Caption Name="CLASS_ID" Value="所属班组" ></Caption>
+    <Caption Name="WORKSHOP_ID" Value="所属车间" ></Caption>
+    <Caption Name="DELETE_FLAG" Value="删除标志" ></Caption>
+    <Caption Name="REMARK" Value="备注" ></Caption>
+    <Caption Name="IS_EMPLOYEE" Value="普通员工" ></Caption>
+    <Caption Name="BAKUP_FLAG" Value="备份标识" ></Caption>
+    <Caption Name="BAKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="RECORD_USER_ID" Value="记录人" ></Caption>
+    <Caption Name="RECORD_TIME" Value="记录时间" ></Caption>
+    <Caption Name="FOREIGN_NO" Value="外部接口编号" ></Caption>
+    <Caption Name="SEQ_INDEX" Value="排序列" ></Caption>
+    <Caption Name="BACKUP_FLAG" Value="备份标志" ></Caption>
+    <Caption Name="BACKUP_TIME" Value="备份时间" ></Caption>
+    <Caption Name="USER_NO" Value="用户名称，用户手持等登录" ></Caption>
+  </Captions>
+  <WebPage Title="系统基础资料-人员信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="USER_NAME" ></GridColumn>
+        <GridColumn ColumnName="USER_PWD" ></GridColumn>
+        <GridColumn ColumnName="REAL_NAME" ></GridColumn>
+        <GridColumn ColumnName="SEX" ></GridColumn>
+        <GridColumn ColumnName="TELEPHONE" ></GridColumn>
+        <GridColumn ColumnName="WORK_BARCODE" ></GridColumn>
+        <GridColumn ColumnName="DEPT_ID" ></GridColumn>
+        <GridColumn ColumnName="WORK_ID" ></GridColumn>
+        <GridColumn ColumnName="SHIFT_ID" ></GridColumn>
+        <GridColumn ColumnName="CLASS_ID" ></GridColumn>
+        <GridColumn ColumnName="WORKSHOP_ID" ></GridColumn>
+        <GridColumn ColumnName="DELETE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="REMARK" ></GridColumn>
+        <GridColumn ColumnName="IS_EMPLOYEE" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BAKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="RECORD_USER_ID" ></GridColumn>
+        <GridColumn ColumnName="RECORD_TIME" ></GridColumn>
+        <GridColumn ColumnName="FOREIGN_NO" ></GridColumn>
+        <GridColumn ColumnName="SEQ_INDEX" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="BACKUP_TIME" ></GridColumn>
+        <GridColumn ColumnName="USER_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="USER_NAME" ></ParamField>
+        <ParamField FieldName="USER_PWD" ></ParamField>
+        <ParamField FieldName="REAL_NAME" ></ParamField>
+        <ParamField FieldName="SEX" ></ParamField>
+        <ParamField FieldName="TELEPHONE" ></ParamField>
+        <ParamField FieldName="WORK_BARCODE" ></ParamField>
+        <ParamField FieldName="DEPT_ID" ></ParamField>
+        <ParamField FieldName="WORK_ID" ></ParamField>
+        <ParamField FieldName="SHIFT_ID" ></ParamField>
+        <ParamField FieldName="CLASS_ID" ></ParamField>
+        <ParamField FieldName="WORKSHOP_ID" ></ParamField>
+        <ParamField FieldName="DELETE_FLAG" ></ParamField>
+        <ParamField FieldName="REMARK" ></ParamField>
+        <ParamField FieldName="IS_EMPLOYEE" ></ParamField>
+        <ParamField FieldName="BAKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BAKUP_TIME" ></ParamField>
+        <ParamField FieldName="RECORD_USER_ID" ></ParamField>
+        <ParamField FieldName="RECORD_TIME" ></ParamField>
+        <ParamField FieldName="FOREIGN_NO" ></ParamField>
+        <ParamField FieldName="SEQ_INDEX" ></ParamField>
+        <ParamField FieldName="BACKUP_FLAG" ></ParamField>
+        <ParamField FieldName="BACKUP_TIME" ></ParamField>
+        <ParamField FieldName="USER_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

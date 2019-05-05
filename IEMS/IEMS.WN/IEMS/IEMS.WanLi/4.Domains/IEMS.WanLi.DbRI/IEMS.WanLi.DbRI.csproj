@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{766EF1F3-0D9C-4EA8-947D-6A167583769D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.WanLi.DbRI</RootNamespace>
+    <AssemblyName>IEMS.WanLi.DbRI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Procedure\Service\Proc0100TaskRequestService.cs" />
+    <Compile Include="Procedure\Service\Proc0200CmdRequestService.cs" />
+    <Compile Include="Procedure\Service\Proc0303CmdFinishService.cs" />
+    <Compile Include="Procedure\Service\Proc3001DataBackupService.cs" />
+    <Compile Include="Procedure\Service\ProcGetBinstoreBatchnoService.cs" />
+    <Compile Include="Procedure\Service\ProcGetBinstoreService.cs" />
+    <Compile Include="Procedure\Service\ProcTaskFinishService.cs" />
+    <Compile Include="Procedure\Service\ProcWmsDeleteBinService.cs" />
+    <Compile Include="Procedure\Service\ProcWmsUpdateSrmAreaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequence\Service\ProcWmsDeleteCmdService.cs" />
+    <Compile Include="Sequence\Service\ProcWmsDeleteTaskService.cs" />
+    <Compile Include="Sequence\Service\ProcWmsFinishCmdService.cs" />
+    <Compile Include="Sequence\Service\SeqBkViewOrderListService.cs" />
+    <Compile Include="Sequence\Service\SeqTproc0100TaskRequestService.cs" />
+    <Compile Include="Sequence\Service\SeqTproc0200CmdRequestService.cs" />
+    <Compile Include="Sequence\Service\SeqTproc0303CmdFinishService.cs" />
+    <Compile Include="Sequence\Service\SeqTprocDataBackupService.cs" />
+    <Compile Include="Sequence\Service\SeqWbsOrderLineService.cs" />
+    <Compile Include="Sequence\Service\SeqWbsOrderService.cs" />
+    <Compile Include="Sequence\Service\SeqWbsTaskCmdService.cs" />
+    <Compile Include="Sequence\Service\SeqWbsTaskManualService.cs" />
+    <Compile Include="Sequence\Service\SeqWbsTaskService.cs" />
+    <Compile Include="Sequence\Service\SeqZ50WbsTaskService.cs" />
+    <Compile Include="Table\Service\PemCrnForkStatusService.cs" />
+    <Compile Include="Table\Service\PsbBinStatusService.cs" />
+    <Compile Include="Table\Service\PsbCrnForkService.cs" />
+    <Compile Include="Table\Service\PsbCrnService.cs" />
+    <Compile Include="Table\Service\PsbGradeService.cs" />
+    <Compile Include="Table\Service\PsbLocService.cs" />
+    <Compile Include="Table\Service\PsbLocTypeService.cs" />
+    <Compile Include="Table\Service\PsbMaterialService.cs" />
+    <Compile Include="Table\Service\PsbMinoService.cs" />
+    <Compile Include="Table\Service\PsbPalletService.cs" />
+    <Compile Include="Table\Service\Tproc0100TaskRequestService.cs" />
+    <Compile Include="Table\Service\Tproc0200CmdRequestService.cs" />
+    <Compile Include="Table\Service\Tproc0303CmdFinishService.cs" />
+    <Compile Include="Table\Service\TprocDataBackupService.cs" />
+    <Compile Include="Table\Service\WbsOrderLineService.cs" />
+    <Compile Include="Table\Service\WbsOrderService.cs" />
+    <Compile Include="Table\Service\WbsTaskCmdService.cs" />
+    <Compile Include="Table\Service\WbsTaskService.cs" />
+    <Compile Include="Table\Service\Z30BinStoreService.cs" />
+    <Compile Include="Table\Service\Z30Loc0101OrderMonitorService.cs" />
+    <Compile Include="Table\Service\Z30Loc0102OrderMonitorService.cs" />
+    <Compile Include="Table\Service\Z30Loc0301CmdMonitorService.cs" />
+    <Compile Include="Table\Service\Z50WbsTaskCmdService.cs" />
+    <Compile Include="Table\Service\Z50WbsTaskService.cs" />
+    <Compile Include="View\Service\ViewPalletService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IEMS.WanLi.Entity\IEMS.WanLi.Entity.csproj">
+      <Project>{b322627c-9f72-417b-bff8-754319e5bcf2}</Project>
+      <Name>IEMS.WanLi.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbGrade.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\Proc0301CmdCreate.xml" />
+    <EmbeddedResource Include="Procedure\Mapper\ProcTaskFinish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sequence\Mapper\SeqBkViewOrderList.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqTprocDataBackup.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqWbsOrder.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqWbsOrderLine.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqWbsTaskCmd.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqWbsTaskManual.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Mapper\ViewPallet.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbLoc.xml" />
+    <EmbeddedResource Include="Table\Mapper\WbsOrder.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbCrn.xml" />
+    <EmbeddedResource Include="Table\Mapper\TprocDataBackup.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbPallet.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\WbsOrderLine.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbMino.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbBinStatus.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbLocType.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\Z30Loc0101OrderMonitor.xml" />
+    <EmbeddedResource Include="Table\Mapper\Z30Loc0102OrderMonitor.xml" />
+    <EmbeddedResource Include="Table\Mapper\Z30Loc0301CmdMonitor.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\Z50WbsTask.xml" />
+    <EmbeddedResource Include="Table\Mapper\Z50WbsTaskCmd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\Proc0303CmdFinish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sequence\Mapper\SeqTproc0303CmdFinish.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqZ50WbsTask.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\Tproc0303CmdFinish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\ProcGetBinstore.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\Z30BinStore.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\ProcGetBinstoreBatchno.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\WbsTask.xml" />
+    <EmbeddedResource Include="Table\Mapper\WbsTaskCmd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sequence\Mapper\ProcWmsDeleteCmd.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\ProcWmsDeleteTask.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\ProcWmsFinishCmd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sequence\Mapper\SeqTproc0100TaskRequest.xml" />
+    <EmbeddedResource Include="Sequence\Mapper\SeqTproc0200CmdRequest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\Tproc0100TaskRequest.xml" />
+    <EmbeddedResource Include="Table\Mapper\Tproc0200CmdRequest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\Proc0100TaskRequest.xml" />
+    <EmbeddedResource Include="Procedure\Mapper\Proc0200CmdRequest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbCrnFork.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PemCrnForkStatus.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\ProcWmsUpdateSrmArea.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sequence\Mapper\SeqWbsTask.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Procedure\Mapper\ProcWmsDeleteBin.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Table\Mapper\PsbMaterial.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

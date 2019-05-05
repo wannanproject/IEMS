@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="车间编号"></Caption>
+    <Caption Name="WORKSHOP_NAME" Value="车间名称"></Caption>
+    <Caption Name="REMARK" Value="备注"></Caption>
+  </Captions>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="WORKSHOP_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="OBJID">
+      <GridColumns>
+        <GridColumn ColumnName="OBJID"></GridColumn>
+        <GridColumn ColumnName="WORKSHOP_NAME"></GridColumn>
+        <GridColumn ColumnName="REMARK"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

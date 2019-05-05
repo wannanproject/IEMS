@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@ExChangeAreaDATA" parameterClass="map" resultClass="row">
+
+      <![CDATA[ 
+       select t1.loc_name,t.loc_no,t.pallet_no,t.loaded_status,t.free_flag,t.loc_status 
+       from PEM_LOC_STATUS t 
+       left join psb_loc t1
+       on t.loc_no = t1.loc_no
+       where t1.loc_type_no in(9001,6001)
+      ]]>
+    <!--  <dynamic prepend="where">
+        <isNotNull property="where.MATERIAL_NO" prepend="AND">
+          WPD.MATER_NO like '%'||#where.MATERIAL_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.BIN_PLC_NO" prepend="AND">
+          T.BIN_PLC_NO like '%'||#where.BIN_PLC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          WPD.PALLET_NO like '%'||#where.PALLET_NO#||'%'
+        </isNotNull>
+      </dynamic> 
+      <isNotNull property="Order By" prepend="">
+        ORDER BY T.BIN_PLC_NO
+      </isNotNull> -->
+    </select>
+  </statements>
+</sqlMap>

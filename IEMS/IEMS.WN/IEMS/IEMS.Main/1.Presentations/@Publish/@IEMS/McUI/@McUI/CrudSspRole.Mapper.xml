@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@CrudSspRole" parameterClass="int" resultClass="row">
+      <![CDATA[
+          SELECT * FROM SSP_ROLE
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.OBJID" prepend="AND">
+          <![CDATA[OBJID = #where.OBJID#]]>
+        </isNotNull>
+        <isNotNull property="where.ROLE_NAME" prepend="AND">
+          ROLE_NAME  like '%'||#where.ROLE_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.DELETE_FLAG" prepend="AND">
+          <![CDATA[DELETE_FLAG = #where.DELETE_FLAG#]]>
+        </isNotNull>
+        <isNotNull property="where.REMARK" prepend="AND">
+          <![CDATA[REMARK = #where.REMARK#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend="">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+    <select id="Select+Update@CrudSspRole" parameterClass="int" resultClass="row">
+      <![CDATA[SELECT * FROM SSP_ROLE ]]>
+      <dynamic prepend="WHERE">
+        <![CDATA[(OBJID = #OBJID#)]]>
+      </dynamic>
+    </select>
+  </statements>
+</sqlMap>

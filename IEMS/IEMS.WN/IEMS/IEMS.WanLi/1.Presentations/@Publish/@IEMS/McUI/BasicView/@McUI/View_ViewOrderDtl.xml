@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="LIST_NO" Value="LIST_NO" ></Caption>
+    <Caption Name="LINE_ID" Value="LINE_ID" ></Caption>
+    <Caption Name="MATER_NO" Value="MATER_NO" ></Caption>
+    <Caption Name="GRADE" Value="GRADE" ></Caption>
+    <Caption Name="REQUIRE_QTY" Value="REQUIRE_QTY" ></Caption>
+    <Caption Name="ACT_QTY" Value="ACT_QTY" ></Caption>
+    <Caption Name="SHIP_QTY" Value="SHIP_QTY" ></Caption>
+    <Caption Name="PRODUCT_GUID" Value="PRODUCT_GUID" ></Caption>
+    <Caption Name="STATUS" Value="STATUS" ></Caption>
+    <Caption Name="STOP_FLAG" Value="STOP_FLAG" ></Caption>
+    <Caption Name="DLOC_NO" Value="DLOC_NO" ></Caption>
+    <Caption Name="ERR_FLAG" Value="ERR_FLAG" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="SLMS_FLAG" ></Caption>
+    <Caption Name="EQUIPMENT_NAME" Value="EQUIPMENT_NAME" ></Caption>
+    <Caption Name="BATCH_NO" Value="BATCH_NO" ></Caption>
+    <Caption Name="REQUEST_CATEGORY" Value="REQUEST_CATEGORY" ></Caption>
+    <Caption Name="MES_STATUS" Value="MES_STATUS" ></Caption>
+    <Caption Name="EQU_STATUS" Value="EQU_STATUS" ></Caption>
+  </Captions>
+  <WebPage Title="VIEW_ORDER_DTL">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="MATER_NO" ></GridColumn>
+        <GridColumn ColumnName="GRADE" ></GridColumn>
+        <GridColumn ColumnName="REQUIRE_QTY" ></GridColumn>
+        <GridColumn ColumnName="ACT_QTY" ></GridColumn>
+        <GridColumn ColumnName="SHIP_QTY" ></GridColumn>
+        <GridColumn ColumnName="PRODUCT_GUID" ></GridColumn>
+        <GridColumn ColumnName="STATUS" ></GridColumn>
+        <GridColumn ColumnName="STOP_FLAG" ></GridColumn>
+        <GridColumn ColumnName="DLOC_NO" ></GridColumn>
+        <GridColumn ColumnName="ERR_FLAG" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" ></GridColumn>
+        <GridColumn ColumnName="EQUIPMENT_NAME" ></GridColumn>
+        <GridColumn ColumnName="BATCH_NO" ></GridColumn>
+        <GridColumn ColumnName="REQUEST_CATEGORY" ></GridColumn>
+        <GridColumn ColumnName="MES_STATUS" ></GridColumn>
+        <GridColumn ColumnName="EQU_STATUS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="MATER_NO" ></ParamField>
+        <ParamField FieldName="GRADE" ></ParamField>
+        <ParamField FieldName="REQUIRE_QTY" ></ParamField>
+        <ParamField FieldName="ACT_QTY" ></ParamField>
+        <ParamField FieldName="SHIP_QTY" ></ParamField>
+        <ParamField FieldName="PRODUCT_GUID" ></ParamField>
+        <ParamField FieldName="STATUS" ></ParamField>
+        <ParamField FieldName="STOP_FLAG" ></ParamField>
+        <ParamField FieldName="DLOC_NO" ></ParamField>
+        <ParamField FieldName="ERR_FLAG" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+        <ParamField FieldName="SLMS_FLAG" ></ParamField>
+        <ParamField FieldName="EQUIPMENT_NAME" ></ParamField>
+        <ParamField FieldName="BATCH_NO" ></ParamField>
+        <ParamField FieldName="REQUEST_CATEGORY" ></ParamField>
+        <ParamField FieldName="MES_STATUS" ></ParamField>
+        <ParamField FieldName="EQU_STATUS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

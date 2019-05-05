@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_Tproc0201TaskCreate" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TPROC_0201_TASK_CREATE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend="AND">
+           T1.OBJID LIKE '%'||#where.OBJID#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY OBJID
+     </select>
+     <select id="Select@View_Tproc0201TaskCreate@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TPROC_0201_TASK_CREATE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.OBJID" prepend = "AND">
+           T1.OBJID = #where.OBJID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_TmpTaskOrderRoute" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TMP_TASK_ORDER_ROUTE T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.SROUTE_NO" prepend="AND">
+           T1.SROUTE_NO LIKE '%'||#where.SROUTE_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY SROUTE_NO
+     </select>
+     <select id="Select@View_TmpTaskOrderRoute@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TMP_TASK_ORDER_ROUTE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.SROUTE_NO" prepend = "AND">
+           T1.SROUTE_NO = #where.SROUTE_NO#
+         </isNotNull><isNotNull property="where.EROUTE_NO" prepend = "AND">
+           T1.EROUTE_NO = #where.EROUTE_NO#
+         </isNotNull><isNotNull property="where.TEMP_GUID" prepend = "AND">
+           T1.TEMP_GUID = #where.TEMP_GUID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

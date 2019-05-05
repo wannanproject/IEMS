@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <statements>
+    <select id="Select@MaterialEvent" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      SELECT t1.id_key,t1.request_no,t1.BARCODE,t1.RFID_NO,
+      CASE t1.TRANS_TYPE WHEN '10' THEN '入库' WHEN '15' THEN '出库' WHEN '16' THEN '物料移动' WHEN '20' THEN '胎胚入硫化机' 
+        WHEN '35' THEN '检验' WHEN '80' THEN '喷涂' WHEN '90' THEN '物流货笼装配' END AS TRANS_TYPE,
+      CASE t1.RESULT WHEN '20' THEN '不良' WHEN '30' THEN '合格' END AS RESULT,
+      CASE t1.MES_STATUS WHEN '20' THEN '已读取' WHEN '90' THEN '异常状况' END AS MES_STATUS,
+      CASE t1.EQU_STATUS WHEN '10' THEN '初始' END AS EQU_STATUS,
+      t1.TRANS_TIME,t1.DESTINATION,t1.REMARKS,t1.UPDATETIME
+      FROM view_material_event t1
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.TRANS_TYPE" prepend="AND">
+          T1.TRANS_TYPE = #where.TRANS_TYPE#
+        </isNotNull>
+        <isNotNull property="where.REQUEST_NO" prepend="AND">
+          T1.REQUEST_NO LIKE '%'||#where.REQUEST_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.RFID_NO" prepend="AND">
+          T1.RFID_NO LIKE '%'||#where.RFID_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.DESTINATION" prepend="AND">
+          T1.DESTINATION LIKE '%'||#where.DESTINATION#||'%'
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.TRANS_TIME >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.TRANS_TIME < #where.END_TIME# + 1]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY t1.request_no
+    </select>
+    <select id="Select@MaterialEvent@MainDetail" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+         select t1.* from view_material_event t1
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ID_KEY" prepend="AND">
+          T1.ID_KEY = #where.ID_KEY#
+        </isNotNull>
+      </dynamic>
+    </select>
+    <!--查询事件类型信息，TRANS_TYPE字段-->
+    <select id="GetComboBoxData@Select@MaterialEvent@TRANS_TYPE" parameterClass="map" resultClass="Row">
+      <![CDATA[ 
+        SELECT '10' AS sskey, '入库' AS ssValue FROM dual
+        UNION  
+        SELECT '15' AS sskey, '出库' AS ssValue FROM dual
+        UNION  
+        SELECT '16' AS sskey, '物料移动' AS ssValue FROM dual
+        UNION  
+        SELECT '20' AS sskey, '胎胚入硫化机' AS ssValue FROM dual
+        UNION  
+        SELECT '35' AS sskey, '检验' AS ssValue FROM dual
+        UNION  
+        SELECT '80' AS sskey, '喷涂' AS ssValue FROM dual
+        UNION  
+        SELECT '90' AS sskey, '物流货笼装配' AS ssValue FROM dual
+      ]]>
+    </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@TprocTaskRequst" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+             SELECT TTR.OBJID,
+                  TTR.ERR_CODE,
+                  TTR.ERR_DESC,
+                  CASE TTR.PROC_STATUS
+                    WHEN 0 THEN '未执行'
+                    WHEN 1 THEN '执行中'
+                    WHEN 2 THEN '结束' END PROC_STATUS,
+                  TTR.PROC_CREATE_TIME,
+                  TTR.PROC_EXCUTE_TIME,
+                  TTR.PROC_FINISH_TIME,
+                  POT.ORDER_TYPE_NAME,
+                  TTR.PALLET_NO,
+                  TTR.SLOC_NO,
+                  PL1.LOC_PLC_NO AS SLOC_PLC_NO,
+                  TTR.ELOC_NO,
+                  PL2.LOC_PLC_NO AS ELOC_PLC_NO,
+                  CASE TTR.SOURCE_TYPE
+                    WHEN 1 THEN '手持'
+                    WHEN 2 THEN 'WMS'
+                    WHEN 3 THEN 'WCS' END SOURCE_TYPE,
+                  TTR.REQUIRE_QTY,
+                  TTR.ROUTE_NO,
+                  TTR.ORDER_PRIORITY,
+                  TTR.PALLET_TYPE,
+                  CASE TTR.ORDER_TYPE_MODULE
+                    WHEN 'I' THEN
+                    '入库'
+                    WHEN 'O' THEN
+                    '出库'
+                    ELSE
+                    ''
+                  END ORDER_TYPE_MODULE,
+                  WPD.MATER_NO,
+                  WT.TASK_NO
+            FROM TPROC_0100_TASK_REQUEST TTR
+            LEFT JOIN PSB_ORDER_TYPE POT
+              ON POT.ORDER_TYPE_NO = TTR.ORDER_TYPE_NO
+            LEFT JOIN WBS_PACKAGE_DATA WPD
+              ON WPD.PACKAGE_GUID = TTR.PACKAGE_GUID
+            LEFT JOIN WBS_TASK WT
+              ON WT.TASK_GUID = TTR.TASK_GUID
+            LEFT JOIN PSB_LOC PL1
+              ON PL1.LOC_NO = TTR.SLOC_NO
+            LEFT JOIN PSB_LOC PL2
+              ON PL2.LOC_NO = TTR.ELOC_NO
+      ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.objid" prepend="AND">
+          TTR.objid like '%'||#where.objid#||'%'
+        </isNotNull>
+        <isNotNull property="where.sloc_plc_no" prepend="AND">
+          PL1.loc_plc_no like '%'||#where.sloc_plc_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.mater_no" prepend="AND">
+          wpd.mater_no like '%'||#where.mater_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.task_no" prepend="AND">
+          WT.task_no like '%'||#where.task_no#||'%'
+        </isNotNull>
+        <isNotNull property="where.pallet_no" prepend="AND">
+          TTR.pallet_no like '%'||#where.pallet_no#||'%'
+        </isNotNull>
+       
+      </dynamic>
+      <![CDATA[ order by TTR.OBJID desc  ]]>
+    </select>
+
+     <select id="Select@TprocTaskRequst@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+             SELECT TTR.OBJID,
+                  TTR.ERR_CODE,
+                  TTR.ERR_DESC,
+                  CASE TTR.PROC_STATUS
+                    WHEN 0 THEN '未执行'
+                    WHEN 1 THEN '执行中'
+                    WHEN 2 THEN '结束' END PROC_STATUS,
+                  TTR.PROC_CREATE_TIME,
+                  TTR.PROC_EXCUTE_TIME,
+                  TTR.PROC_FINISH_TIME,
+                  POT.ORDER_TYPE_NAME,
+                  TTR.PALLET_NO,
+                  TTR.SLOC_NO,
+                  PL1.LOC_PLC_NO AS SLOC_PLC_NO,
+                  TTR.ELOC_NO,
+                  PL2.LOC_PLC_NO AS ELOC_PLC_NO,
+                  CASE TTR.SOURCE_TYPE
+                    WHEN 1 THEN '手持'
+                    WHEN 2 THEN 'WMS'
+                    WHEN 3 THEN 'WCS' END SOURCE_TYPE,
+                  TTR.REQUIRE_QTY,
+                  TTR.ROUTE_NO,
+                  TTR.ORDER_PRIORITY,
+                  TTR.PALLET_TYPE,
+                  CASE TTR.ORDER_TYPE_MODULE
+                    WHEN 'I' THEN
+                    '入库'
+                    WHEN 'O' THEN
+                    '出库'
+                    ELSE
+                    ''
+                  END ORDER_TYPE_MODULE,
+                  WPD.MATER_NO,
+                  WT.TASK_NO
+            FROM TPROC_0100_TASK_REQUEST TTR
+            LEFT JOIN PSB_ORDER_TYPE POT
+              ON POT.ORDER_TYPE_NO = TTR.ORDER_TYPE_NO
+            LEFT JOIN WBS_PACKAGE_DATA WPD
+              ON WPD.PACKAGE_GUID = TTR.PACKAGE_GUID
+            LEFT JOIN WBS_TASK WT
+              ON WT.TASK_GUID = TTR.TASK_GUID
+            LEFT JOIN PSB_LOC PL1
+              ON PL1.LOC_NO = TTR.SLOC_NO
+            LEFT JOIN PSB_LOC PL2
+              ON PL2.LOC_NO = TTR.ELOC_NO
+      ]]>
+       <dynamic prepend="where">
+         <isNotNull property="where.objid" prepend="AND">
+           TTR.objid like '%'||#where.objid#||'%'
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

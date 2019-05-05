@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@View_TmpLoc0101OrderMonitor" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+       SELECT * FROM TMP_LOC_0101_ORDER_MONITOR T1
+      ]]>
+      <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_NO" prepend="AND">
+           T1.LOC_NO LIKE '%'||#where.LOC_NO#||'%'
+         </isNotNull>
+       </dynamic>
+       ORDER BY LOC_NO
+     </select>
+     <select id="Select@View_TmpLoc0101OrderMonitor@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM TMP_LOC_0101_ORDER_MONITOR T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_NO" prepend = "AND">
+           T1.LOC_NO = #where.LOC_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBROUTE" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+          SELECT PR.ROUTE_NO,
+                 PR.SLOC_AREA,
+                 PR.ELOC_AREA,
+                 PLT1.LOC_TYPE_NAME AS SLOC_TYPE,
+                 PLT2.LOC_TYPE_NAME AS ELOC_TYPE,
+                 PR.DEFAULT_PRIORITY,
+                 CASE PR.IO_TYPE
+                   WHEN 'I' THEN
+                    '入库'
+                   WHEN 'O' THEN
+                    '出库'
+                   WHEN 'M' THEN
+                    '移库'
+                   ELSE
+                    '异常'
+                 END IO_TYPE,
+                 PR.FMEM,
+                 CASE PR.TRANS_TYPE_NO
+                   WHEN '10' THEN
+                    '堆垛机'
+                   WHEN '20' THEN
+                    '输送线'
+                   WHEN '30' THEN
+                    'AGV'
+                   WHEN '40' THEN
+                    'RGV'
+                   WHEN '50' THEN
+                    'EMS'
+                   ELSE
+                    '未知'
+                 END TRANS_TYPE_NO,
+                 CASE PR.USED_FLAG
+                   WHEN 1 THEN
+                    '启用'
+                   ELSE
+                    '未用'
+                 END USED_FLAG,
+                 CASE PR.TERMINAL_FLAG
+                   WHEN 1 THEN
+                    '末端路径'
+                   WHEN 0 THEN
+                    '节点路径'
+                   ELSE
+                    '异常'
+                 END TERMINAL_FLAG,
+                 PR.LIMIT_CAPACITY,
+                 PR.CURR_CAPACITY,
+                 PR.PALLET_TYPE
+            FROM PSB_ROUTE PR
+            JOIN PSB_LOC_TYPE PLT1
+              ON PR.SLOC_TYPE = PLT1.LOC_TYPE_NO
+            JOIN PSB_LOC_TYPE PLT2
+              ON PR.ELOC_TYPE = PLT2.LOC_TYPE_NO
+      ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.ROUTE_NO" prepend="AND">
+          PR.ROUTE_NO LIKE '%'||#where.ROUTE_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.SLOC_AREA" prepend="AND">
+          PR.SLOC_AREA LIKE '%'||#where.SLOC_AREA#||'%'
+        </isNotNull>
+        <isNotNull property="where.ELOC_AREA" prepend="AND">
+          PR.ELOC_AREA LIKE '%'||#where.ELOC_AREA#||'%'
+        </isNotNull>
+       </dynamic>
+      ORDER BY ROUTE_NO
+    </select>
+     <select id="Select@VIEW_PSBROUTE@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_ROUTE T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.ROUTE_NO" prepend = "AND">
+           T1.ROUTE_NO = #where.ROUTE_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

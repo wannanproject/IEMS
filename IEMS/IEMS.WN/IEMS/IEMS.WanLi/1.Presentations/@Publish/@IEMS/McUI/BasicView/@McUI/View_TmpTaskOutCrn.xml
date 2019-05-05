@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="CRN_ID" Value="堆垛机编号" ></Caption>
+    <Caption Name="CRN_NAME" Value="堆垛机编号" ></Caption>
+    <Caption Name="CRN_NO" Value="堆垛机编号" ></Caption>
+    <Caption Name="CRN_CODE" Value="堆垛机编号" ></Caption>
+    <Caption Name="FREE_FLAG" Value="空闲标示  1:空闲 0:忙碌" ></Caption>
+    <Caption Name="AREA_NO" Value="区域，南北环" ></Caption>
+    <Caption Name="ENABLE_FLAG" Value="可用" ></Caption>
+    <Caption Name="PLC_ENABLE" Value="可用 1：可用     0：不可用" ></Caption>
+    <Caption Name="UPDATE_DATE" Value="更新时间" ></Caption>
+    <Caption Name="LAST_TRK_DT" Value="上次生成任务的时间" ></Caption>
+    <Caption Name="LIMIT_TRK_SIZE" Value="限定任务数" ></Caption>
+    <Caption Name="REAL_TRK_SIZE" Value="实际任务数" ></Caption>
+  </Captions>
+  <WebPage Title="任务生成 的空闲堆垛机">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="CRN_ID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="CRN_ID" ></GridColumn>
+        <GridColumn ColumnName="CRN_NAME" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="CRN_CODE" ></GridColumn>
+        <GridColumn ColumnName="FREE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="AREA_NO" ></GridColumn>
+        <GridColumn ColumnName="ENABLE_FLAG" ></GridColumn>
+        <GridColumn ColumnName="PLC_ENABLE" ></GridColumn>
+        <GridColumn ColumnName="UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="LAST_TRK_DT" ></GridColumn>
+        <GridColumn ColumnName="LIMIT_TRK_SIZE" ></GridColumn>
+        <GridColumn ColumnName="REAL_TRK_SIZE" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="CRN_ID" ></ParamField>
+        <ParamField FieldName="CRN_NAME" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="CRN_CODE" ></ParamField>
+        <ParamField FieldName="FREE_FLAG" ></ParamField>
+        <ParamField FieldName="AREA_NO" ></ParamField>
+        <ParamField FieldName="ENABLE_FLAG" ></ParamField>
+        <ParamField FieldName="PLC_ENABLE" ></ParamField>
+        <ParamField FieldName="UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="LAST_TRK_DT" ></ParamField>
+        <ParamField FieldName="LIMIT_TRK_SIZE" ></ParamField>
+        <ParamField FieldName="REAL_TRK_SIZE" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

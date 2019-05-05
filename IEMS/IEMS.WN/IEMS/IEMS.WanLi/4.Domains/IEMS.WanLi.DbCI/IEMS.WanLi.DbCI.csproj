@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9648A750-931F-4711-9904-CD0C84C84C33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IEMS.WanLi.DbCI</RootNamespace>
+    <AssemblyName>IEMS.WanLi.DbCI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSTL.DbAccess">
+      <HintPath>..\..\@packages\@MSTL\MSTL.DbAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTL.Extensions">
+      <HintPath>..\..\@packages\@MSTL\MSTL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement\MaterialService.cs" />
+    <Compile Include="Implement\AgvTaskService.cs" />
+    <Compile Include="Implement\BillTaskCmdService.cs" />
+    <Compile Include="Implement\CrnService.cs" />
+    <Compile Include="Implement\BinDataService.cs" />
+    <Compile Include="Implement\OutputService.cs" />
+    <Compile Include="Implement\LocService.cs" />
+    <Compile Include="Implement\TaskService.cs" />
+    <Compile Include="Implement\TmpLocCmdMonitorService.cs" />
+    <Compile Include="Implement\TmpLocOrderMonitorService.cs" />
+    <Compile Include="Interface\IMaterialService.cs" />
+    <Compile Include="Interface\IAgvTaskService.cs" />
+    <Compile Include="Interface\IBillTaskCmdService.cs" />
+    <Compile Include="Interface\IBinDataService.cs" />
+    <Compile Include="Interface\IOutputService.cs" />
+    <Compile Include="Interface\ICrnService.cs" />
+    <Compile Include="Interface\ILocService.cs" />
+    <Compile Include="Interface\ITaskService.cs" />
+    <Compile Include="Interface\ITmpLocCmdMonitorService.cs" />
+    <Compile Include="Interface\ITmpLocOrderMonitorService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IEMS.WanLi.DbMapper\IEMS.WanLi.DbMapper.csproj">
+      <Project>{543e3098-f470-456e-97e6-2554462c012d}</Project>
+      <Name>IEMS.WanLi.DbMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEMS.WanLi.DbRI\IEMS.WanLi.DbRI.csproj">
+      <Project>{766ef1f3-0d9c-4ea8-947d-6a167583769d}</Project>
+      <Name>IEMS.WanLi.DbRI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEMS.WanLi.Entity\IEMS.WanLi.Entity.csproj">
+      <Project>{b322627c-9f72-417b-bff8-754319e5bcf2}</Project>
+      <Name>IEMS.WanLi.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEMS.WanLi.VoDto\IEMS.WanLi.VoDto.csproj">
+      <Project>{fdd830c9-2259-480c-bba3-4982b344ccf6}</Project>
+      <Name>IEMS.WanLi.VoDto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(TargetPath)" /S/Y "$(SolutionDir)@IEMS\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

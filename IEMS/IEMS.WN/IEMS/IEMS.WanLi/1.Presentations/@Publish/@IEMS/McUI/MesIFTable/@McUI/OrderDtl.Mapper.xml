@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@OrderDtl" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select t1.list_no,CASE t1.status WHEN '0' THEN '未执行' WHEN '1' THEN '出库中' WHEN '2' THEN '已完成' WHEN '3' THEN '已取消' END AS status,
+      CASE t1.source_by WHEN '1' THEN 'WMS' WHEN '2' THEN 'MES' WHEN '3' THEN 'WCS' END AS source_by,t1.creation_date,t1.last_update_date,
+      CASE t1.slms_flag WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' WHEN '0' THEN '复位' END AS slms_flag,
+      t2.line_id,t2.mater_no,t2.grade,t2.require_qty,t2.act_qty,t2.ship_qty,t2.product_guid,
+      CASE t2.status WHEN '0' THEN '未执行' WHEN '1' THEN '发货中' WHEN '2' THEN '已完成' END AS line_status,
+      t2.stop_flag,t2.dloc_no,t2.err_flag,t2.remarks,
+      CASE t2.slms_flag WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' WHEN '0' THEN '复位' END AS line_slms_flag,
+      t2.equipment_name,t2.batch_no,t2.request_category,t2.mes_status,t2.equ_status
+      from VIEW_ORDER_LIST t1
+      INNER JOIN View_Order_Dtl t2 ON t1.list_no = t2.list_no
+      ]]>
+      <dynamic prepend="where">
+         <isNotNull property="where.LIST_NO" prepend="AND">
+           T1.LIST_NO LIKE '%'||#where.LIST_NO#||'%'
+         </isNotNull>
+        <isNotNull property="where.MATER_NO" prepend="AND">
+          T2.MATER_NO LIKE '%'||#where.MATER_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.DLOC_NO" prepend="AND">
+          T2.DLOC_NO LIKE '%'||#where.DLOC_NO#||'%'
+        </isNotNull>
+        <isNotNull property="where.EQUIPMENT_NAME" prepend="AND">
+          T2.EQUIPMENT_NAME LIKE '%'||#where.EQUIPMENT_NAME#||'%'
+        </isNotNull>
+        <isNotNull property="where.REQUEST_CATEGORY" prepend="AND">
+          T2.REQUEST_CATEGORY LIKE '%'||#where.REQUEST_CATEGORY#||'%'
+        </isNotNull>
+        <isNotNull property="where.START_TIME" prepend="AND">
+          <![CDATA[T1.CREATION_DATE >= #where.START_TIME#]]>
+        </isNotNull>
+        <isNotNull property="where.END_TIME" prepend="AND">
+          <![CDATA[T1.CREATION_DATE < #where.END_TIME# + 1]]>
+        </isNotNull>
+       </dynamic>
+      ORDER BY t1.list_no,t2.line_id
+    </select>
+     <select id="Select@OrderDtl@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+        select t1.loc_no,t1.loc_plc_no,t1.loc_type_no,t2.loc_type_name,t1.loc_name,
+        t1.max_buffer,t1.loc_group_no,t3.loc_group_name,t1.loc_mes_no,t1.loc_agv_no,
+        CASE t1.loc_enable WHEN 0 THEN '不可用' WHEN 1 THEN '可用' END AS loc_enable
+        from PSB_LOC t1
+        INNER JOIN psb_loc_type t2 ON t1.loc_type_no = t2.loc_type_no
+        INNER JOIN psb_loc_group t3 ON t1.loc_group_no = t3.loc_group_no
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.DLOC_NO" prepend = "AND">
+           T1.loc_mes_no = #where.DLOC_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+     <select id="Select@OrderDtl@DetailGrid" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+        select t1.list_no,CASE t1.status WHEN '0' THEN '未执行' WHEN '1' THEN '出库中' WHEN '2' THEN '已完成' WHEN '3' THEN '已取消' END AS status,
+        CASE t1.source_by WHEN '1' THEN 'WMS' WHEN '2' THEN 'MES' WHEN '3' THEN 'WCS' END AS source_by,t1.creation_date,t1.last_update_date,
+        CASE t1.slms_flag WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' WHEN '0' THEN '复位' END AS slms_flag,
+        t2.line_id,t2.mater_no,t2.grade,t2.require_qty,t2.act_qty,t2.ship_qty,t2.product_guid,
+        CASE t2.status WHEN '0' THEN '未执行' WHEN '1' THEN '发货中' WHEN '2' THEN '已完成' END AS line_status,
+        t2.stop_flag,t2.dloc_no,t2.err_flag,t2.remarks,
+        CASE t2.slms_flag WHEN '1' THEN '新增' WHEN '2' THEN '修改' WHEN '3' THEN '删除' WHEN '0' THEN '复位' END AS line_slms_flag,
+        t2.equipment_name,t2.batch_no,t2.request_category,t2.mes_status,t2.equ_status
+        from VIEW_ORDER_LIST t1
+        INNER JOIN View_Order_Dtl t2 ON t1.list_no = t2.list_no
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LIST_NO" prepend = "AND">
+           T1.list_no = #where.LIST_NO#
+         </isNotNull>
+         <isNotNull property="where.LINE_ID" prepend = "AND">
+           T2.LINE_ID = #where.LINE_ID#
+         </isNotNull>
+       </dynamic>
+     </select>
+  </statements>
+</sqlMap>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="TASK_GUID" Value="序号" ></Caption>
+    <Caption Name="TASK_NO" Value="任务编号" ></Caption>
+    <Caption Name="EMERGENCY" Value="优先级(1: 最优先,  100: 最后)  默认20" ></Caption>
+    <Caption Name="IO_TYPE" Value="入/出库(I:入库, O:出库 ,T 移栽 S:巷道转移)" ></Caption>
+    <Caption Name="TRANSFER_NO" Value="输送设备号" ></Caption>
+    <Caption Name="START_LOC_NO" Value="当前正在执行的指令 起始站台" ></Caption>
+    <Caption Name="END_LOC_NO" Value="当前正在执行的指令 结束站台" ></Caption>
+    <Caption Name="TASK_STEP" Value="作业步骤" ></Caption>
+    <Caption Name="PALLET_NO" Value="货笼ID" ></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料编号" ></Caption>
+    <Caption Name="PACKAGE_GUID" Value="包号" ></Caption>
+    <Caption Name="ORDER_LINE_GUID" Value="订单行项目GUID" ></Caption>
+    <Caption Name="SORT_ID" Value="执行顺序" ></Caption>
+    <Caption Name="CREATION_DATE" Value="任务创建时间" ></Caption>
+    <Caption Name="TASK_EXEC_START_DT" Value="任务开始执行时间" ></Caption>
+    <Caption Name="TASK_EXEC_END_DT" Value="任务结束时间" ></Caption>
+    <Caption Name="LAST_UPDATE_DATE" Value="最后修改日期" ></Caption>
+    <Caption Name="FINISH_FLAG" Value="(0:表示无错误 >0: 对应 ERR_CODE，堆垛机、地面线异常码需要唯一)" ></Caption>
+    <Caption Name="ERR_NO" Value="错误代码 1： 空出库  " ></Caption>
+    <Caption Name="BIN_NO" Value="立库库位信息，如果非立库，可以为空" ></Caption>
+    <Caption Name="PD_GROUP_NO" Value="PD_GROUP_NO" ></Caption>
+    <Caption Name="PALLET_VALID" Value="PALLET_VALID" ></Caption>
+  </Captions>
+  <WebPage Title="工作表">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="TASK_GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="TASK_GUID" ></GridColumn>
+        <GridColumn ColumnName="TASK_NO" ></GridColumn>
+        <GridColumn ColumnName="EMERGENCY" ></GridColumn>
+        <GridColumn ColumnName="IO_TYPE" ></GridColumn>
+        <GridColumn ColumnName="TRANSFER_NO" ></GridColumn>
+        <GridColumn ColumnName="START_LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="END_LOC_NO" ></GridColumn>
+        <GridColumn ColumnName="TASK_STEP" ></GridColumn>
+        <GridColumn ColumnName="PALLET_NO" ></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" ></GridColumn>
+        <GridColumn ColumnName="PACKAGE_GUID" ></GridColumn>
+        <GridColumn ColumnName="ORDER_LINE_GUID" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="TASK_EXEC_START_DT" ></GridColumn>
+        <GridColumn ColumnName="TASK_EXEC_END_DT" ></GridColumn>
+        <GridColumn ColumnName="LAST_UPDATE_DATE" ></GridColumn>
+        <GridColumn ColumnName="FINISH_FLAG" ></GridColumn>
+        <GridColumn ColumnName="ERR_NO" ></GridColumn>
+        <GridColumn ColumnName="BIN_NO" ></GridColumn>
+        <GridColumn ColumnName="PD_GROUP_NO" ></GridColumn>
+        <GridColumn ColumnName="PALLET_VALID" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="TASK_GUID" ></ParamField>
+        <ParamField FieldName="TASK_NO" ></ParamField>
+        <ParamField FieldName="EMERGENCY" ></ParamField>
+        <ParamField FieldName="IO_TYPE" ></ParamField>
+        <ParamField FieldName="TRANSFER_NO" ></ParamField>
+        <ParamField FieldName="START_LOC_NO" ></ParamField>
+        <ParamField FieldName="END_LOC_NO" ></ParamField>
+        <ParamField FieldName="TASK_STEP" ></ParamField>
+        <ParamField FieldName="PALLET_NO" ></ParamField>
+        <ParamField FieldName="MATERIAL_NO" ></ParamField>
+        <ParamField FieldName="PACKAGE_GUID" ></ParamField>
+        <ParamField FieldName="ORDER_LINE_GUID" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="TASK_EXEC_START_DT" ></ParamField>
+        <ParamField FieldName="TASK_EXEC_END_DT" ></ParamField>
+        <ParamField FieldName="LAST_UPDATE_DATE" ></ParamField>
+        <ParamField FieldName="FINISH_FLAG" ></ParamField>
+        <ParamField FieldName="ERR_NO" ></ParamField>
+        <ParamField FieldName="BIN_NO" ></ParamField>
+        <ParamField FieldName="PD_GROUP_NO" ></ParamField>
+        <ParamField FieldName="PALLET_VALID" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

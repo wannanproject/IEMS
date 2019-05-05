@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.OutputService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <statements>
+    <select id="GetBillOutputData" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       SELECT CASE TL.LINE_STATUS
+            WHEN 0 THEN
+             '未执行'
+            WHEN 1 THEN
+             '已下达'
+            WHEN 2 THEN
+             '执行中'
+            WHEN 3 THEN
+             '已完成'
+            ELSE
+             '已取消'
+          END AS STATUS_NAME, T1.*, TL.*,
+         CASE
+           WHEN SL.LOC_NAME IS NULL THEN
+            TL.SLOC_NO
+           ELSE
+            SL.LOC_NAME
+         END AS SLOC_NAME,
+         CASE
+           WHEN EL.LOC_NAME IS NULL THEN
+            TL.ELOC_NO
+           ELSE
+            EL.LOC_NAME
+         END AS ELOC_NAME
+    FROM WBS_ORDER T1
+   INNER JOIN WBS_ORDER_LINE TL
+      ON T1.ORDER_NO = TL.ORDER_NO
+     AND TL.DELETE_FLAG = 'N'
+    LEFT JOIN PSB_LOC SL
+      ON TL.SLOC_NO = SL.LOC_NO
+    LEFT JOIN PSB_LOC EL
+      ON TL.ELOC_NO = EL.LOC_NO
+   WHERE TL.LINE_STATUS < 3
+     AND TL.REQUIRE_QTY > TL.SHIP_QTY
+     AND T1.ORDER_TYPE_MODULE = 'O'
+        ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.OrderNo" prepend="AND">
+          <![CDATA[T1.ORDER_NO LIKE '%' || #where.OrderNo# || '%']]>
+        </isNotNull>
+        <isNotNull property="where.Kind" prepend="AND">
+          <![CDATA[T1.ORDER_STATUS = #where.Kind#]]>
+        </isNotNull>
+        <isNotNull property="where.BeginDate" prepend="AND">
+          <![CDATA[T1.CREATION_DATE >= #where.BeginDate#]]>
+        </isNotNull>
+        <isNotNull property="where.EndDate" prepend="AND">
+          <![CDATA[T1.CREATION_DATE <= #where.EndDate#]]>
+        </isNotNull>
+      </dynamic>
+      ORDER BY TL.CREATION_DATE DESC
+    </select>
+    <!--修改界面显示查询语句-->
+    <select id="GetListOutBillLineData" parameterClass="map" resultClass="Row">
+      <![CDATA[   
+          SELECT CASE TL.LINE_STATUS
+            WHEN 0 THEN
+             '未执行'
+            WHEN 1 THEN
+             '已下达'
+            WHEN 2 THEN
+             '执行中'
+            WHEN 3 THEN
+             '已完成'
+            ELSE
+             '已取消'
+          END AS STATUS_NAME, T1.*, 
+          TL.LIMIT_BIN_NO,
+           TL.ELOC_NO,
+           TL.LIMIT_PALLET_ID,
+           TL.LIMIT_PRODUCT_GUID,
+           TL.LIMIT_DATE_START,
+           TL.Limit_Date_End,
+           TL.DELETE_FLAG,
+           TL.ORDER_LINE_GUID,
+           TL.LINE_ID,
+           TL.SORT_ID,
+           TL.MATERIAL_NO,
+           TL.REQUIRE_QTY,
+           TL.DELETE_FLAG,
+           TL.ACT_QTY,
+           TL.SHIP_QTY,
+           TL.LINE_PRIORITY,
+           TL.LINE_TASK_FLAG,
+           TL.BIN_ERR_DESC,
+           TL.LOCK_END_LOC,
+         CASE
+           WHEN SL.LOC_NAME IS NULL THEN
+            TL.SLOC_NO
+           ELSE
+            SL.LOC_NAME
+         END AS SLOC_NAME,
+         CASE
+           WHEN EL.LOC_NAME IS NULL THEN
+            TL.ELOC_NO
+           ELSE
+            EL.LOC_NAME
+         END AS ELOC_NAME
+    FROM WBS_ORDER T1
+   INNER JOIN WBS_ORDER_LINE TL
+      ON T1.ORDER_NO = TL.ORDER_NO
+     AND TL.DELETE_FLAG = 'N'
+    LEFT JOIN PSB_LOC SL
+      ON TL.SLOC_NO = SL.LOC_NO
+    LEFT JOIN PSB_LOC EL
+      ON TL.ELOC_NO = EL.LOC_NO
+        ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.OrderNo" prepend="AND">
+          <![CDATA[t1.ORDER_NO = #where.OrderNo#]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+    </select>
+  </statements>
+</sqlMap>

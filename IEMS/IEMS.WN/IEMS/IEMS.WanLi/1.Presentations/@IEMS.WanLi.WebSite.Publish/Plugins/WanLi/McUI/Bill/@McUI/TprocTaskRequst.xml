@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="ID"></Caption>
+    <Caption Name="ERR_CODE" Value="异常编码"></Caption>
+    <Caption Name="ERR_DESC" Value="异常描述 "></Caption>
+    <Caption Name="PROC_STATUS" Value="执行状态"></Caption>
+    <Caption Name="PROC_CREATE_TIME" Value="创建日期"></Caption>
+    <Caption Name="PROC_EXCUTE_TIME" Value="执行时间"></Caption>
+    <Caption Name="PROC_FINISH_TIME" Value="结束时间"></Caption>
+    <Caption Name="ORDER_TYPE_NAME" Value="订单类型"></Caption>
+    <Caption Name="SOURCE_TYPE" Value="来源类型"></Caption>
+    <Caption Name="PALLET_NO1" Value="工装号1"></Caption>
+    <Caption Name="PALLET_NO2" Value="工装号2"></Caption>
+    <Caption Name="SLOC_NO" Value="起始位置"></Caption>
+    <Caption Name="SLOC_PLC_NO" Value="起始PLC编号"></Caption>
+    <Caption Name="ELOC_NO" Value="目的地址"></Caption>
+    <Caption Name="ELOC_PLC_NO" Value="目的PLC地址"></Caption>
+    <Caption Name="REQUIRE_QTY" Value="数量"></Caption>
+    <Caption Name="ROUTE_NO" Value="路径编码"></Caption>
+    <Caption Name="ORDER_PRIORITY" Value="优先级"></Caption>
+    <Caption Name="PALLET_TYPE" Value="工装类型"></Caption>
+    <Caption Name="ORDER_TYPE_MODULE" Value="出库/入库"></Caption>
+    <Caption Name="MATERIAL_NO" Value="物料号"></Caption>
+    <Caption Name="TASK_NO" Value="任务号"></Caption>
+  </Captions>
+  <WebPage Title="任务请求信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="SLOC_PLC_NO"></ParamField>
+        <ParamField FieldName="PALLET_NO1"></ParamField>
+        <ParamField FieldName="PALLET_NO2"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid PageSize ="50">
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" Width="70"></GridColumn>
+        <GridColumn ColumnName="ERR_DESC" Width="160"></GridColumn>
+        <GridColumn ColumnName="PROC_STATUS" Width="60"></GridColumn>
+        <GridColumn ColumnName="TASK_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="MATERIAL_NO" Width="100"></GridColumn>
+        <GridColumn ColumnName="SLOC_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="SLOC_PLC_NO" Width="80"></GridColumn>
+        <GridColumn ColumnName="PALLET_NO1" Width="90"></GridColumn>
+        <GridColumn ColumnName="PALLET_NO2" Width="90"></GridColumn>
+        <GridColumn ColumnName="PROC_CREATE_TIME" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="PROC_EXCUTE_TIME" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="PROC_FINISH_TIME" Width="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+     <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+        <ParamField FieldName="ERR_CODE"></ParamField>
+        <ParamField FieldName="ERR_DESC"></ParamField>
+        <ParamField FieldName="PROC_STATUS"></ParamField>
+        <ParamField FieldName="PROC_CREATE_TIME"></ParamField>
+        <ParamField FieldName="PROC_EXCUTE_TIME"></ParamField>
+        <ParamField FieldName="PROC_FINISH_TIME"></ParamField>
+        <ParamField FieldName="ORDER_TYPE_Name"></ParamField>
+        <ParamField FieldName="SOURCE_TYPE"></ParamField>
+        <ParamField FieldName="PALLET_NO1"></ParamField>
+        <ParamField FieldName="PALLET_NO2"></ParamField>
+        <ParamField FieldName="SLOC_NO"></ParamField>
+        <ParamField FieldName="SLOC_PLC_NO"></ParamField>
+        <ParamField FieldName="ELOC_NO"></ParamField>
+        <ParamField FieldName="ELOC_PLC_NO"></ParamField>
+        <ParamField FieldName="REQUIRE_QTY"></ParamField>
+        <ParamField FieldName="ROUTE_NO"></ParamField>
+        <ParamField FieldName="ORDER_PRIORITY"></ParamField>
+        <ParamField FieldName="PALLET_TYPE"></ParamField>
+        <ParamField FieldName="ORDER_TYPE_MODULE"></ParamField>
+        <ParamField FieldName="MATERIAL_NO"></ParamField>
+        <ParamField FieldName="TASK_NO"></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

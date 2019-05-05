@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="MATER_NO" Value="物料编码"></Caption>
+    <Caption Name="MATER_NAME" Value="物料名称"></Caption>
+  </Captions>
+  <WebPage Title="物料信息">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="MATER_NAME"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid OrderString="IDX,MATER_NO">
+      <GridColumns>
+        <GridColumn ColumnName="MATER_NO"></GridColumn>
+        <GridColumn ColumnName="MATER_NAME"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+  </Select>
+</UiConfig>

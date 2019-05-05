@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="PALLET_NO" Value="工装编号" ></Caption>
+    <Caption Name="RFID_NO" Value="RFID号码" ></Caption>
+    <Caption Name="PAINT_CODE" Value="喷码" ></Caption>
+    <Caption Name="PALLET_TYPE" Value="工装类型" ></Caption>   
+    <Caption Name="PALLET_NAME" Value="工装名称" ></Caption>
+    <Caption Name="USED_FLAG" Value="启用标志" ></Caption>    
+    <Caption Name="PALLET_WEIGHT" Value="工装单重" ></Caption> 
+    <Caption Name="PRODUCT_GUID" Value="生产条码" ></Caption>
+    <Caption Name="LAST_PRODUCT_GUID" Value="最后的生产条码" ></Caption>
+    <Caption Name="BINDING_TIME" Value="绑定时间" ></Caption>
+    <Caption Name="LOAD_STATUS" Value="负载状态" ></Caption>
+    <Caption Name="ERROR_STATUS" Value="异常状态" ></Caption>
+    <Caption Name="CHECKOUT_STATUS" Value="检量状态" ></Caption>
+    <Caption Name="FMEM" Value="信息备注" ></Caption>
+    <Caption Name="DEQUIP_CODE" Value="目标机台" ></Caption>
+    <Caption Name="DLOG_NO" Value="目标线边库" ></Caption>
+    <Caption Name="SLMS_FLAG" Value="更新标志" ></Caption>
+  </Captions>
+  <WebPage Title="工装">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="PALLET_NO"></ParamField>        
+        <ParamField FieldName="RFID_NO"></ParamField>
+        <ParamField FieldName="PALLET_NAME"></ParamField>
+        <ParamField FieldName="LOAD_STATUS" Type="ComboBox" Nullable="true" Caption="负载状态"></ParamField>
+        <ParamField FieldName="ERROR_STATUS" Type="ComboBox" Nullable="true" Caption="异常状态"></ParamField>
+        <ParamField FieldName="CHECKOUT_STATUS" Type="ComboBox" Nullable="true" Caption="检量状态"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="PALLET_NO" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PALLET_TYPE" WIDTH="80" ></GridColumn>
+        <GridColumn ColumnName="RFID_NO" WIDTH="120"></GridColumn>               
+        <GridColumn ColumnName="PALLET_NAME" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="USED_FLAG" WIDTH="60"></GridColumn>       
+        <GridColumn ColumnName="PRODUCT_GUID" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="LAST_PRODUCT_GUID" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="BINDING_TIME" WIDTH="140" ColumnType="Date" ColumnFormt="yyyy-MM-dd HH:mm:ss"></GridColumn>
+        <GridColumn ColumnName="LOAD_STATUS" WIDTH="60" ></GridColumn>
+        <GridColumn ColumnName="ERROR_STATUS" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="CHECKOUT_STATUS" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="DLOG_NO" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="DEQUIP_CODE" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PAINT_CODE" WIDTH="120"></GridColumn>
+        <GridColumn ColumnName="PALLET_WEIGHT" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="SLMS_FLAG" WIDTH="60"></GridColumn>
+        <GridColumn ColumnName="FMEM" WIDTH="120"></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <!--<DetailGrid>
+      <GridColumns>        
+        <GridColumn ColumnName="MATER_NO" WIDTH="180"></GridColumn>       
+      </GridColumns>
+    </DetailGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="MATER_NO" ></ParamField>       
+      </ParamFields>
+    </MainDetail>-->
+  </Select>
+</UiConfig>

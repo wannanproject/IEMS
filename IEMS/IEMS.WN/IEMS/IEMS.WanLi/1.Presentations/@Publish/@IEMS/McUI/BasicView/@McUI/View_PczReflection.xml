@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="GUID" Value="主键编号" ></Caption>
+    <Caption Name="REFLECTION_ASSEMBLY" Value="处理程序集" ></Caption>
+    <Caption Name="REFLECTION_TYPE" Value="处理接口" ></Caption>
+    <Caption Name="REMARKS" Value="REMARKS" ></Caption>
+  </Captions>
+  <WebPage Title="类型反射">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="GUID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="GUID" ></GridColumn>
+        <GridColumn ColumnName="REFLECTION_ASSEMBLY" ></GridColumn>
+        <GridColumn ColumnName="REFLECTION_TYPE" ></GridColumn>
+        <GridColumn ColumnName="REMARKS" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="GUID" ></ParamField>
+        <ParamField FieldName="REFLECTION_ASSEMBLY" ></ParamField>
+        <ParamField FieldName="REFLECTION_TYPE" ></ParamField>
+        <ParamField FieldName="REMARKS" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

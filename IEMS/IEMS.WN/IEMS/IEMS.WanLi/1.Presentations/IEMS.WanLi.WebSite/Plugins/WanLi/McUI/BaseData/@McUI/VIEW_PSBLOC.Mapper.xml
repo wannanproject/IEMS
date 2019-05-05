@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.Frame.DbCI.McUIService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+   <statements>
+    <select id="Select@VIEW_PSBLOC" parameterClass="map" resultClass="row">
+      <![CDATA[ 
+      select loc_no, loc_plc_no, t.loc_type_no, loc_name, loc_index, max_buffer, loc_group_no, 
+      loc_mes_no, loc_priority, loc_enable, last_used_date, limit_pallet_type, limit_cmd_finish, 
+      auto_pallet_request, area_no, transfer_no, request_pallet_type, limit_cmd_qty, 
+      control_privilege, wms_mes_lock, wh_no, loc_agv_no,t1.loc_type_name from psb_loc t
+      left join psb_loc_type t1 on t1.loc_type_no = t.loc_type_no
+      ]]>
+      <dynamic prepend="WHERE">
+          <isNotNull property="where.LOC_NO" prepend="AND">
+           T.LOC_NO LIKE '%'||#where.LOC_NO#||'%'
+          </isNotNull>
+          <isNotNull property="where.LOC_TYPE_NO" prepend="AND">
+            T.LOC_TYPE_NO = #where.LOC_TYPE_NO#
+          </isNotNull>
+       </dynamic>
+       ORDER BY LOC_NO
+     </select>
+     <select id="Select@VIEW_PSBLOC@MainDetail" parameterClass="map" resultClass="row">
+       <![CDATA[ 
+       SELECT * FROM PSB_LOC T1
+      ]]>
+       <dynamic prepend="WHERE">
+         <isNotNull property="where.LOC_NO" prepend = "AND">
+           T1.LOC_NO = #where.LOC_NO#
+         </isNotNull>
+       </dynamic>
+     </select>
+     <!--查询站台类型信息，ID值固定为GetComboBoxData@Select@View_PsbLoc@LOC_TYPE_NO字段，id值不允许重复-->
+     <select id="GetComboBoxData@Select@VIEW_PSBLOC@LOC_TYPE_NO" parameterClass="map" resultClass="Row">
+       <![CDATA[ 
+        select t.loc_type_no sskey,t.loc_type_name ssValue from psb_loc_type t where t.isshow = 1 order BY t.loc_type_no
+      ]]>
+     </select>
+  </statements>
+</sqlMap>

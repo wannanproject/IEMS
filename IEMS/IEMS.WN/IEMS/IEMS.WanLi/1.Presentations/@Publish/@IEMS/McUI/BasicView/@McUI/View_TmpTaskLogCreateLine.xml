@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UiConfig>
+  <Captions>
+    <Caption Name="OBJID" Value="编号" ></Caption>
+    <Caption Name="LOG_TYPE" Value="日志类型   0:正常" ></Caption>
+    <Caption Name="CREATION_DATE" Value="创建日期" ></Caption>
+    <Caption Name="LOG_DATA" Value="日志信息" ></Caption>
+    <Caption Name="LIST_NO" Value="单据号" ></Caption>
+    <Caption Name="LINE_ID" Value="行项目序号" ></Caption>
+    <Caption Name="SORT_ID" Value="行项目序号" ></Caption>
+    <Caption Name="TASK_SER" Value="任务号" ></Caption>
+    <Caption Name="CRN_NO" Value="堆垛机号" ></Caption>
+    <Caption Name="BIN_NO" Value="库位号" ></Caption>
+  </Captions>
+  <WebPage Title="任务生成调度系统日志">
+  </WebPage>
+  <Select>
+    <ParamPanel>
+      <ParamFields>
+        <ParamField FieldName="OBJID"></ParamField>
+      </ParamFields>
+    </ParamPanel>
+    <MainGrid>
+      <GridColumns>
+        <GridColumn ColumnName="OBJID" ></GridColumn>
+        <GridColumn ColumnName="LOG_TYPE" ></GridColumn>
+        <GridColumn ColumnName="CREATION_DATE" ></GridColumn>
+        <GridColumn ColumnName="LOG_DATA" ></GridColumn>
+        <GridColumn ColumnName="LIST_NO" ></GridColumn>
+        <GridColumn ColumnName="LINE_ID" ></GridColumn>
+        <GridColumn ColumnName="SORT_ID" ></GridColumn>
+        <GridColumn ColumnName="TASK_SER" ></GridColumn>
+        <GridColumn ColumnName="CRN_NO" ></GridColumn>
+        <GridColumn ColumnName="BIN_NO" ></GridColumn>
+      </GridColumns>
+    </MainGrid>
+    <MainDetail>
+      <ParamFields>
+        <ParamField FieldName="OBJID" ></ParamField>
+        <ParamField FieldName="LOG_TYPE" ></ParamField>
+        <ParamField FieldName="CREATION_DATE" ></ParamField>
+        <ParamField FieldName="LOG_DATA" ></ParamField>
+        <ParamField FieldName="LIST_NO" ></ParamField>
+        <ParamField FieldName="LINE_ID" ></ParamField>
+        <ParamField FieldName="SORT_ID" ></ParamField>
+        <ParamField FieldName="TASK_SER" ></ParamField>
+        <ParamField FieldName="CRN_NO" ></ParamField>
+        <ParamField FieldName="BIN_NO" ></ParamField>
+      </ParamFields>
+    </MainDetail>
+  </Select>
+</UiConfig>

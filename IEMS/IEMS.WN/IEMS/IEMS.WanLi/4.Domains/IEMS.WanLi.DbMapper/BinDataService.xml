@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="IEMS.WanLi.DbCI.BinDataService"
+	xmlns="http://ibatis.apache.org/mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <statements>
+    <select id="GetMaxBinNo" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       SELECT MAX(S.BIN_PLC_NO) MaxBinNo FROM PSB_BIN_STATUS S where 1=1
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.BinStart" prepend="AND">
+          <![CDATA[S.BIN_PLC_NO LIKE  #where.BinStart#||'%']]>
+        </isNotNull>
+      </dynamic>
+    </select>
+    <select id="GetBinDataByBinNoStart" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       SELECT F.*, 
+              T1.MATER_NO MATERIAL_NO,
+              T1.MATER_NAME,
+              T1.MATER_MKIND,
+              T1.MATER_TYPE,
+              T1.MAIN_UNIT,
+              T1.MATER_SPEC,
+              T1.MATER_DESC, 
+              T1.BATCH_NO,
+              T1.PALLET_NO PALLET_NO1,
+              T1.PRODUCT_QTY QTY,
+              T1.PRODUCT_DATE
+         FROM PSB_BIN_STATUS F
+         LEFT JOIN WBS_BIN T
+           ON T.BIN_NO = F.BIN_NO
+         LEFT JOIN WBS_PACKAGE_DATA T1
+           ON T1.PACKAGE_GUID = T.PACKAGE_GUID
+       ]]>
+      <dynamic prepend="WHERE">
+        <isNotNull property="where.BinStart" prepend="AND">
+          <![CDATA[F.BIN_PLC_NO LIKE  #where.BinStart#||'%']]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY F.BIN_NO
+      </isNotNull>
+    </select>
+    <select id="GetProductStatistics" parameterClass="map" resultClass="Row">
+      <![CDATA[
+        SELECT TA.*,ROUND(TA.FG_BIN/TA.TOTAL_BIN,2)*100||'%' AS USE_RATE,
+        (1-ROUND(TA.DISA_BIN/TA.TOTAL_BIN,2))*100||'%' AS STO_RATE FROM (
+        SELECT SUBSTR (T.BIN_PLC_NO, 1, 2) AS ROW_NO,
+        COUNT (DECODE (T.BIN_STATUS, CHR(36), 1, NULL)) AS FG_BIN, -------------物料
+        COUNT (DECODE (T.BIN_STATUS, '_', 1, NULL)) AS EMPTY_BIN, -------------空库位
+        COUNT (DECODE (T.USED_FLAG, 0, 1, NULL)) AS DISA_BIN, -------------禁用库位
+        (COUNT (DECODE (T.BIN_BIZ_STATUS, 'P', 1, NULL))
+        + COUNT (DECODE (T.BIN_BIZ_STATUS, 'E', 1, NULL)))
+        AS ERR_BIN,-------------异常库位(空出库位，先入库位)
+        (COUNT (DECODE (T.BIN_BIZ_STATUS, 'I', 1, NULL))
+        + COUNT (DECODE (T.BIN_BIZ_STATUS, 'O', 1, NULL)))
+        AS RES_BIN,                           -------------预约库位
+        COUNT (*) AS TOTAL_BIN
+        FROM PSB_BIN_STATUS T
+        GROUP BY SUBSTR (BIN_PLC_NO, 1, 2)                                -------------总库位
+        UNION
+        SELECT '总计' AS ROW_NO,
+        COUNT (DECODE (BIN_STATUS, CHR(36), 1, NULL)) AS FG_BIN, -------------物料
+        COUNT (DECODE (BIN_STATUS, '_', 1, NULL)) AS EMPTY_BIN, -------------空库位
+        COUNT (DECODE (T.USED_FLAG, 0, 1, NULL)) AS DISA_BIN, -------------禁用库位
+        (  COUNT (DECODE (BIN_BIZ_STATUS, 'P', 1, NULL))
+        + COUNT (DECODE (BIN_BIZ_STATUS, 'E', 1, NULL)))
+        AS ERR_BIN,                             -------------异常库位(空出库位，先入库位)
+        (COUNT (DECODE (T.BIN_BIZ_STATUS, 'I', 1, NULL))
+        + COUNT (DECODE (T.BIN_BIZ_STATUS, 'O', 1, NULL)))
+        AS RES_BIN,                           -------------预约库位
+        COUNT (*) AS TOTAL_BIN
+        FROM PSB_BIN_STATUS T ) TA
+      ]]>
+    </select>
+    <select id="GetWbsBinDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.BIN_NO,T.CREATION_DATE,T.DEADLINE_DATE,T.PALLET_NO,
+      T.PRODUCT_ID,T.BATCH_NO,T.KIND,T.FACTORY,T.FULL_PALLET_QTY,T.REAL_PALLET_QTY,
+      T.FULL_PALLET_FLAG,T.GRADE,T.ORDER_LINE_GUID,T.PRODUCT_DATE,T.PALLET_TYPE,
+      T.PRODUCT_ORGANIZATION,T.TASK_NO,T.TASK_GUID,T.STOCK_IN_TYPE,T.PRODUCT_NAME,
+      T.ORDERCODE,T.MATERIALMODEL,T.MINO,T.UNIT,T1.BIN_PLC_NO FROM WBS_BIN T
+      INNER JOIN PSB_BIN_STATUS T1 ON T1.BIN_NO = T.BIN_NO
+      WHERE 1=1 
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.BIN_PLC_NO" prepend="AND">
+          <![CDATA[T1.BIN_PLC_NO = #where.BIN_PLC_NO# ]]>
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          <![CDATA[T.PALLET_NO like '%'||#where.PALLET_NO#||'%' ]]>
+        </isNotNull>
+        <isNotNull property="where.PRODUCT_ID" prepend="AND">
+          <![CDATA[T.PRODUCT_ID like '%'||#where.PRODUCT_ID#||'%' ]]>
+        </isNotNull>
+        <isNotNull property="where.GRADE" prepend="AND">
+          <![CDATA[T.GRADE = #where.GRADE# ]]>
+        </isNotNull>
+        <isNotNull property="where.BTIME" prepend="AND">
+          <![CDATA[ T.CREATION_DATE >=#where.BTIME#  ]]>
+        </isNotNull>
+        <isNotNull property="where.ETIME" prepend="AND">
+          <![CDATA[ T.CREATION_DATE <= 1+#where.ETIME#  ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$ DESC
+      </isNotNull>
+    </select>
+    <select id="GetWbsBinDetDataTable" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT T.BIN_NO,T.PRODUCT_ID,T.PRODUCT_DATE,T.BATCH_NO,T.FACTORY,T.FACTORY,
+      T.PRODUCT_ORGANIZATION,T.CELLCODE,T.VOLTAGE,T.RESISTANCE,T.GDCAPACITY,
+      T.PALLET_NO,T.PALLET_NO,T2.BIN_PLC_NO FROM WBS_BIN_DET T
+      INNER JOIN WBS_BIN T1 ON T1.BIN_NO = T.BIN_NO AND T.PALLET_NO = T1.PALLET_NO
+      INNER JOIN PSB_BIN_STATUS T2 ON T2.BIN_NO = T1.BIN_NO 
+      WHERE 1=1 
+      ]]>
+      <dynamic prepend="">
+        <isNotNull property="where.BIN_PLC_NO" prepend="AND">
+          <![CDATA[T2.BIN_PLC_NO = #where.BIN_PLC_NO# ]]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$ DESC
+      </isNotNull>
+    </select>
+
+    <select id="GetZ30BinStore" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT PRODUCT_ID,MINO,GRADE,MIN_DATE,MAX_DATE,AQTY,PQTY FROM Z30_BIN_STORE T
+      ]]>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY T.PRODUCT_ID DESC
+      </isNotNull>
+    </select>
+    <select id="GetZ30BinStoreBatchNo" parameterClass="map" resultClass="Row">
+      <![CDATA[
+      SELECT PRODUCT_ID,MINO,GRADE,BATCH_NO,MIN_DATE,MAX_DATE,AQTY,PQTY FROM Z30_BIN_STORE_BATCHNO T 
+      ]]>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY T.BATCHNO,T.PRODUCT_ID ,T.MINO,T.GRADE
+      </isNotNull>
+    </select>
+
+    <select id="GetErrBinNo" parameterClass="map" resultClass="Row">
+      <![CDATA[
+           SELECT T.*,
+              CASE WHEN T.BIN_BIZ_STATUS = 'E' THEN '空出库'
+                   WHEN T.BIN_BIZ_STATUS = 'P' THEN '先入品'
+                   WHEN T.BIN_STATUS != '_' AND T1.PACKAGE_GUID IS NULL THEN '库位有货,库存无记录'
+                   WHEN T.BIN_STATUS = '_' AND T1.PACKAGE_GUID IS NOT NULL THEN '库位无货,库存有信息'
+                   WHEN T.BIN_BIZ_STATUS = 'I' THEN '入库占用异常'
+                   WHEN T.BIN_BIZ_STATUS = 'O' THEN '出库占用异常'
+               END ERR_NAME
+              FROM PSB_BIN_STATUS T
+              LEFT JOIN WBS_BIN T1
+                ON T1.BIN_NO = T.BIN_NO
+             WHERE T.BIN_BIZ_STATUS IN ('E','P')
+                OR (T.BIN_STATUS != '_' AND T1.PACKAGE_GUID IS NULL)
+                OR (T.BIN_STATUS = '_' AND T1.PACKAGE_GUID IS NOT NULL)
+                OR (T.BIN_BIZ_STATUS IN ('I','O') AND NOT EXISTS 
+                   (SELECT 1 FROM WBS_TASK F WHERE F.SLOC_NO = T.BIN_NO OR F.ELOC_NO =  T.BIN_NO))
+           ]]>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY T.BIN_NO
+      </isNotNull>
+    </select>
+
+    <select id="GetBinData" parameterClass="map" resultClass="Row">
+      <![CDATA[
+       SELECT T.BIN_NO,T.PALLET_NO,T1.MATER_NO MATERIAL_NO,T1.MATER_SPEC,NVL(T1.PRODUCT_QTY,1) as QTY,T1.PRODUCT_DATE
+       FROM WBS_BIN T
+       JOIN WBS_PACKAGE_DATA T1
+       ON T.PACKAGE_GUID = T1.PACKAGE_GUID
+     ]]>
+      <dynamic prepend="where">
+        <isNotNull property="where.BIN_NO" prepend="AND">
+          <![CDATA[t.BIN_NO = #where.BIN_NO#]]>
+        </isNotNull>
+        <isNotNull property="where.PALLET_NO" prepend="AND">
+          <![CDATA[t.PALLET_NO like '%'|| #where.PALLET_NO# ||'%']]>
+        </isNotNull>
+        <isNotNull property="where.MATERIAL_NO" prepend="AND">
+          <![CDATA[t1.MATER_NO like '%'|| #where.MATERIAL_NO# ||'%']]>
+        </isNotNull>
+      </dynamic>
+      <isNotNull property="OrderString" prepend=" ">
+        ORDER BY $OrderString$
+      </isNotNull>
+      
+      
+    </select>
+
+  </statements>
+</sqlMap>
